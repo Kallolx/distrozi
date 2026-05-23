@@ -5,8 +5,8 @@ import BorderGlow from "@/components/BorderGlow";
 export default function WhyChoose() {
   const reasons = [
     {
-      title: "Direct YouTube CMS & MCN Access",
-      description: "Claim user-generated content, resolve asset conflicts, and maximize video payouts with direct multi-channel network permissions.",
+      title: "YouTube Content ID, Rights Management & MCN Services",
+      description: "Claim user-generated content, resolve asset conflicts, manage channel monetization, and maximize video revenue with advanced YouTube CMS & multi-channel network solutions.",
       image: "/youtube_cms.png"
     },
     {
@@ -48,7 +48,7 @@ export default function WhyChoose() {
             >
               <div className="p-3 flex flex-col gap-2.5 w-full h-full">
                 {/* Premium Static Illustration (Sleek, Small Padding Frame) */}
-                <div className="w-full h-36 sm:h-40 rounded-xl overflow-hidden bg-black border border-white/5 relative">
+                <div className="w-full h-48 sm:h-56 md:h-64 rounded-xl overflow-hidden bg-black border border-white/5 relative">
                   <img
                     src={reason.image}
                     alt={reason.title}

@@ -70,7 +70,7 @@ export default function Hero() {
             className="hero-section absolute inset-0 w-full h-full"
             {...fadeIn(0)}
           />
-          <div className="absolute inset-0 bg-black/65 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-black/25 backdrop-blur-[1px]" />
         </div>
 
         <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between px-6 pb-6 pt-0 sm:pb-12 lg:pt-10 z-20">

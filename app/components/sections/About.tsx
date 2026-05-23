@@ -169,7 +169,7 @@ export default function About() {
             </div>
 
             {/* ── TAB CONTENT SHOWCASE ── */}
-            <div className="min-h-[220px] relative bg-white/[0.01] border border-white/5 rounded-2xl p-5 sm:p-6 backdrop-blur-xl shadow-inner flex flex-col justify-center">
+            <div className="min-h-[380px] relative bg-white/[0.01] border border-white/5 rounded-2xl p-5 sm:p-7 backdrop-blur-xl shadow-inner flex flex-col justify-start">
               <AnimatePresence mode="wait">
                 {activeTab === "mission" && (
                   <motion.div
@@ -178,23 +178,27 @@ export default function About() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.3 }}
-                    className="flex flex-col gap-4 text-left"
+                    className="flex flex-col gap-6 text-left"
                   >
-                    <p className="text-base sm:text-lg text-white/70 leading-relaxed font-outfit">
-                      We offer a self-serve platform built for the digital age,
-                      providing{" "}
-                      <strong className="text-white font-medium">
-                        direct integration with YouTube CMS/MCN
-                      </strong>{" "}
-                      and over 150+ international music outlets.
+                    <p className="text-base sm:text-lg text-white font-medium leading-relaxed font-outfit">
+                      Distrozi is a <span className="text-[#f3c343]">global digital music distribution</span> and rights management platform built for modern independent artists, labels, and music businesses.
                     </p>
-                    <p className="text-sm text-white/50 leading-relaxed">
-                      Our technology helps artists release tracks at absolute
-                      zero upfront cost while retaining 100% catalog ownership.
-                      Through real-time revenue splits and metadata curation
-                      engines, we keep creators in complete command.
-                    </p>
-                    <div className="flex items-center gap-6 mt-2 pt-4 border-t border-white/5">
+                    
+                    <div className="space-y-4">
+                      <p className="text-[13px] sm:text-sm text-white/60 leading-relaxed">
+                        We provide advanced distribution infrastructure, YouTube CMS & MCN services, content protection, royalty management, and platform optimization tools designed to help creators scale worldwide.
+                      </p>
+                      
+                      <p className="text-[13px] sm:text-sm text-white/60 leading-relaxed">
+                        With delivery to <strong className="text-white/80">150+ digital streaming platforms</strong> and social media services, Distrozi empowers partners to manage releases, monetize content, protect copyrights, and grow audiences through a powerful and reliable ecosystem.
+                      </p>
+
+                      <p className="text-[13px] sm:text-sm text-white/60 leading-relaxed italic">
+                        From music distribution and Content ID to artist support and label operations, Distrozi combines technology, automation, and industry expertise to simplify global music management for the next generation of creators.
+                      </p>
+                    </div>
+
+                    <div className="flex items-center gap-6 mt-2 pt-6 border-t border-white/5">
                       <div className="flex items-center -space-x-3">
                         {avatars.map((av, index) => (
                           <div

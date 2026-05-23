@@ -69,8 +69,8 @@ export default function Contact() {
                 {/* Location Map (Top Area) - Explicit top rounding to guarantee clipping */}
                 <div className="w-full h-48 sm:h-56 lg:h-auto lg:flex-grow bg-black relative border-b border-white/5 rounded-t-[16px] overflow-hidden">
                   <iframe
-                    title="London Headquarters Location Map"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1325%2C51.5115%2C-0.1235%2C51.5155&amp;layer=mapnik&amp;marker=51.5136%2C-0.1279"
+                    title="Sheridan Headquarters Location Map"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-107.0000%2C44.7800%2C-106.9200%2C44.8200&amp;layer=mapnik&amp;marker=44.7972%2C-106.9561"
                     className="w-full h-full border-0 select-none pointer-events-none rounded-t-[16px]"
                     style={{
                       filter: "invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)"
@@ -92,7 +92,7 @@ export default function Contact() {
                     <div>
                       <h4 className="text-xs font-bold text-white uppercase tracking-wider text-white/40">Office Address</h4>
                       <p className="text-xs sm:text-sm text-white/80 leading-relaxed mt-0.5">
-                        71-75 Shelton Street, Covent Garden, London, WC2H 9JQ
+                        30 N Gould St Ste N, Sheridan, WY, United States, 82801, LLC
                       </p>
                     </div>
                   </div>
@@ -124,8 +124,8 @@ export default function Contact() {
                       </div>
                       <div>
                         <span className="text-[9px] text-white/30 block uppercase tracking-wider leading-none">Call</span>
-                        <a href="tel:+447307601744" className="text-[11px] sm:text-xs text-white/80 hover:text-white font-semibold transition-colors duration-200">
-                          +44 7307 601 744
+                        <a href="tel:+13074434528" className="text-[11px] sm:text-xs text-white/80 hover:text-white font-semibold transition-colors duration-200">
+                          +1 (307) 443-4528
                         </a>
                       </div>
                     </div>
@@ -139,8 +139,8 @@ export default function Contact() {
                       </div>
                       <div>
                         <span className="text-[9px] text-white/30 block uppercase tracking-wider leading-none">Email</span>
-                        <a href="mailto:contact@distrozi.com" className="text-[11px] sm:text-xs text-white/80 hover:text-white font-semibold transition-colors duration-200 block truncate">
-                          contact@distrozi.com
+                        <a href="mailto:support@distrozi.com" className="text-[11px] sm:text-xs text-white/80 hover:text-white font-semibold transition-colors duration-200 block truncate">
+                          support@distrozi.com
                         </a>
                       </div>
                     </div>
@@ -162,8 +162,8 @@ export default function Contact() {
             >
               <div className="p-5 sm:p-6 flex flex-col gap-4 text-left relative overflow-hidden w-full h-full">
                 
-                <div className="flex flex-col gap-0.5 border-b border-white/5 pb-3">
-                  <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">Distribution Inquiry</h3>
+                <div className="flex flex-col gap-0.5 pb-2">
+                  <h3 className="text-base sm:text-lg text-white tracking-tight">Distribution Inquiry</h3>
                 </div>
 
                 {status === "success" ? (

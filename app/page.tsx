@@ -19,7 +19,7 @@ export default function Home() {
       {/* Global Fixed Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Aurora 
-          colorStops={["#3b82f6", "#ec4899", "#facc15"]}
+          colorStops={["#7042f8", "#d159ff", "#3b82f6", "#14b8a6", "#22c55e", "#f3c343"]}
           amplitude={1.2}
           blend={0.5}
         />
@@ -41,7 +41,6 @@ export default function Home() {
         <About />
         <WhyChoose />
         <Testimonials />
-        <Team />
         <Contact />
         <Footer />
       </div>

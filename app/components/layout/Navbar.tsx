@@ -37,27 +37,71 @@ const navConfig: NavItem[] = [
   {
     label: "Features",
     submenu: [
-      { name: "Catalog Management", desc: "Organize metadata, artwork, and tracks.", icon: RiGridLine },
-      { name: "Rights Management", desc: "Protect licenses and content ownership.", icon: RiShieldKeyholeLine },
-      { name: "Distribution", desc: "Deliver tracks to 150+ stores globally.", icon: RiUploadCloud2Line },
-      { name: "Royalty Accounting", desc: "Split earnings and track financial reports.", icon: RiMoneyDollarCircleLine },
-      { name: "Analytics Insights", desc: "Track real-time streams and audience trends.", icon: RiBarChart2Line },
+      {
+        name: "Catalog Management",
+        desc: "Organize metadata, artwork, and tracks.",
+        icon: RiGridLine,
+      },
+      {
+        name: "Rights Management",
+        desc: "Protect licenses and content ownership.",
+        icon: RiShieldKeyholeLine,
+      },
+      {
+        name: "Distribution",
+        desc: "Deliver tracks to 150+ stores globally.",
+        icon: RiUploadCloud2Line,
+      },
+      {
+        name: "Royalty Accounting",
+        desc: "Split earnings and track financial reports.",
+        icon: RiMoneyDollarCircleLine,
+      },
+      {
+        name: "Analytics Insights",
+        desc: "Track real-time streams and audience trends.",
+        icon: RiBarChart2Line,
+      },
     ],
   },
   {
     label: "Services",
     submenu: [
-      { name: "Artist Service", desc: "Tailored marketing, licensing, and support.", icon: RiUserStarLine },
-      { name: "Label Service", desc: "Scale your imprint with publishing pipelines.", icon: RiDiscLine },
-      { name: "YouTube Network", desc: "Monetize content and join our MCN network.", icon: RiYoutubeLine },
+      {
+        name: "Artist Solution",
+        desc: "Tailored marketing, licensing, and support.",
+        icon: RiUserStarLine,
+      },
+      {
+        name: "Label Solution",
+        desc: "Scale your imprint with publishing pipelines.",
+        icon: RiDiscLine,
+      },
+      {
+        name: "YouTube Network",
+        desc: "Monetize content and join our MCN network.",
+        icon: RiYoutubeLine,
+      },
     ],
   },
   {
     label: "AI Tools",
     submenu: [
-      { name: "Music Gen", desc: "Generate original backing tracks with AI.", icon: RiMagicLine },
-      { name: "Mastering", desc: "Get industry-grade stereo masters instantly.", icon: RiEqualizer3Line },
-      { name: "Vocal Synthesis", desc: "Synthesize high-fidelity vocal cloning.", icon: RiVoiceprintLine },
+      {
+        name: "Music Gen",
+        desc: "Generate original backing tracks with AI.",
+        icon: RiMagicLine,
+      },
+      {
+        name: "Mastering",
+        desc: "Get industry-grade stereo masters instantly.",
+        icon: RiEqualizer3Line,
+      },
+      {
+        name: "Vocal Synthesis",
+        desc: "Synthesize high-fidelity vocal cloning.",
+        icon: RiVoiceprintLine,
+      },
     ],
   },
   { label: "About", href: "#" },
@@ -66,7 +110,9 @@ const navConfig: NavItem[] = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeAccordions, setActiveAccordions] = useState<Record<string, boolean>>({});
+  const [activeAccordions, setActiveAccordions] = useState<
+    Record<string, boolean>
+  >({ Features: true });
   const [isVisible, setIsVisible] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -87,6 +133,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  // Ensure "Features" is open when mobile menu is opened
+  useEffect(() => {
+    if (isOpen) {
+      setActiveAccordions((prev) => ({ ...prev, Features: true }));
+    }
+  }, [isOpen]);
+
   const toggleAccordion = (label: string) => {
     setActiveAccordions((prev) => ({ ...prev, [label]: !prev[label] }));
   };
@@ -96,19 +149,27 @@ export default function Navbar() {
       {/* ── Navbar ── */}
       <motion.header
         className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ease-in-out ${
-          isSticky ? "bg-black/60 backdrop-blur-md shadow-2xl" : "bg-transparent"
+          isSticky
+            ? "bg-black/60 backdrop-blur-md shadow-2xl"
+            : "bg-transparent"
         }`}
         initial={{ y: -100, opacity: 0 }}
-        animate={{ 
+        animate={{
           y: isVisible || isOpen ? 0 : -100,
-          opacity: 1 
+          opacity: 1,
         }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
-        <nav className={`mx-auto flex w-full max-w-7xl items-center justify-between px-6 lg:px-10 transition-all duration-300 ${isSticky ? "py-4" : "py-6"}`}>
+        <nav
+          className={`mx-auto flex w-full max-w-7xl items-center justify-between px-6 lg:px-10 transition-all duration-300 ${isSticky ? "py-4" : "py-6"}`}
+        >
           {/* Logo */}
           <a href="/" className="flex items-center" aria-label="Distrozi Home">
-            <img src="/logo.png" alt="Distrozi Logo" className="h-12 w-auto object-contain select-none" />
+            <img
+              src="/logo.png"
+              alt="Distrozi Logo"
+              className="h-12 w-auto object-contain select-none"
+            />
           </a>
 
           {/* Desktop nav */}
@@ -120,20 +181,31 @@ export default function Navbar() {
                   <div key={item.label} className="relative group py-2">
                     <button className="flex items-center gap-1 cursor-pointer transition-colors hover:text-white text-foreground font-medium">
                       {item.label}
-                      <RiArrowDownSLine size={16} className="transition-transform duration-300 group-hover:rotate-180 text-muted group-hover:text-white" />
+                      <RiArrowDownSLine
+                        size={16}
+                        className="transition-transform duration-300 group-hover:rotate-180 text-muted group-hover:text-white"
+                      />
                     </button>
                     <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[640px] rounded-2xl bg-neutral-950/98 backdrop-blur-2xl p-4 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.85)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 scale-95 group-hover:scale-100 origin-top z-50">
                       <div className="grid grid-cols-2 gap-x-3 gap-y-1.5">
                         {item.submenu!.map((sub) => {
                           const SubIcon = sub.icon;
                           return (
-                            <a key={sub.name} href="#" className="flex items-start gap-4 p-2.5 rounded-xl hover:bg-white/5 transition-all text-left group/item">
+                            <a
+                              key={sub.name}
+                              href="#"
+                              className="flex items-start gap-4 p-2.5 rounded-xl hover:bg-white/5 transition-all text-left group/item"
+                            >
                               <span className="submenu-item-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
                                 <SubIcon size={24} />
                               </span>
                               <div className="flex flex-col gap-0.5 justify-center">
-                                <div className="submenu-item-title text-sm font-medium">{sub.name}</div>
-                                <div className="text-xs text-muted leading-snug">{sub.desc}</div>
+                                <div className="submenu-item-title text-sm font-medium">
+                                  {sub.name}
+                                </div>
+                                <div className="text-xs text-muted leading-snug">
+                                  {sub.desc}
+                                </div>
                               </div>
                             </a>
                           );
@@ -144,7 +216,11 @@ export default function Navbar() {
                 );
               }
               return (
-                <a key={item.label} href={item.href || "#"} className="transition-colors hover:text-white text-foreground font-medium py-2">
+                <a
+                  key={item.label}
+                  href={item.href || "#"}
+                  className="transition-colors hover:text-white text-foreground font-medium py-2"
+                >
                   {item.label}
                 </a>
               );
@@ -160,8 +236,8 @@ export default function Navbar() {
               variant="secondary"
               className="px-3.5 py-1.5 text-xs sm:px-5 sm:py-2 sm:text-sm md:px-[22px] md:py-[10px] md:text-[15px]"
             >
-              <span className="md:hidden">Start</span>
-              <span className="hidden md:inline">Get Started</span>
+              <span className="md:hidden">Client Login</span>
+              <span className="hidden md:inline">Client Login</span>
             </Button>
 
             <button
@@ -178,11 +254,16 @@ export default function Navbar() {
       {/* ── Mobile Sidebar — rendered OUTSIDE header to avoid transform stacking context ── */}
       <div
         className={`fixed inset-0 z-[999] md:hidden transition-all duration-300 ${
-          isOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+          isOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible pointer-events-none"
         }`}
       >
         {/* Backdrop */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-pointer" onClick={() => setIsOpen(false)} />
+        <div
+          className="absolute inset-0 bg-black/70 backdrop-blur-sm cursor-pointer"
+          onClick={() => setIsOpen(false)}
+        />
 
         {/* Drawer */}
         <div
@@ -196,7 +277,11 @@ export default function Navbar() {
           {/* Header */}
           <div className="flex items-center justify-between px-6 pt-6 pb-5 border-b border-white/5">
             <a href="/" onClick={() => setIsOpen(false)} aria-label="Home">
-              <img src="/logo.png" alt="Distrozi" className="h-8 w-auto object-contain" />
+              <img
+                src="/logo.png"
+                alt="Distrozi"
+                className="h-8 w-auto object-contain"
+              />
             </a>
             <button
               onClick={() => setIsOpen(false)}
@@ -228,7 +313,9 @@ export default function Navbar() {
                     </button>
                     <div
                       className={`flex flex-col gap-1 overflow-hidden transition-all duration-300 ${
-                        isExpanded ? "max-h-[600px] opacity-100 mt-1 mb-2" : "max-h-0 opacity-0"
+                        isExpanded
+                          ? "max-h-[600px] opacity-100 mt-1 mb-2"
+                          : "max-h-0 opacity-0"
                       }`}
                     >
                       <div className="flex flex-col gap-1 px-2 py-2 rounded-2xl bg-white/2 border border-white/5">
@@ -245,8 +332,12 @@ export default function Navbar() {
                                 <SubIcon size={18} />
                               </span>
                               <div className="flex flex-col gap-0.5 min-w-0">
-                                <span className="submenu-item-title text-[13.5px] font-medium leading-tight">{sub.name}</span>
-                                <span className="text-[11.5px] text-muted leading-tight truncate">{sub.desc}</span>
+                                <span className="submenu-item-title text-[13.5px] font-medium leading-tight">
+                                  {sub.name}
+                                </span>
+                                <span className="text-[11.5px] text-muted leading-tight truncate">
+                                  {sub.desc}
+                                </span>
                               </div>
                             </a>
                           );
@@ -281,9 +372,11 @@ export default function Navbar() {
               className="w-full justify-center py-3.5 text-[15px] font-medium"
               onClick={() => setIsOpen(false)}
             >
-              Get Started
+              Client Login
             </Button>
-            <p className="text-center text-[11px] text-muted">Join 10,000+ artists on Distrozi</p>
+            <p className="text-center text-[11px] text-muted">
+              Join 10,000+ artists on Distrozi
+            </p>
           </div>
         </div>
       </div>

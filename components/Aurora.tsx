@@ -15,7 +15,7 @@ precision highp float;
 
 uniform float uTime;
 uniform float uAmplitude;
-uniform vec3 uColorStops[3];
+uniform vec3 uColorStops[6];
 uniform vec2 uResolution;
 uniform float uBlend;
 
@@ -72,7 +72,7 @@ struct ColorStop {
 
 #define COLOR_RAMP(colors, factor, finalColor) {              \
   int index = 0;                                            \
-  for (int i = 0; i < 2; i++) {                               \
+  for (int i = 0; i < 5; i++) {                               \
      ColorStop currentColor = colors[i];                    \
      bool isInBetween = currentColor.position <= factor;    \
      index = int(mix(float(index), float(i), float(isInBetween))); \
@@ -87,10 +87,13 @@ struct ColorStop {
 void main() {
   vec2 uv = gl_FragCoord.xy / uResolution;
   
-  ColorStop colors[3];
+  ColorStop colors[6];
   colors[0] = ColorStop(uColorStops[0], 0.0);
-  colors[1] = ColorStop(uColorStops[1], 0.5);
-  colors[2] = ColorStop(uColorStops[2], 1.0);
+  colors[1] = ColorStop(uColorStops[1], 0.2);
+  colors[2] = ColorStop(uColorStops[2], 0.4);
+  colors[3] = ColorStop(uColorStops[3], 0.6);
+  colors[4] = ColorStop(uColorStops[4], 0.8);
+  colors[5] = ColorStop(uColorStops[5], 1.0);
   
   vec3 rampColor;
   COLOR_RAMP(colors, uv.x, rampColor);
@@ -118,7 +121,7 @@ interface AuroraProps {
 }
 
 export default function Aurora(props: AuroraProps) {
-  const { colorStops = ['#5227FF', '#7cff67', '#5227FF'], amplitude = 1.0, blend = 0.5 } = props;
+  const { colorStops = ['#7042f8', '#d159ff', '#3b82f6', '#14b8a6', '#22c55e', '#f3c343'], amplitude = 1.0, blend = 0.5 } = props;
   const propsRef = useRef<AuroraProps>(props);
   propsRef.current = props;
 
