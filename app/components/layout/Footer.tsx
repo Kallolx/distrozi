@@ -188,27 +188,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Mid-boundary: Copyright / Server info */}
+        {/* Mid-boundary: Copyright */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 text-[11px] text-white/45 select-none text-center sm:text-left">
           <div className="flex items-center gap-1.5">
             <RiCopyrightLine size={12} className="shrink-0" />
-            <span>
-              {new Date().getFullYear()} Distrozi LLC. All rights reserved.
-            </span>
+            <span>{new Date().getFullYear()} Distrozi LLC. All rights reserved.</span>
           </div>
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="hover:text-white transition-colors font-mono tracking-tighter text-emerald-400/80"
-            >
-              SYS // OK
-            </a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
           </div>
         </div>
       </div>

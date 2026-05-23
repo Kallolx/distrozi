@@ -120,7 +120,7 @@ export default function Hero() {
                 transition={{ duration: 0.55, delay: 0.46 }}
               >
                 <Button as="a" href="/start" variant="primary" size="lg">
-                  Start Now
+                  Apply Now
                 </Button>
               </motion.div>
             </div>

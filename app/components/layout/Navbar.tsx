@@ -25,6 +25,7 @@ interface SubmenuItem {
   name: string;
   desc: string;
   icon: any;
+  href?: string;
 }
 
 interface NavItem {
@@ -41,26 +42,31 @@ const navConfig: NavItem[] = [
         name: "Catalog Management",
         desc: "Organize metadata, artwork, and tracks.",
         icon: RiGridLine,
+        href: "/features/catalog",
       },
       {
         name: "Rights Management",
         desc: "Protect licenses and content ownership.",
         icon: RiShieldKeyholeLine,
+        href: "/features/rights",
       },
       {
         name: "Distribution",
         desc: "Deliver tracks to 150+ stores globally.",
         icon: RiUploadCloud2Line,
+        href: "/features/distribution",
       },
       {
         name: "Royalty Accounting",
         desc: "Split earnings and track financial reports.",
         icon: RiMoneyDollarCircleLine,
+        href: "/features/royalty",
       },
       {
         name: "Analytics Insights",
         desc: "Track real-time streams and audience trends.",
         icon: RiBarChart2Line,
+        href: "/features/analytics",
       },
     ],
   },
@@ -71,16 +77,19 @@ const navConfig: NavItem[] = [
         name: "Artist Solution",
         desc: "Tailored marketing, licensing, and support.",
         icon: RiUserStarLine,
+        href: "/services/artist",
       },
       {
         name: "Label Solution",
         desc: "Scale your imprint with publishing pipelines.",
         icon: RiDiscLine,
+        href: "/services/label",
       },
       {
         name: "YouTube Network",
         desc: "Monetize content and join our MCN network.",
         icon: RiYoutubeLine,
+        href: "/services/youtube",
       },
     ],
   },
@@ -193,7 +202,7 @@ export default function Navbar() {
                           return (
                             <a
                               key={sub.name}
-                              href="#"
+                              href={sub.href || "#"}
                               className="flex items-start gap-4 p-2.5 rounded-xl hover:bg-white/5 transition-all text-left group/item"
                             >
                               <span className="submenu-item-icon flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
@@ -324,7 +333,7 @@ export default function Navbar() {
                           return (
                             <a
                               key={sub.name}
-                              href="#"
+                              href={sub.href || "#"}
                               onClick={() => setIsOpen(false)}
                               className="flex items-center gap-3.5 px-3 py-3 rounded-xl hover:bg-white/5 transition-all"
                             >
