@@ -48,7 +48,7 @@ export default function WhyChoose() {
             >
               <div className="p-3 flex flex-col gap-2.5 w-full h-full">
                 {/* Premium Static Illustration (Sleek, Small Padding Frame) */}
-                <div className="w-full h-48 sm:h-56 md:h-64 rounded-xl overflow-hidden bg-black border border-white/5 relative">
+                <div className="w-full h-56 sm:h-64 md:h-72 rounded-xl overflow-hidden bg-black border border-white/5 relative">
                   <img
                     src={reason.image}
                     alt={reason.title}

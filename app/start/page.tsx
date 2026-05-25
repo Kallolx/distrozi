@@ -229,15 +229,43 @@ export default function StartOnboarding() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateStep(4)) {
       setIsSubmitting(true);
-      setTimeout(() => {
+      
+      try {
+        const formData = new FormData();
+        
+        // Append all text fields
+        Object.entries(form).forEach(([key, value]) => {
+          if (key !== "idFile") {
+            formData.append(key, String(value));
+          }
+        });
+
+        // Append the file if exists
+        if (form.idFile) {
+          formData.append("idFile", form.idFile);
+        }
+
+        formData.append("submissionType", "Artist/Label Onboarding");
+
+        const response = await fetch("/api/send-email", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) throw new Error("Submission failed");
+
         setIsSubmitting(false);
         setIsSubmitted(true);
         window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 2000);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        setErrors({ submit: "There was an error submitting your application. Please try again." });
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -1040,49 +1068,58 @@ export default function StartOnboarding() {
               )}
 
               {/* Form Navigation Controls */}
-              <div className="flex items-center justify-between pt-4 gap-4">
-                {currentStep > 1 ? (
-                  <button
-                    type="button"
-                    onClick={handlePrev}
-                    disabled={isSubmitting}
-                    className="h-12 rounded-2xl px-6 text-lg font-bold bg-white/[0.03] text-white/80 hover:text-white hover:bg-white/[0.06] hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2.5 shrink-0 select-none cursor-pointer border-none"
-                  >
-                    <RiArrowLeftLine size={18} />
-                    <span>Back</span>
-                  </button>
-                ) : (
-                  <div />
+              <div className="flex flex-col gap-4 pt-4">
+                {errors.submit && (
+                  <div className="flex items-center gap-2 text-red-400 bg-red-400/10 p-4 rounded-2xl text-xs sm:text-sm animate-fade-in border border-red-400/20">
+                    <RiAlertLine size={18} className="shrink-0" />
+                    <span>{errors.submit}</span>
+                  </div>
                 )}
+                
+                <div className="flex items-center justify-between gap-4 w-full">
+                  {currentStep > 1 ? (
+                    <button
+                      type="button"
+                      onClick={handlePrev}
+                      disabled={isSubmitting}
+                      className="h-12 rounded-2xl px-6 text-lg font-bold bg-white/[0.03] text-white/80 hover:text-white hover:bg-white/[0.06] hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2.5 shrink-0 select-none cursor-pointer border-none"
+                    >
+                      <RiArrowLeftLine size={18} />
+                      <span>Back</span>
+                    </button>
+                  ) : (
+                    <div />
+                  )}
 
-                {currentStep < 4 ? (
-                  <button
-                    type="button"
-                    onClick={handleNext}
-                    className="h-12 rounded-2xl px-6 text-lg font-bold bg-primary text-black hover:bg-[#f7d26e] hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_24px_rgba(243,195,67,0.3)] shrink-0 select-none cursor-pointer border-none"
-                  >
-                    <span>Next</span>
-                    <RiArrowRightLine size={18} />
-                  </button>
-                ) : (
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="h-12 rounded-2xl px-7 text-lg font-bold bg-primary text-black hover:bg-[#f7d26e] hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_30px_rgba(243,195,67,0.4)] shrink-0 select-none cursor-pointer border-none disabled:opacity-50"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <span className="h-4 w-4 border-2 border-black border-t-transparent rounded-full animate-spin shrink-0" />
-                        <span>Submitting...</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Submit Registration</span>
-                        <RiArrowRightLine size={18} />
-                      </>
-                    )}
-                  </button>
-                )}
+                  {currentStep < 4 ? (
+                    <button
+                      type="button"
+                      onClick={handleNext}
+                      className="h-12 rounded-2xl px-6 text-lg font-bold bg-primary text-black hover:bg-[#f7d26e] hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_24px_rgba(243,195,67,0.3)] shrink-0 select-none cursor-pointer border-none"
+                    >
+                      <span>Next</span>
+                      <RiArrowRightLine size={18} />
+                    </button>
+                  ) : (
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="h-12 rounded-2xl px-7 text-lg font-bold bg-primary text-black hover:bg-[#f7d26e] hover:scale-[1.03] transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_30px_rgba(243,195,67,0.4)] shrink-0 select-none cursor-pointer border-none disabled:opacity-50"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <span className="h-4 w-4 border-2 border-black border-t-transparent rounded-full animate-spin shrink-0" />
+                          <span>Submitting...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>Submit Registration</span>
+                          <RiArrowRightLine size={18} />
+                        </>
+                      )}
+                    </button>
+                  )}
+                </div>
               </div>
             </form>
 

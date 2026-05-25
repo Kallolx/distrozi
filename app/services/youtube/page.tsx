@@ -6,6 +6,8 @@ import {
   RiUploadCloud2Line,
   RiFileTextLine,
   RiCloseLine,
+  RiAlertLine,
+  RiArrowRightLine,
 } from "react-icons/ri";
 import Navbar from "@/app/components/layout/Navbar";
 import Footer from "@/app/components/layout/Footer";
@@ -54,7 +56,7 @@ export default function YouTubeNetworkPage() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (
       !formData.firstName ||
@@ -78,7 +80,23 @@ export default function YouTubeNetworkPage() {
 
     setStatus("sending");
 
-    setTimeout(() => {
+    try {
+      const dataToSend = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        dataToSend.append(key, value);
+      });
+      if (idFile) {
+        dataToSend.append("idFile", idFile);
+      }
+      dataToSend.append("submissionType", "YouTube MCN Application");
+
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        body: dataToSend,
+      });
+
+      if (!response.ok) throw new Error("Failed to send");
+
       setStatus("success");
       setFormData({
         firstName: "",
@@ -98,7 +116,10 @@ export default function YouTubeNetworkPage() {
         cond2: false,
         cond3: false,
       });
-    }, 1200);
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
   };
 
   const handleInputChange = (
@@ -659,6 +680,13 @@ export default function YouTubeNetworkPage() {
                             "Submit Application"
                           )}
                         </button>
+                        
+                        {status === "error" && (
+                          <div className="flex items-center gap-2 text-red-500 bg-red-500/5 p-3 rounded-xl text-xs border border-red-500/10">
+                            <RiAlertLine size={16} className="shrink-0" />
+                            <span>Failed to send application. Please ensure all fields are correct and you've accepted all terms.</span>
+                          </div>
+                        )}
                       </form>
                     )}
                   </div>
