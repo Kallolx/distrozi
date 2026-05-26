@@ -23,20 +23,20 @@ const data: FeaturePageData = {
     {
       title: "Automate Back Office",
       description:
-        "Eliminate manual accounting workflows and operational overhead.",
-      image: "/features/benifit/13.png"
+        "Cut down on the time you spend on accounting",
+      image: "/features/benifit/4.png"
     },
     {
       title: "Transparent Workflows",
       description:
-        "Maintain end-to-end clarity across approvals, reporting, and payouts.",
-      image: "/features/benifit/11.png"
+        "Quickly give the thumbs up to royalties and statements",
+      image: "/features/benifit/12.png"
     },
     {
       title: "Client Portal Access",
       description:
-        "Empower artists with secure, real-time access to their earnings and statements.",
-      image: "/features/benifit/12.png"
+        "Give clients access to a secure portal",
+      image: "/features/benifit/13.png"
     },
   ],
   sections: [

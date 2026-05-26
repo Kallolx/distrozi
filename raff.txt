@@ -1,0 +1,16 @@
+{
+      title: "All-in-One Dashboard",
+      description: "Manage singles, albums, EPs, and every release from a single, unified workspace. Stop dealing with scattered files.",
+      image: "/features/benifit/1.png"
+    },
+
+        {
+      title: "Smart Metadata",
+      description: "Ensure your music appears correctly with clean, structurual metadata across over 150+ digital stores every single time.",
+      image: "/features/benifit/2.png"
+    },
+    {
+      title: "Full Release Control",
+      description: "Schedule, edit, and launch releases with exact timing. Gain absolute control over when and where your music goes live.",
+      image: "/features/benifit/3.png"
+    },

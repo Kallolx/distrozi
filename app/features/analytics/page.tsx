@@ -21,22 +21,22 @@ const data: FeaturePageData = {
   showcaseAlt: "Analytics dashboard showing streaming data",
   benefits: [
     {
-      title: "Unified Performance Dashboard",
+      title: "Performance Dashboard",
       description:
-        "All your streaming stats, revenue data, and audience insights consolidated in a single, clear view — no more jumping between platform dashboards.",
-      image: "/features/benifit/7.png"
+        "A complete 360° look at how your catalog is performing.",
+      image: "/features/benifit/8.png"
     },
     {
       title: "Real-Time Streaming Data",
       description:
-        "See how your music performs as it happens. Track plays, saves, and playlist adds in real time so you can react to momentum instantly.",
-      image: "/features/benifit/8.png"
+        "Spot trends for better choices.",
+      image: "/features/benifit/9.png"
     },
     {
       title: "Audience Demographics",
       description:
-        "Know exactly who is listening, where they're from, and what devices they use — so you can market smarter and grow faster.",
-      image: "/features/benifit/9.png"
+        "Look for chances to enhance your success.",
+      image: "/features/benifit/10.png"
     },
   ],
   sections: [

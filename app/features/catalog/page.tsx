@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import FeatureLayout from "@/app/components/layout/FeatureLayout";
-import FeaturePage, { type FeaturePageData } from "@/app/components/features/FeaturePage";
+import FeaturePage, {
+  type FeaturePageData,
+} from "@/app/components/features/FeaturePage";
 
 export const metadata: Metadata = {
   title: "Catalog Management — Distrozi",
-  description: "Organize your entire music catalogue with professional precision. Optimize metadata, manage releases, and maintain full visibility over your lifetime collection.",
+  description:
+    "Organize your entire music catalogue with professional precision. Optimize metadata, manage releases, and maintain full visibility over your lifetime collection.",
 };
 
 const data: FeaturePageData = {
@@ -20,18 +23,20 @@ const data: FeaturePageData = {
   benefits: [
     {
       title: "All-in-One Dashboard",
-      description: "Manage singles, albums, EPs, and every release from a single, unified workspace. Stop dealing with scattered files.",
-      image: "/features/benifit/1.png"
-    },
-    {
-      title: "Smart Metadata",
-      description: "Ensure your music appears correctly with clean, structurual metadata across over 150+ digital stores every single time.",
-      image: "/features/benifit/2.png"
+      description: "Compatibility with all standard formats.",
+      image: "/features/benifit/1.png",
     },
     {
       title: "Full Release Control",
-      description: "Schedule, edit, and launch releases with exact timing. Gain absolute control over when and where your music goes live.",
-      image: "/features/benifit/3.png"
+      description:
+        "Handle all your assets in a single, user-friendly platform.",
+      image: "/features/benifit/2.png",
+    },
+    {
+      title: "Smart Metadata",
+      description:
+        "Maximize earnings on every platform.",
+      image: "/features/benifit/3.png",
     },
   ],
   sections: [

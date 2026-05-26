@@ -17,26 +17,26 @@ const data: FeaturePageData = {
   accentClass: "text-[#EA621F]",
   glowColor: "rgba(234,98,31,0.12)",
   themeColor: "#EA621F", // Vibrant orange for highlighted card
-  showcaseImage: "/feature/dashboard.png",
+  showcaseImage: "/feature/royalti.png",
   showcaseAlt: "Rights management and copyright protection interface",
   benefits: [
     {
       title: "Clear Ownership Structure",
       description:
-        "Know exactly who owns what in every release. Define rights clearly so there's never confusion over who earns what.",
-      image: "/features/benifit/10.png"
+        "Tailored logic for intricate rights conditions.",
+      image: "/features/benifit/5.png"
     },
     {
       title: "Flexible Split Management",
       description:
-        "Handle collaborations without disputes. Set custom revenue splits for every contributor and track allocation automatically.",
-      image: "/features/benifit/11.png"
+        "Get detailed reports.",
+      image: "/features/benifit/4.png"
     },
     {
       title: "Secure Rights Protection",
       description:
-        "Your music is protected across all platforms. Content ID, takedown support, and claim management are handled for you.",
-      image: "/features/benifit/12.png"
+        "Make royalty payments easier to get right.",
+      image: "/features/benifit/6.png"
     },
   ],
   sections: [
@@ -44,28 +44,28 @@ const data: FeaturePageData = {
       title: "Digital Contracts",
       description:
         "Create, customize, and manage music contracts in a structured digital environment. Whether working with a few collaborators or large teams, ensure every agreement is clearly defined, securely stored, and fully compliant with industry standards.",
-      image: "/features/24.png",
+      image: "/features/8.png",
       imageAlt: "Digital Contracts interface",
     },
     {
       title: "Rights Management",
       description:
         "Organize and process complex rights data with ease, including publishing splits and ownership details. Our system ensures every contributor’s share is accurately recorded and maintained across all projects.",
-      image: "/features/25.png",
+      image: "/features/9.png",
       imageAlt: "Rights Management split tracking",
     },
     {
       title: "Royalty Splits",
       description:
         "Automatically calculate and distribute royalties to all collaborators with precision. Eliminate manual errors, reduce delays, and ensure that every stakeholder receives their correct share on time.",
-      image: "/features/26.png",
+      image: "/features/10.png",
       imageAlt: "Royalty Splits calculation",
     },
     {
       title: "Smart Contracts",
       description:
         "Leverage blockchain-based smart contracts to automate agreements and payments. Provide a secure, transparent, and tamper-resistant system that builds trust among all collaborators.",
-      image: "/features/27.png",
+      image: "/features/11.png",
       imageAlt: "Smart Contracts and blockchain agreements",
     },
   ],
