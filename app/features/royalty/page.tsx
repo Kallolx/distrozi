@@ -43,7 +43,7 @@ const data: FeaturePageData = {
     {
       title: "Automate Royalty Processing",
       description:
-        "Simplify how your label handles royalty calculations and reporting. Zinetic Music automates complex workflows so you can generate accurate royalty statements across your entire catalog without manual effort. Reduce errors, save time, and scale your operations as your artist roster grows.",
+        "Simplify how your label handles royalty calculations and reporting. Distrozi Music automates complex workflows so you can generate accurate royalty statements across your entire catalog without manual effort. Reduce errors, save time, and scale your operations as your artist roster grows.",
       image: "/features/24.png",
       imageAlt: "Automate Royalty Processing",
     },
@@ -57,7 +57,7 @@ const data: FeaturePageData = {
     {
       title: "Analyze Royalty Earnings",
       description:
-        "Gain deeper insights into your revenue across platforms, artists, and releases. Zinetic Music provides clear, structured data so you understand exactly where income is generated and how your catalog is performing across every DSP. Identify trends, monitor growth, and make informed decisions to scale your music business.",
+        "Gain deeper insights into your revenue across platforms, artists, and releases. Distrozi Music provides clear, structured data so you understand exactly where income is generated and how your catalog is performing across every DSP. Identify trends, monitor growth, and make informed decisions to scale your music business.",
       image: "/features/26.png",
       imageAlt: "Analyze Royalty Earnings",
     },
@@ -78,7 +78,7 @@ const data: FeaturePageData = {
     {
       title: "Secure & Flexible Global Payouts",
       description:
-        "Pay every rights holder accurately through traditional or blockchain-based payment methods. Zinetic Music supports global bank transfers, PayPal, Payoneer, Wise, and digital asset options — eliminating manual tasks, reducing errors, and delivering complete transparency for every transaction.",
+        "Pay every rights holder accurately through traditional or blockchain-based payment methods. Distrozi Music supports global bank transfers, PayPal, Payoneer, Wise, and digital asset options — eliminating manual tasks, reducing errors, and delivering complete transparency for every transaction.",
       image: "/features/29.png",
       imageAlt: "Secure & Flexible Global Payouts",
     },

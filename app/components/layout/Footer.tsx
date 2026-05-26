@@ -202,7 +202,7 @@ export default function Footer() {
       </div>
 
       {/* Colossal Peaking Logo Segment at Bottom (Only Half Top Visible - Absolute Clipped, No Layout Gaps) */}
-      <div className="w-full select-none overflow-hidden relative h-[10vw] flex justify-center items-start bg-gradient-to-t from-white/[0.01] to-transparent pointer-events-none mt-2">
+      <div className="hidden sm:flex w-full select-none overflow-hidden relative h-[10vw] justify-center items-start bg-gradient-to-t from-white/[0.01] to-transparent pointer-events-none mt-2">
         <img
           src="/logo.png"
           alt="Distrozi Logo"

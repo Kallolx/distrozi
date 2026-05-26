@@ -92,7 +92,7 @@ export default function Contact() {
                     <div>
                       <h4 className="text-xs font-bold text-white uppercase tracking-wider text-white/40">Office Address</h4>
                       <p className="text-xs sm:text-sm text-white/80 leading-relaxed mt-0.5">
-                        30 N Gould St Ste N, Sheridan, WY, United States, 82801, LLC
+                        30 N Gould St Ste N, Sheridan, WY, United States, 82801
                       </p>
                     </div>
                   </div>

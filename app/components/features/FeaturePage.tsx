@@ -1,5 +1,7 @@
 "use client";
 
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
@@ -122,6 +124,26 @@ export default function FeaturePage({
   data: FeaturePageData;
   currentHref: string;
 }) {
+  const [emblaRef] = useEmblaCarousel(
+    {
+      align: "start",
+      containScroll: "trimSnaps",
+      loop: false,
+      breakpoints: { "(min-width: 768px)": { active: false } },
+    },
+    [Autoplay({ delay: 3500, stopOnInteraction: true, stopOnLastSnap: true })]
+  );
+
+  const [exploreRef] = useEmblaCarousel(
+    {
+      align: "start",
+      containScroll: "trimSnaps",
+      loop: false,
+      breakpoints: { "(min-width: 768px)": { active: false } },
+    },
+    [Autoplay({ delay: 4000, stopOnInteraction: true, stopOnLastSnap: true })]
+  );
+
   return (
     <div className="relative">
       {/* ── Spacer for fixed Navbar ── */}
@@ -188,66 +210,72 @@ export default function FeaturePage({
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {data.benefits.map((b, i) => {
-              const isHighlighted = i === 1;
-              return (
-                <motion.div
-                  key={b.title}
-                  {...fadeUp(i * 0.08)}
-                  className={`relative flex flex-col rounded-3xl overflow-hidden border min-h-[380px] md:h-[360px] transition-all duration-300 ${
-                    isHighlighted
-                      ? "border-blue-500/30 bg-blue-950 backdrop-blur-md"
-                      : "border-white/5 bg-black/40 hover:border-white/10"
-                  }`}
-                  style={
-                    isHighlighted
-                      ? { boxShadow: `0 20px 40px ${data.glowColor}` }
-                      : {}
-                  }
-                >
-                  {/* Header Info */}
-                  <div className="p-6 md:p-8 pb-4 relative z-10">
-                    <div className="flex items-center gap-2 mb-3">
-                      <RiCheckboxCircleFill
-                        className={
-                          isHighlighted
-                            ? "text-blue-400 shrink-0"
-                            : "text-white/40 shrink-0"
-                        }
-                        size={22}
-                      />
-                      {b.accent && (
-                        <span className="text-xl sm:text-2xl mr-1">
-                          {b.accent}
-                        </span>
-                      )}
-                      <h3 className="text-lg md:text-xl font-medium tracking-tight text-white">
-                        {b.title}
-                      </h3>
-                    </div>
-                    <p
-                      className={`text-sm md:text-base leading-relaxed ${isHighlighted ? "text-white" : "text-white/60"}`}
+          <div className="overflow-hidden md:overflow-visible pr-6 md:pr-0" ref={emblaRef}>
+            <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-5">
+              {data.benefits.map((b, i) => {
+                const isHighlighted = i === 1;
+                return (
+                  <div 
+                    key={b.title} 
+                    className="flex-[0_0_85%] min-w-0 md:flex-none md:w-full"
+                  >
+                    <motion.div
+                      {...fadeUp(i * 0.08)}
+                      className={`h-full relative flex flex-col rounded-3xl overflow-hidden border min-h-[380px] md:h-[360px] transition-all duration-300 ${
+                        isHighlighted
+                          ? "border-blue-500/30 bg-blue-950 backdrop-blur-md"
+                          : "border-white/10 bg-white/5 hover:border-white/20"
+                      }`}
+                      style={
+                        isHighlighted
+                          ? { boxShadow: `0 20px 40px ${data.glowColor}` }
+                          : {}
+                      }
                     >
-                      {b.description}
-                    </p>
-                  </div>
-
-                  {/* Image Content */}
-                  <div className="flex-1 relative w-full mt-auto flex flex-col justify-end overflow-hidden pt-4 select-none pointer-events-none">
-                    {b.image && (
-                      <div className="relative w-full h-[180px] md:h-[210px]">
-                        <img
-                          src={b.image}
-                          alt={b.title}
-                          className="w-full h-full object-cover object-top"
-                        />
+                      {/* Header Info */}
+                      <div className="p-6 md:p-8 pb-4 relative z-10">
+                        <div className="flex items-center gap-2 mb-3">
+                          <RiCheckboxCircleFill
+                            className={
+                              isHighlighted
+                                ? "text-blue-400 shrink-0"
+                                : "text-white/40 shrink-0"
+                            }
+                            size={22}
+                          />
+                          {b.accent && (
+                            <span className="text-xl sm:text-2xl mr-1">
+                              {b.accent}
+                            </span>
+                          )}
+                          <h3 className="text-lg md:text-xl font-medium tracking-tight text-white">
+                            {b.title}
+                          </h3>
+                        </div>
+                        <p
+                          className={`text-sm md:text-base leading-relaxed ${isHighlighted ? "text-white" : "text-white/60"}`}
+                        >
+                          {b.description}
+                        </p>
                       </div>
-                    )}
+
+                      {/* Image Content */}
+                      <div className="flex-1 relative w-full mt-auto flex flex-col justify-end overflow-hidden pt-4 select-none pointer-events-none">
+                        {b.image && (
+                          <div className="relative w-full h-[180px] md:h-[210px]">
+                            <img
+                              src={b.image}
+                              alt={b.title}
+                              className="w-full h-full object-cover object-top"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </motion.div>
                   </div>
-                </motion.div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </section>
 
@@ -255,7 +283,7 @@ export default function FeaturePage({
           4. ALTERNATING SECTIONS (5 sections)
       ══════════════════════════════════════════════════ */}
         <section className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 pb-24">
-          <div className="flex flex-col gap-24 lg:gap-32">
+          <div className="flex flex-col gap-12 lg:gap-32">
             {data.sections.map((sec, i) => {
               const isEven = i % 2 === 0; // even → image left, text right
               return (
@@ -267,7 +295,7 @@ export default function FeaturePage({
                   }`}
                 >
                   {/* Image */}
-                  <div className="w-full lg:w-1/2 shrink-0">
+                  <div className="hidden lg:block w-full lg:w-1/2 shrink-0">
                     <div className="relative w-full aspect-[4/3] flex items-center justify-center">
                       <img
                         src={sec.image}
@@ -278,7 +306,7 @@ export default function FeaturePage({
                   </div>
 
                   {/* Text */}
-                  <div className="w-full lg:w-1/2 flex flex-col gap-5">
+                  <div className="w-full lg:w-1/2 flex flex-col gap-4 sm:gap-5 bg-white/5 lg:bg-transparent border border-white/10 lg:border-transparent p-6 sm:p-10 lg:p-0 rounded-3xl lg:rounded-none">
                     <span className="text-xs font-medium uppercase tracking-widest text-muted">
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -288,7 +316,7 @@ export default function FeaturePage({
                     <p className="text-muted text-lg leading-relaxed">
                       {sec.description}
                     </p>
-                    <div>
+                    <div className="pt-2">
                       <Button
                         as="a"
                         href="/start"
@@ -316,33 +344,37 @@ export default function FeaturePage({
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {exploreFeatures
-              .filter((f) => f.href !== currentHref)
-              .map((f, i) => {
-                const Icon = f.icon;
-                return (
-                  <motion.div key={f.label} {...fadeUp(i * 0.06)}>
-                    <Link
-                      href={f.href}
-                      className={`group flex items-center gap-4 p-4 rounded-2xl bg-black/[0.5] border border-white/[0.06] transition-all duration-300`}
-                    >
-                      <span
-                        className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08] ${f.accentClass} transition-colors`}
-                      >
-                        <Icon size={18} />
-                      </span>
-                      <span className="text-sm font-medium text-foreground group-hover:text-white transition-colors truncate">
-                        {f.label}
-                      </span>
-                      <RiArrowRightLine
-                        size={14}
-                        className="shrink-0 text-muted opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200 ml-auto"
-                      />
-                    </Link>
-                  </motion.div>
-                );
-              })}
+          <div className="overflow-hidden md:overflow-visible pr-6 md:pr-0" ref={exploreRef}>
+            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {exploreFeatures
+                .filter((f) => f.href !== currentHref)
+                .map((f, i) => {
+                  const Icon = f.icon;
+                  return (
+                    <div key={f.label} className="flex-[0_0_70%] min-w-0 md:flex-none">
+                      <motion.div {...fadeUp(i * 0.06)}>
+                        <Link
+                          href={f.href}
+                          className="group flex items-center gap-4 p-4 rounded-2xl bg-white/5 md:bg-black/[0.5] border border-white/10 md:border-white/[0.06] transition-all duration-300"
+                        >
+                          <span
+                            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08] ${f.accentClass} transition-colors`}
+                          >
+                            <Icon size={18} />
+                          </span>
+                          <span className="text-sm font-medium text-foreground group-hover:text-white transition-colors truncate">
+                            {f.label}
+                          </span>
+                          <RiArrowRightLine
+                            size={14}
+                            className="shrink-0 text-muted opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all duration-200 ml-auto"
+                          />
+                        </Link>
+                      </motion.div>
+                    </div>
+                  );
+                })}
+            </div>
           </div>
         </section>
 
