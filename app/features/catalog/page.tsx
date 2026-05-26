@@ -4,74 +4,85 @@ import FeaturePage, { type FeaturePageData } from "@/app/components/features/Fea
 
 export const metadata: Metadata = {
   title: "Catalog Management — Distrozi",
-  description: "Organize your entire music catalogue — metadata, artwork, audio files, and releases — all in one place.",
+  description: "Organize your entire music catalogue with professional precision. Optimize metadata, manage releases, and maintain full visibility over your lifetime collection.",
 };
 
 const data: FeaturePageData = {
   badge: "Feature · Catalog Management",
-  heroTitle: "Your entire catalogue,",
-  heroTitleHighlight: "perfectly organized.",
+  heroTitle: "Your Music,",
+  heroTitleHighlight: "Perfectly Organized.",
   heroSubtitle:
-    "Manage metadata, artwork, audio files, and release schedules from a single, intuitive dashboard.",
-  accentClass: "text-blue-400",
-  glowColor: "rgba(59,130,246,0.12)",
+    "Manage your entire independent music catalog with enterprise precision. Keep every single release clean, structured, and visible — from first upload to global delivery.",
+  accentClass: "text-[#DA35F7]",
+  glowColor: "rgba(218,53,247,0.12)",
   showcaseImage: "/feature/dashboard.png",
-  showcaseAlt: "Catalog management dashboard",
+  showcaseAlt: "Distrozi catalog management dashboard",
   benefits: [
     {
-      title: "Unified library",
-      description:
-        "All your releases, singles, EPs and albums live in one structured, searchable library — never lose a track again.",
-      accent: "📂",
+      title: "All-in-One Dashboard",
+      description: "Manage singles, albums, EPs, and every release from a single, unified workspace. Stop dealing with scattered files.",
+      image: "/features/benifit/1.png"
     },
     {
-      title: "Metadata precision",
-      description:
-        "ISRC codes, credits, composers, and genre tagging done right. Accurate metadata means better discoverability.",
-      accent: "🏷️",
+      title: "Smart Metadata",
+      description: "Ensure your music appears correctly with clean, structurual metadata across over 150+ digital stores every single time.",
+      image: "/features/benifit/2.png"
     },
     {
-      title: "Artwork & assets",
-      description:
-        "Upload high-resolution artwork and promotional assets per release, with automated format compliance checks.",
-      accent: "🖼️",
+      title: "Full Release Control",
+      description: "Schedule, edit, and launch releases with exact timing. Gain absolute control over when and where your music goes live.",
+      image: "/features/benifit/3.png"
     },
   ],
   sections: [
     {
-      title: "One place for every release you've ever made",
+      title: "Consolidate your entire discography in one place",
       description:
-        "No more scattered folders or lost files. Distrozi's Catalog Manager centralizes your entire discography — from your first demo to your latest single — in a clean, searchable dashboard. Filter by genre, release date, label, or artist in seconds.",
-      image: "/features/showcase1.png",
-      imageAlt: "Music library organized on screen",
+        "From your earliest acoustic demos to full studio albums, your entire catalog resides in a structured, rapid-search environment. Filter, tag, and modify assets in moments — completely eliminating the need to hunt through external drives or spreadsheets.",
+      image: "/features/1.png",
+      imageAlt: "Organized music discography workspace",
     },
     {
-      title: "Rich metadata that platforms actually accept",
+      title: "Metadata that translates globally",
       description:
-        "Correct ISRC, ISWC, UPC codes and proper contributor credits aren't optional — they're required for royalties. Our smart metadata editor validates every field before you distribute, so you never lose earnings to bad data.",
-      image: "/features/showcase2.png",
-      imageAlt: "Metadata editing interface",
+        "Incomplete credits or missing identification codes directly cost you royalties. Our intelligent metadata validator ensures that every contributor field and ISRC is fully compliant before your submission reaches the stores.",
+      image: "/features/2.png",
+      imageAlt: "Store metadata optimization",
     },
     {
-      title: "Artwork and asset management built in",
+      title: "Absolute scheduling precision",
       description:
-        "Upload cover art once and Distrozi auto-generates every platform-specific variant — Spotify squares, Apple banners, YouTube thumbnails. No Photoshop required. Version control keeps your art history clean.",
-      image: "/features/showcase3.png",
-      imageAlt: "Artwork management panel",
+        "Execute your rollouts with confidence. Designate global or regional release dates, orchestrate pre-save campaigns, and visualize your entire release trajectory down to the minute on a unified calendar.",
+      image: "/features/3.png",
+      imageAlt: "Content launch scheduling",
     },
     {
-      title: "Release scheduling and drafts",
+      title: "Mass content optimization",
       description:
-        "Plan your releases weeks in advance. Set embargo dates, coordinate pre-saves, and keep drafts private until you're ready. Every release goes through a pre-flight checklist so nothing ships with missing data.",
-      image: "/features/showcase4.png",
-      imageAlt: "Release calendar and scheduling",
+        "When your label grows, update thousands of tracks at once. Whether changing imprint details or enforcing standardized copyright tags, our batch management tools process catalog-wide changes instantly.",
+      image: "/features/4.png",
+      imageAlt: "Bulk music catalog controls",
     },
     {
-      title: "Collaboration and team access",
+      title: "Lifecycle asset tracking",
       description:
-        "Invite managers, producers, and A&R contacts with role-based permissions. Everyone sees what they need, nothing they don't. Activity logs track every change, so you always know what happened and who did it.",
-      image: "/features/showcase5.png",
-      imageAlt: "Team collaboration dashboard",
+        "Monitor the digital pulse of your files. Our platform logs the exact status of your submissions, showing precisely when Apple Music, Spotify, and TikTok ingested and verified your audio packages.",
+      image: "/features/5.png",
+      imageAlt: "Audio package lifecycle tracking",
+    },
+    {
+      title: "Transparent contributor credits",
+      description:
+        "Establish immediate financial clarity for your team. Structure split-sheets, detail precise engineering credits, and assign royalty ownership logically directly within your master catalog database.",
+      image: "/features/6.png",
+      imageAlt: "Collaborator credits and splits",
+    },
+    {
+      title: "Marketplace-ready delivery",
+      description:
+        "Your catalog should never sit idle. Instantly route your meticulously organized tracks to 150+ international digital stores and streaming hubs with uncompromised metadata fidelity.",
+      image: "/features/7.png",
+      imageAlt: "Global music delivery",
     },
   ],
 };

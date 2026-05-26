@@ -9,6 +9,7 @@ import {
   RiBarChart2Line,
   RiShieldKeyholeLine,
   RiMoneyDollarCircleLine,
+  RiCheckboxCircleFill,
 } from "react-icons/ri";
 import Button from "../ui/Button";
 
@@ -18,7 +19,9 @@ export interface BenefitCard {
   title: string;
   description: string;
   /** emoji or small icon label shown in the card decoration */
-  accent: string;
+  accent?: string;
+  /** image url for the bottom of the card */
+  image?: string;
 }
 
 export interface FeatureSection {
@@ -39,18 +42,14 @@ export interface FeaturePageData {
   accentClass: string;
   /** glow colour for the image box border */
   glowColor: string;
+  /** theme color for highlighted card bg */
+  themeColor?: string;
   /** 16:9 showcase image */
   showcaseImage: string;
   showcaseAlt: string;
   benefits: [BenefitCard, BenefitCard, BenefitCard];
-  /** 5 alternating image+text sections */
-  sections: [
-    FeatureSection,
-    FeatureSection,
-    FeatureSection,
-    FeatureSection,
-    FeatureSection,
-  ];
+  /** alternating image+text sections */
+  sections: FeatureSection[];
 }
 
 // ─── Explore cards data (shared across all pages) ───────────────────────────
@@ -173,31 +172,62 @@ export default function FeaturePage({
       </section>
 
       {/* ══════════════════════════════════════════════════
-          3. BENEFITS (3 cards)
+          BOTTOM HALF - SOLID BLACK BACKGROUND
       ══════════════════════════════════════════════════ */}
-      <section className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 pb-28">
-        <motion.div {...fadeUp(0)} className="text-center mb-12">
+      <div className="relative z-10 w-full bg-black pt-20">
+        {/* ══════════════════════════════════════════════════
+            3. BENEFITS (3 cards)
+        ══════════════════════════════════════════════════ */}
+        <section className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 pb-28">
+          <motion.div {...fadeUp(0)} className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-medium text-foreground title-text">
             Why it matters
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {data.benefits.map((b, i) => (
-            <motion.div
-              key={b.title}
-              {...fadeUp(i * 0.08)}
-              className="relative rounded-2xl bg-black/[0.5] border border-white/[0.07] p-6 flex flex-col gap-3 overflow-hidden group hover:border-white/[0.14] transition-colors duration-300"
-            >
-              <span className="text-4xl">{b.accent}</span>
-              <h3 className="text-base font-medium text-foreground">
-                {b.title}
-              </h3>
-              <p className="text-sm text-muted leading-relaxed">
-                {b.description}
-              </p>
-            </motion.div>
-          ))}
+          {data.benefits.map((b, i) => {
+            const isHighlighted = i === 1;
+            return (
+              <motion.div
+                key={b.title}
+                {...fadeUp(i * 0.08)}
+                className={`relative flex flex-col rounded-3xl overflow-hidden border min-h-[380px] md:h-[420px] transition-all duration-300 ${
+                  isHighlighted
+                    ? "border-blue-500/30 bg-blue-950 backdrop-blur-md"
+                    : "border-white/5 bg-black/40 hover:border-white/10"
+                }`}
+                style={isHighlighted ? { boxShadow: `0 20px 40px ${data.glowColor}` } : {}}
+              >
+                {/* Header Info */}
+                <div className="p-6 md:p-8 pb-4 relative z-10">
+                  <div className="flex items-center gap-2 mb-3">
+                    <RiCheckboxCircleFill className={isHighlighted ? "text-blue-400 shrink-0" : "text-white/40 shrink-0"} size={22} />
+                    {b.accent && <span className="text-xl sm:text-2xl mr-1">{b.accent}</span>}
+                    <h3 className="text-lg md:text-xl font-medium tracking-tight text-white">
+                      {b.title}
+                    </h3>
+                  </div>
+                  <p className={`text-sm md:text-base leading-relaxed ${isHighlighted ? "text-white" : "text-white/60"}`}>
+                    {b.description}
+                  </p>
+                </div>
+
+                {/* Image Content */}
+                <div className="flex-1 relative w-full mt-auto flex flex-col justify-end overflow-hidden pt-4 select-none pointer-events-none">
+                  {b.image && (
+                    <div className="relative w-full h-[180px] md:h-[200px]">
+                      <img
+                        src={b.image}
+                        alt={b.title}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                  )}
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
@@ -218,13 +248,12 @@ export default function FeaturePage({
               >
                 {/* Image */}
                 <div className="w-full lg:w-1/2 shrink-0">
-                  <div className="relative rounded-2xl overflow-hidden border border-white/[0.07] aspect-[4/3]">
+                  <div className="relative w-full aspect-[4/3] flex items-center justify-center">
                     <img
                       src={sec.image}
                       alt={sec.imageAlt}
-                      className="w-full h-full object-cover"
+                      className="max-w-full max-h-full object-contain"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                   </div>
                 </div>
 
@@ -233,14 +262,14 @@ export default function FeaturePage({
                   <span className="text-xs font-medium uppercase tracking-widest text-muted">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-medium text-foreground title-text leading-tight">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-foreground title-text leading-tight">
                     {sec.title}
                   </h2>
-                  <p className="text-muted text-base leading-relaxed">
+                  <p className="text-muted text-lg leading-relaxed">
                     {sec.description}
                   </p>
                   <div>
-                    <Button as="a" href="/start" variant="ghost" size="md">
+                    <Button as="a" href="/start" variant="secondary" size="md">
                       Get started
                       <RiArrowRightLine size={16} />
                     </Button>
@@ -298,29 +327,26 @@ export default function FeaturePage({
       <section className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 pb-24">
         <motion.div
           {...fadeUp(0)}
-          className="relative rounded-3xl overflow-hidden border border-white/[0.08] bg-white/[0.02] px-8 sm:px-14 py-14 sm:py-16 text-center"
+          className="relative rounded-3xl overflow-hidden px-8 sm:px-14 py-14 sm:py-16 text-center"
+          style={{ background: "var(--gradient-accent)" }}
         >
-          {/* Glow */}
-          <div
-            className="pointer-events-none absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(ellipse at 50% 0%, rgba(243,195,67,0.08) 0%, transparent 70%)",
-            }}
-          />
+          {/* Subtle overlay to ensure text readability */}
+          <div className="pointer-events-none absolute inset-0 bg-black/10 mix-blend-multiply" />
+          
           <div className="relative z-10 flex flex-col items-center gap-5">
-            <h2 className="text-3xl sm:text-4xl font-medium text-foreground title-text max-w-xl">
+            <h2 className="text-3xl sm:text-4xl font-medium text-white title-text max-w-xl shadow-black/10 drop-shadow-md">
               Ready to take your music further?
             </h2>
-            <p className="text-muted text-base max-w-md">
+            <p className="text-white/90 text-base max-w-md drop-shadow-sm">
               Join over 10,000 artists and labels already growing with Distrozi.
             </p>
-            <Button as="a" href="/start" variant="primary" size="lg">
+            <Button as="a" href="/start" variant="primary" size="lg" className="mt-2 bg-white text-black hover:bg-gray-100">
               Start for free
             </Button>
           </div>
         </motion.div>
       </section>
+      </div>
     </div>
   );
 }

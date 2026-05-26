@@ -3,75 +3,84 @@ import FeatureLayout from "@/app/components/layout/FeatureLayout";
 import FeaturePage, { type FeaturePageData } from "@/app/components/features/FeaturePage";
 
 export const metadata: Metadata = {
-  title: "Analytics Insights — Distrozi",
-  description: "Real-time streaming data, audience demographics, and revenue analytics for independent artists.",
+  title: "Analytics & Insights — Distrozi",
+  description:
+    "Turn your streaming data into actionable growth decisions. Real-time analytics across every platform — audience, revenue, trends, and more.",
 };
 
 const data: FeaturePageData = {
-  badge: "Feature · Analytics Insights",
-  heroTitle: "Know your audience.",
-  heroTitleHighlight: "Grow your reach.",
+  badge: "Feature · Analytics & Insights",
+  heroTitle: "Data That Drives",
+  heroTitleHighlight: "Real Growth.",
   heroSubtitle:
-    "Real-time streaming data, listener demographics, revenue trends, and territory breakdowns — all in one dashboard.",
-  accentClass: "text-emerald-400",
-  glowColor: "rgba(16,185,129,0.12)",
+    "Stop guessing what's working. Real-time streaming data, audience demographics, and platform insights — all in one powerful dashboard built for artists who take their careers seriously.",
+  accentClass: "text-[#DA35F7]",
+  glowColor: "rgba(218,53,247,0.12)",
+  themeColor: "#802CEE", // Vivid purple for highlighting analytics
   showcaseImage: "/feature/analytics.png",
   showcaseAlt: "Analytics dashboard showing streaming data",
   benefits: [
     {
-      title: "Real-time streams",
+      title: "Unified Performance Dashboard",
       description:
-        "Watch your play counts update in near real-time across all platforms. No more waiting 48 hours for yesterday's data.",
-      accent: "📊",
+        "All your streaming stats, revenue data, and audience insights consolidated in a single, clear view — no more jumping between platform dashboards.",
+      image: "/features/benifit/7.png"
     },
     {
-      title: "Audience breakdown",
+      title: "Real-Time Streaming Data",
       description:
-        "Know exactly who your listeners are — age, gender, city, country — and where your next tour stop should be.",
-      accent: "🎯",
+        "See how your music performs as it happens. Track plays, saves, and playlist adds in real time so you can react to momentum instantly.",
+      image: "/features/benifit/8.png"
     },
     {
-      title: "Revenue forecasting",
+      title: "Audience Demographics",
       description:
-        "Predictive royalty estimates based on current streaming velocity. Know what's coming before the payout.",
-      accent: "📈",
+        "Know exactly who is listening, where they're from, and what devices they use — so you can market smarter and grow faster.",
+      image: "/features/benifit/9.png"
     },
   ],
   sections: [
     {
-      title: "Streams, saves, and skips — all in real time",
+      title: "Catalog Performance Analysis",
       description:
-        "Distrozi aggregates data from Spotify, Apple Music, YouTube, Deezer and 20+ other platforms into one unified feed. See which track is climbing, which is dropping, and act before the algorithm does it for you.",
-      image: "/features/showcase3.png",
-      imageAlt: "Real-time streaming analytics chart",
+        "Get unmatched granularity into your catalog's reach. Track streaming volume and revenue trends across every release, platform, and territory from a single, high-fidelity dashboard.",
+      image: "/features/18.png",
+      imageAlt: "Catalog Performance Analysis",
     },
     {
-      title: "Territory insights that inform your strategy",
+      title: "Revenue Growth Tracking",
       description:
-        "Is your latest track blowing up in Brazil or gaining traction in South Korea? Our territory heat maps and city-level breakdowns show you where your audience actually lives — so you can target playlisting, ads, and touring accordingly.",
-      image: "/features/showcase4.png",
-      imageAlt: "Geographic listener heat map",
+        "Visualize your financial trajectory with precision. Breakdown earnings by asset, market, and DSP to identify your primary revenue drivers and optimize your commercial strategy.",
+      image: "/features/19.png",
+      imageAlt: "Revenue Growth Tracking",
     },
     {
-      title: "Playlist placement tracking",
+      title: "Advanced Playlist Insights",
       description:
-        "Know every editorial and user-generated playlist your tracks land on. Monitor follower counts, stream contributions per playlist, and how long you stay on each list. Playlist data is your most actionable growth metric.",
-      image: "/features/showcase5.png",
-      imageAlt: "Playlist tracking analytics",
+        "Monitor your music's discovery journey in real-time. Stay notified on every playlist adds and analyze how different placements impact your streaming growth and artist momentum.",
+      image: "/features/20.png",
+      imageAlt: "Advanced Playlist Insights",
     },
     {
-      title: "Revenue analytics across every source",
+      title: "Seamless Data Portability",
       description:
-        "Streaming royalties, Content ID claims, YouTube ad revenue, sync fees — all broken down in a single revenue chart. Filter by platform, territory, or time period. Export to CSV for your accountant in seconds.",
-      image: "/features/showcase6.png",
-      imageAlt: "Revenue analytics breakdown chart",
+        "Export high-resolution data for your entire team. Generate CSV or PDF reports with up to 1000 rows of granular analytics, making it easy to collaborate and make data-backed decisions.",
+      image: "/features/21.png",
+      imageAlt: "Seamless Data Portability",
     },
     {
-      title: "Performance reports, automatically generated",
+      title: "Direct Audience Understanding",
       description:
-        "Schedule weekly or monthly PDF reports delivered to your inbox. Share them with your manager, label, or investors without logging into any dashboard. Customise what's included per stakeholder.",
-      image: "/features/showcase1.png",
-      imageAlt: "Automated performance report",
+        "Deep-dive into your fan demographics and engagement patterns. Track daily growth and location data to refine your marketing efforts and expand your global listener base.",
+      image: "/features/22.png",
+      imageAlt: "Direct Audience Understanding",
+    },
+    {
+      title: "UGC & Social Impact Monitoring",
+      description:
+        "Gain clear visibility into your music's viral performance. Track catalog reach across TikTok, YouTube, Meta, and Vevo to measure social traction and fan interaction globally.",
+      image: "/features/23.png",
+      imageAlt: "UGC & Social Impact Monitoring",
     },
   ],
 };

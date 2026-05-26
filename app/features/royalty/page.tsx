@@ -4,74 +4,83 @@ import FeaturePage, { type FeaturePageData } from "@/app/components/features/Fea
 
 export const metadata: Metadata = {
   title: "Royalty Accounting — Distrozi",
-  description: "Transparent royalty splits, real-time financial reports, and on-time payments for every collaborator.",
+  description:
+    "Automate royalty calculations, streamline approvals, and distribute earnings to artists with complete accuracy. Built for labels managing complex catalogs at scale.",
 };
 
 const data: FeaturePageData = {
   badge: "Feature · Royalty Accounting",
-  heroTitle: "Every dollar tracked.",
-  heroTitleHighlight: "Every split, transparent.",
+  heroTitle: "Automate Your",
+  heroTitleHighlight: "Royalty Accounting.",
   heroSubtitle:
-    "Automated royalty calculations, real-time earnings dashboards, and on-time payments to every collaborator on your releases.",
-  accentClass: "text-rose-400",
-  glowColor: "rgba(244,63,94,0.10)",
+    "Automate complex royalty calculations, manage multi-artist statements, and distribute earnings reliably at scale. Purpose-built for labels that need precision, speed, and full transparency.",
+  accentClass: "text-[#DA35F7]",
+  glowColor: "rgba(218,53,247,0.12)",
+  themeColor: "#DA35F7", // Striking magenta for the highlighted card
   showcaseImage: "/feature/report.png",
   showcaseAlt: "Royalty accounting and financial dashboard",
   benefits: [
     {
-      title: "Automated splits",
+      title: "Automate Back Office",
       description:
-        "Define royalty splits once per release. Distrozi calculates and distributes each collaborator's share automatically every payout cycle.",
-      accent: "✂️",
+        "Eliminate manual accounting workflows and operational overhead.",
+      image: "/features/benifit/13.png"
     },
     {
-      title: "Multi-source aggregation",
+      title: "Transparent Workflows",
       description:
-        "Streaming, Content ID, sync, and performance royalties all collected and consolidated into a single monthly statement.",
-      accent: "🔗",
+        "Maintain end-to-end clarity across approvals, reporting, and payouts.",
+      image: "/features/benifit/11.png"
     },
     {
-      title: "On-time payments",
+      title: "Client Portal Access",
       description:
-        "Payouts processed on a fixed schedule — no delays, no excuses. Bank transfer, PayPal, or Wise supported globally.",
-      accent: "💸",
+        "Empower artists with secure, real-time access to their earnings and statements.",
+      image: "/features/benifit/12.png"
     },
   ],
   sections: [
     {
-      title: "Royalties collected from every source",
+      title: "Automate Royalty Processing",
       description:
-        "Mechanical royalties, performance royalties, neighbouring rights, streaming micro-payments, YouTube ad revenue — Distrozi aggregates earnings from every income source into a single monthly statement. No more chasing PROs or missing platform payouts.",
-      image: "/features/showcase5.png",
-      imageAlt: "Multi-source royalty aggregation dashboard",
+        "Simplify how your label handles royalty calculations and reporting. Zinetic Music automates complex workflows so you can generate accurate royalty statements across your entire catalog without manual effort. Reduce errors, save time, and scale your operations as your artist roster grows.",
+      image: "/features/24.png",
+      imageAlt: "Automate Royalty Processing",
     },
     {
-      title: "Collaborator splits, set once and forget",
+      title: "Simplify Approval Workflows",
       description:
-        "Define ownership and royalty percentages per track at the time of upload. Producers, featured artists, co-writers — every collaborator gets their exact share deposited automatically. No spreadsheets, no arguments.",
-      image: "/features/showcase6.png",
-      imageAlt: "Collaborator royalty split setup",
+        "Maintain full control over your royalty process with a structured approval system. Review and approve statements before payouts are processed, ensuring complete accuracy at every stage. This workflow reduces discrepancies, improves transparency, and keeps operations organized across all your artists and releases.",
+      image: "/features/25.png",
+      imageAlt: "Simplify Approval Workflows",
     },
     {
-      title: "Transparent earnings statements",
+      title: "Analyze Royalty Earnings",
       description:
-        "Every payout comes with a detailed statement broken down by platform, territory, and time period. Collaborators receive their own view of only their earnings — private, secure, and audit-ready.",
-      image: "/features/showcase1.png",
-      imageAlt: "Detailed earnings statement view",
+        "Gain deeper insights into your revenue across platforms, artists, and releases. Zinetic Music provides clear, structured data so you understand exactly where income is generated and how your catalog is performing across every DSP. Identify trends, monitor growth, and make informed decisions to scale your music business.",
+      image: "/features/26.png",
+      imageAlt: "Analyze Royalty Earnings",
     },
     {
-      title: "Tax documentation, automated",
+      title: "Accelerate Royalty Distribution",
       description:
-        "Year-end tax documents, withholding calculations, and country-specific compliance forms generated automatically. We support W-8, W-9, and international equivalents — so your accountant has everything they need.",
-      image: "/features/showcase2.png",
-      imageAlt: "Tax documentation and compliance forms",
+        "Distribute earnings to your artists and collaborators quickly and reliably. Once balances are confirmed and approved, royalties flow efficiently through a secure global payment system. Support your roster with consistent, timely payments while maintaining complete control over your financial operations.",
+      image: "/features/27.png",
+      imageAlt: "Accelerate Royalty Distribution",
     },
     {
-      title: "Dispute resolution for royalty discrepancies",
+      title: "YouTube CMS & Channel Revenue",
       description:
-        "Found a discrepancy between what a platform reports and what you received? Our accounting team investigates and resolves royalty disputes directly with DSPs, PROs, and collection societies — with full documentation of the outcome.",
-      image: "/features/showcase3.png",
-      imageAlt: "Royalty dispute investigation interface",
+        "Manage your YouTube network with full visibility and control. Track channel performance, monitor earnings, and distribute revenue accurately across multiple creators and channels. From Content ID revenue to channel monetization, everything is structured and transparent — helping you scale MCN operations without added complexity.",
+      image: "/features/28.png",
+      imageAlt: "YouTube CMS & Channel Revenue",
+    },
+    {
+      title: "Secure & Flexible Global Payouts",
+      description:
+        "Pay every rights holder accurately through traditional or blockchain-based payment methods. Zinetic Music supports global bank transfers, PayPal, Payoneer, Wise, and digital asset options — eliminating manual tasks, reducing errors, and delivering complete transparency for every transaction.",
+      image: "/features/29.png",
+      imageAlt: "Secure & Flexible Global Payouts",
     },
   ],
 };

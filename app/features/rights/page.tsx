@@ -4,74 +4,69 @@ import FeaturePage, { type FeaturePageData } from "@/app/components/features/Fea
 
 export const metadata: Metadata = {
   title: "Rights Management — Distrozi",
-  description: "Protect your music ownership, licenses, and content rights across every platform.",
+  description:
+    "Stay in full control of your music rights. Define ownership, manage splits, and protect your earnings with precision rights management built for independent artists.",
 };
 
 const data: FeaturePageData = {
   badge: "Feature · Rights Management",
-  heroTitle: "Own your music.",
-  heroTitleHighlight: "Protect it everywhere.",
+  heroTitle: "Own Your Music.",
+  heroTitleHighlight: "Protect Every Note.",
   heroSubtitle:
-    "Register copyrights, manage licenses, and enforce your content rights across every streaming platform — automatically.",
-  accentClass: "text-amber-400",
-  glowColor: "rgba(245,158,11,0.12)",
+    "Define ownership, manage splits, and protect your catalog across every platform. Your rights are your livelihood — we make sure they're always in order.",
+  accentClass: "text-[#EA621F]",
+  glowColor: "rgba(234,98,31,0.12)",
+  themeColor: "#EA621F", // Vibrant orange for highlighted card
   showcaseImage: "/feature/dashboard.png",
   showcaseAlt: "Rights management and copyright protection interface",
   benefits: [
     {
-      title: "Content ID protection",
+      title: "Clear Ownership Structure",
       description:
-        "Your catalogue is enrolled in YouTube Content ID automatically. Any use of your music online is tracked and monetised.",
-      accent: "🛡️",
+        "Know exactly who owns what in every release. Define rights clearly so there's never confusion over who earns what.",
+      image: "/features/benifit/10.png"
     },
     {
-      title: "License tracking",
+      title: "Flexible Split Management",
       description:
-        "All sync licenses, mechanical licenses, and master use agreements stored in one place with expiry alerts.",
-      accent: "📜",
+        "Handle collaborations without disputes. Set custom revenue splits for every contributor and track allocation automatically.",
+      image: "/features/benifit/11.png"
     },
     {
-      title: "Dispute resolution",
+      title: "Secure Rights Protection",
       description:
-        "Our rights team handles copyright disputes, fraudulent claims, and takedown requests on your behalf.",
-      accent: "⚖️",
+        "Your music is protected across all platforms. Content ID, takedown support, and claim management are handled for you.",
+      image: "/features/benifit/12.png"
     },
   ],
   sections: [
     {
-      title: "Register your copyright with precision",
+      title: "Digital Contracts",
       description:
-        "Proper copyright registration is the foundation of music ownership. Distrozi guides you through registering compositions and masters correctly, with the right performing rights organisations in your territory — PROs, CMOs, and collection societies worldwide.",
-      image: "/features/showcase4.png",
-      imageAlt: "Copyright registration interface",
+        "Create, customize, and manage music contracts in a structured digital environment. Whether working with a few collaborators or large teams, ensure every agreement is clearly defined, securely stored, and fully compliant with industry standards.",
+      image: "/features/24.png",
+      imageAlt: "Digital Contracts interface",
     },
     {
-      title: "Content ID — your music earns, even without permission",
+      title: "Rights Management",
       description:
-        "Every video on YouTube that uses your track — licensed or not — is automatically claimed and monetised on your behalf. Content ID scans billions of videos continuously, so nothing slips through. You earn from every use.",
-      image: "/features/showcase5.png",
-      imageAlt: "YouTube Content ID claims dashboard",
+        "Organize and process complex rights data with ease, including publishing splits and ownership details. Our system ensures every contributor’s share is accurately recorded and maintained across all projects.",
+      image: "/features/25.png",
+      imageAlt: "Rights Management split tracking",
     },
     {
-      title: "Sync and licensing deal management",
+      title: "Royalty Splits",
       description:
-        "Track every sync placement — films, TV, ads, games — with contract dates, fee amounts, usage terms, and expiry notifications. Never miss a licence renewal or discover an expired deal too late.",
-      image: "/features/showcase6.png",
-      imageAlt: "Sync licensing agreement tracker",
+        "Automatically calculate and distribute royalties to all collaborators with precision. Eliminate manual errors, reduce delays, and ensure that every stakeholder receives their correct share on time.",
+      image: "/features/26.png",
+      imageAlt: "Royalty Splits calculation",
     },
     {
-      title: "Dispute and claim handling",
+      title: "Smart Contracts",
       description:
-        "When someone files a fraudulent copyright claim against your music, our rights team responds immediately. We prepare counter-notifications, evidence packages, and legal correspondence — so you keep your revenue while the dispute is resolved.",
-      image: "/features/showcase1.png",
-      imageAlt: "Copyright dispute resolution process",
-    },
-    {
-      title: "Ownership splits and co-writer agreements",
-      description:
-        "Define ownership percentages between co-writers, producers, and featured artists upfront. Locked agreements prevent future disputes. Every collaborator sees only their share — nothing else.",
-      image: "/features/showcase2.png",
-      imageAlt: "Co-writer ownership split interface",
+        "Leverage blockchain-based smart contracts to automate agreements and payments. Provide a secure, transparent, and tamper-resistant system that builds trust among all collaborators.",
+      image: "/features/27.png",
+      imageAlt: "Smart Contracts and blockchain agreements",
     },
   ],
 };
