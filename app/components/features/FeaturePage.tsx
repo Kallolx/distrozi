@@ -130,8 +130,7 @@ export default function FeaturePage({
       containScroll: "trimSnaps",
       loop: false,
       breakpoints: { "(min-width: 768px)": { active: false } },
-    },
-    [Autoplay({ delay: 3500, stopOnInteraction: true, stopOnLastSnap: true })]
+    }
   );
 
   const [exploreRef] = useEmblaCarousel(
