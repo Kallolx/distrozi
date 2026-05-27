@@ -181,11 +181,11 @@ export default function Hero() {
             >
               <div className="platform-marquee-track">
                 {MARQUEE_ITEMS.map((item, i) => (
-                  <div key={`${item.id}-${i}`} className="platform-marquee-item !border-r-0 !px-3 md:!px-4.5 flex items-center justify-center shrink-0">
+                  <div key={`${item.id}-${i}`} className="platform-marquee-item !border-r-0 !px-1.5 sm:!px-2 md:!px-3 flex items-center justify-center shrink-0">
                     <img
                       src={item.src}
                       alt="Brand Partner"
-                      className="h-4 sm:h-4.5 md:h-5 w-auto object-contain opacity-65 hover:opacity-100 transition-opacity duration-300 filter brightness-0 invert"
+                      className="h-5 sm:h-5.5 md:h-6 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
                     />
                   </div>
                 ))}
