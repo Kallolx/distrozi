@@ -394,6 +394,13 @@ body {
   will-change: transform;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .platform-marquee-track {
+    animation: none;
+    transform: none;
+  }
+}
+
 .platform-marquee-item {
   display: inline-flex;
   align-items: center;

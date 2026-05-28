@@ -8,6 +8,7 @@ import {
   useSpring,
   animate,
   AnimatePresence,
+  useReducedMotion,
 } from "framer-motion";
 import {
   Shield,
@@ -25,38 +26,43 @@ function CountUp({
   duration = 2,
   prefix = "",
   suffix = "",
+  isMobile = false,
 }: {
   value: number;
   duration?: number;
   prefix?: string;
   suffix?: string;
+  isMobile?: boolean;
 }) {
+  const [displayValue, setDisplayValue] = useState(prefix + "0" + suffix);
   const ref = useRef<HTMLSpanElement>(null);
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { stiffness: 45, damping: 15 });
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   useEffect(() => {
-    if (inView) {
-      animate(motionValue, value, { duration, ease: "easeOut" });
+    // If we're on a mobile, just show the final value instantly and STOP
+    if (isMobile) {
+      setDisplayValue(prefix + value.toLocaleString() + suffix);
+      return;
     }
-  }, [inView, value, motionValue, duration]);
 
-  useEffect(() => {
-    return springValue.on("change", (latest) => {
-      if (ref.current) {
-        ref.current.textContent =
-          prefix + Math.floor(latest).toLocaleString() + suffix;
-      }
-    });
-  }, [springValue, prefix, suffix]);
+    if (inView) {
+      const controls = animate(0, value, {
+        duration,
+        ease: "easeOut",
+        onUpdate: (latest) => {
+          setDisplayValue(prefix + Math.floor(latest).toLocaleString() + suffix);
+        },
+      });
+      return () => controls.stop();
+    }
+  }, [inView, value, duration, prefix, suffix, isMobile]);
 
   return (
     <span
       ref={ref}
       className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-extrabold tracking-tight text-white font-outfit leading-none"
     >
-      {prefix}0{suffix}
+      {isMobile ? prefix + value.toLocaleString() + suffix : displayValue}
     </span>
   );
 }
@@ -88,7 +94,7 @@ function StatCard({
   );
 }
 
-export default function About() {
+export default function About({ isMobile }: { isMobile: boolean }) {
   const [activeTab, setActiveTab] = useState<"mission" | "platforms" | "flow">(
     "mission",
   );
@@ -341,208 +347,214 @@ export default function About() {
             {/* Card 1: 155+ Channels */}
             <StatCard gradientColor="from-[#3b82f6]/10">
               <div className="flex flex-col items-start gap-0.5 mt-1 text-left">
-                <CountUp value={155} suffix="+" />
+                <CountUp value={155} suffix="+" isMobile={isMobile} />
                 <span className="text-[11px] sm:text-xs font-semibold text-white/50 leading-tight font-outfit mt-1">
                   Channels Managed
                 </span>
               </div>
               {/* Full-width context visualizer: Spanning spectrum waves */}
-              <div className="w-full h-8 relative mt-3 overflow-hidden flex items-end justify-between gap-[3px] px-0.5 pb-1">
-                {[
-                  0.4, 0.7, 0.5, 0.9, 0.6, 0.8, 0.3, 0.7, 1.0, 0.5, 0.8, 0.4,
-                  0.7, 0.5, 0.9, 0.6, 0.8, 0.3,
-                ].map((h, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{
-                      height: [`20%`, `${h * 95}%`, `20%`],
-                    }}
-                    transition={{
-                      duration: 1.0 + i * 0.08,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                    className="w-1 bg-[#3b82f6] rounded-full shrink-0 shadow-[0_0_4px_rgba(59,130,246,0.5)]"
-                  />
-                ))}
-              </div>
+              {!isMobile && (
+                <div className="w-full h-8 relative mt-3 overflow-hidden flex items-end justify-between gap-[3px] px-0.5 pb-1">
+                  {[
+                    0.4, 0.7, 0.5, 0.9, 0.6, 0.8, 0.3, 0.7, 1.0, 0.5, 0.8, 0.4,
+                    0.7, 0.5, 0.9, 0.6, 0.8, 0.3,
+                  ].map((h, i) => (
+                    <motion.div
+                      key={i}
+                      animate={{
+                        height: [`20%`, `${h * 95}%`, `20%`],
+                      }}
+                      transition={{
+                        duration: 1.0 + i * 0.08,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="w-1 bg-[#3b82f6] rounded-full shrink-0 shadow-[0_0_4px_rgba(59,130,246,0.5)]"
+                    />
+                  ))}
+                </div>
+              )}
             </StatCard>
 
             {/* Card 2: $249,700 Revenue Paid */}
             <StatCard gradientColor="from-[#ec4899]/10">
               <div className="flex flex-col items-start gap-0.5 mt-1 text-left">
-                <CountUp value={249700} prefix="$" />
+                <CountUp value={249700} prefix="$" isMobile={isMobile} />
                 <span className="text-[11px] sm:text-xs font-semibold text-white/50 leading-tight font-outfit mt-1">
                   Revenue Paid
                 </span>
               </div>
               {/* Full-width context visualizer: Moving billing splits flow */}
-              <div className="w-full h-8 relative mt-3 overflow-hidden flex items-center justify-between px-0.5">
-                <div className="flex items-center gap-1.5 w-full">
-                  <div className="w-2 h-2 rounded-full bg-[#ec4899] shadow-[0_0_8px_#ec4899] shrink-0" />
-                  <div className="flex-1 h-[3px] bg-white/10 relative overflow-hidden rounded-full">
-                    <motion.div
-                      animate={{
-                        left: ["0%", "100%"],
-                        x: ["-100%", "0%"],
-                      }}
-                      transition={{
-                        duration: 1.8,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                      }}
-                      className="absolute top-0 bottom-0 w-6 h-[3px] bg-gradient-to-r from-transparent via-[#ec4899] to-transparent shadow-[0_0_8px_#ec4899]"
-                    />
+              {!isMobile && (
+                <div className="w-full h-8 relative mt-3 overflow-hidden flex items-center justify-between px-0.5">
+                  <div className="flex items-center gap-1.5 w-full">
+                    <div className="w-2 h-2 rounded-full bg-[#ec4899] shadow-[0_0_8px_#ec4899] shrink-0" />
+                    <div className="flex-1 h-[3px] bg-white/10 relative overflow-hidden rounded-full">
+                      <motion.div
+                        animate={{
+                          left: ["0%", "100%"],
+                          x: ["-100%", "0%"],
+                        }}
+                        transition={{
+                          duration: 1.8,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                        className="absolute top-0 bottom-0 w-6 h-[3px] bg-gradient-to-r from-transparent via-[#ec4899] to-transparent shadow-[0_0_8px_#ec4899]"
+                      />
+                    </div>
+                    <div className="w-2 h-2 rounded-full bg-[#ec4899] shadow-[0_0_8px_#ec4899] shrink-0" />
                   </div>
-                  <div className="w-2 h-2 rounded-full bg-[#ec4899] shadow-[0_0_8px_#ec4899] shrink-0" />
                 </div>
-              </div>
+              )}
             </StatCard>
 
             {/* Card 3: 13M Subscribers */}
             <StatCard gradientColor="from-[#facc15]/10">
               <div className="flex flex-col items-start gap-0.5 mt-1 text-left">
-                <CountUp value={13} suffix="M" />
+                <CountUp value={13} suffix="M" isMobile={isMobile} />
                 <span className="text-[11px] sm:text-xs font-semibold text-white/50 leading-tight font-outfit mt-1">
                   Subscribers
                 </span>
               </div>
               {/* Full-width context visualizer: Broadcasting signal & Audience ripple network */}
-              <div className="w-full h-8 relative mt-3 overflow-hidden flex items-center justify-between px-0.5">
-                {/* Broadcasting beacon */}
-                <div className="relative w-4 h-4 flex items-center justify-center shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-[#facc15] shadow-[0_0_8px_#facc15] z-10 animate-pulse" />
-                  {[1, 2, 3].map((j) => (
+              {!isMobile && (
+                <div className="w-full h-8 relative mt-3 overflow-hidden flex items-center justify-between px-0.5">
+                  {/* Broadcasting beacon */}
+                  <div className="relative w-4 h-4 flex items-center justify-center shrink-0">
+                    <div className="w-2 h-2 rounded-full bg-[#facc15] shadow-[0_0_8px_#facc15] z-10 animate-pulse" />
+                    {[1, 2, 3].map((j) => (
+                      <motion.div
+                        key={j}
+                        initial={{ width: 4, height: 4, opacity: 0.8 }}
+                        animate={{
+                          width: 80,
+                          height: 80,
+                          opacity: 0,
+                        }}
+                        transition={{
+                          duration: 2.0,
+                          repeat: Infinity,
+                          delay: j * 0.6,
+                          ease: "easeOut",
+                        }}
+                        className="absolute rounded-full border border-[#facc15]/30 -translate-x-1/2 -translate-y-1/2"
+                        style={{
+                          left: "8px",
+                          top: "8px",
+                        }}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Network nodes and signal streams */}
+                  <div className="flex-1 relative h-full min-w-[120px] overflow-hidden ml-1">
+                    {/* Subscriber Audience Nodes */}
                     <motion.div
-                      key={j}
-                      initial={{ width: 4, height: 4, opacity: 0.8 }}
+                      animate={{ scale: [1, 1.25, 1], opacity: [0.4, 1, 0.4] }}
+                      transition={{
+                        duration: 1.6,
+                        repeat: Infinity,
+                        delay: 0.2,
+                        ease: "easeInOut",
+                      }}
+                      className="absolute w-1.5 h-1.5 rounded-full bg-[#facc15] shadow-[0_0_6px_#facc15]"
+                      style={{ left: "25%", top: "30%" }}
+                    />
+                    <motion.div
+                      animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.9, 0.3] }}
+                      transition={{
+                        duration: 2.0,
+                        repeat: Infinity,
+                        delay: 0.8,
+                        ease: "easeInOut",
+                      }}
+                      className="absolute w-2 h-2 rounded-full bg-[#facc15] shadow-[0_0_6px_#facc15]"
+                      style={{ left: "55%", top: "60%" }}
+                    />
+                    <motion.div
+                      animate={{ scale: [1, 1.25, 1], opacity: [0.5, 1, 0.5] }}
+                      transition={{
+                        duration: 1.8,
+                        repeat: Infinity,
+                        delay: 1.4,
+                        ease: "easeInOut",
+                      }}
+                      className="absolute w-1.5 h-1.5 rounded-full bg-[#facc15] shadow-[0_0_6px_#facc15]"
+                      style={{ left: "80%", top: "20%" }}
+                    />
+
+                    {/* Subtle connecting lines */}
+                    <svg
+                      className="absolute inset-0 w-full h-full pointer-events-none opacity-20"
+                      viewBox="0 0 100 32"
+                      preserveAspectRatio="none"
+                    >
+                      <path
+                        d="M0,16 Q25,8 25,10"
+                        fill="none"
+                        stroke="#facc15"
+                        strokeWidth="0.75"
+                      />
+                      <path
+                        d="M0,16 Q45,24 55,20"
+                        fill="none"
+                        stroke="#facc15"
+                        strokeWidth="0.75"
+                      />
+                      <path
+                        d="M0,16 Q65,6 80,6"
+                        fill="none"
+                        stroke="#facc15"
+                        strokeWidth="0.75"
+                      />
+                    </svg>
+
+                    {/* Dynamic travelling signal stream particles */}
+                    <motion.div
                       animate={{
-                        width: 80,
-                        height: 80,
-                        opacity: 0,
+                        left: ["0%", "25%"],
+                        top: ["50%", "30%"],
+                        opacity: [0, 1, 0],
+                      }}
+                      transition={{
+                        duration: 1.6,
+                        repeat: Infinity,
+                        ease: "easeOut",
+                      }}
+                      className="absolute w-1 h-1 bg-[#facc15] rounded-full shadow-[0_0_4px_#facc15]"
+                    />
+                    <motion.div
+                      animate={{
+                        left: ["0%", "55%"],
+                        top: ["50%", "60%"],
+                        opacity: [0, 1, 0],
                       }}
                       transition={{
                         duration: 2.0,
                         repeat: Infinity,
-                        delay: j * 0.6,
                         ease: "easeOut",
+                        delay: 0.4,
                       }}
-                      className="absolute rounded-full border border-[#facc15]/30 -translate-x-1/2 -translate-y-1/2"
-                      style={{
-                        left: "8px",
-                        top: "8px",
+                      className="absolute w-1 h-1 bg-[#facc15] rounded-full shadow-[0_0_4px_#facc15]"
+                    />
+                    <motion.div
+                      animate={{
+                        left: ["0%", "80%"],
+                        top: ["50%", "20%"],
+                        opacity: [0, 1, 0],
                       }}
+                      transition={{
+                        duration: 1.8,
+                        repeat: Infinity,
+                        ease: "easeOut",
+                        delay: 0.8,
+                      }}
+                      className="absolute w-1 h-1 bg-[#facc15] rounded-full shadow-[0_0_4px_#facc15]"
                     />
-                  ))}
+                  </div>
                 </div>
-
-                {/* Network nodes and signal streams */}
-                <div className="flex-1 relative h-full min-w-[120px] overflow-hidden ml-1">
-                  {/* Subscriber Audience Nodes */}
-                  <motion.div
-                    animate={{ scale: [1, 1.25, 1], opacity: [0.4, 1, 0.4] }}
-                    transition={{
-                      duration: 1.6,
-                      repeat: Infinity,
-                      delay: 0.2,
-                      ease: "easeInOut",
-                    }}
-                    className="absolute w-1.5 h-1.5 rounded-full bg-[#facc15] shadow-[0_0_6px_#facc15]"
-                    style={{ left: "25%", top: "30%" }}
-                  />
-                  <motion.div
-                    animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.9, 0.3] }}
-                    transition={{
-                      duration: 2.0,
-                      repeat: Infinity,
-                      delay: 0.8,
-                      ease: "easeInOut",
-                    }}
-                    className="absolute w-2 h-2 rounded-full bg-[#facc15] shadow-[0_0_6px_#facc15]"
-                    style={{ left: "55%", top: "60%" }}
-                  />
-                  <motion.div
-                    animate={{ scale: [1, 1.25, 1], opacity: [0.5, 1, 0.5] }}
-                    transition={{
-                      duration: 1.8,
-                      repeat: Infinity,
-                      delay: 1.4,
-                      ease: "easeInOut",
-                    }}
-                    className="absolute w-1.5 h-1.5 rounded-full bg-[#facc15] shadow-[0_0_6px_#facc15]"
-                    style={{ left: "80%", top: "20%" }}
-                  />
-
-                  {/* Subtle connecting lines */}
-                  <svg
-                    className="absolute inset-0 w-full h-full pointer-events-none opacity-20"
-                    viewBox="0 0 100 32"
-                    preserveAspectRatio="none"
-                  >
-                    <path
-                      d="M0,16 Q25,8 25,10"
-                      fill="none"
-                      stroke="#facc15"
-                      strokeWidth="0.75"
-                    />
-                    <path
-                      d="M0,16 Q45,24 55,20"
-                      fill="none"
-                      stroke="#facc15"
-                      strokeWidth="0.75"
-                    />
-                    <path
-                      d="M0,16 Q65,6 80,6"
-                      fill="none"
-                      stroke="#facc15"
-                      strokeWidth="0.75"
-                    />
-                  </svg>
-
-                  {/* Dynamic travelling signal stream particles */}
-                  <motion.div
-                    animate={{
-                      left: ["0%", "25%"],
-                      top: ["50%", "30%"],
-                      opacity: [0, 1, 0],
-                    }}
-                    transition={{
-                      duration: 1.6,
-                      repeat: Infinity,
-                      ease: "easeOut",
-                    }}
-                    className="absolute w-1 h-1 bg-[#facc15] rounded-full shadow-[0_0_4px_#facc15]"
-                  />
-                  <motion.div
-                    animate={{
-                      left: ["0%", "55%"],
-                      top: ["50%", "60%"],
-                      opacity: [0, 1, 0],
-                    }}
-                    transition={{
-                      duration: 2.0,
-                      repeat: Infinity,
-                      ease: "easeOut",
-                      delay: 0.4,
-                    }}
-                    className="absolute w-1 h-1 bg-[#facc15] rounded-full shadow-[0_0_4px_#facc15]"
-                  />
-                  <motion.div
-                    animate={{
-                      left: ["0%", "80%"],
-                      top: ["50%", "20%"],
-                      opacity: [0, 1, 0],
-                    }}
-                    transition={{
-                      duration: 1.8,
-                      repeat: Infinity,
-                      ease: "easeOut",
-                      delay: 0.8,
-                    }}
-                    className="absolute w-1 h-1 bg-[#facc15] rounded-full shadow-[0_0_4px_#facc15]"
-                  />
-                </div>
-              </div>
+              )}
             </StatCard>
 
             {/* Card 4: 24X7 Always Active */}
@@ -560,30 +572,32 @@ export default function About() {
                 </span>
               </div>
               {/* Full-width context visualizer: Blinking operational servers and live latency */}
-              <div className="w-full h-8 relative mt-3 overflow-hidden flex items-center justify-between px-0.5">
-                <span className="text-[9px] font-mono text-emerald-400 font-bold font-outfit">
-                  LATENCY: {latency}MS
-                </span>
-                <div className="flex items-center gap-1.5">
-                  {[0, 1, 2, 3].map((i) => (
-                    <motion.div
-                      key={i}
-                      animate={{
-                        backgroundColor: ["#10b981", "#34d399", "#10b981"],
-                        opacity: [0.4, 1, 0.4],
-                        scale: [0.8, 1.2, 0.8],
-                      }}
-                      transition={{
-                        duration: 1.2,
-                        repeat: Infinity,
-                        delay: i * 0.25,
-                        ease: "easeInOut",
-                      }}
-                      className="w-1.5 h-1.5 rounded-full shadow-[0_0_8px_#10b981]"
-                    />
-                  ))}
+              {!isMobile && (
+                <div className="w-full h-8 relative mt-3 overflow-hidden flex items-center justify-between px-0.5">
+                  <span className="text-[9px] font-mono text-emerald-400 font-bold font-outfit">
+                    LATENCY: {latency}MS
+                  </span>
+                  <div className="flex items-center gap-1.5">
+                    {[0, 1, 2, 3].map((i) => (
+                      <motion.div
+                        key={i}
+                        animate={{
+                          backgroundColor: ["#10b981", "#34d399", "#10b981"],
+                          opacity: [0.4, 1, 0.4],
+                          scale: [0.8, 1.2, 0.8],
+                        }}
+                        transition={{
+                          duration: 1.2,
+                          repeat: Infinity,
+                          delay: i * 0.25,
+                          ease: "easeInOut",
+                        }}
+                        className="w-1.5 h-1.5 rounded-full shadow-[0_0_8px_#10b981]"
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </StatCard>
           </div>
         </div>

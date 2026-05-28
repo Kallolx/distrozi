@@ -1,67 +1,69 @@
-import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
-export async function POST(req: NextRequest) {
+export async function POST(request: Request) {
   try {
-    const formData = await req.formData();
-    
-    // Extract all fields
-    const data: Record<string, any> = {};
+    const contentType = request.headers.get("content-type") || "";
+    let dataObj: Record<string, string> = {};
     const attachments: any[] = [];
 
-    for (const [key, value] of formData.entries()) {
-      if (value instanceof File) {
-        const buffer = Buffer.from(await value.arrayBuffer());
-        attachments.push({
-          filename: value.name,
-          content: buffer,
-        });
-      } else {
-        data[key] = value;
+    if (contentType.includes("multipart/form-data")) {
+      const formData = await request.formData();
+      for (const [key, value] of formData.entries()) {
+        if (value instanceof Blob) {
+          const buffer = Buffer.from(await value.arrayBuffer());
+          attachments.push({
+            filename: value.name,
+            content: buffer,
+            contentType: value.type,
+          });
+        } else {
+          dataObj[key] = value.toString();
+        }
       }
+    } else {
+      dataObj = await request.json();
     }
 
-    const submissionType = data.submissionType || "General Submission";
-    delete data.submissionType;
+    const submissionType = dataObj.submissionType || "New Submission";
+    const subject = `Distrozi - ${submissionType}`;
 
-    // Create a formatted HTML string for the email
-    let htmlContent = `<h2>New ${submissionType}</h2>`;
-    htmlContent += `<table style="width: 100%; border-collapse: collapse;">`;
-    for (const [key, value] of Object.entries(data)) {
-      htmlContent += `
-        <tr>
-          <td style="padding: 8px; border-bottom: 1px solid #eee; font-weight: bold; width: 30%;">${key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase())}</td>
-          <td style="padding: 8px; border-bottom: 1px solid #eee;">${value}</td>
-        </tr>
-      `;
+    let message = `You have received a new submission:\n\n`;
+    for (const [key, value] of Object.entries(dataObj)) {
+      if (key === "submissionType") continue;
+      // formatted key
+      const formattedKey = key.replace(/([A-Z])/g, ' $1').trim();
+      const finalKey = formattedKey.charAt(0).toUpperCase() + formattedKey.slice(1);
+      message += `${finalKey}: ${value}\n`;
     }
-    htmlContent += `</table>`;
 
-    // Configure Nodemailer
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: 'smtp.hostinger.com',
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
     });
 
+    const receiver = process.env.RECEIVER_EMAIL || "support@distrozi.com";
+    const replyTo = dataObj.email || process.env.EMAIL_USER;
+
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.RECEIVER_EMAIL,
-      subject: `New Application: ${submissionType} from ${data.firstName || ""} ${data.lastName || ""}`,
-      html: htmlContent,
+      to: receiver,
+      replyTo: replyTo,
+      subject: subject,
+      text: message,
       attachments: attachments,
     };
 
     await transporter.sendMail(mailOptions);
 
-    return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
-  } catch (error: any) {
+    return NextResponse.json({ success: true, message: "Email sent successfully" }, { status: 200 });
+  } catch (error) {
     console.error("Error sending email:", error);
-    return NextResponse.json(
-      { message: "Failed to send email", error: error.message },
-      { status: 500 }
-    );
+    return NextResponse.json({ success: false, message: "Failed to send email" }, { status: 500 });
   }
 }

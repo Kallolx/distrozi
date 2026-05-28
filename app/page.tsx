@@ -1,6 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import { MotionConfig } from "framer-motion";
 import Navbar from "./components/layout/Navbar";
 import Hero from "./components/sections/Hero";
 import About from "./components/sections/About";
@@ -14,15 +16,26 @@ import Footer from "./components/layout/Footer";
 const Aurora = dynamic(() => import("../components/Aurora"), { ssr: false });
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
-    <main className="relative min-h-screen bg-black">
+    <main className="relative min-h-screen bg-black overflow-x-hidden">
       {/* Global Fixed Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <Aurora 
-          colorStops={["#7042f8", "#d159ff", "#3b82f6", "#14b8a6", "#22c55e", "#f3c343"]}
-          amplitude={1.2}
-          blend={0.5}
-        />
+        <div className="fixed inset-0 z-0 pointer-events-none">
+        {!isMobile && (
+          <Aurora 
+            colorStops={["#7042f8", "#d159ff", "#3b82f6", "#14b8a6", "#22c55e", "#f3c343"]}
+            amplitude={1.2}
+            blend={0.5}
+          />
+        )}
         {/* Premium solid dimming overlay (more intense on mobile for maximum readability) */}
         <div className="absolute inset-0 bg-black/45 sm:bg-black/25 transition-all duration-300" />
         
@@ -36,14 +49,14 @@ export default function Home() {
       <Navbar />
 
       <div className="relative z-10 flex flex-col items-center w-full">
-        <Hero />       
-        <Services />
-        <About />
-        <WhyChoose />
-        <Testimonials />
-        <Contact />
-        <Footer />
-      </div>
+          <Hero isMobile={isMobile} />       
+          <Services isMobile={isMobile} />
+          <About isMobile={isMobile} />
+          <WhyChoose />
+          <Testimonials isMobile={isMobile} />
+          <Contact />
+          <Footer />
+        </div>
     </main>
   );
 }

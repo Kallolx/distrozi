@@ -53,7 +53,7 @@ const fadeRight = (delay = 0) => ({
   transition: { duration: 0.7, delay },
 });
 
-export default function Hero() {
+export default function Hero({ isMobile = false }: { isMobile?: boolean }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
@@ -82,7 +82,9 @@ export default function Hero() {
               {/* Line 1: "Your Music" */}
               <motion.div
                 className="flex flex-col leading-tighter items-center lg:items-start"
-                {...fadeUp(0.1)}
+                initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.1 }}
               >
                 <h1 className="title-text text-5xl text-foreground sm:text-6xl lg:text-7xl font-medium">
                   Your Music
@@ -91,7 +93,9 @@ export default function Hero() {
                 {/* Line 2: "Everywhere." gradient — slight extra delay */}
                 <motion.h1
                   className="title-text text-5xl text-foreground sm:text-6xl lg:text-7xl font-medium"
-                  {...fadeUp(0.22)}
+                  initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.55, delay: 0.22 }}
                 >
                   <span className="gradient-text">Everywhere.</span>
                 </motion.h1>
@@ -100,7 +104,9 @@ export default function Hero() {
               {/* Subtitle */}
               <motion.div
                 className="flex flex-col items-center gap-4 text-center lg:flex-row lg:items-start lg:text-left lg:gap-6"
-                {...fadeUp(0.34)}
+                initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.34 }}
               >
                 <img
                   src="/icons/wave.png"
@@ -115,7 +121,7 @@ export default function Hero() {
               {/* CTA button */}
               <motion.div
                 className="flex flex-wrap items-center gap-4 justify-center lg:justify-start"
-                initial={{ opacity: 0, y: 16, scale: 0.96 }}
+                initial={isMobile ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 16, scale: 0.96 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.55, delay: 0.46 }}
               >
@@ -166,7 +172,9 @@ export default function Hero() {
           <motion.div
             className="w-[96%] max-w-[780px] h-12 sm:h-14 md:h-16 z-30 mx-auto my-4 md:my-6 relative shrink-0"
             aria-label="Supported streaming platforms"
-            {...fadeIn(0.55)}
+            initial={isMobile ? { opacity: 1 } : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.55 }}
           >
             {/* Glass pill */}
             <div className="absolute inset-0 w-full h-full rounded-full border border-white/15 bg-neutral-900/40 backdrop-blur-2xl shadow-2xl" />
@@ -196,7 +204,9 @@ export default function Hero() {
           {/* ── Play row: New Release label / Waves+Button / Listener stats ── */}
           <motion.div
             className="flex flex-col md:flex-row w-full items-center md:items-end justify-center gap-6 md:gap-12 relative mt-2 md:mt-0"
-            {...fadeUp(0.65)}
+            initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.65 }}
           >
             {/* New Release label */}
             <div className="hidden md:flex flex-col items-center gap-1.5 md:absolute md:left-0 md:items-start md:gap-2">

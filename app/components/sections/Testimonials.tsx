@@ -74,12 +74,8 @@ function TestimonialCard({
   image: string; 
 }) {
   return (
-    <BorderGlow
-      backgroundColor="#0b0b0b"
-      borderRadius={16}
-      className="w-[280px] sm:w-[310px] shrink-0 text-left flex h-full"
-    >
-      <div className="p-4 flex flex-col gap-3 w-full h-full">
+    <div className="w-[280px] sm:w-[310px] shrink-0 text-left flex h-full bg-[#0b0b0b] border border-white/5 rounded-2xl relative overflow-hidden">
+      <div className="p-4 flex flex-col gap-3 w-full h-full relative z-10">
         {/* 5 Vector Rating Stars (100% Solid & Safe Vector SVGs) */}
         <div className="flex gap-0.5 text-amber-400">
           {[...Array(5)].map((_, i) => (
@@ -115,11 +111,11 @@ function TestimonialCard({
           </div>
         </div>
       </div>
-    </BorderGlow>
+    </div>
   );
 }
 
-export default function Testimonials() {
+export default function Testimonials({ isMobile = false }: { isMobile?: boolean }) {
   return (
     <section className="relative w-full py-16 bg-transparent overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 text-center">
@@ -143,7 +139,7 @@ export default function Testimonials() {
             animate={{ x: ["0%", "-50%"] }}
             transition={{
               ease: "linear",
-              duration: 35,
+              duration: isMobile ? 25 : 35,
               repeat: Infinity,
             }}
             className="flex gap-4 w-max"
@@ -166,7 +162,7 @@ export default function Testimonials() {
             animate={{ x: ["-50%", "0%"] }}
             transition={{
               ease: "linear",
-              duration: 35,
+              duration: isMobile ? 25 : 35,
               repeat: Infinity,
             }}
             className="flex gap-4 w-max"

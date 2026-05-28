@@ -15,7 +15,7 @@ export default function Contact() {
 
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("error");
@@ -24,17 +24,30 @@ export default function Contact() {
     
     setStatus("sending");
     
-    // Simulate high-end backend dispatch
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({
-        name: "",
-        role: "",
-        email: "",
-        phone: "",
-        message: ""
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          submissionType: "Contact Form",
+          ...formData
+        }),
       });
-    }, 1200);
+
+      if (!response.ok) throw new Error("Submission failed");
+
+      setStatus("success");
+      setFormData({ name: "", role: "", email: "", phone: "", message: "" });
+      
+      setTimeout(() => {
+        setStatus("idle");
+      }, 5000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setStatus("error");
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

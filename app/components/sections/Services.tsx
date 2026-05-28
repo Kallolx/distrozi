@@ -37,18 +37,21 @@ const services = [
   },
 ];
 
-const DistributionVisual = () => (
+const DistributionVisual = ({ isMobile }: { isMobile: boolean }) => (
   <div className="w-full h-full flex items-center justify-center relative p-6 sm:p-10">
-    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--color-gradient-start)_0%,transparent_70%)] opacity-5 pointer-events-none" />
+    {!isMobile && (
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--color-gradient-start)_0%,transparent_70%)] opacity-5 pointer-events-none" />
+    )}
     
     <div className="flex items-center justify-between w-full max-w-lg relative z-10 gap-0">
       {/* Left Node */}
       <motion.div 
-        initial={{ scale: 0.8, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
+        initial={isMobile ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
+        animate={isMobile ? { scale: 1, opacity: 1 } : undefined}
+        whileInView={!isMobile ? { scale: 1, opacity: 1 } : undefined}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="w-14 h-14 sm:w-20 sm:h-20 shrink-0 rounded-xl bg-white/5 border border-[var(--color-gradient-start)]/30 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.15)] relative z-10"
+        className={`w-14 h-14 sm:w-20 sm:h-20 shrink-0 rounded-xl bg-white/5 border border-[var(--color-gradient-start)]/30 flex items-center justify-center ${isMobile ? '' : 'shadow-[0_0_20px_rgba(59,130,246,0.15)]'} relative z-10`}
       >
         <img 
           src="/icons/folder.png" 
@@ -74,7 +77,7 @@ const DistributionVisual = () => (
             stroke="url(#dist-grad)" 
             strokeWidth="2" 
             fill="none" 
-            initial={{ pathLength: 0 }}
+            initial={isMobile ? { pathLength: 1 } : { pathLength: 0 }}
             whileInView={{ pathLength: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeInOut" }}
@@ -86,7 +89,7 @@ const DistributionVisual = () => (
             stroke="url(#dist-grad)" 
             strokeWidth="2" 
             fill="none" 
-            initial={{ pathLength: 0 }}
+            initial={isMobile ? { pathLength: 1 } : { pathLength: 0 }}
             whileInView={{ pathLength: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeInOut", delay: 0.1 }}
@@ -98,7 +101,7 @@ const DistributionVisual = () => (
             stroke="url(#dist-grad)" 
             strokeWidth="2" 
             fill="none" 
-            initial={{ pathLength: 0 }}
+            initial={isMobile ? { pathLength: 1 } : { pathLength: 0 }}
             whileInView={{ pathLength: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeInOut", delay: 0.2 }}
@@ -115,11 +118,12 @@ const DistributionVisual = () => (
         ].map((platform, i) => (
           <motion.div 
             key={i} 
-            initial={{ x: 20, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            initial={isMobile ? { x: 0, opacity: 1 } : { x: 20, opacity: 0 }}
+            animate={isMobile ? { x: 0, opacity: 1 } : undefined}
+            whileInView={!isMobile ? { x: 0, opacity: 1 } : undefined}
             transition={{ delay: i * 0.15, duration: 0.5 }}
             viewport={{ once: true }}
-            className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.02)]"
+            className={`w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center ${isMobile ? '' : 'shadow-[0_0_15px_rgba(255,255,255,0.02)]'}`}
           >
             <img 
               src={platform.src} 
@@ -133,7 +137,7 @@ const DistributionVisual = () => (
   </div>
 );
 
-const RoyaltyVisual = () => (
+const RoyaltyVisual = ({ isMobile }: { isMobile: boolean }) => (
   <div className="w-full h-full flex items-end justify-center gap-2 sm:gap-4 pt-16 pb-8 sm:pb-12 px-6 sm:px-12 relative">
     {/* Animated background grid lines */}
     <div className="absolute inset-0 flex flex-col justify-between pt-16 pb-12 px-8 sm:px-12 pointer-events-none opacity-20">
@@ -145,18 +149,20 @@ const RoyaltyVisual = () => (
     {[25, 45, 35, 65, 55, 80, 70, 78].map((h, i) => (
       <motion.div 
         key={i} 
-        initial={{ height: 0 }} 
-        whileInView={{ height: `${h}%` }} 
+        initial={isMobile ? { height: `${h}%` } : { height: 0 }} 
+        animate={isMobile ? { height: `${h}%` } : undefined}
+        whileInView={!isMobile ? { height: `${h}%` } : undefined}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay: i * 0.05, ease: "easeOut" }}
         className="w-6 sm:w-10 rounded-t-sm bg-gradient-to-t from-[var(--color-gradient-start)] via-[var(--color-gradient-mid)] to-[var(--color-gradient-end)] relative group cursor-pointer z-10"
       >
         <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={isMobile ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          animate={isMobile ? { opacity: 1, y: 0 } : undefined}
+          whileInView={!isMobile ? { opacity: 1, y: 0 } : undefined}
           viewport={{ once: true }}
           transition={{ delay: 0.8 + (i * 0.05) }}
-          className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-[10px] sm:text-xs font-mono font-bold text-white bg-black/80 border border-white/10 px-2 py-1 rounded transition-opacity pointer-events-none whitespace-nowrap"
+          className={`absolute -top-8 left-1/2 -translate-x-1/2 ${isMobile ? "opacity-100" : "opacity-0 group-hover:opacity-100"} text-[10px] sm:text-xs font-mono font-bold text-white bg-black/80 border border-white/10 px-2 py-1 rounded transition-opacity pointer-events-none whitespace-nowrap`}
         >
           ${h}k
         </motion.div>
@@ -165,11 +171,11 @@ const RoyaltyVisual = () => (
   </div>
 );
 
-const AnalyticsVisual = () => (
+const AnalyticsVisual = ({ isMobile }: { isMobile: boolean }) => (
   <div className="w-full h-full relative flex flex-col justify-end p-6 sm:p-10">
     <div className="absolute top-8 left-8 z-10">
       <motion.div 
-        initial={{ opacity: 0, x: -20 }} 
+        initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }} 
         whileInView={{ opacity: 1, x: 0 }} 
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
@@ -188,7 +194,7 @@ const AnalyticsVisual = () => (
           fill="none" 
           stroke="url(#gradient-stroke)" 
           strokeWidth="3"
-          initial={{ pathLength: 0 }}
+          initial={isMobile ? { pathLength: 1 } : { pathLength: 0 }}
           whileInView={{ pathLength: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -196,7 +202,7 @@ const AnalyticsVisual = () => (
         <motion.path 
           d="M0,80 Q10,70 20,80 T40,50 T60,60 T80,30 T100,10 L100,100 L0,100 Z" 
           fill="url(#gradient-analytics)" 
-          initial={{ opacity: 0 }}
+          initial={isMobile ? { opacity: 0.15 } : { opacity: 0 }}
           whileInView={{ opacity: 0.15 }}
           viewport={{ once: true }}
           transition={{ duration: 1.5, delay: 0.2 }}
@@ -224,7 +230,7 @@ const AnalyticsVisual = () => (
       ].map((point, i) => (
         <motion.div 
           key={i}
-          initial={{ opacity: 0, scale: 0 }} 
+          initial={isMobile ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }} 
           whileInView={{ opacity: 1, scale: 1 }} 
           viewport={{ once: true }}
           transition={{ delay: point.delay, type: "spring" }}
@@ -235,7 +241,7 @@ const AnalyticsVisual = () => (
       
       {/* Floating Tooltip at the end */}
       <motion.div
-        initial={{ opacity: 0, y: 10, scale: 0.9 }}
+        initial={isMobile ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 10, scale: 0.9 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 1.8, duration: 0.4 }}
@@ -248,7 +254,7 @@ const AnalyticsVisual = () => (
   </div>
 );
 
-const CatalogVisual = () => {
+const CatalogVisual = ({ isMobile }: { isMobile: boolean }) => {
   const colors = [
     "from-pink-500/80 to-rose-600/80",
     "from-blue-600/80 to-indigo-700/80",
@@ -264,7 +270,7 @@ const CatalogVisual = () => {
         {colors.map((color, i) => (
           <motion.div 
             key={i}
-            initial={{ opacity: 0, y: 12, scale: 0.9 }}
+            initial={isMobile ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 12, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{
@@ -281,12 +287,14 @@ const CatalogVisual = () => {
               <div className={`absolute inset-0 bg-gradient-to-br ${color}`} />
 
               {/* Shimmer effect */}
-              <motion.div 
-                initial={{ left: "-100%" }}
-                animate={{ left: "100%" }}
-                transition={{ repeat: Infinity, repeatDelay: 2.5 + i * 0.2, duration: 1.0, ease: "easeInOut" }}
-                className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 pointer-events-none"
-              />
+              {!isMobile && (
+                <motion.div 
+                  initial={{ left: "-100%" }}
+                  animate={{ left: "100%" }}
+                  transition={{ repeat: Infinity, repeatDelay: 2.5 + i * 0.2, duration: 1.0, ease: "easeInOut" }}
+                  className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 pointer-events-none"
+                />
+              )}
             </div>
             
             {/* Abstract metadata placeholders */}
@@ -299,14 +307,14 @@ const CatalogVisual = () => {
   );
 };
 
-const RightsVisual = () => (
+const RightsVisual = ({ isMobile }: { isMobile: boolean }) => (
   <div className="w-full h-full flex flex-col sm:flex-row items-center justify-between p-4 sm:p-10 gap-4 sm:gap-10">
     {/* Left Side: Abstract Asset List */}
     <div className="w-full sm:flex-1 flex flex-col justify-center gap-3 sm:gap-5 h-full">
       {[1, 2, 3].map((i) => (
         <motion.div 
           key={i}
-          initial={{ opacity: 0, x: -20 }}
+          initial={isMobile ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ delay: i * 0.15, duration: 0.5 }}
@@ -343,22 +351,26 @@ const RightsVisual = () => (
       </div>
 
       {/* Scanning Laser Line */}
-      <motion.div 
-        className="absolute left-0 w-full h-[2px] bg-[var(--color-gradient-mid)] shadow-[0_0_20px_4px_rgba(236,72,153,0.6)] z-10"
-        animate={{ top: ["0%", "100%", "0%"] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-      />
-      {/* Glow Wash */}
-      <motion.div 
-        className="absolute left-0 w-full h-16 bg-gradient-to-b from-transparent via-[var(--color-gradient-mid)]/20 to-transparent pointer-events-none"
-        animate={{ top: ["-20%", "100%", "-20%"] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-      />
+      {!isMobile && (
+        <>
+          <motion.div 
+            className="absolute left-0 w-full h-[2px] bg-[var(--color-gradient-mid)] shadow-[0_0_20px_4px_rgba(236,72,153,0.6)] z-10"
+            animate={{ top: ["0%", "100%", "0%"] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          />
+          {/* Glow Wash */}
+          <motion.div 
+            className="absolute left-0 w-full h-16 bg-gradient-to-b from-transparent via-[var(--color-gradient-mid)]/20 to-transparent pointer-events-none"
+            animate={{ top: ["-20%", "100%", "-20%"] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          />
+        </>
+      )}
     </div>
   </div>
 );
 
-export default function Services() {
+export default function Services({ isMobile }: { isMobile?: boolean }) {
 
   return (
     <section className="relative w-full py-16 bg-transparent overflow-hidden">
@@ -379,12 +391,12 @@ export default function Services() {
 
             let Visualizer;
             switch (service.id) {
-              case "distribution": Visualizer = DistributionVisual; break;
-              case "royalty": Visualizer = RoyaltyVisual; break;
-              case "analytics": Visualizer = AnalyticsVisual; break;
-              case "catalog": Visualizer = CatalogVisual; break;
-              case "rights": Visualizer = RightsVisual; break;
-              default: Visualizer = DistributionVisual;
+              case "distribution": Visualizer = () => <DistributionVisual isMobile={!!isMobile} />; break;
+              case "royalty": Visualizer = () => <RoyaltyVisual isMobile={!!isMobile} />; break;
+              case "analytics": Visualizer = () => <AnalyticsVisual isMobile={!!isMobile} />; break;
+              case "catalog": Visualizer = () => <CatalogVisual isMobile={!!isMobile} />; break;
+              case "rights": Visualizer = () => <RightsVisual isMobile={!!isMobile} />; break;
+              default: Visualizer = () => <DistributionVisual isMobile={!!isMobile} />;
             }
 
             return (
@@ -411,7 +423,7 @@ export default function Services() {
 
                 {/* Tablet Mockup */}
                 <div className="w-full lg:w-1/2">
-                  <TabletMockup>
+                  <TabletMockup isMobile={isMobile}>
                     <div className="w-full h-full relative bg-[#050505] flex flex-col font-sans">
                       <Visualizer />
                     </div>
