@@ -75,7 +75,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5">
               <li>
                 <a
-                  href="#"
+                  href="/features/catalog"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
                   Catalog Manager
@@ -83,7 +83,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/features/distribution"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
                   Distribution Pipeline
@@ -91,7 +91,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/features/royalty"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
                   Royalty Ledger
@@ -99,10 +99,18 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/features/analytics"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
-                  AI Creator Suite
+                  Analytics Insights
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/features/rights"
+                  className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
+                >
+                  Rights Management
                 </a>
               </li>
             </ul>
@@ -111,39 +119,39 @@ export default function Footer() {
           {/* Column 3: Corporate Links (Col span 2) */}
           <div className="md:col-span-2 flex flex-col gap-3 text-left">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider text-white/40">
-              Company
+              Services
             </h4>
             <ul className="flex flex-col gap-2.5">
               <li>
                 <a
-                  href="#"
+                  href="/services/artist"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
-                  About Us
+                  Artist Solution
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/services/label"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
-                  Careers
+                  Label Solution
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/services/youtube"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
-                  Press Kit
+                  YouTube Network
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/start"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
-                  Contact Support
+                  Get Started
                 </a>
               </li>
             </ul>
@@ -194,9 +202,12 @@ export default function Footer() {
             <RiCopyrightLine size={12} className="shrink-0" />
             <span>{new Date().getFullYear()} Distrozi LLC. All rights reserved.</span>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+          <div className="flex items-center flex-wrap justify-center sm:justify-end gap-x-4 gap-y-2">
+            <a href="/about" className="hover:text-white transition-colors">About Us</a>
+            <a href="/contact" className="hover:text-white transition-colors">Contact Support</a>
+            <span className="hidden sm:block opacity-20">|</span>
+            <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
           </div>
         </div>
       </div>

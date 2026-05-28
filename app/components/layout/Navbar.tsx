@@ -113,8 +113,8 @@ const navConfig: NavItem[] = [
       },
     ],
   },
-  { label: "About", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {

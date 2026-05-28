@@ -230,6 +230,16 @@ export default function About({ isMobile }: { isMobile: boolean }) {
                         </span>
                       </div>
                     </div>
+
+                    <div className="mt-4">
+                      <a 
+                        href="/about" 
+                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white/80 text-sm font-semibold hover:bg-white/5 hover:text-white transition-all group"
+                      >
+                        Read our full story
+                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
                   </motion.div>
                 )}
 
