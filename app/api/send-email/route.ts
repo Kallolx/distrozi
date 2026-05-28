@@ -28,14 +28,34 @@ export async function POST(request: Request) {
     const submissionType = dataObj.submissionType || "New Submission";
     const subject = `Distrozi - ${submissionType}`;
 
-    let message = `You have received a new submission:\n\n`;
+    let plainText = `You have received a new submission:\n\n`;
+    let htmlContent = `
+    <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #121212; color: #ffffff; padding: 30px; border-radius: 12px; border: 1px solid #2a2a2a;">
+      <h2 style="margin-top: 0; color: #ffffff; font-size: 24px; border-bottom: 1px solid #2a2a2a; padding-bottom: 16px; margin-bottom: 10px;">New ${submissionType}</h2>
+      <table style="width: 100%; border-collapse: collapse;">
+        <tbody>
+    `;
+
     for (const [key, value] of Object.entries(dataObj)) {
       if (key === "submissionType") continue;
       // formatted key
       const formattedKey = key.replace(/([A-Z])/g, ' $1').trim();
       const finalKey = formattedKey.charAt(0).toUpperCase() + formattedKey.slice(1);
-      message += `${finalKey}: ${value}\n`;
+      
+      plainText += `${finalKey}: ${value}\n`;
+      htmlContent += `
+          <tr>
+            <td style="padding: 16px 15px 16px 0; border-bottom: 1px solid #2a2a2a; font-weight: 600; width: 35%; color: #a1a1aa; vertical-align: top;">${finalKey}</td>
+            <td style="padding: 16px 0; border-bottom: 1px solid #2a2a2a; color: #ffffff; vertical-align: top; word-break: break-word;">${value || "-"}</td>
+          </tr>
+      `;
     }
+
+    htmlContent += `
+        </tbody>
+      </table>
+    </div>
+    `;
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -53,7 +73,8 @@ export async function POST(request: Request) {
       to: receiver,
       replyTo: replyTo,
       subject: subject,
-      text: message,
+      text: plainText,
+      html: htmlContent,
       attachments: attachments,
     };
 
