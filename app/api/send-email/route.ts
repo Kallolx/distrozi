@@ -65,12 +65,18 @@ export async function POST(request: Request) {
       },
     });
 
-    const receiver = process.env.RECEIVER_EMAIL || "support@distrozi.com";
+    // Supports multiple recipients: 
+    // 1. You can comma-separate them in RECEIVER_EMAIL (e.g., "a@b.com, c@d.com")
+    // 2. Or add a second email in RECEIVER_EMAIL_2
+    const receiver1 = process.env.RECEIVER_EMAIL || "support@distrozi.com";
+    const receiver2 = process.env.RECEIVER_EMAIL_2;
+    const finalRecipients = receiver2 ? `${receiver1}, ${receiver2}` : receiver1;
+
     const replyTo = dataObj.email || process.env.EMAIL_USER;
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: receiver,
+      to: finalRecipients,
       replyTo: replyTo,
       subject: subject,
       text: plainText,
