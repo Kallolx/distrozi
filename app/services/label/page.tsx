@@ -35,7 +35,7 @@ const labelData: ServicePageData = {
       id: "rights-governance",
       title: "Rights & Ownership Governance",
       description: "Protect your label's intellectual property with total confidence. We provide the structure to define complex ownership rules, manage multi-artist rights, and enforce copyright protection across the global digital landscape.",
-      image: "/feature/2.png",
+      image: "/feature/3.png",
       imageAlt: "Label Rights Management illustration",
       glowColor: "280 85% 55%", // Purple
       features: [
@@ -51,7 +51,7 @@ const labelData: ServicePageData = {
       id: "global-distribution",
       title: "Distribution & DSP Delivery",
       description: "Push your music to every corner of the globe. Deliver your entire catalog to 150+ stores while maintaining complete control over release schedules, pricing, and territorial availability.",
-      image: "/feature/3.png",
+      image: "/feature/2.png",
       imageAlt: "Distribution illustration",
       glowColor: "140 85% 55%", // Green
       features: [
@@ -83,7 +83,7 @@ const labelData: ServicePageData = {
       id: "royalty-accounting",
       title: "Royalty Accounting & Payouts",
       description: "Professional accounting designed for record labels. Automate complex tiered splits, recoup marketing costs, and provide your artists with transparent, professional earning portals.",
-      image: "/feature/5.png",
+      image: "/feature/6.png",
       imageAlt: "Royalty Accounting illustration",
       glowColor: "40 85% 55%", // Amber
       features: [
@@ -99,7 +99,7 @@ const labelData: ServicePageData = {
       id: "advanced-analytics",
       title: "Analytics & Demographic Insights",
       description: "Fuel your label's growth with data-driven intelligence. Deconstruct audience behaviors and listenership trends to identify the next breakout hit on your roster.",
-      image: "/feature/6.png",
+      image: "/feature/7.png",
       imageAlt: "Analytics illustration",
       glowColor: "190 85% 55%", // Cyan
       features: [
@@ -115,7 +115,7 @@ const labelData: ServicePageData = {
       id: "label-support",
       title: "Label Support & Dedicated Reps",
       description: "First-class support for established imprints. Our team of experts actively manages your profile setups, resolves metadata conflicts, and provides direct platform troubleshooting.",
-      image: "/feature/7.png",
+      image: "/feature/5.png",
       imageAlt: "Label Support illustration",
       glowColor: "0 0% 80%", // Light gray
       features: [

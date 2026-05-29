@@ -211,15 +211,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      {/* Colossal Peaking Logo Segment at Bottom (Only Half Top Visible - Absolute Clipped, No Layout Gaps) */}
-      <div className="hidden sm:flex w-full select-none overflow-hidden relative h-[10vw] justify-center items-start bg-gradient-to-t from-white/[0.01] to-transparent pointer-events-none mt-2">
-        <img
-          src="/logo.png"
-          alt="Distrozi Logo"
-          className="absolute top-0 h-[20vw] w-auto opacity-[0.5] select-none pointer-events-none object-contain"
-        />
-      </div>
     </footer>
   );
 }
