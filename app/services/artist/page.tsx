@@ -2,7 +2,7 @@ import ServiceLayout from "@/app/components/layout/ServiceLayout";
 import ServicePage, { ServicePageData } from "@/app/components/services/ServicePage";
 
 export const metadata = {
-  title: "Artist Solutions - Distrozi",
+  title: "Distrozi - Artist Solutions",
   description: "Global music distribution, smart marketing automation, automated royalty splits, and artist advances for independent creators.",
 };
 

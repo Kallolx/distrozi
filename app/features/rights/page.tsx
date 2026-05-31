@@ -3,7 +3,7 @@ import FeatureLayout from "@/app/components/layout/FeatureLayout";
 import FeaturePage, { type FeaturePageData } from "@/app/components/features/FeaturePage";
 
 export const metadata: Metadata = {
-  title: "Rights Management — Distrozi",
+  title: "Distrozi - Rights Management",
   description:
     "Stay in full control of your music rights. Define ownership, manage splits, and protect your earnings with precision rights management built for independent artists.",
 };

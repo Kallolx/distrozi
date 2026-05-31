@@ -3,7 +3,7 @@ import FeatureLayout from "@/app/components/layout/FeatureLayout";
 import FeaturePage, { type FeaturePageData } from "@/app/components/features/FeaturePage";
 
 export const metadata: Metadata = {
-  title: "Distribution — Distrozi",
+  title: "Distrozi - Distribution",
   description: "Deliver your catalog to 150+ digital service providers globally. Maintain total independence and keep 100% of your royalties.",
 };
 
@@ -39,13 +39,6 @@ const data: FeaturePageData = {
     },
   ],
   sections: [
-    {
-      title: "Tailored DSP Architecture",
-      description:
-        "Define exactly how you distribute your releases. Choose between flexible direct DSP delivery agreements or leverage our established global ingestion network to build a distribution strategy that scales effortlessly with your imprint's growth.",
-      image: "/features/12.png",
-      imageAlt: "Digital Service Provider connections",
-    },
     {
       title: "Worldwide Audience Reach",
       description:

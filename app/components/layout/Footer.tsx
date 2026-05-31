@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import {
-  RiTwitterFill,
+  RiFacebookCircleFill,
   RiInstagramLine,
   RiLinkedinBoxFill,
+  RiWhatsappFill,
+  RiYoutubeFill,
   RiArrowRightLine,
   RiCopyrightLine,
 } from "react-icons/ri";
@@ -42,27 +44,51 @@ export default function Footer() {
               management across 150+ platforms.
             </p>
             {/* Social Links */}
-            <div className="flex gap-3 mt-2">
+            <div className="flex gap-4 mt-2">
               <a
-                href="#"
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition-all"
-                aria-label="Twitter"
+                href="https://www.facebook.com/distroziofficial"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#1877F2] flex items-center justify-center text-white/60 hover:text-white transition-all"
+                aria-label="Facebook"
               >
-                <RiTwitterFill size={16} />
+                <RiFacebookCircleFill size={22} />
               </a>
               <a
-                href="#"
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition-all"
+                href="https://www.instagram.com/distrozi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#E4405F] flex items-center justify-center text-white/60 hover:text-white transition-all hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888]"
                 aria-label="Instagram"
               >
-                <RiInstagramLine size={16} />
+                <RiInstagramLine size={22} />
               </a>
               <a
-                href="#"
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-white/60 hover:text-white transition-all"
+                href="https://www.linkedin.com/company/distrozi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#0A66C2] flex items-center justify-center text-white/60 hover:text-white transition-all"
                 aria-label="LinkedIn"
               >
-                <RiLinkedinBoxFill size={16} />
+                <RiLinkedinBoxFill size={22} />
+              </a>
+              <a
+                href="https://wa.me/message/USVDSXMA7HGKO1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#25D366] flex items-center justify-center text-white/60 hover:text-white transition-all"
+                aria-label="WhatsApp"
+              >
+                <RiWhatsappFill size={22} />
+              </a>
+              <a
+                href="https://youtube.com/@distrozi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#FF0000] flex items-center justify-center text-white/60 hover:text-white transition-all"
+                aria-label="YouTube"
+              >
+                <RiYoutubeFill size={22} />
               </a>
             </div>
           </div>
@@ -148,7 +174,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/start"
+                  href="/apply"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
                   Get Started

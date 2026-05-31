@@ -15,7 +15,7 @@ import BorderGlow from "@/components/BorderGlow";
 
 const Aurora = dynamic(() => import("@/components/Aurora"), { ssr: false });
 
-export default function YouTubeNetworkPage() {
+export default function YouTubeNetworkMCNCMSPage() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -167,11 +167,11 @@ export default function YouTubeNetworkPage() {
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white max-w-2xl leading-[1.15]">
                Scale Your YouTube Channel with{" "}
                 <span className="gradient-text font-semibold">
-                  Distrozi MCN
+                  Distrozi MCN/CMS
                 </span>
               </h1>
               <p className="text-white/60 mt-4 max-w-xl mx-auto text-sm sm:text-base">
-                Join the Distrozi MCN to protect your rights and monetize
+                Join the Distrozi MCN/CMS network to protect your rights and monetize
                 your music-related content globally.
               </p>
             </div>
@@ -199,7 +199,7 @@ export default function YouTubeNetworkPage() {
                       </div>
                       <p className="text-sm text-white/70 leading-relaxed mb-4">
                         Thanks for your interest in linking your channel(s) to
-                        Distrozi MCN.
+                        Distrozi MCN/CMS.
                       </p>
                       <p className="text-sm text-white/70 leading-relaxed">
                         To ensure linking your channel is beneficial and
@@ -235,7 +235,7 @@ export default function YouTubeNetworkPage() {
                           <p className="text-sm text-white/80 group-hover:text-white transition-colors leading-relaxed">
                             I have read and understand the Conditions for
                             maintaining your YouTube channel in Distrozi
-                            MCN.
+                            MCN/CMS.
                           </p>
                           <a
                             href="#"

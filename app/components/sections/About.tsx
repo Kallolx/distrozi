@@ -60,7 +60,11 @@ function CountUp({
   return (
     <span
       ref={ref}
-      className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-extrabold tracking-tight text-white font-outfit leading-none"
+      className={`font-extrabold tracking-tight text-white font-outfit leading-none ${
+        String(value).length >= 6
+          ? "text-[1.1rem] min-[380px]:text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl"
+          : "text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl"
+      }`}
     >
       {isMobile ? prefix + value.toLocaleString() + suffix : displayValue}
     </span>
@@ -80,14 +84,14 @@ function StatCard({
     <motion.div
       whileHover={{ scale: 1.01 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="bg-[#0b0b0b] border border-white/5 p-4 sm:p-5 rounded-2xl relative overflow-hidden transition-all duration-300 group flex flex-col justify-between min-h-[130px] sm:min-h-[150px] shadow-2xl"
+      className="bg-[#0b0b0b] border border-white/5 p-4 sm:p-5 rounded-2xl relative overflow-hidden transition-all duration-300 group flex flex-col justify-center sm:justify-between min-h-[110px] sm:min-h-[150px] shadow-2xl"
     >
       {/* Dynamic Background Hover Glow */}
       <div
         className={`absolute -right-12 -top-12 w-32 h-32 bg-gradient-to-br ${gradientColor} to-transparent blur-3xl rounded-full opacity-60 group-hover:opacity-100 transition-opacity pointer-events-none`}
       />
       <div className="absolute inset-x-0 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-white/10 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-      <div className="relative z-10 flex flex-col h-full justify-between gap-3">
+      <div className="relative z-10 flex flex-col h-full justify-center sm:justify-between gap-3">
         {children}
       </div>
     </motion.div>
@@ -356,8 +360,11 @@ export default function About({ isMobile }: { isMobile: boolean }) {
           <div className="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-4.5 w-full">
             {/* Card 1: 155+ Channels */}
             <StatCard gradientColor="from-[#3b82f6]/10">
-              <div className="flex flex-col items-start gap-0.5 mt-1 text-left">
-                <CountUp value={155} suffix="+" isMobile={isMobile} />
+              <div className="flex flex-col items-start gap-1 sm:gap-0.5 mt-1 text-left">
+                <div className="sm:hidden text-white/50 mb-2">
+                  <Tv size={22} />
+                </div>
+                <CountUp value={1000} suffix="+" isMobile={isMobile} />
                 <span className="text-[11px] sm:text-xs font-semibold text-white/50 leading-tight font-outfit mt-1">
                   Channels Managed
                 </span>
@@ -388,8 +395,11 @@ export default function About({ isMobile }: { isMobile: boolean }) {
 
             {/* Card 2: $249,700 Revenue Paid */}
             <StatCard gradientColor="from-[#ec4899]/10">
-              <div className="flex flex-col items-start gap-0.5 mt-1 text-left">
-                <CountUp value={249700} prefix="$" isMobile={isMobile} />
+              <div className="flex flex-col items-start gap-1 sm:gap-0.5 mt-1 text-left">
+                <div className="sm:hidden text-white/50 mb-2">
+                  <DollarSign size={22} />
+                </div>
+                <CountUp value={1000000} prefix="$" isMobile={isMobile} />
                 <span className="text-[11px] sm:text-xs font-semibold text-white/50 leading-tight font-outfit mt-1">
                   Revenue Paid
                 </span>
@@ -421,8 +431,11 @@ export default function About({ isMobile }: { isMobile: boolean }) {
 
             {/* Card 3: 13M Subscribers */}
             <StatCard gradientColor="from-[#facc15]/10">
-              <div className="flex flex-col items-start gap-0.5 mt-1 text-left">
-                <CountUp value={13} suffix="M" isMobile={isMobile} />
+              <div className="flex flex-col items-start gap-1 sm:gap-0.5 mt-1 text-left">
+                <div className="sm:hidden text-white/50 mb-2">
+                  <Users size={22} />
+                </div>
+                <CountUp value={50} suffix="M" isMobile={isMobile} />
                 <span className="text-[11px] sm:text-xs font-semibold text-white/50 leading-tight font-outfit mt-1">
                   Subscribers
                 </span>
@@ -569,7 +582,10 @@ export default function About({ isMobile }: { isMobile: boolean }) {
 
             {/* Card 4: 24X7 Always Active */}
             <StatCard gradientColor="from-emerald-500/10">
-              <div className="flex flex-col items-start gap-0.5 mt-1 text-left">
+              <div className="flex flex-col items-start gap-1 sm:gap-0.5 mt-1 text-left">
+                <div className="sm:hidden text-white/50 mb-2">
+                  <Activity size={22} />
+                </div>
                 <span className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-extrabold tracking-tight text-white font-outfit leading-none">
                   24
                   <span className="text-sm font-semibold text-white/50 lowercase mx-0.5">

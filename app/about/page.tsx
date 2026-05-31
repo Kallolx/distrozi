@@ -96,7 +96,7 @@ export default function AboutPage() {
                 Distrozi was founded with a singular mission: to strip away the complexity of global music distribution and give independent artists the power of a major label, right from their bedroom.
               </p>
               <div className="mt-2">
-                <Button as="a" href="/start" variant="primary" size="lg">
+                <Button as="a" href="/apply" variant="primary" size="lg">
                   Join the Movement
                 </Button>
               </div>
@@ -215,7 +215,7 @@ export default function AboutPage() {
                 </p>
                 <Button
                   as="a"
-                  href="/start"
+                  href="/apply"
                   variant="primary"
                   size="lg"
                   className="mt-2 bg-white text-black hover:bg-gray-100 border-none px-10"

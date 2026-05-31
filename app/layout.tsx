@@ -11,10 +11,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://distrozi.com"),
-  title: {
-    default: "Distrozi - Global Music Distribution & Rights Management",
-    template: "%s | Distrozi",
-  },
+  title: "Distrozi - Global Music Distribution & Rights Management",
   description:
     "Powering artists and labels with global music distribution, YouTube CMS/MCN services, and advanced royalty management across 150+ platforms.",
   keywords: [

@@ -11,6 +11,7 @@ import WhyChoose from "./components/sections/WhyChoose";
 import Testimonials from "./components/sections/Testimonials";
 import Team from "./components/sections/Team";
 import Contact from "./components/sections/Contact";
+import FAQ from "./components/sections/FAQ";
 import Footer from "./components/layout/Footer";
 
 const Aurora = dynamic(() => import("../components/Aurora"), { ssr: false });
@@ -54,6 +55,7 @@ export default function Home() {
           <About isMobile={isMobile} />
           <WhyChoose />
           <Testimonials isMobile={isMobile} />
+          <FAQ />
           <Contact />
           <Footer />
         </div>

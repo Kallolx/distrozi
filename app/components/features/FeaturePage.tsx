@@ -168,7 +168,7 @@ export default function FeaturePage({
 
           {/* CTA */}
           <div className="mt-2">
-            <Button as="a" href="/start" variant="primary" size="lg">
+            <Button as="a" href="/apply" variant="primary" size="lg">
               Get Started
             </Button>
           </div>
@@ -318,7 +318,7 @@ export default function FeaturePage({
                     <div className="pt-2">
                       <Button
                         as="a"
-                        href="/start"
+                        href="/apply"
                         variant="secondary"
                         size="md"
                       >
@@ -399,7 +399,7 @@ export default function FeaturePage({
               </p>
               <Button
                 as="a"
-                href="/start"
+                href="/apply"
                 variant="primary"
                 size="lg"
                 className="mt-2 bg-white text-black hover:bg-gray-100"

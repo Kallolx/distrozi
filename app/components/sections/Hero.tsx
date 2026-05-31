@@ -13,9 +13,9 @@ import {
 import Button from "../ui/Button";
 
 const stats = [
-  { label: "10M+", description: "Artists empowered", icon: RiMicLine },
-  { label: "150+", description: "Countries reached", icon: RiGlobeLine },
-  { label: "1B+", description: "Streams delivered", icon: RiPlayCircleLine },
+  { label: "5K+", description: "Artists & Labels Served", icon: RiMicLine },
+  { label: "100+", description: "Countries reached", icon: RiGlobeLine },
+  { label: "50K+", description: "Streams delivered", icon: RiPlayCircleLine },
 ];
 
 const avatars = [
@@ -125,7 +125,7 @@ export default function Hero({ isMobile = false }: { isMobile?: boolean }) {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.55, delay: 0.46 }}
               >
-                <Button as="a" href="/start" variant="primary" size="lg">
+                <Button as="a" href="/apply" variant="primary" size="lg">
                   Apply Now
                 </Button>
               </motion.div>

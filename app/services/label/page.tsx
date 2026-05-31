@@ -2,7 +2,7 @@ import ServiceLayout from "@/app/components/layout/ServiceLayout";
 import ServicePage, { ServicePageData } from "@/app/components/services/ServicePage";
 
 export const metadata = {
-  title: "Label Solutions - Distrozi",
+  title: "Distrozi - Label Solutions",
   description: "Enterprise-grade catalog management, global distribution, and royalty split accounting for record labels.",
 };
 

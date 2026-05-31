@@ -3,7 +3,7 @@ import FeatureLayout from "@/app/components/layout/FeatureLayout";
 import FeaturePage, { type FeaturePageData } from "@/app/components/features/FeaturePage";
 
 export const metadata: Metadata = {
-  title: "Analytics & Insights — Distrozi",
+  title: "Distrozi - Analytics & Insights",
   description:
     "Turn your streaming data into actionable growth decisions. Real-time analytics across every platform — audience, revenue, trends, and more.",
 };

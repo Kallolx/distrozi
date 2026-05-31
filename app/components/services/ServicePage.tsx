@@ -122,7 +122,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
 
           {/* CTA */}
           <div className="mt-2">
-            <Button as="a" href="/start" variant="primary" size="lg">
+            <Button as="a" href="/apply" variant="primary" size="lg">
               Get Started
             </Button>
           </div>
@@ -279,7 +279,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
               Join over 10,000 global artists and record labels already running
               on Distrozi.
             </p>
-            <Button as="a" href="/start" variant="primary" size="lg">
+            <Button as="a" href="/apply" variant="primary" size="lg">
               Get Started Now
             </Button>
           </div>

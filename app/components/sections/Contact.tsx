@@ -80,13 +80,13 @@ export default function Contact() {
               <div className="flex flex-col w-full h-full overflow-hidden rounded-[16px]">
                 
                 {/* Location Map (Top Area) - Explicit top rounding to guarantee clipping */}
-                <div className="w-full h-48 sm:h-56 lg:h-auto lg:flex-grow bg-black relative border-b border-white/5 rounded-t-[16px] overflow-hidden">
+                <div className="w-full h-48 sm:h-56 lg:h-auto lg:flex-grow bg-black relative border-b border-white/5 rounded-t-[16px] overflow-hidden pointer-events-none">
                   <iframe
                     title="Sheridan Headquarters Location Map"
-                    src="https://www.openstreetmap.org/export/embed.html?bbox=-107.0000%2C44.7800%2C-106.9200%2C44.8200&amp;layer=mapnik&amp;marker=44.7972%2C-106.9561"
-                    className="w-full h-full border-0 select-none pointer-events-none rounded-t-[16px]"
+                    src="https://maps.google.com/maps?q=30%20N%20Gould%20St%20Ste%20N,%20Sheridan,%20WY&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                    className="w-full h-full border-0 rounded-t-[16px]"
                     style={{
-                      filter: "invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)"
+                      filter: "invert(100%) hue-rotate(180deg) brightness(85%) contrast(90%) grayscale(50%)"
                     }}
                     loading="lazy"
                   />

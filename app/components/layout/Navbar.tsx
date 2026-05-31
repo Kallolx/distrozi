@@ -86,7 +86,7 @@ const navConfig: NavItem[] = [
         href: "/services/label",
       },
       {
-        name: "YouTube Network",
+        name: "YouTube Network MCN/CMS",
         desc: "Monetize content and join our MCN network.",
         icon: RiYoutubeLine,
         href: "/services/youtube",
@@ -114,6 +114,7 @@ const navConfig: NavItem[] = [
     ],
   },
   { label: "About", href: "/about" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
 

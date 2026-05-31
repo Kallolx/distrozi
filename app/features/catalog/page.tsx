@@ -5,7 +5,7 @@ import FeaturePage, {
 } from "@/app/components/features/FeaturePage";
 
 export const metadata: Metadata = {
-  title: "Catalog Management — Distrozi",
+  title: "Distrozi - Catalog Management",
   description:
     "Organize your entire music catalogue with professional precision. Optimize metadata, manage releases, and maintain full visibility over your lifetime collection.",
 };

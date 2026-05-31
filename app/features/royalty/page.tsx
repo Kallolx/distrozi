@@ -3,7 +3,7 @@ import FeatureLayout from "@/app/components/layout/FeatureLayout";
 import FeaturePage, { type FeaturePageData } from "@/app/components/features/FeaturePage";
 
 export const metadata: Metadata = {
-  title: "Royalty Accounting — Distrozi",
+  title: "Distrozi - Royalty Accounting",
   description:
     "Automate royalty calculations, streamline approvals, and distribute earnings to artists with complete accuracy. Built for labels managing complex catalogs at scale.",
 };
@@ -58,21 +58,21 @@ const data: FeaturePageData = {
       title: "Analyze Royalty Earnings",
       description:
         "Gain deeper insights into your revenue across platforms, artists, and releases. Distrozi Music provides clear, structured data so you understand exactly where income is generated and how your catalog is performing across every DSP. Identify trends, monitor growth, and make informed decisions to scale your music business.",
-      image: "/features/26.png",
+      image: "/features/27.png",
       imageAlt: "Analyze Royalty Earnings",
     },
     {
       title: "Accelerate Royalty Distribution",
       description:
         "Distribute earnings to your artists and collaborators quickly and reliably. Once balances are confirmed and approved, royalties flow efficiently through a secure global payment system. Support your roster with consistent, timely payments while maintaining complete control over your financial operations.",
-      image: "/features/27.png",
+      image: "/features/28.png",
       imageAlt: "Accelerate Royalty Distribution",
     },
     {
       title: "YouTube CMS & Channel Revenue",
       description:
         "Manage your YouTube network with full visibility and control. Track channel performance, monitor earnings, and distribute revenue accurately across multiple creators and channels. From Content ID revenue to channel monetization, everything is structured and transparent — helping you scale MCN operations without added complexity.",
-      image: "/features/28.png",
+      image: "/features/26.png",
       imageAlt: "YouTube CMS & Channel Revenue",
     },
     {
