@@ -229,9 +229,7 @@ export default function Footer() {
             <span>{new Date().getFullYear()} Distrozi LLC. All rights reserved.</span>
           </div>
           <div className="flex items-center flex-wrap justify-center sm:justify-end gap-x-4 gap-y-2">
-            <a href="/about" className="hover:text-white transition-colors">About Us</a>
-            <a href="/contact" className="hover:text-white transition-colors">Contact Support</a>
-            <span className="hidden sm:block opacity-20">|</span>
+            <a href="/agreement" target="_blank" className="hover:text-white transition-colors">Agreement</a>
             <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
             <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
           </div>
