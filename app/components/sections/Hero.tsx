@@ -15,7 +15,7 @@ import Button from "../ui/Button";
 const stats = [
   { label: "5K+", description: "Artists & Labels Served", icon: RiMicLine },
   { label: "100+", description: "Countries reached", icon: RiGlobeLine },
-  { label: "50K+", description: "Streams delivered", icon: RiPlayCircleLine },
+  { label: "50K+", description: "Tracks delivered", icon: RiPlayCircleLine },
 ];
 
 const avatars = [

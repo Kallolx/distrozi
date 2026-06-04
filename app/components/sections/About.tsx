@@ -26,22 +26,24 @@ function CountUp({
   duration = 2,
   prefix = "",
   suffix = "",
+  decimals = 0,
   isMobile = false,
 }: {
   value: number;
   duration?: number;
   prefix?: string;
   suffix?: string;
+  decimals?: number;
   isMobile?: boolean;
 }) {
-  const [displayValue, setDisplayValue] = useState(prefix + "0" + suffix);
+  const [displayValue, setDisplayValue] = useState(prefix + (0).toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: decimals }) + suffix);
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   useEffect(() => {
     // If we're on a mobile, just show the final value instantly and STOP
     if (isMobile) {
-      setDisplayValue(prefix + value.toLocaleString() + suffix);
+      setDisplayValue(prefix + value.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: decimals }) + suffix);
       return;
     }
 
@@ -50,12 +52,15 @@ function CountUp({
         duration,
         ease: "easeOut",
         onUpdate: (latest) => {
-          setDisplayValue(prefix + Math.floor(latest).toLocaleString() + suffix);
+          setDisplayValue(prefix + latest.toLocaleString(undefined, { 
+            minimumFractionDigits: 0, 
+            maximumFractionDigits: decimals 
+          }) + suffix);
         },
       });
       return () => controls.stop();
     }
-  }, [inView, value, duration, prefix, suffix, isMobile]);
+  }, [inView, value, duration, prefix, suffix, isMobile, decimals]);
 
   return (
     <span
@@ -399,7 +404,7 @@ export default function About({ isMobile }: { isMobile: boolean }) {
                 <div className="sm:hidden text-white/50 mb-2">
                   <DollarSign size={22} />
                 </div>
-                <CountUp value={1000000} prefix="$" isMobile={isMobile} />
+                <CountUp value={1} decimals={1} suffix="M+" isMobile={isMobile} />
                 <span className="text-[11px] sm:text-xs font-semibold text-white/50 leading-tight font-outfit mt-1">
                   Revenue Paid
                 </span>
@@ -435,7 +440,7 @@ export default function About({ isMobile }: { isMobile: boolean }) {
                 <div className="sm:hidden text-white/50 mb-2">
                   <Users size={22} />
                 </div>
-                <CountUp value={50} suffix="M" isMobile={isMobile} />
+                <CountUp value={50} suffix="M+" isMobile={isMobile} />
                 <span className="text-[11px] sm:text-xs font-semibold text-white/50 leading-tight font-outfit mt-1">
                   Subscribers
                 </span>

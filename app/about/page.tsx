@@ -32,10 +32,10 @@ const fadeIn = (delay = 0) => ({
 
 export default function AboutPage() {
   const stats = [
-    { label: "Active Creators", value: "10K+" },
-    { label: "Countries Reached", value: "150+" },
-    { label: "Streams Processed", value: "5B+" },
-    { label: "Payouts Issued", value: "$10M+" },
+    { label: "Channels Managed", value: "1,000+" },
+    { label: "Revenue Paid", value: "$1M+" },
+    { label: "Total Subscribers", value: "50M+" },
+    { label: "Always Active", value: "24/7" },
   ];
 
   const values = [

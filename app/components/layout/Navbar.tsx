@@ -86,7 +86,7 @@ const navConfig: NavItem[] = [
         href: "/services/label",
       },
       {
-        name: "YouTube Network MCN/CMS",
+        name: "YouTube Network",
         desc: "Monetize content and join our MCN network.",
         icon: RiYoutubeLine,
         href: "/services/youtube",
@@ -385,7 +385,7 @@ export default function Navbar() {
               Client Login
             </Button>
             <p className="text-center text-[11px] text-muted">
-              Join 10,000+ artists on Distrozi
+              Join 1,000+ artists on Distrozi
             </p>
           </div>
         </div>
