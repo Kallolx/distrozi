@@ -385,7 +385,7 @@ export default function Navbar() {
               Client Login
             </Button>
             <p className="text-center text-[11px] text-muted">
-              Join 1,000+ artists on Distrozi
+              Join 5,000+ artists & labels on Distrozi
             </p>
           </div>
         </div>
