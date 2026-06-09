@@ -48,7 +48,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="relative w-full py-16 sm:py-24 bg-transparent overflow-hidden">
+    <section className="relative w-full py-10 bg-transparent overflow-hidden">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
         
         {/* Section Heading - Clean & Minimalist */}

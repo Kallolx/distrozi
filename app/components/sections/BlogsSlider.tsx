@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -73,10 +73,10 @@ export default function BlogsSlider() {
   }
 
   return (
-    <section className="relative w-full py-16 sm:py-10 bg-transparent overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col gap-10">
-        
-        {/* Header Group */}
+    <section className="relative w-full py-16 sm:py-24 bg-transparent overflow-hidden">
+      
+      {/* 1. Constrained Header Group Container */}
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col gap-10 mb-10">
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
           <div className="flex flex-col gap-2.5 text-left">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight text-white leading-[1.15]">
@@ -113,10 +113,19 @@ export default function BlogsSlider() {
             </Link>
           </div>
         </div>
+      </div>
 
-        {/* Carousel Slider */}
-        <div className="relative w-full overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6 select-none cursor-grab active:cursor-grabbing pb-4">
+      {/* 2. Full-Width Carousel Slider Track Container */}
+      <div className="relative w-full z-10 select-none">
+        
+        {/* Left/Right Vignette Fade Gradients (identical to Testimonials overlay styling) */}
+        <div className="absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-black via-black/40 to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-black via-black/40 to-transparent z-20 pointer-events-none" />
+
+        {/* Embla Viewport */}
+        <div className="w-full overflow-hidden" ref={emblaRef}>
+          {/* embla container element with custom responsive padding that matches max-w-6xl bounds */}
+          <div className="flex gap-6 cursor-grab active:cursor-grabbing pb-4 px-6 lg:px-8 xl:px-[calc((100vw-1152px)/2+2rem)]">
             {loading
               ? Array.from({ length: 3 }).map((_, idx) => (
                   <div
@@ -152,7 +161,7 @@ export default function BlogsSlider() {
                       </div>
                       
                       {/* Content block */}
-                      <div className="flex flex-col gap-1 text-left select-none">
+                      <div className="flex flex-col gap-1 text-left select-none mt-1">
                         <h3 className="text-base sm:text-lg font-bold text-white leading-snug group-hover:text-[#f3c343] transition-colors duration-200 line-clamp-2 min-h-[50px] select-none">
                           {blog.title}
                         </h3>
@@ -170,8 +179,8 @@ export default function BlogsSlider() {
                 ))}
           </div>
         </div>
-
       </div>
+
     </section>
   );
 }

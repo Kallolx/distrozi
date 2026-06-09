@@ -184,7 +184,7 @@ export default function About({ isMobile }: { isMobile: boolean }) {
             </div>
 
             {/* ── TAB CONTENT SHOWCASE ── */}
-            <div className="min-h-[380px] relative bg-white/[0.01] border border-white/5 rounded-2xl p-5 sm:p-7 backdrop-blur-xl shadow-inner flex flex-col justify-start">
+            <div className="min-h-[380px] relative bg-black/[0.5] border border-white/5 rounded-2xl p-5 sm:p-7 backdrop-blur-xl shadow-inner flex flex-col justify-start">
               <AnimatePresence mode="wait">
                 {activeTab === "mission" && (
                   <motion.div
@@ -213,40 +213,40 @@ export default function About({ isMobile }: { isMobile: boolean }) {
                       </p>
                     </div>
 
-                    <div className="flex items-center gap-6 mt-2 pt-6 border-t border-white/5">
-                      <div className="flex items-center -space-x-3">
-                        {avatars.map((av, index) => (
-                          <div
-                            key={index}
-                            className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-black overflow-hidden bg-zinc-800 shadow"
-                            style={{ zIndex: avatars.length - index }}
-                          >
-                            <img
-                              src={av.img}
-                              alt={av.name}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        ))}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mt-2 pt-6 border-t border-white/5">
+                      <div className="flex items-center gap-6">
+                        <div className="flex items-center -space-x-3">
+                          {avatars.map((av, index) => (
+                            <div
+                              key={index}
+                              className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-black overflow-hidden bg-zinc-800 shadow"
+                              style={{ zIndex: avatars.length - index }}
+                            >
+                              <img
+                                src={av.img}
+                                alt={av.name}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                        <div className="flex flex-col text-xs font-outfit">
+                          <span className="font-semibold text-white/90 flex items-center gap-1.5">
+                            Trusted by 1,000+ Creators{" "}
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+                          </span>
+                          <span className="text-white/40">
+                            Powering music across 150+ countries
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex flex-col text-xs font-outfit">
-                        <span className="font-semibold text-white/90 flex items-center gap-1.5">
-                          Trusted by 1,000+ Creators{" "}
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-                        </span>
-                        <span className="text-white/40">
-                          Powering music across 150+ countries
-                        </span>
-                      </div>
-                    </div>
 
-                    <div className="mt-4">
                       <a 
                         href="/about" 
-                        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white/80 text-sm font-semibold hover:bg-white/5 hover:text-white transition-all group"
+                        className="inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-white/[0.03] border border-white/10 text-white/80 text-xs sm:text-sm font-semibold hover:bg-white/5 hover:text-white transition-all group shrink-0"
                       >
-                        Read our full story
-                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                        About us
+                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                       </a>
                     </div>
                   </motion.div>
