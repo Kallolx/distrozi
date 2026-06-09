@@ -1,0 +1,132 @@
+{
+  "slug": "distrozi-vs-soundon",
+  "category": "compare",
+  "title": "Distrozi vs SoundOn",
+  "metaTitle": "Distrozi vs SoundOn | Distrozi Music Distribution",
+  "metaDescription": "Read about Distrozi vs SoundOn. Learn how to distribute your music globally, protect copyrights, and maximize streaming royalties with Distrozi.",
+  "publishDate": "2026-06-04",
+  "author": "Distrozi Editorial Team",
+  "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&auto=format&fit=crop",
+  "readTime": "5 min read",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Choosing your distribution partner is one of the most critical business decisions you will make as an independent artist or record label. While SoundOn is a highly recognizable company, artists are increasingly looking closer at hidden fees, rights management, and long-term costs. Distrozi provides a modern, premium alternative designed to maximize your revenue while protecting your masters."
+    },
+    {
+      "type": "heading",
+      "text": "1. Fee Structure Comparison"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pricing transparency is a major point of difference. TikTok's native distributor, offering free uploads and direct promotional integrations within ByteDance apps. Distrozi includes advanced catalog management, scheduled releases, and Rights Management on all standard plans without hidden annual charges."
+    },
+    {
+      "type": "heading",
+      "text": "2. YouTube Content ID & Rights Management"
+    },
+    {
+      "type": "paragraph",
+      "text": "Monetizing your music on YouTube, TikTok, and Instagram is essential. Distrozi integrates YouTube Content ID directly into its core platform. Rather than charging you annual maintenance fees per song like traditional aggregators, we ensure your catalog is protected and earning royalties from day one."
+    },
+    {
+      "type": "heading",
+      "text": "3. Catalog Safety & Takedown Policies"
+    },
+    {
+      "type": "paragraph",
+      "text": "Music stays live, but splits are taken on non-ByteDance DSPs after year one. Distrozi believes your music legacy belongs to you forever. If you choose to pause your subscription, we never delete your hard work. Your music stays online and continues earning royalties under standard administrative splits."
+    },
+    {
+      "type": "heading",
+      "text": "Compare Platforms Side-by-Side"
+    },
+    {
+      "type": "platforms",
+      "platformItems": [
+        {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "description": "Premium distribution alternative with transparent pricing, zero hidden fees, and lifetime catalog protection.",
+          "url": "https://distrozi.com",
+          "bestFor": "Best Overall",
+          "rating": "4.9/5",
+          "pricing": "Flat Annual Fee / Splits",
+          "pros": [
+            "Music stays live forever",
+            "Direct bank payouts",
+            "YouTube CMS integration"
+          ]
+        },
+        {
+          "name": "SoundOn",
+          "logoDomain": "soundon.com",
+          "description": "Standard distribution platform: TikTok's native distributor, offering free uploads and direct promotional integrations within ByteDance apps.",
+          "url": "https://soundon.com",
+          "bestFor": "Competitor",
+          "rating": "4.4/5",
+          "pricing": "Annual Fee",
+          "pros": [
+            "Direct TikTok library synchronization",
+            "TikTok promotional campaigns",
+            "100% royalties on ByteDance apps"
+          ]
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Distrozi cheaper than SoundOn over time?",
+      "answer": "Yes, because Distrozi doesn't charge hidden recurring fees for YouTube Content ID or release scheduling, saving you significant money as your catalog grows."
+    },
+    {
+      "question": "Can I migrate my catalog from SoundOn to Distrozi?",
+      "answer": "Absolutely. Upload your tracks to Distrozi using the exact same audio files, metadata, and ISRCs, and then request a takedown from SoundOn once the releases are live."
+    }
+  ],
+  "comparisonTable": {
+    "title": "Distrozi vs. SoundOn Head-to-Head",
+    "headers": [
+      "Metric",
+      "Distrozi",
+      "SoundOn"
+    ],
+    "rows": [
+      [
+        "Keep 100% Royalties",
+        "Yes",
+        "Yes"
+      ],
+      [
+        "YouTube Content ID",
+        "Included",
+        "Extra annual fee"
+      ],
+      [
+        "Scheduled Releases",
+        "Free (All plans)",
+        "Locked on basic plan"
+      ],
+      [
+        "Lapsed subscription policy",
+        "Music remains online",
+        "Music deleted"
+      ],
+      [
+        "YouTube CMS & MCN Services",
+        "Yes (Direct mappings)",
+        "No"
+      ],
+      [
+        "Transparent local bank payouts",
+        "Yes",
+        "No"
+      ]
+    ]
+  },
+  "relatedSlugs": [
+    "distrozi-vs-distrokid",
+    "distrozi-vs-tunecore"
+  ]
+}

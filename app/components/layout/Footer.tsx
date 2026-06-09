@@ -28,8 +28,8 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Top Half: Asymmetric Modern Columns */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 pb-12 sm:pb-16">
-          {/* Column 1: Brand & Pitch (Col span 4) */}
-          <div className="md:col-span-4 flex flex-col gap-4 text-left">
+          {/* Column 1: Brand & Pitch (Col span 3) */}
+          <div className="md:col-span-3 flex flex-col gap-4 text-left">
             <div className="flex items-center">
               <img
                 src="/logo.png"
@@ -142,7 +142,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Corporate Links (Col span 2) */}
+          {/* Column 3: Services Links (Col span 2) */}
           <div className="md:col-span-2 flex flex-col gap-3 text-left">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider text-white/40">
               Services
@@ -183,8 +183,49 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Newsletter / Connect (Col span 4) */}
-          <div className="md:col-span-4 flex flex-col gap-3.5 text-left">
+          {/* Column 3.5: Quick Links (Col span 2) */}
+          <div className="md:col-span-2 flex flex-col gap-3 text-left">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider text-white/40">
+              Quick Links
+            </h4>
+            <ul className="flex flex-col gap-2.5">
+              <li>
+                <a
+                  href="/blog"
+                  className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
+                >
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/compare"
+                  className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
+                >
+                  Compare
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/resources"
+                  className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
+                >
+                  Resources
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/guide"
+                  className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
+                >
+                  Guides
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Newsletter / Connect (Col span 3) */}
+          <div className="md:col-span-3 flex flex-col gap-3.5 text-left">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider text-white/40">
               Stay Tuned
             </h4>

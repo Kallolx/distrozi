@@ -1,0 +1,93 @@
+{
+  "slug": "music-distribution-pricing-comparison",
+  "category": "guide",
+  "title": "Music Distribution Pricing Comparison",
+  "metaTitle": "Music Distribution Pricing Comparison | Distrozi Music Distribution",
+  "metaDescription": "Read about Music Distribution Pricing Comparison. Learn how to distribute your music globally, protect copyrights, and maximize streaming royalties with Distrozi.",
+  "publishDate": "2026-05-27",
+  "author": "Distrozi Editorial Team",
+  "image": "https://images.unsplash.com/photo-1516280440614-37939bbacd6a?w=800&auto=format&fit=crop",
+  "readTime": "5 min read",
+  "content": [
+    {
+      "type": "paragraph",
+      "text": "Navigating the digital music ecosystem requires a clear understanding of how distributors, stores, and registration agencies interact. Correctly preparing your files and metadata is the key to preventing release delays and ensuring you collect every cent your music generates."
+    },
+    {
+      "type": "heading",
+      "text": "Step 1: Export Your Tracks in Lossless Format"
+    },
+    {
+      "type": "paragraph",
+      "text": "Ensure your audio files are formatted as 16-bit, 44.1kHz WAV or FLAC files. Digital platforms reject compressed files like MP3s to guarantee the best listener quality."
+    },
+    {
+      "type": "heading",
+      "text": "Step 2: Compile Accurate Metadata"
+    },
+    {
+      "type": "paragraph",
+      "text": "Prepare metadata containing the song title, artist name, songwriters, producers, and release date. Accurate metadata prevents release delays and ensures you collect correct royalty payments."
+    },
+    {
+      "type": "heading",
+      "text": "Step 3: Select a Global Distributor"
+    },
+    {
+      "type": "paragraph",
+      "text": "Upload your tracks to a distributor like Distrozi. Specify release dates, upload cover art, and decide which digital streaming platforms (Spotify, Apple, TikTok) you want to target."
+    },
+    {
+      "type": "heading",
+      "text": "Step 4: Claim Your Artist Profiles"
+    },
+    {
+      "type": "paragraph",
+      "text": "Once live, claim your profiles on Spotify for Artists and Apple Music for Artists to track metrics, pitch songs to playlists, and customize your profiles."
+    }
+  ],
+  "faq": [
+    {
+      "question": "How long does it take for a song to go live on Spotify?",
+      "answer": "Delivery takes 24-48 hours. However, we suggest scheduling your release at least 14 days in advance to allow for playlist pitching."
+    },
+    {
+      "question": "What is the difference between an ISRC code and a UPC code?",
+      "answer": "An ISRC code tracks streams and play metrics for individual songs, while a UPC code tracks sales metrics for the overall single or album release product."
+    }
+  ],
+  "comparisonTable": {
+    "title": "Digital Distribution vs. Traditional Record Labels",
+    "headers": [
+      "Aspect",
+      "Self-Distribution (Distrozi)",
+      "Traditional Record Label"
+    ],
+    "rows": [
+      [
+        "Master Ownership",
+        "Artist retains 100%",
+        "Label owns masters"
+      ],
+      [
+        "Creative Control",
+        "Complete freedom",
+        "Subject to label approval"
+      ],
+      [
+        "Royalty Share Split",
+        "Artist keeps up to 100%",
+        "Artist gets 15% - 50% split"
+      ],
+      [
+        "Release Speed",
+        "Within 24-48 hours",
+        "Months of schedule coordination"
+      ]
+    ]
+  },
+  "relatedSlugs": [
+    "what-is-music-distribution",
+    "how-music-distribution-works"
+  ]
+}
