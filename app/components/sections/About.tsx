@@ -137,7 +137,7 @@ export default function About({ isMobile }: { isMobile: boolean }) {
   ];
 
   return (
-    <section className="relative w-full py-20 bg-transparent overflow-hidden">
+    <section className="relative w-full py-10 bg-transparent overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-25">
         
         {/* Centered Header - matching Services style */}
@@ -152,7 +152,7 @@ export default function About({ isMobile }: { isMobile: boolean }) {
           {/* ── Left Column: Rich Typography, Tab Switcher & Dynamic Content Panel ── */}
           <div className="lg:col-span-7 flex flex-col gap-8 text-left">
             {/* ── INTERACTIVE TAB VIEW SELECTOR ── */}
-            <div className="flex gap-1.5 sm:gap-2.5 p-1 bg-white/[0.03] border border-white/5 rounded-xl backdrop-blur-md self-start w-full sm:w-auto overflow-x-auto">
+            <div className="flex gap-1 sm:gap-1.5 p-1 bg-white/[0.03] border border-white/5 rounded-xl backdrop-blur-md self-center mx-auto w-full sm:w-auto overflow-x-auto justify-center">
               {[
                 { id: "mission", label: "Our Mission" },
                 { id: "platforms", label: "Platforms" },
