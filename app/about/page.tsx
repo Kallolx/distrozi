@@ -6,28 +6,22 @@ import Navbar from "@/app/components/layout/Navbar";
 import Footer from "@/app/components/layout/Footer";
 import BorderGlow from "@/components/BorderGlow";
 import Button from "../components/ui/Button";
+import RelatedBlogsGrid from "../components/sections/RelatedBlogsGrid";
 import { 
   RiRocket2Line, 
   RiEarthLine, 
   RiTeamLine, 
-  RiFingerprintLine,
-  RiArrowRightLine
+  RiFingerprintLine
 } from "react-icons/ri";
 
 const Aurora = dynamic(() => import("@/components/Aurora"), { ssr: false });
+const easeOutQuart = [0.22, 1, 0.36, 1] as const;
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as any, delay },
-});
-
-const fadeIn = (delay = 0) => ({
-  initial: { opacity: 0 },
-  whileInView: { opacity: 1 },
-  viewport: { once: true },
-  transition: { duration: 0.7, ease: "easeOut" as any, delay },
+  transition: { duration: 0.65, ease: easeOutQuart, delay },
 });
 
 export default function AboutPage() {
@@ -161,10 +155,10 @@ export default function AboutPage() {
                   Our goal goes beyond a digital dashboard; we aim to foster sustainable careers. We have watched bedroom producers scale into charting artists by merely bridging the gap between talent and global accessibility.
                 </p>
                 <p>
-                  Because we don't take ownership of your master rights, every stream translates directly into independence. We provide the data agility you need to see exactly where your audience is, which playlist triggers your spike, and how to harness your momentum.
+                  Because we don&apos;t take ownership of your master rights, every stream translates directly into independence. We provide the data agility you need to see exactly where your audience is, which playlist triggers your spike, and how to harness your momentum.
                 </p>
                 <p>
-                  With comprehensive reporting and zero black-box royalty deductions, Distrozi empowers the artist to become their own institution. Let your data tell the story of your success while you keep the lion's share of your hard-earned revenue.
+                  With comprehensive reporting and zero black-box royalty deductions, Distrozi empowers the artist to become their own institution. Let your data tell the story of your success while you keep the lion&apos;s share of your hard-earned revenue.
                 </p>
               </div>
             </div>
@@ -196,6 +190,23 @@ export default function AboutPage() {
               ))}
             </div>
           </div>
+
+          <RelatedBlogsGrid
+            contained
+            heading="Artist"
+            highlightedHeading="Growth Reads"
+            relatedSlugs={[
+              "best-music-distributor-for-independent-artists",
+              "best-music-distributor-for-record-labels",
+              "best-music-distributor-for-global-distribution",
+              "best-music-distributor-for-international-artists",
+              "best-music-distribution-services",
+              "best-music-distributor-for-musicians",
+              "best-music-distribution-companies",
+              "best-music-distributor-with-publishing-administration",
+              "free-music-distribution-for-independent-artists",
+            ]}
+          />
 
           {/* Call to Action Banner */}
           <section className="relative z-10 w-full pb-10">

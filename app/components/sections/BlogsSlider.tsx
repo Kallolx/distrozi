@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -38,9 +38,13 @@ export default function BlogsSlider() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect();
+    queueMicrotask(onSelect);
     emblaApi.on("reInit", onSelect);
     emblaApi.on("select", onSelect);
+    return () => {
+      emblaApi.off("reInit", onSelect);
+      emblaApi.off("select", onSelect);
+    };
   }, [emblaApi, onSelect]);
 
   useEffect(() => {

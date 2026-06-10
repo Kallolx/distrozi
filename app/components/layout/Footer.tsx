@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   RiFacebookCircleFill,
   RiInstagramLine,
@@ -25,11 +26,11 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-[#050505] pt-16 sm:pt-20 overflow-hidden relative z-10">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+      <div className="max-w-[1500px] mx-auto px-6 sm:px-8 lg:px-10 xl:px-12">
         {/* Top Half: Asymmetric Modern Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 pb-12 sm:pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 xl:grid-cols-[minmax(280px,1.4fr)_minmax(140px,0.75fr)_minmax(140px,0.75fr)_minmax(140px,0.75fr)_minmax(260px,1.1fr)] gap-y-10 gap-x-8 xl:gap-x-14 pb-12 sm:pb-16">
           {/* Column 1: Brand & Pitch (Col span 3) */}
-          <div className="md:col-span-3 flex flex-col gap-4 text-left">
+          <div className="sm:col-span-2 lg:col-span-4 xl:col-span-1 flex flex-col gap-4 text-left">
             <div className="flex items-center">
               <img
                 src="/logo.png"
@@ -94,7 +95,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Platform Links (Col span 2) */}
-          <div className="md:col-span-2 flex flex-col gap-3 text-left">
+          <div className="lg:col-span-2 xl:col-span-1 flex flex-col gap-3 text-left">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider text-white/40">
               Platform
             </h4>
@@ -143,7 +144,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Services Links (Col span 2) */}
-          <div className="md:col-span-2 flex flex-col gap-3 text-left">
+          <div className="lg:col-span-2 xl:col-span-1 flex flex-col gap-3 text-left">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider text-white/40">
               Services
             </h4>
@@ -184,48 +185,48 @@ export default function Footer() {
           </div>
 
           {/* Column 3.5: Quick Links (Col span 2) */}
-          <div className="md:col-span-2 flex flex-col gap-3 text-left">
+          <div className="lg:col-span-2 xl:col-span-1 flex flex-col gap-3 text-left">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider text-white/40">
               Quick Links
             </h4>
             <ul className="flex flex-col gap-2.5">
               <li>
-                <a
+                <Link
                   href="/blog"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/compare"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
                   Compare
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/resources"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
                   Resources
-                </a>
+                </Link>
               </li>
               <li>
-                <a
+                <Link
                   href="/guide"
                   className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
                 >
                   Guides
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Column 4: Newsletter / Connect (Col span 3) */}
-          <div className="md:col-span-3 flex flex-col gap-3.5 text-left">
+          <div className="sm:col-span-2 lg:col-span-2 xl:col-span-1 flex flex-col gap-3.5 text-left">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider text-white/40">
               Stay Tuned
             </h4>

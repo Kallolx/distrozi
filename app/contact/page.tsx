@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Navbar from "@/app/components/layout/Navbar";
 import Footer from "@/app/components/layout/Footer";
 import Contact from "@/app/components/sections/Contact";
+import RelatedBlogsGrid from "@/app/components/sections/RelatedBlogsGrid";
 
 const Aurora = dynamic(() => import("@/components/Aurora"), { ssr: false });
 
@@ -26,6 +27,21 @@ export default function ContactPage() {
       {/* Main Content Area */}
       <div className="relative z-10 w-full flex-grow pt-12 pb-16 flex flex-col justify-center">
         <Contact />
+        <RelatedBlogsGrid
+          heading="Before You"
+          highlightedHeading="Contact Us"
+          relatedSlugs={[
+            "fastest-music-distribution-service",
+            "best-free-music-distribution",
+            "free-music-distribution-for-independent-artists",
+            "best-music-distributor-for-musicians",
+            "best-music-distributor-for-youtube-music",
+            "most-affordable-music-distribution-service",
+            "best-music-distributor-for-spotify",
+            "best-music-distributor-for-tiktok",
+            "best-music-distributor-for-apple-music",
+          ]}
+        />
       </div>
 
       <Footer />
