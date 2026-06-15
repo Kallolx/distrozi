@@ -123,19 +123,6 @@
           ]
         },
         {
-          "name": "Outside Music",
-          "logoDomain": "outsidemusic.com",
-          "icon": "/platform-icons/canada/outside-music.png",
-          "description": "A Canadian music company with distribution roots and experience supporting independent releases.",
-          "url": "https://outsidemusic.com",
-          "bestFor": "Canadian Catalogs",
-          "pros": [
-            "Domestic network",
-            "Catalog services",
-            "Label support"
-          ]
-        },
-        {
           "name": "Cadence/Fontana North",
           "logoDomain": "fontananorth.com",
           "icon": "/platform-icons/canada/cadence-fontana-north.png",

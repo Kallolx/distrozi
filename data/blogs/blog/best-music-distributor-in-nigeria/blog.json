@@ -149,19 +149,6 @@
           ]
         },
         {
-          "name": "ONErpm",
-          "logoDomain": "onerpm.com",
-          "icon": "/platform-icons/nigeria/onerpm.png",
-          "description": "A widely used distributor for artists and labels that want global DSP delivery with strong regional market experience.",
-          "url": "https://onerpm.com",
-          "bestFor": "Regional Scale",
-          "pros": [
-            "Regional teams",
-            "Marketing-oriented tools",
-            "Broad store network"
-          ]
-        },
-        {
           "name": "TuneCore",
           "logoDomain": "tunecore.com",
           "icon": "/platform-icons/nigeria/tunecore.png",

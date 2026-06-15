@@ -110,19 +110,6 @@
           ]
         },
         {
-          "name": "Boomplay",
-          "logoDomain": "boomplay.com",
-          "icon": "/platform-icons/kenya/boomplay.png",
-          "description": "A major music platform across African markets that can help artists reach mobile-first listeners.",
-          "url": "https://boomplay.com",
-          "bestFor": "African Discovery",
-          "pros": [
-            "African platform reach",
-            "Listener discovery",
-            "Regional presence"
-          ]
-        },
-        {
           "name": "TuneCore",
           "logoDomain": "tunecore.com",
           "icon": "/platform-icons/kenya/tunecore.png",

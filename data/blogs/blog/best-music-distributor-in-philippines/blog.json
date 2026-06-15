@@ -147,19 +147,6 @@
             "Local catalog experience",
             "Philippines audience reach"
           ]
-        },
-        {
-          "name": "Ditto Music",
-          "logoDomain": "dittomusic.com",
-          "icon": "/platform-icons/philippines/ditto-music.png",
-          "description": "A familiar self-service distributor for independent artists that want direct control over releases and store delivery.",
-          "url": "https://dittomusic.com",
-          "bestFor": "Independent Artists",
-          "pros": [
-            "Simple dashboard",
-            "Global delivery",
-            "Artist-focused tools"
-          ]
         }
       ]
     }

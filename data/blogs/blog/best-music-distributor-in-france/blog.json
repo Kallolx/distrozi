@@ -123,19 +123,6 @@
           ]
         },
         {
-          "name": "iMusician",
-          "logoDomain": "imusician.pro",
-          "icon": "/platform-icons/france/imusician.png",
-          "description": "A Europe-based platform that supports independent creators with distribution and catalog administration tools.",
-          "url": "https://imusician.pro",
-          "bestFor": "European Artists",
-          "pros": [
-            "European support",
-            "Rights tools",
-            "Artist-friendly workflow"
-          ]
-        },
-        {
           "name": "TuneCore",
           "logoDomain": "tunecore.com",
           "icon": "/platform-icons/france/tunecore.png",

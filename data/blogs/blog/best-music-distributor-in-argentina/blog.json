@@ -110,32 +110,6 @@
           ]
         },
         {
-          "name": "ONErpm",
-          "logoDomain": "onerpm.com",
-          "icon": "/platform-icons/argentina/onerpm.png",
-          "description": "A widely used distributor for artists and labels that want global DSP delivery with strong regional market experience.",
-          "url": "https://onerpm.com",
-          "bestFor": "Regional Scale",
-          "pros": [
-            "Regional teams",
-            "Marketing-oriented tools",
-            "Broad store network"
-          ]
-        },
-        {
-          "name": "Altafonte",
-          "logoDomain": "altafonte.com",
-          "icon": "/platform-icons/argentina/altafonte.png",
-          "description": "A strong option for Spanish and Latin catalog owners that need distribution plus hands-on regional knowledge.",
-          "url": "https://altafonte.com",
-          "bestFor": "Ibero-American Reach",
-          "pros": [
-            "Ibero-American focus",
-            "Catalog services",
-            "Regional promotion support"
-          ]
-        },
-        {
           "name": "Symphonic Distribution",
           "logoDomain": "symphonic.com",
           "icon": "/platform-icons/argentina/symphonic-distribution.png",

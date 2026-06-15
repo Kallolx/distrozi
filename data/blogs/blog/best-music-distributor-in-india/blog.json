@@ -175,19 +175,6 @@
           ]
         },
         {
-          "name": "SwaLay",
-          "logoDomain": "swalay.com",
-          "icon": "/platform-icons/india/swalay.png",
-          "description": "A South Asia-aware option for independent creators who need global DSP reach with regional artist support.",
-          "url": "https://swalay.com",
-          "bestFor": "South Asian Artists",
-          "pros": [
-            "South Asian context",
-            "Creator tools",
-            "Global delivery"
-          ]
-        },
-        {
           "name": "DistroKid",
           "logoDomain": "distrokid.com",
           "icon": "/platform-icons/india/distrokid.png",
