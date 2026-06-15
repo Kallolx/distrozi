@@ -47,16 +47,17 @@
         {
           "name": "Distrozi",
           "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
           "description": "Premium distribution alternative with transparent pricing, zero hidden fees, and lifetime catalog protection.",
           "url": "https://distrozi.com",
           "bestFor": "Best Overall",
-          "rating": "4.9/5",
-          "pricing": "Flat Annual Fee / Splits",
           "pros": [
             "Music stays live forever",
             "Direct bank payouts",
             "YouTube CMS integration"
-          ]
+          ],
+          "rating": "4.9/5",
+          "pricing": "Flat Annual Fee / Splits"
         },
         {
           "name": "Amuse",

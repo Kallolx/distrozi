@@ -35,26 +35,91 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for Germany"
+      "text": "Recommended local and international distributors for Germany"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as recordJet, iMusician, Zebralution stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand Germany's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
         {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
           "name": "recordJet",
           "logoDomain": "recordjet.com",
-          "icon": "/platform-icons/germany/recordjet.png",
-          "description": "A Germany-based distributor with a strong fit for local independent artists and labels.",
+          "icon": "/platform-icons/platforms/recordjet.png",
+          "description": "recordJet is included as a local or regional distribution option for Germany-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and artist distribution tools matter alongside global DSP delivery.",
           "url": "https://recordjet.com",
-          "bestFor": "German Independents",
+          "bestFor": "Local / Regional",
           "pros": [
-            "German support",
-            "Self-service releases",
-            "European DSP delivery"
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Zebralution",
+          "logoDomain": "zebralution.com",
+          "icon": "/platform-icons/platforms/zebralution.png",
+          "description": "Zebralution is included as a local or regional distribution option for Germany-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and digital distribution network matter alongside global DSP delivery.",
+          "url": "https://zebralution.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "iMusician Germany",
+          "logoDomain": "imusician.pro",
+          "icon": "/platform-icons/platforms/imusician-germany.png",
+          "description": "iMusician Germany is included as a local or regional distribution option for Germany-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent artist distribution matter alongside global DSP delivery.",
+          "url": "https://imusician.pro",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "finetunes",
+          "logoDomain": "finetunes.net",
+          "icon": "/platform-icons/platforms/finetunes-placeholder.svg",
+          "description": "finetunes is included as a local or regional distribution option for Germany-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent distribution matter alongside global DSP delivery.",
+          "url": "https://finetunes.net",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Kontor New Media",
+          "logoDomain": "kontornewmedia.com",
+          "icon": "/platform-icons/platforms/kontor-new-media.png",
+          "description": "Kontor New Media is included as a local or regional distribution option for Germany-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and catalog distribution matter alongside global DSP delivery.",
+          "url": "https://kontornewmedia.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {
@@ -68,19 +133,6 @@
             "European support",
             "Rights tools",
             "Artist-friendly workflow"
-          ]
-        },
-        {
-          "name": "Zebralution",
-          "logoDomain": "zebralution.com",
-          "icon": "/platform-icons/germany/zebralution.png",
-          "description": "A German digital distribution company suited to professional catalog owners and media businesses.",
-          "url": "https://zebralution.com",
-          "bestFor": "German Catalogs",
-          "pros": [
-            "Catalog operations",
-            "European market knowledge",
-            "Professional distribution"
           ]
         },
         {

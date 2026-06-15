@@ -35,65 +35,104 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for UK"
+      "text": "Recommended local and international distributors for UK"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as Ditto Music, Horus Music, EmuBands stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand UK's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
         {
-          "name": "Ditto Music",
-          "logoDomain": "dittomusic.com",
-          "icon": "/platform-icons/uk/ditto-music.png",
-          "description": "A familiar self-service distributor for independent artists that want direct control over releases and store delivery.",
-          "url": "https://dittomusic.com",
-          "bestFor": "Independent Artists",
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
           "pros": [
-            "Simple dashboard",
             "Global delivery",
-            "Artist-focused tools"
-          ]
-        },
-        {
-          "name": "Horus Music",
-          "logoDomain": "horusmusic.global",
-          "icon": "/platform-icons/uk/horus-music.png",
-          "description": "A UK-based distributor suited to independent artists and labels looking for global store delivery.",
-          "url": "https://horusmusic.global",
-          "bestFor": "UK Distribution",
-          "pros": [
-            "UK support",
-            "Global delivery",
-            "Label services"
-          ]
-        },
-        {
-          "name": "EmuBands",
-          "logoDomain": "emubands.com",
-          "icon": "/platform-icons/uk/emubands.png",
-          "description": "A UK-based self-service distributor with tools for artists managing their own releases.",
-          "url": "https://emubands.com",
-          "bestFor": "UK Self-Service",
-          "pros": [
-            "Simple release workflow",
-            "UK support",
-            "Global DSP access"
+            "Catalog workflow",
+            "YouTube CMS support"
           ]
         },
         {
           "name": "AWAL",
           "logoDomain": "awal.com",
-          "icon": "/platform-icons/uk/awal.png",
-          "description": "An artist-services company suited to selected artists and teams seeking a more hands-on growth path.",
+          "icon": "/platform-icons/platforms/awal.png",
+          "description": "AWAL is included as a local or regional distribution option for UK-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and artist and label services matter alongside global DSP delivery.",
           "url": "https://awal.com",
-          "bestFor": "Artist Services",
+          "bestFor": "Local / Regional",
           "pros": [
-            "Artist services",
-            "Data-led support",
-            "Global reach"
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Ditto Music",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/ditto-music.png",
+          "description": "Ditto Music is included as a local or regional distribution option for UK-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional distribution workflow matter alongside global DSP delivery.",
+          "url": "https://www.google.com/search?q=Ditto%20Music%20music%20distribution",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Horus Music",
+          "logoDomain": "horusmusic.global",
+          "icon": "/platform-icons/platforms/horus-music.png",
+          "description": "Horus Music is included as a local or regional distribution option for UK-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent distribution matter alongside global DSP delivery.",
+          "url": "https://horusmusic.global",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "EmuBands",
+          "logoDomain": "emubands.com",
+          "icon": "/platform-icons/platforms/emubands.png",
+          "description": "EmuBands is included as a local or regional distribution option for UK-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and self-service distribution matter alongside global DSP delivery.",
+          "url": "https://emubands.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Republic of Music",
+          "logoDomain": "republicofmusic.net",
+          "icon": "/platform-icons/platforms/republic-of-music.png",
+          "description": "Republic of Music is included as a local or regional distribution option for UK-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent distribution matter alongside global DSP delivery.",
+          "url": "https://republicofmusic.net",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Proper Music Distribution",
+          "logoDomain": "propermusicgroup.com",
+          "icon": "/platform-icons/platforms/proper-music-distribution.png",
+          "description": "Proper Music Distribution is included as a local or regional distribution option for UK-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and physical and digital distribution matter alongside global DSP delivery.",
+          "url": "https://propermusicgroup.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {

@@ -35,15 +35,80 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for Nepal"
+      "text": "Recommended local and international distributors for Nepal"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as TuneCore, DistroKid, CD Baby stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand Nepal's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
+        {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
+          "name": "Music Nepal",
+          "logoDomain": "musicnepal.com",
+          "icon": "/platform-icons/platforms/music-nepal.png",
+          "description": "Music Nepal is included as a local or regional distribution option for Nepal-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Nepali music catalog matter alongside global DSP delivery.",
+          "url": "https://musicnepal.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "OSR Digital",
+          "logoDomain": "osrdigital.com",
+          "icon": "/platform-icons/platforms/osr-digital-placeholder.svg",
+          "description": "OSR Digital is included as a local or regional distribution option for Nepal-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional catalog operations matter alongside global DSP delivery.",
+          "url": "https://osrdigital.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Highlights Nepal",
+          "logoDomain": "highlightsnepal.com",
+          "icon": "/platform-icons/platforms/highlights-nepal.png",
+          "description": "Highlights Nepal is included as a local or regional distribution option for Nepal-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Nepali digital catalog matter alongside global DSP delivery.",
+          "url": "https://highlightsnepal.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Budha Subba Digital",
+          "logoDomain": "budhasubbadigital.com",
+          "icon": "/platform-icons/platforms/budha-subba-digital-placeholder.svg",
+          "description": "Budha Subba Digital is included as a local or regional distribution option for Nepal-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional catalog delivery matter alongside global DSP delivery.",
+          "url": "https://budhasubbadigital.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
         {
           "name": "TuneCore",
           "logoDomain": "tunecore.com",

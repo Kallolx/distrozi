@@ -46,5 +46,451 @@
   "Ditto Music": {
     "domain": "dittomusic.com",
     "icon": "/platform-icons/platforms/ditto-music.png"
+  },
+  "PDL": {
+    "domain": null,
+    "icon": "/platform-icons/platforms/pdl-placeholder.svg",
+    "status": "placeholder"
+  },
+  "ST Digital": {
+    "domain": null,
+    "icon": "/platform-icons/platforms/st-digital-placeholder.svg",
+    "status": "placeholder"
+  },
+  "RDC Media": {
+    "domain": null,
+    "icon": "/platform-icons/platforms/rdc-media-placeholder.svg",
+    "status": "placeholder"
+  },
+  "Believe Music India": {
+    "domain": "believe.com",
+    "icon": "/platform-icons/platforms/believe-music-india-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 403 Forbidden; direct-www-favicon: 403 Forbidden; homepage-icon: https://believe.com: 403 Forbidden; https://www.believe.com: 403 Forbidden"
+  },
+  "Madverse": {
+    "domain": "madverse.co",
+    "icon": "/platform-icons/platforms/madverse.png",
+    "status": "existing"
+  },
+  "SwaLay Digital": {
+    "domain": "swalaydigital.com",
+    "icon": "/platform-icons/platforms/swalay-digital.png",
+    "status": "copied-from-country-icon",
+    "source": "/platform-icons/india/swalay.png"
+  },
+  "Deliver My Tune": {
+    "domain": "delivermytune.com",
+    "icon": "/platform-icons/platforms/deliver-my-tune.png",
+    "status": "existing"
+  },
+  "OKListen": {
+    "domain": "oklisten.com",
+    "icon": "/platform-icons/platforms/oklisten.png",
+    "status": "existing"
+  },
+  "Distrofy": {
+    "domain": "distrofy.org",
+    "icon": "/platform-icons/platforms/distrofy.png",
+    "status": "existing"
+  },
+  "ZCaller Music": {
+    "domain": "zcallermusic.com",
+    "icon": "/platform-icons/platforms/zcaller-music-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: fetch failed; direct-www-favicon: fetch failed; homepage-icon: https://zcallermusic.com: fetch failed; https://www.zcallermusic.com: fetch failed"
+  },
+  "Taazi": {
+    "domain": "taazi.com",
+    "icon": "/platform-icons/platforms/taazi-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 503 Service Unavailable; direct-www-favicon: 503 Service Unavailable; homepage-icon: https://taazi.com: 503 Service Unavailable; https://www.taazi.com: 503 Service Unavailable"
+  },
+  "Digital Entertainment World": {
+    "domain": null,
+    "icon": "/platform-icons/platforms/digital-entertainment-world-placeholder.svg",
+    "status": "placeholder"
+  },
+  "Music Nepal": {
+    "domain": "musicnepal.com",
+    "icon": "/platform-icons/platforms/music-nepal.png",
+    "status": "existing"
+  },
+  "OSR Digital": {
+    "domain": "osrdigital.com",
+    "icon": "/platform-icons/platforms/osr-digital-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 404 Not Found; direct-www-favicon: 404 Not Found; homepage-icon: https://osrdigital.com: no icon link found; https://www.osrdigital.com: no icon link found"
+  },
+  "Highlights Nepal": {
+    "domain": "highlightsnepal.com",
+    "icon": "/platform-icons/platforms/highlights-nepal.png",
+    "status": "existing"
+  },
+  "Budha Subba Digital": {
+    "domain": "budhasubbadigital.com",
+    "icon": "/platform-icons/platforms/budha-subba-digital-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: fetch failed; direct-www-favicon: fetch failed; homepage-icon: https://budhasubbadigital.com: fetch failed; https://www.budhasubbadigital.com: fetch failed"
+  },
+  "Netrilis": {
+    "domain": "netrilis.com",
+    "icon": "/platform-icons/platforms/netrilis.png",
+    "status": "existing"
+  },
+  "Musikator": {
+    "domain": "musikator.com",
+    "icon": "/platform-icons/platforms/musikator.png",
+    "status": "existing"
+  },
+  "demajors": {
+    "domain": "demajors.com",
+    "icon": "/platform-icons/platforms/demajors.png",
+    "status": "downloaded",
+    "source": "direct-favicon",
+    "contentType": "image/x-icon"
+  },
+  "Believe Indonesia": {
+    "domain": "believe.com",
+    "icon": "/platform-icons/platforms/believe-indonesia-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 403 Forbidden; direct-www-favicon: 403 Forbidden; homepage-icon: https://believe.com: 403 Forbidden; https://www.believe.com: 403 Forbidden"
+  },
+  "Believe Philippines": {
+    "domain": "believe.com",
+    "icon": "/platform-icons/platforms/believe-philippines-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 403 Forbidden; direct-www-favicon: 403 Forbidden; homepage-icon: https://believe.com: 403 Forbidden; https://www.believe.com: 403 Forbidden"
+  },
+  "The Orchard Philippines": {
+    "domain": "theorchard.com",
+    "icon": "/platform-icons/platforms/the-orchard-philippines.png",
+    "status": "existing"
+  },
+  "Ditto Music Philippines": {
+    "domain": "dittomusic.com",
+    "icon": "/platform-icons/platforms/ditto-music-philippines.png",
+    "status": "existing"
+  },
+  "Anghami": {
+    "domain": "anghami.com",
+    "icon": "/platform-icons/platforms/anghami.png",
+    "status": "existing"
+  },
+  "Chabaka": {
+    "domain": "chabaka.com",
+    "icon": "/platform-icons/platforms/chabaka-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 404 Not Found; direct-www-favicon: 404 Not Found; homepage-icon: https://chabaka.com: no icon link found; https://www.chabaka.com: no icon link found"
+  },
+  "Qanawat Music": {
+    "domain": "qanawatmusic.com",
+    "icon": "/platform-icons/platforms/qanawat-music-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: fetch failed; direct-www-favicon: fetch failed; homepage-icon: https://qanawatmusic.com: fetch failed; https://www.qanawatmusic.com: fetch failed"
+  },
+  "Rotana Digital Distribution": {
+    "domain": "rotana.net",
+    "icon": "/platform-icons/platforms/rotana-digital-distribution.png",
+    "status": "existing"
+  },
+  "PopArabia": {
+    "domain": "poparabia.com",
+    "icon": "/platform-icons/platforms/poparabia.png",
+    "status": "existing"
+  },
+  "Mdundo": {
+    "domain": "mdundo.com",
+    "icon": "/platform-icons/platforms/mdundo.png",
+    "status": "existing"
+  },
+  "Boomplay for Artists": {
+    "domain": "boomplay.com",
+    "icon": "/platform-icons/platforms/boomplay-for-artists.png",
+    "status": "existing"
+  },
+  "Africori": {
+    "domain": "africori.com",
+    "icon": "/platform-icons/platforms/africori.png",
+    "status": "existing"
+  },
+  "Ngomma": {
+    "domain": "ngomma.com",
+    "icon": "/platform-icons/platforms/ngomma-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 404 Not Found; direct-www-favicon: 404 Not Found; homepage-icon: https://ngomma.com: no icon link found; https://www.ngomma.com: no icon link found"
+  },
+  "MAD Solutions": {
+    "domain": "madsolutions.ai",
+    "icon": "/platform-icons/platforms/mad-solutions.png",
+    "status": "existing"
+  },
+  "Freeme Digital": {
+    "domain": "freemedigital.com",
+    "icon": "/platform-icons/platforms/freeme-digital-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 404 Not Found; direct-www-favicon: 404 Not Found; homepage-icon: https://freemedigital.com: no icon link found; https://www.freemedigital.com: no icon link found"
+  },
+  "Dvpper Digital": {
+    "domain": "dvpper.com",
+    "icon": "/platform-icons/platforms/dvpper-digital-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: fetch failed; direct-www-favicon: fetch failed; homepage-icon: https://dvpper.com: fetch failed; https://www.dvpper.com: fetch failed"
+  },
+  "emPawa Distribution": {
+    "domain": "empawaafrica.com",
+    "icon": "/platform-icons/platforms/empawa-distribution.png",
+    "status": "existing"
+  },
+  "ONErpm Africa": {
+    "domain": "onerpm.com",
+    "icon": "/platform-icons/platforms/onerpm-africa.png",
+    "status": "existing"
+  },
+  "Electromode": {
+    "domain": "electromode.co.za",
+    "icon": "/platform-icons/platforms/electromode.png",
+    "status": "existing"
+  },
+  "Content Connect Africa": {
+    "domain": "contentconnectafrica.com",
+    "icon": "/platform-icons/platforms/content-connect-africa-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: fetch failed; direct-www-favicon: fetch failed; homepage-icon: https://contentconnectafrica.com: fetch failed; https://www.contentconnectafrica.com: fetch failed"
+  },
+  "Paradise Sound System": {
+    "domain": "paradisesoundsystem.com",
+    "icon": "/platform-icons/platforms/paradise-sound-system.png",
+    "status": "existing"
+  },
+  "MOJO": {
+    "domain": "mojo.lat",
+    "icon": "/platform-icons/platforms/mojo.png",
+    "status": "existing"
+  },
+  "FaroLatino": {
+    "domain": "farolatino.com",
+    "icon": "/platform-icons/platforms/farolatino.png",
+    "status": "existing"
+  },
+  "Altafonte Argentina": {
+    "domain": "altafonte.com",
+    "icon": "/platform-icons/platforms/altafonte-argentina.png",
+    "status": "existing"
+  },
+  "ONErpm Argentina": {
+    "domain": "onerpm.com",
+    "icon": "/platform-icons/platforms/onerpm-argentina.png",
+    "status": "existing"
+  },
+  "Sua Musica Digital": {
+    "domain": "suamusica.com.br",
+    "icon": "/platform-icons/platforms/sua-musica-digital.png",
+    "status": "existing"
+  },
+  "Tratore": {
+    "domain": "tratore.com.br",
+    "icon": "/platform-icons/platforms/tratore.png",
+    "status": "existing"
+  },
+  "ONErpm Brazil": {
+    "domain": "onerpm.com",
+    "icon": "/platform-icons/platforms/onerpm-brazil.png",
+    "status": "existing"
+  },
+  "Altafonte Brazil": {
+    "domain": "altafonte.com",
+    "icon": "/platform-icons/platforms/altafonte-brazil.png",
+    "status": "existing"
+  },
+  "Believe Brazil": {
+    "domain": "believe.com",
+    "icon": "/platform-icons/platforms/believe-brazil-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 403 Forbidden; direct-www-favicon: 403 Forbidden; homepage-icon: https://believe.com: 403 Forbidden; https://www.believe.com: 403 Forbidden"
+  },
+  "Altafonte Mexico": {
+    "domain": "altafonte.com",
+    "icon": "/platform-icons/platforms/altafonte-mexico.png",
+    "status": "existing"
+  },
+  "ONErpm Mexico": {
+    "domain": "onerpm.com",
+    "icon": "/platform-icons/platforms/onerpm-mexico.png",
+    "status": "existing"
+  },
+  "Believe Mexico": {
+    "domain": "believe.com",
+    "icon": "/platform-icons/platforms/believe-mexico-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 403 Forbidden; direct-www-favicon: 403 Forbidden; homepage-icon: https://believe.com: 403 Forbidden; https://www.believe.com: 403 Forbidden"
+  },
+  "Fontana North": {
+    "domain": "fontananorth.com",
+    "icon": "/platform-icons/platforms/fontana-north.png",
+    "status": "existing"
+  },
+  "Cadence Music Group": {
+    "domain": "cadencemusicgroup.com",
+    "icon": "/platform-icons/platforms/cadence-music-group.png",
+    "status": "existing"
+  },
+  "Outside Music Distribution": {
+    "domain": "outsidemusic.com",
+    "icon": "/platform-icons/platforms/outside-music-distribution.png",
+    "status": "existing"
+  },
+  "Sonic Unyon Distribution": {
+    "domain": "sonicunyon.com",
+    "icon": "/platform-icons/platforms/sonic-unyon-distribution.png",
+    "status": "existing"
+  },
+  "IDOL": {
+    "domain": "idol.io",
+    "icon": "/platform-icons/platforms/idol.png",
+    "status": "existing"
+  },
+  "Believe": {
+    "domain": "believe.com",
+    "icon": "/platform-icons/platforms/believe-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 403 Forbidden; direct-www-favicon: 403 Forbidden; homepage-icon: https://believe.com: 403 Forbidden; https://www.believe.com: 403 Forbidden"
+  },
+  "Wiseband": {
+    "domain": "wiseband.com",
+    "icon": "/platform-icons/platforms/wiseband.png",
+    "status": "existing"
+  },
+  "iMusician France": {
+    "domain": "imusician.pro",
+    "icon": "/platform-icons/platforms/imusician-france.png",
+    "status": "existing"
+  },
+  "Kuroneko": {
+    "domain": "kuronekomedia.com",
+    "icon": "/platform-icons/platforms/kuroneko-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: fetch failed; direct-www-favicon: fetch failed; homepage-icon: https://kuronekomedia.com: fetch failed; https://www.kuronekomedia.com: fetch failed"
+  },
+  "recordJet": {
+    "domain": "recordjet.com",
+    "icon": "/platform-icons/platforms/recordjet.png",
+    "status": "existing"
+  },
+  "Zebralution": {
+    "domain": "zebralution.com",
+    "icon": "/platform-icons/platforms/zebralution.png",
+    "status": "existing"
+  },
+  "iMusician Germany": {
+    "domain": "imusician.pro",
+    "icon": "/platform-icons/platforms/imusician-germany.png",
+    "status": "existing"
+  },
+  "finetunes": {
+    "domain": "finetunes.net",
+    "icon": "/platform-icons/platforms/finetunes-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: fetch failed; direct-www-favicon: fetch failed; homepage-icon: https://finetunes.net: fetch failed; https://www.finetunes.net: fetch failed"
+  },
+  "Kontor New Media": {
+    "domain": "kontornewmedia.com",
+    "icon": "/platform-icons/platforms/kontor-new-media.png",
+    "status": "existing"
+  },
+  "Artist First": {
+    "domain": "artistfirst.it",
+    "icon": "/platform-icons/platforms/artist-first.png",
+    "status": "existing"
+  },
+  "Believe Italy": {
+    "domain": "believe.com",
+    "icon": "/platform-icons/platforms/believe-italy-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: 403 Forbidden; direct-www-favicon: 403 Forbidden; homepage-icon: https://believe.com: 403 Forbidden; https://www.believe.com: 403 Forbidden"
+  },
+  "The Orchard Italy": {
+    "domain": "theorchard.com",
+    "icon": "/platform-icons/platforms/the-orchard-italy.png",
+    "status": "existing"
+  },
+  "Pirames International": {
+    "domain": "pirames.it",
+    "icon": "/platform-icons/platforms/pirames-international-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: fetch failed; direct-www-favicon: fetch failed; homepage-icon: https://pirames.it: fetch failed; https://www.pirames.it: fetch failed"
+  },
+  "Made In Etaly": {
+    "domain": "madeinetaly.com",
+    "icon": "/platform-icons/platforms/made-in-etaly-placeholder.svg",
+    "status": "placeholder",
+    "reason": "clearbit: fetch failed; google-favicon: 404 Not Found; google-favicon-url: 404 Not Found; direct-favicon: fetch failed; direct-www-favicon: fetch failed; homepage-icon: https://madeinetaly.com: fetch failed; https://www.madeinetaly.com: fetch failed"
+  },
+  "La Cupula Music": {
+    "domain": "lacupulamusic.com",
+    "icon": "/platform-icons/platforms/la-cupula-music.png",
+    "status": "existing"
+  },
+  "SonoSuite": {
+    "domain": "sonosuite.com",
+    "icon": "/platform-icons/platforms/sonosuite.png",
+    "status": "existing"
+  },
+  "Gran Sol": {
+    "domain": "gransol.net",
+    "icon": "/platform-icons/platforms/gran-sol.png",
+    "status": "downloaded",
+    "source": "google-favicon-url",
+    "contentType": "image/png"
+  },
+  "Satelite K": {
+    "domain": "satelitek.com",
+    "icon": "/platform-icons/platforms/satelite-k.png",
+    "status": "existing"
+  },
+  "AWAL": {
+    "domain": "awal.com",
+    "icon": "/platform-icons/platforms/awal.png",
+    "status": "existing"
+  },
+  "Horus Music": {
+    "domain": "horusmusic.global",
+    "icon": "/platform-icons/platforms/horus-music.png",
+    "status": "existing"
+  },
+  "EmuBands": {
+    "domain": "emubands.com",
+    "icon": "/platform-icons/platforms/emubands.png",
+    "status": "existing"
+  },
+  "Republic of Music": {
+    "domain": "republicofmusic.net",
+    "icon": "/platform-icons/platforms/republic-of-music.png",
+    "status": "existing"
+  },
+  "Proper Music Distribution": {
+    "domain": "propermusicgroup.com",
+    "icon": "/platform-icons/platforms/proper-music-distribution.png",
+    "status": "existing"
+  },
+  "EMPIRE": {
+    "domain": "empi.re",
+    "icon": "/platform-icons/platforms/empire.png",
+    "status": "existing"
+  },
+  "Stem": {
+    "domain": "stem.is",
+    "icon": "/platform-icons/platforms/stem.png",
+    "status": "existing"
+  },
+  "Redeye Worldwide": {
+    "domain": "redeyeworldwide.com",
+    "icon": "/platform-icons/platforms/redeye-worldwide.png",
+    "status": "existing"
+  },
+  "Ingrooves / Virgin Music Group": {
+    "domain": "virginmusic.com",
+    "icon": "/platform-icons/platforms/ingrooves-virgin-music-group.png",
+    "status": "existing"
   }
 }

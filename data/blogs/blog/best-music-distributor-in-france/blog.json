@@ -35,39 +35,91 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for France"
+      "text": "Recommended local and international distributors for France"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as IDOL, Wiseband, iMusician stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand France's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
         {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
           "name": "IDOL",
           "logoDomain": "idol.io",
-          "icon": "/platform-icons/france/idol.png",
-          "description": "A selective digital distributor often associated with independent labels and curated catalog development.",
+          "icon": "/platform-icons/platforms/idol.png",
+          "description": "IDOL is included as a local or regional distribution option for France-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent digital distribution matter alongside global DSP delivery.",
           "url": "https://idol.io",
-          "bestFor": "Independent Labels",
+          "bestFor": "Local / Regional",
           "pros": [
-            "Label-first approach",
-            "Editorial focus",
-            "International delivery"
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Believe",
+          "logoDomain": "believe.com",
+          "icon": "/platform-icons/platforms/believe-placeholder.svg",
+          "description": "Believe is included as a local or regional distribution option for France-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and distribution and label services matter alongside global DSP delivery.",
+          "url": "https://www.believe.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {
           "name": "Wiseband",
           "logoDomain": "wiseband.com",
-          "icon": "/platform-icons/france/wiseband.png",
-          "description": "A European distribution option for independent artists and labels that need practical digital release tools.",
+          "icon": "/platform-icons/platforms/wiseband.png",
+          "description": "Wiseband is included as a local or regional distribution option for France-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and artist distribution workflow matter alongside global DSP delivery.",
           "url": "https://wiseband.com",
-          "bestFor": "European Independents",
+          "bestFor": "Local / Regional",
           "pros": [
-            "European support",
-            "Release tools",
-            "Artist dashboard"
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "iMusician France",
+          "logoDomain": "imusician.pro",
+          "icon": "/platform-icons/platforms/imusician-france.png",
+          "description": "iMusician France is included as a local or regional distribution option for France-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent artist distribution matter alongside global DSP delivery.",
+          "url": "https://imusician.pro",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Kuroneko",
+          "logoDomain": "kuronekomedia.com",
+          "icon": "/platform-icons/platforms/kuroneko-placeholder.svg",
+          "description": "Kuroneko is included as a local or regional distribution option for France-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent catalog distribution matter alongside global DSP delivery.",
+          "url": "https://kuronekomedia.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {

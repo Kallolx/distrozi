@@ -35,39 +35,78 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for UAE"
+      "text": "Recommended local and international distributors for UAE"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as Anghami, PopArabia, ONErpm stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand UAE's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
         {
-          "name": "Anghami",
-          "logoDomain": "anghami.com",
-          "icon": "/platform-icons/uae/anghami.png",
-          "description": "A key regional platform for Arabic and Middle East listeners, useful for artists targeting MENA audiences.",
-          "url": "https://anghami.com",
-          "bestFor": "MENA Reach",
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
           "pros": [
-            "Arabic catalog support",
-            "MENA discovery",
-            "Regional listening habits"
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
           ]
         },
         {
           "name": "PopArabia",
           "logoDomain": "poparabia.com",
-          "icon": "/platform-icons/uae/poparabia.png",
-          "description": "A regional music company connected to Middle East publishing, rights, and catalog development.",
+          "icon": "/platform-icons/platforms/poparabia.png",
+          "description": "PopArabia is included as a local or regional distribution option for UAE-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and MENA rights and distribution matter alongside global DSP delivery.",
           "url": "https://poparabia.com",
-          "bestFor": "Middle East Catalogs",
+          "bestFor": "Local / Regional",
           "pros": [
-            "MENA market knowledge",
-            "Publishing awareness",
-            "Regional partnerships"
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Anghami",
+          "logoDomain": "anghami.com",
+          "icon": "/platform-icons/platforms/anghami.png",
+          "description": "Anghami is included as a local or regional distribution option for UAE-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional streaming and distribution access matter alongside global DSP delivery.",
+          "url": "https://anghami.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Chabaka",
+          "logoDomain": "chabaka.com",
+          "icon": "/platform-icons/platforms/chabaka-placeholder.svg",
+          "description": "Chabaka is included as a local or regional distribution option for UAE-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Arabic catalog distribution matter alongside global DSP delivery.",
+          "url": "https://chabaka.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Qanawat Music",
+          "logoDomain": "qanawatmusic.com",
+          "icon": "/platform-icons/platforms/qanawat-music-placeholder.svg",
+          "description": "Qanawat Music is included as a local or regional distribution option for UAE-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional rights and distribution matter alongside global DSP delivery.",
+          "url": "https://qanawatmusic.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {

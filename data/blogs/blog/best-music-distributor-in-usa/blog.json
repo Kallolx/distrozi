@@ -35,15 +35,119 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for USA"
+      "text": "Recommended local and international distributors for USA"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as DistroKid, TuneCore, CD Baby stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand USA's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
+        {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
+          "name": "EMPIRE",
+          "logoDomain": "empi.re",
+          "icon": "/platform-icons/platforms/empire.png",
+          "description": "EMPIRE is included as a local or regional distribution option for USA-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent distribution and services matter alongside global DSP delivery.",
+          "url": "https://empi.re",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Stem",
+          "logoDomain": "stem.is",
+          "icon": "/platform-icons/platforms/stem.png",
+          "description": "Stem is included as a local or regional distribution option for USA-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and artist distribution and payments matter alongside global DSP delivery.",
+          "url": "https://stem.is",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "UnitedMasters",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/unitedmasters.png",
+          "description": "UnitedMasters is included as a local or regional distribution option for USA-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional distribution workflow matter alongside global DSP delivery.",
+          "url": "https://www.google.com/search?q=UnitedMasters%20music%20distribution",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Symphonic Distribution",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/symphonic-distribution.png",
+          "description": "Symphonic Distribution is included as a local or regional distribution option for USA-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional distribution workflow matter alongside global DSP delivery.",
+          "url": "https://www.google.com/search?q=Symphonic%20Distribution%20music%20distribution",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "The Orchard",
+          "logoDomain": "theorchard.com",
+          "icon": "/platform-icons/platforms/the-orchard-italy.png",
+          "description": "The Orchard is included as a local or regional distribution option for USA-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and global distribution network matter alongside global DSP delivery.",
+          "url": "https://theorchard.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Redeye Worldwide",
+          "logoDomain": "redeyeworldwide.com",
+          "icon": "/platform-icons/platforms/redeye-worldwide.png",
+          "description": "Redeye Worldwide is included as a local or regional distribution option for USA-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent distribution matter alongside global DSP delivery.",
+          "url": "https://redeyeworldwide.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Ingrooves / Virgin Music Group",
+          "logoDomain": "virginmusic.com",
+          "icon": "/platform-icons/platforms/ingrooves-virgin-music-group.png",
+          "description": "Ingrooves / Virgin Music Group is included as a local or regional distribution option for USA-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and global distribution network matter alongside global DSP delivery.",
+          "url": "https://virginmusic.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
         {
           "name": "DistroKid",
           "logoDomain": "distrokid.com",
@@ -81,45 +185,6 @@
             "Established distributor",
             "Physical and digital history",
             "Catalog tools"
-          ]
-        },
-        {
-          "name": "UnitedMasters",
-          "logoDomain": "unitedmasters.com",
-          "icon": "/platform-icons/usa/unitedmasters.png",
-          "description": "A US artist platform focused on distribution, brand opportunities, and creator-friendly tools.",
-          "url": "https://unitedmasters.com",
-          "bestFor": "US Artist Tools",
-          "pros": [
-            "Artist dashboard",
-            "Brand opportunities",
-            "US market fit"
-          ]
-        },
-        {
-          "name": "Symphonic Distribution",
-          "logoDomain": "symphonic.com",
-          "icon": "/platform-icons/usa/symphonic-distribution.png",
-          "description": "A distribution and services company suited to artists, labels, and managers that want a more structured release operation.",
-          "url": "https://symphonic.com",
-          "bestFor": "Artist Services",
-          "pros": [
-            "Label-friendly workflow",
-            "Marketing services",
-            "Catalog management"
-          ]
-        },
-        {
-          "name": "Stem",
-          "logoDomain": "stem.is",
-          "icon": "/platform-icons/usa/stem.png",
-          "description": "A platform known for collaborative release teams, splits workflows, and catalog management.",
-          "url": "https://stem.is",
-          "bestFor": "Team Workflows",
-          "pros": [
-            "Team collaboration",
-            "Split workflows",
-            "Catalog operations"
           ]
         },
         {

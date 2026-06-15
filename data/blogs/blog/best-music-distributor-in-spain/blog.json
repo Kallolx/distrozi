@@ -35,39 +35,91 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for Spain"
+      "text": "Recommended local and international distributors for Spain"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as Altafonte, La Cupula Music, iMusician stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand Spain's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
         {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
           "name": "Altafonte",
           "logoDomain": "altafonte.com",
-          "icon": "/platform-icons/spain/altafonte.png",
-          "description": "A strong option for Spanish and Latin catalog owners that need distribution plus hands-on regional knowledge.",
+          "icon": "/platform-icons/platforms/altafonte-argentina.png",
+          "description": "Altafonte is included as a local or regional distribution option for Spain-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Spanish and Latin catalog distribution matter alongside global DSP delivery.",
           "url": "https://altafonte.com",
-          "bestFor": "Ibero-American Reach",
+          "bestFor": "Local / Regional",
           "pros": [
-            "Ibero-American focus",
-            "Catalog services",
-            "Regional promotion support"
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {
           "name": "La Cupula Music",
           "logoDomain": "lacupulamusic.com",
-          "icon": "/platform-icons/spain/la-cupula-music.png",
-          "description": "A Spain-based distribution option with local market knowledge and independent artist support.",
+          "icon": "/platform-icons/platforms/la-cupula-music.png",
+          "description": "La Cupula Music is included as a local or regional distribution option for Spain-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and digital distribution tools matter alongside global DSP delivery.",
           "url": "https://lacupulamusic.com",
-          "bestFor": "Spanish Independents",
+          "bestFor": "Local / Regional",
           "pros": [
-            "Spain market focus",
-            "Digital distribution",
-            "Independent catalog tools"
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "SonoSuite",
+          "logoDomain": "sonosuite.com",
+          "icon": "/platform-icons/platforms/sonosuite.png",
+          "description": "SonoSuite is included as a local or regional distribution option for Spain-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and distribution technology matter alongside global DSP delivery.",
+          "url": "https://sonosuite.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Gran Sol",
+          "logoDomain": "gransol.net",
+          "icon": "/platform-icons/platforms/gran-sol.png",
+          "description": "Gran Sol is included as a local or regional distribution option for Spain-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Spanish catalog distribution matter alongside global DSP delivery.",
+          "url": "https://gransol.net",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Satelite K",
+          "logoDomain": "satelitek.com",
+          "icon": "/platform-icons/platforms/satelite-k.png",
+          "description": "Satelite K is included as a local or regional distribution option for Spain-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent distribution matter alongside global DSP delivery.",
+          "url": "https://satelitek.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {

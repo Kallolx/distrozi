@@ -35,15 +35,93 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for Brazil"
+      "text": "Recommended local and international distributors for Brazil"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as ONErpm, Sua Musica Digital, Tratore stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand Brazil's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
+        {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
+          "name": "Sua Musica Digital",
+          "logoDomain": "suamusica.com.br",
+          "icon": "/platform-icons/platforms/sua-musica-digital.png",
+          "description": "Sua Musica Digital is included as a local or regional distribution option for Brazil-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Brazilian music reach matter alongside global DSP delivery.",
+          "url": "https://suamusica.com.br",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Tratore",
+          "logoDomain": "tratore.com.br",
+          "icon": "/platform-icons/platforms/tratore.png",
+          "description": "Tratore is included as a local or regional distribution option for Brazil-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Brazilian independent distribution matter alongside global DSP delivery.",
+          "url": "https://tratore.com.br",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "ONErpm Brazil",
+          "logoDomain": "onerpm.com",
+          "icon": "/platform-icons/platforms/onerpm-brazil.png",
+          "description": "ONErpm Brazil is included as a local or regional distribution option for Brazil-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional distribution network matter alongside global DSP delivery.",
+          "url": "https://onerpm.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Altafonte Brazil",
+          "logoDomain": "altafonte.com",
+          "icon": "/platform-icons/platforms/altafonte-brazil.png",
+          "description": "Altafonte Brazil is included as a local or regional distribution option for Brazil-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Latin catalog distribution matter alongside global DSP delivery.",
+          "url": "https://altafonte.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Believe Brazil",
+          "logoDomain": "believe.com",
+          "icon": "/platform-icons/platforms/believe-brazil-placeholder.svg",
+          "description": "Believe Brazil is included as a local or regional distribution option for Brazil-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and distribution and label services matter alongside global DSP delivery.",
+          "url": "https://www.believe.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
         {
           "name": "ONErpm",
           "logoDomain": "onerpm.com",
@@ -55,32 +133,6 @@
             "Regional teams",
             "Marketing-oriented tools",
             "Broad store network"
-          ]
-        },
-        {
-          "name": "Sua Musica Digital",
-          "logoDomain": "suamusica.com.br",
-          "icon": "/platform-icons/brazil/sua-musica-digital.png",
-          "description": "A Brazil-focused platform connected to local listening habits and regional audience discovery.",
-          "url": "https://suamusica.com.br",
-          "bestFor": "Brazilian Discovery",
-          "pros": [
-            "Brazilian audience reach",
-            "Portuguese-market context",
-            "Regional catalog visibility"
-          ]
-        },
-        {
-          "name": "Tratore",
-          "logoDomain": "tratore.com.br",
-          "icon": "/platform-icons/brazil/tratore.png",
-          "description": "A Brazilian distributor with local catalog knowledge and experience across independent and label releases.",
-          "url": "https://tratore.com.br",
-          "bestFor": "Brazilian Catalogs",
-          "pros": [
-            "Brazil market familiarity",
-            "Local catalog support",
-            "Independent label experience"
           ]
         },
         {

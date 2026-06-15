@@ -35,15 +35,54 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for Pakistan"
+      "text": "Recommended local and international distributors for Pakistan"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as TuneCore, DistroKid, CD Baby stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand Pakistan's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
+        {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
+          "name": "Taazi",
+          "logoDomain": "taazi.com",
+          "icon": "/platform-icons/platforms/taazi-placeholder.svg",
+          "description": "Taazi is included as a local or regional distribution option for Pakistan-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Pakistan music distribution history matter alongside global DSP delivery.",
+          "url": "https://taazi.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Digital Entertainment World",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/digital-entertainment-world-placeholder.svg",
+          "description": "Digital Entertainment World is included as a local or regional distribution option for Pakistan-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and local rights workflow matter alongside global DSP delivery.",
+          "url": "https://www.google.com/search?q=Digital+Entertainment+World+Pakistan+music+distribution",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
         {
           "name": "TuneCore",
           "logoDomain": "tunecore.com",

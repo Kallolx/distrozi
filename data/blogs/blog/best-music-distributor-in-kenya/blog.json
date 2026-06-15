@@ -35,26 +35,78 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for Kenya"
+      "text": "Recommended local and international distributors for Kenya"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as Mdundo, Boomplay, Africori stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand Kenya's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
         {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
           "name": "Mdundo",
           "logoDomain": "mdundo.com",
-          "icon": "/platform-icons/kenya/mdundo.png",
-          "description": "A strong African music platform for mobile-first discovery and regional audience access.",
+          "icon": "/platform-icons/platforms/mdundo.png",
+          "description": "Mdundo is included as a local or regional distribution option for Kenya-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and African music discovery and delivery matter alongside global DSP delivery.",
           "url": "https://mdundo.com",
-          "bestFor": "African Mobile Reach",
+          "bestFor": "Local / Regional",
           "pros": [
-            "African listener base",
-            "Mobile-first reach",
-            "Regional discovery"
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Boomplay for Artists",
+          "logoDomain": "boomplay.com",
+          "icon": "/platform-icons/platforms/boomplay-for-artists.png",
+          "description": "Boomplay for Artists is included as a local or regional distribution option for Kenya-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and African DSP reach matter alongside global DSP delivery.",
+          "url": "https://boomplay.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Africori",
+          "logoDomain": "africori.com",
+          "icon": "/platform-icons/platforms/africori.png",
+          "description": "Africori is included as a local or regional distribution option for Kenya-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and African catalog distribution matter alongside global DSP delivery.",
+          "url": "https://africori.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Ngomma",
+          "logoDomain": "ngomma.com",
+          "icon": "/platform-icons/platforms/ngomma-placeholder.svg",
+          "description": "Ngomma is included as a local or regional distribution option for Kenya-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional music delivery matter alongside global DSP delivery.",
+          "url": "https://ngomma.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {
@@ -68,19 +120,6 @@
             "African platform reach",
             "Listener discovery",
             "Regional presence"
-          ]
-        },
-        {
-          "name": "Africori",
-          "logoDomain": "africori.com",
-          "icon": "/platform-icons/kenya/africori.png",
-          "description": "A distributor and label-services company with deep African music market experience.",
-          "url": "https://africori.com",
-          "bestFor": "African Catalogs",
-          "pros": [
-            "African market expertise",
-            "Label services",
-            "Catalog growth"
           ]
         },
         {

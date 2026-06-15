@@ -35,26 +35,78 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for Argentina"
+      "text": "Recommended local and international distributors for Argentina"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as FaroLatino, ONErpm, Altafonte stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand Argentina's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
         {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
+          "name": "MOJO",
+          "logoDomain": "mojo.lat",
+          "icon": "/platform-icons/platforms/mojo.png",
+          "description": "MOJO is included as a local or regional distribution option for Argentina-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Latin American distribution matter alongside global DSP delivery.",
+          "url": "https://mojo.lat",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
           "name": "FaroLatino",
           "logoDomain": "farolatino.com",
-          "icon": "/platform-icons/argentina/farolatino.png",
-          "description": "Strong for Spanish-language independent catalogs and Latin American releases that need regional context.",
+          "icon": "/platform-icons/platforms/farolatino.png",
+          "description": "FaroLatino is included as a local or regional distribution option for Argentina-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional digital distribution matter alongside global DSP delivery.",
           "url": "https://farolatino.com",
-          "bestFor": "Latin America Focus",
+          "bestFor": "Local / Regional",
           "pros": [
-            "Spanish-language catalog support",
-            "Latin America delivery",
-            "Independent artist workflows"
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Altafonte Argentina",
+          "logoDomain": "altafonte.com",
+          "icon": "/platform-icons/platforms/altafonte-argentina.png",
+          "description": "Altafonte Argentina is included as a local or regional distribution option for Argentina-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Latin catalog distribution matter alongside global DSP delivery.",
+          "url": "https://altafonte.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "ONErpm Argentina",
+          "logoDomain": "onerpm.com",
+          "icon": "/platform-icons/platforms/onerpm-argentina.png",
+          "description": "ONErpm Argentina is included as a local or regional distribution option for Argentina-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional distribution network matter alongside global DSP delivery.",
+          "url": "https://onerpm.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {

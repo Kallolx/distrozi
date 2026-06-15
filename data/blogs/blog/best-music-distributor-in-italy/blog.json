@@ -35,26 +35,91 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for Italy"
+      "text": "Recommended local and international distributors for Italy"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as Artist First, iMusician, TuneCore stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand Italy's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
         {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
           "name": "Artist First",
           "logoDomain": "artistfirst.it",
-          "icon": "/platform-icons/italy/artist-first.png",
-          "description": "An Italy-focused company for artists and catalog teams that need local market knowledge.",
+          "icon": "/platform-icons/platforms/artist-first.png",
+          "description": "Artist First is included as a local or regional distribution option for Italy-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Italian music distribution matter alongside global DSP delivery.",
           "url": "https://artistfirst.it",
-          "bestFor": "Italian Market",
+          "bestFor": "Local / Regional",
           "pros": [
-            "Italian catalog support",
-            "Local industry context",
-            "Release services"
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Believe Italy",
+          "logoDomain": "believe.com",
+          "icon": "/platform-icons/platforms/believe-italy-placeholder.svg",
+          "description": "Believe Italy is included as a local or regional distribution option for Italy-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and distribution and label services matter alongside global DSP delivery.",
+          "url": "https://www.believe.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "The Orchard Italy",
+          "logoDomain": "theorchard.com",
+          "icon": "/platform-icons/platforms/the-orchard-italy.png",
+          "description": "The Orchard Italy is included as a local or regional distribution option for Italy-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and global distribution network matter alongside global DSP delivery.",
+          "url": "https://theorchard.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Pirames International",
+          "logoDomain": "pirames.it",
+          "icon": "/platform-icons/platforms/pirames-international-placeholder.svg",
+          "description": "Pirames International is included as a local or regional distribution option for Italy-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and digital distribution matter alongside global DSP delivery.",
+          "url": "https://pirames.it",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Made In Etaly",
+          "logoDomain": "madeinetaly.com",
+          "icon": "/platform-icons/platforms/made-in-etaly-placeholder.svg",
+          "description": "Made In Etaly is included as a local or regional distribution option for Italy-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent distribution matter alongside global DSP delivery.",
+          "url": "https://madeinetaly.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {

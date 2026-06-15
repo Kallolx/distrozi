@@ -35,15 +35,80 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for Canada"
+      "text": "Recommended local and international distributors for Canada"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as Arts & Crafts Distribution, Outside Music, Cadence/Fontana North stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand Canada's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
+        {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
+          "name": "Fontana North",
+          "logoDomain": "fontananorth.com",
+          "icon": "/platform-icons/platforms/fontana-north.png",
+          "description": "Fontana North is included as a local or regional distribution option for Canada-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Canadian independent distribution matter alongside global DSP delivery.",
+          "url": "https://fontananorth.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Cadence Music Group",
+          "logoDomain": "cadencemusicgroup.com",
+          "icon": "/platform-icons/platforms/cadence-music-group.png",
+          "description": "Cadence Music Group is included as a local or regional distribution option for Canada-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Canadian catalog operations matter alongside global DSP delivery.",
+          "url": "https://cadencemusicgroup.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Outside Music Distribution",
+          "logoDomain": "outsidemusic.com",
+          "icon": "/platform-icons/platforms/outside-music-distribution.png",
+          "description": "Outside Music Distribution is included as a local or regional distribution option for Canada-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent distribution matter alongside global DSP delivery.",
+          "url": "https://outsidemusic.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Sonic Unyon Distribution",
+          "logoDomain": "sonicunyon.com",
+          "icon": "/platform-icons/platforms/sonic-unyon-distribution.png",
+          "description": "Sonic Unyon Distribution is included as a local or regional distribution option for Canada-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Canadian independent distribution matter alongside global DSP delivery.",
+          "url": "https://sonicunyon.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
         {
           "name": "Arts & Crafts Distribution",
           "logoDomain": "arts-crafts.ca",

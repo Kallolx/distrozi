@@ -35,15 +35,132 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for India"
+      "text": "Recommended local and international distributors for India"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as TuneCore India, SwaLay, DistroKid stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand India's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
+        {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
+          "name": "PDL",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/pdl-placeholder.svg",
+          "description": "PDL is included as a local or regional distribution option for India-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and local distributor research matter alongside global DSP delivery.",
+          "url": "https://www.google.com/search?q=PDL+music+distribution+India",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "ST Digital",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/st-digital-placeholder.svg",
+          "description": "ST Digital is included as a local or regional distribution option for India-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and local distribution support matter alongside global DSP delivery.",
+          "url": "https://www.google.com/search?q=ST+Digital+music+distribution+India",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "RDC Media",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/rdc-media-placeholder.svg",
+          "description": "RDC Media is included as a local or regional distribution option for India-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and catalog delivery matter alongside global DSP delivery.",
+          "url": "https://www.google.com/search?q=RDC+Media+music+distribution+India",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Believe Music India",
+          "logoDomain": "believe.com",
+          "icon": "/platform-icons/platforms/believe-music-india-placeholder.svg",
+          "description": "Believe Music India is included as a local or regional distribution option for India-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and label services and distribution matter alongside global DSP delivery.",
+          "url": "https://www.believe.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Madverse",
+          "logoDomain": "madverse.co",
+          "icon": "/platform-icons/platforms/madverse.png",
+          "description": "Madverse is included as a local or regional distribution option for India-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent artist distribution matter alongside global DSP delivery.",
+          "url": "https://madverse.co",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "SwaLay Digital",
+          "logoDomain": "swalaydigital.com",
+          "icon": "/platform-icons/platforms/swalay-digital.png",
+          "description": "SwaLay Digital is included as a local or regional distribution option for India-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional artist support matter alongside global DSP delivery.",
+          "url": "https://swalaydigital.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Deliver My Tune",
+          "logoDomain": "delivermytune.com",
+          "icon": "/platform-icons/platforms/deliver-my-tune.png",
+          "description": "Deliver My Tune is included as a local or regional distribution option for India-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and artist distribution workflow matter alongside global DSP delivery.",
+          "url": "https://delivermytune.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "OKListen",
+          "logoDomain": "oklisten.com",
+          "icon": "/platform-icons/platforms/oklisten.png",
+          "description": "OKListen is included as a local or regional distribution option for India-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent music catalog matter alongside global DSP delivery.",
+          "url": "https://oklisten.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
         {
           "name": "TuneCore India",
           "logoDomain": "tunecore.com",

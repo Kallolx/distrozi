@@ -35,26 +35,78 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for South Africa"
+      "text": "Recommended local and international distributors for South Africa"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as Africori, IDOL, Ditto Music stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand South Africa's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
         {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
           "name": "Africori",
           "logoDomain": "africori.com",
-          "icon": "/platform-icons/south-africa/africori.png",
-          "description": "A distributor and label-services company with deep African music market experience.",
+          "icon": "/platform-icons/platforms/africori.png",
+          "description": "Africori is included as a local or regional distribution option for South Africa-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and African catalog distribution matter alongside global DSP delivery.",
           "url": "https://africori.com",
-          "bestFor": "African Catalogs",
+          "bestFor": "Local / Regional",
           "pros": [
-            "African market expertise",
-            "Label services",
-            "Catalog growth"
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Electromode",
+          "logoDomain": "electromode.co.za",
+          "icon": "/platform-icons/platforms/electromode.png",
+          "description": "Electromode is included as a local or regional distribution option for South Africa-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and Southern African catalog delivery matter alongside global DSP delivery.",
+          "url": "https://electromode.co.za",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Content Connect Africa",
+          "logoDomain": "contentconnectafrica.com",
+          "icon": "/platform-icons/platforms/content-connect-africa-placeholder.svg",
+          "description": "Content Connect Africa is included as a local or regional distribution option for South Africa-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and digital rights and distribution matter alongside global DSP delivery.",
+          "url": "https://contentconnectafrica.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Paradise Sound System",
+          "logoDomain": "paradisesoundsystem.com",
+          "icon": "/platform-icons/platforms/paradise-sound-system.png",
+          "description": "Paradise Sound System is included as a local or regional distribution option for South Africa-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and independent distribution support matter alongside global DSP delivery.",
+          "url": "https://paradisesoundsystem.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {

@@ -35,26 +35,91 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for Nigeria"
+      "text": "Recommended local and international distributors for Nigeria"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as MAD Solutions, Boomplay, Africori stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand Nigeria's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
         {
-          "name": "MAD Solutions",
-          "logoDomain": "madsolutions.com",
-          "icon": "/platform-icons/nigeria/mad-solutions.png",
-          "description": "A regional entertainment company useful for teams looking at African and Middle East music opportunities.",
-          "url": "https://madsolutions.com",
-          "bestFor": "African & MENA Support",
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
           "pros": [
-            "Regional expertise",
-            "Media relationships",
-            "Catalog support"
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
+          "name": "MAD Solutions",
+          "logoDomain": "madsolutions.ai",
+          "icon": "/platform-icons/platforms/mad-solutions.png",
+          "description": "MAD Solutions is included as a local or regional distribution option for Nigeria-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and digital distribution and marketing matter alongside global DSP delivery.",
+          "url": "https://madsolutions.ai",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Freeme Digital",
+          "logoDomain": "freemedigital.com",
+          "icon": "/platform-icons/platforms/freeme-digital-placeholder.svg",
+          "description": "Freeme Digital is included as a local or regional distribution option for Nigeria-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and African digital distribution matter alongside global DSP delivery.",
+          "url": "https://freemedigital.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "Dvpper Digital",
+          "logoDomain": "dvpper.com",
+          "icon": "/platform-icons/platforms/dvpper-digital-placeholder.svg",
+          "description": "Dvpper Digital is included as a local or regional distribution option for Nigeria-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and African catalog delivery matter alongside global DSP delivery.",
+          "url": "https://dvpper.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "emPawa Distribution",
+          "logoDomain": "empawaafrica.com",
+          "icon": "/platform-icons/platforms/empawa-distribution.png",
+          "description": "emPawa Distribution is included as a local or regional distribution option for Nigeria-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and artist development and distribution matter alongside global DSP delivery.",
+          "url": "https://empawaafrica.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "ONErpm Africa",
+          "logoDomain": "onerpm.com",
+          "icon": "/platform-icons/platforms/onerpm-africa.png",
+          "description": "ONErpm Africa is included as a local or regional distribution option for Nigeria-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional distribution network matter alongside global DSP delivery.",
+          "url": "https://onerpm.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
           ]
         },
         {

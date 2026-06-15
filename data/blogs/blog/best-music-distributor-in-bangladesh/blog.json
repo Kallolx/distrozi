@@ -35,15 +35,54 @@
     },
     {
       "type": "heading",
-      "text": "Recommended platforms for Bangladesh"
+      "text": "Recommended local and international distributors for Bangladesh"
     },
     {
       "type": "paragraph",
-      "text": "For this market, platforms such as TuneCore, DistroKid, CD Baby stand out because they bring useful regional context alongside wider digital delivery. The list below focuses on fit, workflow, and market relevance rather than headline marketing claims."
+      "text": "The first options below focus on local or regional distributors that understand Bangladesh's market, followed by international platforms already useful for wider DSP coverage. Compare each option by release workflow, metadata handling, support quality, rights tools, and how comfortably it fits the artist's catalog plan."
     },
     {
       "type": "platforms",
       "platformItems": [
+        {
+          "name": "Distrozi",
+          "logoDomain": "distrozi.com",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists, managers, and labels that need global DSP delivery, catalog management, YouTube CMS support, rights workflows, and practical release operations from one dashboard.",
+          "url": "https://distrozi.com",
+          "bestFor": "Distrozi Platform",
+          "pros": [
+            "Global delivery",
+            "Catalog workflow",
+            "YouTube CMS support"
+          ]
+        },
+        {
+          "name": "Distrofy",
+          "logoDomain": "distrofy.org",
+          "icon": "/platform-icons/platforms/distrofy.png",
+          "description": "Distrofy is included as a local or regional distribution option for Bangladesh-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and local digital distribution matter alongside global DSP delivery.",
+          "url": "https://distrofy.org",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
+        {
+          "name": "ZCaller Music",
+          "logoDomain": "zcallermusic.com",
+          "icon": "/platform-icons/platforms/zcaller-music-placeholder.svg",
+          "description": "ZCaller Music is included as a local or regional distribution option for Bangladesh-based artists. It is most relevant when local market knowledge, nearby catalog support, language or rights context, and regional catalog delivery matter alongside global DSP delivery.",
+          "url": "https://zcallermusic.com",
+          "bestFor": "Local / Regional",
+          "pros": [
+            "Local market context",
+            "Regional catalog support",
+            "DSP delivery workflow"
+          ]
+        },
         {
           "name": "TuneCore",
           "logoDomain": "tunecore.com",
