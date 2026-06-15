@@ -1,0 +1,50 @@
+{
+  "Distrozi": {
+    "domain": "distrozi.com",
+    "icon": "/platform-icons/platforms/distrozi.png"
+  },
+  "DistroKid": {
+    "domain": "distrokid.com",
+    "icon": "/platform-icons/platforms/distrokid.png"
+  },
+  "TuneCore": {
+    "domain": "tunecore.com",
+    "icon": "/platform-icons/platforms/tunecore.png"
+  },
+  "CD Baby": {
+    "domain": "cdbaby.com",
+    "icon": "/platform-icons/platforms/cd-baby.png"
+  },
+  "LANDR": {
+    "domain": "landr.com",
+    "icon": "/platform-icons/platforms/landr.png"
+  },
+  "RouteNote": {
+    "domain": "routenote.com",
+    "icon": "/platform-icons/platforms/routenote.png"
+  },
+  "ONErpm": {
+    "domain": "onerpm.com",
+    "icon": "/platform-icons/platforms/onerpm.png"
+  },
+  "Amuse": {
+    "domain": "amuse.io",
+    "icon": "/platform-icons/platforms/amuse.png"
+  },
+  "SoundOn": {
+    "domain": "soundon.global",
+    "icon": "/platform-icons/platforms/soundon.png"
+  },
+  "UnitedMasters": {
+    "domain": "unitedmasters.com",
+    "icon": "/platform-icons/platforms/unitedmasters.png"
+  },
+  "Symphonic Distribution": {
+    "domain": "symphonic.com",
+    "icon": "/platform-icons/platforms/symphonic-distribution.png"
+  },
+  "Ditto Music": {
+    "domain": "dittomusic.com",
+    "icon": "/platform-icons/platforms/ditto-music.png"
+  }
+}

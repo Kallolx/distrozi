@@ -15,7 +15,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Below, we outline the leading platforms, structuring their pricing models, pros, cons, and explaining which types of artists or labels they fit best."
+      "text": "Below, we outline the leading platforms, structuring their workflow models, pros, cons, and explaining which types of artists or labels they fit best."
     },
     {
       "type": "heading",
@@ -23,7 +23,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Premium distribution alternative with transparent pricing, zero hidden fees, and lifetime catalog protection."
+      "text": "Distrozi is positioned for artists, managers, and labels that want distribution, catalog control, YouTube CMS support, and release operations handled in one place. It is a strong fit when the priority is clean metadata, reliable delivery, and long-term control of a growing catalog rather than only uploading a single release. For labels, compare team workflows, catalog scale, reporting, takedown or update handling, split administration, and the level of support available when multiple artists release at once."
     },
     {
       "type": "heading",
@@ -31,7 +31,7 @@
     },
     {
       "type": "paragraph",
-      "text": "A flat-fee annual subscription service providing fast uploads and basic digital delivery workflows."
+      "text": "DistroKid is a self-service distributor known for a fast upload flow and broad DSP delivery. It can work well for artists who release often, but users should still plan metadata, profile setup, release dates, and post-release updates carefully so speed does not create avoidable catalog issues. For labels, compare team workflows, catalog scale, reporting, takedown or update handling, split administration, and the level of support available when multiple artists release at once."
     },
     {
       "type": "heading",
@@ -39,7 +39,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Provides detailed analytics charts, flexible pay-per-release options, and publishing administration add-ons."
+      "text": "TuneCore is an established distribution platform with store delivery, analytics, creator tools, and publishing-related options in its wider ecosystem. It is usually considered by artists who want a familiar dashboard and deeper reporting while keeping release administration organized across multiple platforms. For labels, compare team workflows, catalog scale, reporting, takedown or update handling, split administration, and the level of support available when multiple artists release at once."
     },
     {
       "type": "heading",
@@ -47,7 +47,7 @@
     },
     {
       "type": "paragraph",
-      "text": "A veteran aggregator charging a one-time fee per release, providing digital delivery and physical distribution."
+      "text": "CD Baby is a long-running aggregator with a structured release workflow and catalog-oriented services. It is often considered by artists who want a more guided distribution path, useful documentation, and support for releases that may need careful setup beyond a quick upload. For labels, compare team workflows, catalog scale, reporting, takedown or update handling, split administration, and the level of support available when multiple artists release at once."
     },
     {
       "type": "heading",
@@ -55,11 +55,15 @@
     },
     {
       "type": "paragraph",
-      "text": "An all-in-one platform integrating distribution with professional automated mastering and collaboration plugins."
+      "text": "LANDR combines distribution with creator tools such as mastering, production resources, collaboration features, and release preparation support. It is most relevant for artists who want parts of the recording, polishing, and delivery process connected in one creative workflow. For labels, compare team workflows, catalog scale, reporting, takedown or update handling, split administration, and the level of support available when multiple artists release at once."
     },
     {
       "type": "heading",
-      "text": "Top Music Distribution Platforms Reviewed"
+      "text": "Recommended Platforms to Compare"
+    },
+    {
+      "type": "paragraph",
+      "text": "Record labels usually need roster controls, catalog organization, collaborator credits, and support for repeatable release operations."
     },
     {
       "type": "platforms",
@@ -67,71 +71,79 @@
         {
           "name": "Distrozi",
           "logoDomain": "distrozi.com",
-          "description": "Premium distribution alternative with transparent pricing, zero hidden fees, and lifetime catalog protection.",
+          "icon": "/platform-icons/platforms/distrozi.png",
+          "description": "Distrozi is built for artists and labels that need global DSP delivery, YouTube CMS support, catalog management, and release operations from one dashboard. It is worth considering for teams that need repeatable workflows across more than one artist or catalog.",
           "url": "https://distrozi.com",
-          "bestFor": "Best Overall",
-          "rating": "4.9/5",
-          "pricing": "Flat Annual Fee / Splits",
+          "bestFor": "Catalog Control",
           "pros": [
-            "Music stays live forever",
-            "Direct bank payouts",
-            "YouTube CMS integration"
+            "Global delivery",
+            "YouTube CMS support",
+            "Catalog workflow"
           ]
         },
         {
-          "name": "DistroKid",
-          "logoDomain": "distrokid.com",
-          "description": "A flat-fee annual subscription service providing fast uploads and basic digital delivery workflows.",
-          "url": "https://distrokid.com",
-          "bestFor": "Unlimited Releases",
-          "rating": "4.5/5",
-          "pricing": "From $22.99/yr",
+          "name": "Symphonic Distribution",
+          "logoDomain": "symphonic.com",
+          "icon": "/platform-icons/platforms/symphonic-distribution.png",
+          "description": "Symphonic Distribution fits artists, labels, and managers that need a more structured distribution and services workflow. It is worth considering for teams that need repeatable workflows across more than one artist or catalog.",
+          "url": "https://symphonic.com",
+          "bestFor": "Artist Services",
           "pros": [
-            "Unlimited uploads",
-            "Fast ingestion speed",
-            "Simple plain text dashboard"
+            "Label-friendly tools",
+            "Artist services",
+            "Catalog management"
+          ]
+        },
+        {
+          "name": "ONErpm",
+          "logoDomain": "onerpm.com",
+          "icon": "/platform-icons/platforms/onerpm.png",
+          "description": "ONErpm is a strong fit for artists and labels that want global delivery combined with regional teams and marketing-oriented support. It is worth considering for teams that need repeatable workflows across more than one artist or catalog.",
+          "url": "https://onerpm.com",
+          "bestFor": "Regional Scale",
+          "pros": [
+            "Regional teams",
+            "Marketing tools",
+            "Global delivery"
           ]
         },
         {
           "name": "TuneCore",
           "logoDomain": "tunecore.com",
-          "description": "Provides detailed analytics charts, flexible pay-per-release options, and publishing administration add-ons.",
+          "icon": "/platform-icons/platforms/tunecore.png",
+          "description": "TuneCore suits artists who want established store delivery, creator tools, and publishing-related options in a self-service workflow. It is worth considering for teams that need repeatable workflows across more than one artist or catalog.",
           "url": "https://tunecore.com",
-          "bestFor": "Publishing Collection",
-          "rating": "4.4/5",
-          "pricing": "From $19.99/yr",
+          "bestFor": "Publishing Tools",
           "pros": [
-            "Detailed analytics charts",
-            "Publishing administration add-on",
-            "Good global presence"
+            "Established platform",
+            "Publishing options",
+            "Global delivery"
           ]
         },
         {
           "name": "CD Baby",
           "logoDomain": "cdbaby.com",
-          "description": "A veteran aggregator charging a one-time fee per release, providing digital delivery and physical distribution.",
+          "icon": "/platform-icons/platforms/cd-baby.png",
+          "description": "CD Baby is a long-running distributor often used by artists who want a structured release path and catalog-oriented tools. It is worth considering for teams that need repeatable workflows across more than one artist or catalog.",
           "url": "https://cdbaby.com",
-          "bestFor": "One-time Fee",
-          "rating": "4.3/5",
-          "pricing": "$9.99/release + 9% cut",
+          "bestFor": "Catalog Support",
           "pros": [
-            "No annual subscription fee",
-            "Physical distribution option",
-            "Sync licensing integration"
+            "Established distributor",
+            "Catalog tools",
+            "Release support"
           ]
         },
         {
-          "name": "LANDR",
-          "logoDomain": "landr.com",
-          "description": "An all-in-one platform integrating distribution with professional automated mastering and collaboration plugins.",
-          "url": "https://landr.com",
-          "bestFor": "Producer Bundle",
-          "rating": "4.6/5",
-          "pricing": "From $23.99/yr",
+          "name": "Ditto Music",
+          "logoDomain": "dittomusic.com",
+          "icon": "/platform-icons/platforms/ditto-music.png",
+          "description": "Ditto Music is a familiar option for independent artists who want direct release control and global store delivery. It is worth considering for teams that need repeatable workflows across more than one artist or catalog.",
+          "url": "https://dittomusic.com",
+          "bestFor": "Independent Artists",
           "pros": [
-            "Integrated AI mastering",
-            "Collaboration plugins",
-            "All-in-one producer tools"
+            "Independent workflow",
+            "Global delivery",
+            "Artist dashboard"
           ]
         }
       ]
@@ -157,7 +169,7 @@
     "rows": [
       [
         "Master Ownership",
-        "Artist retains 100%",
+        "Artist retains platform",
         "Label owns masters"
       ],
       [
@@ -167,8 +179,8 @@
       ],
       [
         "Royalty Share Split",
-        "Artist keeps up to 100%",
-        "Artist gets 15% - 50% split"
+        "artist manages direct catalog terms",
+        "artist terms vary by agreement"
       ],
       [
         "Release Speed",

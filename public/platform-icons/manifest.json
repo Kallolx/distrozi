@@ -1,0 +1,859 @@
+{
+  "argentina": [
+    {
+      "country": "argentina",
+      "platform": "FaroLatino",
+      "domain": "farolatino.com",
+      "icon": "/platform-icons/argentina/farolatino.png"
+    },
+    {
+      "country": "argentina",
+      "platform": "ONErpm",
+      "domain": "onerpm.com",
+      "icon": "/platform-icons/argentina/onerpm.png"
+    },
+    {
+      "country": "argentina",
+      "platform": "Altafonte",
+      "domain": "altafonte.com",
+      "icon": "/platform-icons/argentina/altafonte.png"
+    },
+    {
+      "country": "argentina",
+      "platform": "Symphonic Distribution",
+      "domain": "symphonic.com",
+      "icon": "/platform-icons/argentina/symphonic-distribution.png"
+    },
+    {
+      "country": "argentina",
+      "platform": "Ditto Music",
+      "domain": "dittomusic.com",
+      "icon": "/platform-icons/argentina/ditto-music.png"
+    },
+    {
+      "country": "argentina",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/argentina/tunecore.png"
+    }
+  ],
+  "bangladesh": [
+    {
+      "country": "bangladesh",
+      "platform": "Distrofy",
+      "domain": "distrofy.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "bangladesh",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/bangladesh/tunecore.png"
+    },
+    {
+      "country": "bangladesh",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/bangladesh/distrokid.png"
+    },
+    {
+      "country": "bangladesh",
+      "platform": "CD Baby",
+      "domain": "cdbaby.com",
+      "icon": "/platform-icons/bangladesh/cd-baby.png"
+    },
+    {
+      "country": "bangladesh",
+      "platform": "Ditto Music",
+      "domain": "dittomusic.com",
+      "icon": "/platform-icons/bangladesh/ditto-music.png"
+    },
+    {
+      "country": "bangladesh",
+      "platform": "RouteNote",
+      "domain": "routenote.com",
+      "icon": "/platform-icons/bangladesh/routenote.png"
+    }
+  ],
+  "brazil": [
+    {
+      "country": "brazil",
+      "platform": "ONErpm",
+      "domain": "onerpm.com",
+      "icon": "/platform-icons/brazil/onerpm.png"
+    },
+    {
+      "country": "brazil",
+      "platform": "Sua Musica Digital",
+      "domain": "suamusica.com.br",
+      "icon": "/platform-icons/brazil/sua-musica-digital.png"
+    },
+    {
+      "country": "brazil",
+      "platform": "Tratore",
+      "domain": "tratore.com.br",
+      "icon": "/platform-icons/brazil/tratore.png"
+    },
+    {
+      "country": "brazil",
+      "platform": "Altafonte",
+      "domain": "altafonte.com",
+      "icon": "/platform-icons/brazil/altafonte.png"
+    },
+    {
+      "country": "brazil",
+      "platform": "Believe",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "brazil",
+      "platform": "Symphonic Distribution",
+      "domain": "symphonic.com",
+      "icon": "/platform-icons/brazil/symphonic-distribution.png"
+    }
+  ],
+  "canada": [
+    {
+      "country": "canada",
+      "platform": "Arts & Crafts Distribution",
+      "domain": "arts-crafts.ca",
+      "icon": "/platform-icons/canada/arts-and-crafts-distribution.png"
+    },
+    {
+      "country": "canada",
+      "platform": "Outside Music",
+      "domain": "outsidemusic.com",
+      "icon": "/platform-icons/canada/outside-music.png"
+    },
+    {
+      "country": "canada",
+      "platform": "Cadence/Fontana North",
+      "domain": "fontananorth.com",
+      "icon": "/platform-icons/canada/cadence-fontana-north.png"
+    },
+    {
+      "country": "canada",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/canada/tunecore.png"
+    },
+    {
+      "country": "canada",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/canada/distrokid.png"
+    },
+    {
+      "country": "canada",
+      "platform": "CD Baby",
+      "domain": "cdbaby.com",
+      "icon": "/platform-icons/canada/cd-baby.png"
+    }
+  ],
+  "france": [
+    {
+      "country": "france",
+      "platform": "Believe",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "france",
+      "platform": "IDOL",
+      "domain": "idol.io",
+      "icon": "/platform-icons/france/idol.png"
+    },
+    {
+      "country": "france",
+      "platform": "Wiseband",
+      "domain": "wiseband.com",
+      "icon": "/platform-icons/france/wiseband.png"
+    },
+    {
+      "country": "france",
+      "platform": "iMusician",
+      "domain": "imusician.pro",
+      "icon": "/platform-icons/france/imusician.png"
+    },
+    {
+      "country": "france",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/france/tunecore.png"
+    },
+    {
+      "country": "france",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/france/distrokid.png"
+    }
+  ],
+  "germany": [
+    {
+      "country": "germany",
+      "platform": "recordJet",
+      "domain": "recordjet.com",
+      "icon": "/platform-icons/germany/recordjet.png"
+    },
+    {
+      "country": "germany",
+      "platform": "iMusician",
+      "domain": "imusician.pro",
+      "icon": "/platform-icons/germany/imusician.png"
+    },
+    {
+      "country": "germany",
+      "platform": "Zebralution",
+      "domain": "zebralution.com",
+      "icon": "/platform-icons/germany/zebralution.png"
+    },
+    {
+      "country": "germany",
+      "platform": "Believe",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "germany",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/germany/tunecore.png"
+    },
+    {
+      "country": "germany",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/germany/distrokid.png"
+    }
+  ],
+  "india": [
+    {
+      "country": "india",
+      "platform": "TuneCore India",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/india/tunecore-india.png"
+    },
+    {
+      "country": "india",
+      "platform": "Believe India",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "india",
+      "platform": "SwaLay",
+      "domain": "swalay.com",
+      "icon": "/platform-icons/india/swalay.png"
+    },
+    {
+      "country": "india",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/india/distrokid.png"
+    },
+    {
+      "country": "india",
+      "platform": "CD Baby",
+      "domain": "cdbaby.com",
+      "icon": "/platform-icons/india/cd-baby.png"
+    },
+    {
+      "country": "india",
+      "platform": "Ditto Music",
+      "domain": "dittomusic.com",
+      "icon": "/platform-icons/india/ditto-music.png"
+    }
+  ],
+  "indonesia": [
+    {
+      "country": "indonesia",
+      "platform": "Believe",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "indonesia",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/indonesia/tunecore.png"
+    },
+    {
+      "country": "indonesia",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/indonesia/distrokid.png"
+    },
+    {
+      "country": "indonesia",
+      "platform": "CD Baby",
+      "domain": "cdbaby.com",
+      "icon": "/platform-icons/indonesia/cd-baby.png"
+    },
+    {
+      "country": "indonesia",
+      "platform": "RouteNote",
+      "domain": "routenote.com",
+      "icon": "/platform-icons/indonesia/routenote.png"
+    },
+    {
+      "country": "indonesia",
+      "platform": "Ditto Music",
+      "domain": "dittomusic.com",
+      "icon": "/platform-icons/indonesia/ditto-music.png"
+    }
+  ],
+  "italy": [
+    {
+      "country": "italy",
+      "platform": "Artist First",
+      "domain": "artistfirst.it",
+      "icon": "/platform-icons/italy/artist-first.png"
+    },
+    {
+      "country": "italy",
+      "platform": "Believe",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "italy",
+      "platform": "iMusician",
+      "domain": "imusician.pro",
+      "icon": "/platform-icons/italy/imusician.png"
+    },
+    {
+      "country": "italy",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/italy/tunecore.png"
+    },
+    {
+      "country": "italy",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/italy/distrokid.png"
+    },
+    {
+      "country": "italy",
+      "platform": "CD Baby",
+      "domain": "cdbaby.com",
+      "icon": "/platform-icons/italy/cd-baby.png"
+    }
+  ],
+  "kenya": [
+    {
+      "country": "kenya",
+      "platform": "Mdundo",
+      "domain": "mdundo.com",
+      "icon": "/platform-icons/kenya/mdundo.png"
+    },
+    {
+      "country": "kenya",
+      "platform": "Boomplay",
+      "domain": "boomplay.com",
+      "icon": "/platform-icons/kenya/boomplay.png"
+    },
+    {
+      "country": "kenya",
+      "platform": "Africori",
+      "domain": "africori.com",
+      "icon": "/platform-icons/kenya/africori.png"
+    },
+    {
+      "country": "kenya",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/kenya/tunecore.png"
+    },
+    {
+      "country": "kenya",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/kenya/distrokid.png"
+    },
+    {
+      "country": "kenya",
+      "platform": "Ditto Music",
+      "domain": "dittomusic.com",
+      "icon": "/platform-icons/kenya/ditto-music.png"
+    }
+  ],
+  "mexico": [
+    {
+      "country": "mexico",
+      "platform": "ONErpm",
+      "domain": "onerpm.com",
+      "icon": "/platform-icons/mexico/onerpm.png"
+    },
+    {
+      "country": "mexico",
+      "platform": "Altafonte",
+      "domain": "altafonte.com",
+      "icon": "/platform-icons/mexico/altafonte.png"
+    },
+    {
+      "country": "mexico",
+      "platform": "FaroLatino",
+      "domain": "farolatino.com",
+      "icon": "/platform-icons/mexico/farolatino.png"
+    },
+    {
+      "country": "mexico",
+      "platform": "Symphonic Distribution",
+      "domain": "symphonic.com",
+      "icon": "/platform-icons/mexico/symphonic-distribution.png"
+    },
+    {
+      "country": "mexico",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/mexico/tunecore.png"
+    },
+    {
+      "country": "mexico",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/mexico/distrokid.png"
+    }
+  ],
+  "nepal": [
+    {
+      "country": "nepal",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/nepal/tunecore.png"
+    },
+    {
+      "country": "nepal",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/nepal/distrokid.png"
+    },
+    {
+      "country": "nepal",
+      "platform": "CD Baby",
+      "domain": "cdbaby.com",
+      "icon": "/platform-icons/nepal/cd-baby.png"
+    },
+    {
+      "country": "nepal",
+      "platform": "RouteNote",
+      "domain": "routenote.com",
+      "icon": "/platform-icons/nepal/routenote.png"
+    },
+    {
+      "country": "nepal",
+      "platform": "Ditto Music",
+      "domain": "dittomusic.com",
+      "icon": "/platform-icons/nepal/ditto-music.png"
+    },
+    {
+      "country": "nepal",
+      "platform": "SwaLay",
+      "domain": "swalay.com",
+      "icon": "/platform-icons/nepal/swalay.png"
+    }
+  ],
+  "nigeria": [
+    {
+      "country": "nigeria",
+      "platform": "Freeme Digital",
+      "domain": "freemedigital.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "nigeria",
+      "platform": "MAD Solutions",
+      "domain": "madsolutions.com",
+      "icon": "/platform-icons/nigeria/mad-solutions.png"
+    },
+    {
+      "country": "nigeria",
+      "platform": "Boomplay",
+      "domain": "boomplay.com",
+      "icon": "/platform-icons/nigeria/boomplay.png"
+    },
+    {
+      "country": "nigeria",
+      "platform": "Africori",
+      "domain": "africori.com",
+      "icon": "/platform-icons/nigeria/africori.png"
+    },
+    {
+      "country": "nigeria",
+      "platform": "ONErpm",
+      "domain": "onerpm.com",
+      "icon": "/platform-icons/nigeria/onerpm.png"
+    },
+    {
+      "country": "nigeria",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/nigeria/tunecore.png"
+    }
+  ],
+  "pakistan": [
+    {
+      "country": "pakistan",
+      "platform": "Patari",
+      "domain": "patari.pk",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "pakistan",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/pakistan/tunecore.png"
+    },
+    {
+      "country": "pakistan",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/pakistan/distrokid.png"
+    },
+    {
+      "country": "pakistan",
+      "platform": "CD Baby",
+      "domain": "cdbaby.com",
+      "icon": "/platform-icons/pakistan/cd-baby.png"
+    },
+    {
+      "country": "pakistan",
+      "platform": "Ditto Music",
+      "domain": "dittomusic.com",
+      "icon": "/platform-icons/pakistan/ditto-music.png"
+    },
+    {
+      "country": "pakistan",
+      "platform": "RouteNote",
+      "domain": "routenote.com",
+      "icon": "/platform-icons/pakistan/routenote.png"
+    }
+  ],
+  "philippines": [
+    {
+      "country": "philippines",
+      "platform": "Believe",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "philippines",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/philippines/tunecore.png"
+    },
+    {
+      "country": "philippines",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/philippines/distrokid.png"
+    },
+    {
+      "country": "philippines",
+      "platform": "CD Baby",
+      "domain": "cdbaby.com",
+      "icon": "/platform-icons/philippines/cd-baby.png"
+    },
+    {
+      "country": "philippines",
+      "platform": "Viva Records",
+      "domain": "vivavicor.com",
+      "icon": "/platform-icons/philippines/viva-records.png"
+    },
+    {
+      "country": "philippines",
+      "platform": "Ditto Music",
+      "domain": "dittomusic.com",
+      "icon": "/platform-icons/philippines/ditto-music.png"
+    }
+  ],
+  "saudi-arabia": [
+    {
+      "country": "saudi-arabia",
+      "platform": "Anghami",
+      "domain": "anghami.com",
+      "icon": "/platform-icons/saudi-arabia/anghami.png"
+    },
+    {
+      "country": "saudi-arabia",
+      "platform": "Believe",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "saudi-arabia",
+      "platform": "ONErpm",
+      "domain": "onerpm.com",
+      "icon": "/platform-icons/saudi-arabia/onerpm.png"
+    },
+    {
+      "country": "saudi-arabia",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/saudi-arabia/tunecore.png"
+    },
+    {
+      "country": "saudi-arabia",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/saudi-arabia/distrokid.png"
+    },
+    {
+      "country": "saudi-arabia",
+      "platform": "CD Baby",
+      "domain": "cdbaby.com",
+      "icon": "/platform-icons/saudi-arabia/cd-baby.png"
+    }
+  ],
+  "south-africa": [
+    {
+      "country": "south-africa",
+      "platform": "Africori",
+      "domain": "africori.com",
+      "icon": "/platform-icons/south-africa/africori.png"
+    },
+    {
+      "country": "south-africa",
+      "platform": "IDOL",
+      "domain": "idol.io",
+      "icon": "/platform-icons/south-africa/idol.png"
+    },
+    {
+      "country": "south-africa",
+      "platform": "Believe",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "south-africa",
+      "platform": "Ditto Music",
+      "domain": "dittomusic.com",
+      "icon": "/platform-icons/south-africa/ditto-music.png"
+    },
+    {
+      "country": "south-africa",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/south-africa/tunecore.png"
+    },
+    {
+      "country": "south-africa",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/south-africa/distrokid.png"
+    }
+  ],
+  "spain": [
+    {
+      "country": "spain",
+      "platform": "Altafonte",
+      "domain": "altafonte.com",
+      "icon": "/platform-icons/spain/altafonte.png"
+    },
+    {
+      "country": "spain",
+      "platform": "La Cupula Music",
+      "domain": "lacupulamusic.com",
+      "icon": "/platform-icons/spain/la-cupula-music.png"
+    },
+    {
+      "country": "spain",
+      "platform": "iMusician",
+      "domain": "imusician.pro",
+      "icon": "/platform-icons/spain/imusician.png"
+    },
+    {
+      "country": "spain",
+      "platform": "Believe",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "spain",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/spain/tunecore.png"
+    },
+    {
+      "country": "spain",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/spain/distrokid.png"
+    }
+  ],
+  "sri-lanka": [
+    {
+      "country": "sri-lanka",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/sri-lanka/tunecore.png"
+    },
+    {
+      "country": "sri-lanka",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/sri-lanka/distrokid.png"
+    },
+    {
+      "country": "sri-lanka",
+      "platform": "CD Baby",
+      "domain": "cdbaby.com",
+      "icon": "/platform-icons/sri-lanka/cd-baby.png"
+    },
+    {
+      "country": "sri-lanka",
+      "platform": "Ditto Music",
+      "domain": "dittomusic.com",
+      "icon": "/platform-icons/sri-lanka/ditto-music.png"
+    },
+    {
+      "country": "sri-lanka",
+      "platform": "RouteNote",
+      "domain": "routenote.com",
+      "icon": "/platform-icons/sri-lanka/routenote.png"
+    },
+    {
+      "country": "sri-lanka",
+      "platform": "Believe",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    }
+  ],
+  "uae": [
+    {
+      "country": "uae",
+      "platform": "Anghami",
+      "domain": "anghami.com",
+      "icon": "/platform-icons/uae/anghami.png"
+    },
+    {
+      "country": "uae",
+      "platform": "PopArabia",
+      "domain": "poparabia.com",
+      "icon": "/platform-icons/uae/poparabia.png"
+    },
+    {
+      "country": "uae",
+      "platform": "Believe",
+      "domain": "believe.com",
+      "icon": null,
+      "error": "fetch failed"
+    },
+    {
+      "country": "uae",
+      "platform": "ONErpm",
+      "domain": "onerpm.com",
+      "icon": "/platform-icons/uae/onerpm.png"
+    },
+    {
+      "country": "uae",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/uae/tunecore.png"
+    },
+    {
+      "country": "uae",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/uae/distrokid.png"
+    }
+  ],
+  "uk": [
+    {
+      "country": "uk",
+      "platform": "Ditto Music",
+      "domain": "dittomusic.com",
+      "icon": "/platform-icons/uk/ditto-music.png"
+    },
+    {
+      "country": "uk",
+      "platform": "Horus Music",
+      "domain": "horusmusic.global",
+      "icon": "/platform-icons/uk/horus-music.png"
+    },
+    {
+      "country": "uk",
+      "platform": "EmuBands",
+      "domain": "emubands.com",
+      "icon": "/platform-icons/uk/emubands.png"
+    },
+    {
+      "country": "uk",
+      "platform": "AWAL",
+      "domain": "awal.com",
+      "icon": "/platform-icons/uk/awal.png"
+    },
+    {
+      "country": "uk",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/uk/tunecore.png"
+    },
+    {
+      "country": "uk",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/uk/distrokid.png"
+    }
+  ],
+  "usa": [
+    {
+      "country": "usa",
+      "platform": "DistroKid",
+      "domain": "distrokid.com",
+      "icon": "/platform-icons/usa/distrokid.png"
+    },
+    {
+      "country": "usa",
+      "platform": "TuneCore",
+      "domain": "tunecore.com",
+      "icon": "/platform-icons/usa/tunecore.png"
+    },
+    {
+      "country": "usa",
+      "platform": "CD Baby",
+      "domain": "cdbaby.com",
+      "icon": "/platform-icons/usa/cd-baby.png"
+    },
+    {
+      "country": "usa",
+      "platform": "UnitedMasters",
+      "domain": "unitedmasters.com",
+      "icon": "/platform-icons/usa/unitedmasters.png"
+    },
+    {
+      "country": "usa",
+      "platform": "Symphonic Distribution",
+      "domain": "symphonic.com",
+      "icon": "/platform-icons/usa/symphonic-distribution.png"
+    },
+    {
+      "country": "usa",
+      "platform": "Stem",
+      "domain": "stem.is",
+      "icon": "/platform-icons/usa/stem.png"
+    },
+    {
+      "country": "usa",
+      "platform": "ONErpm",
+      "domain": "onerpm.com",
+      "icon": "/platform-icons/usa/onerpm.png"
+    }
+  ]
+}

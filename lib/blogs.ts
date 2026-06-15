@@ -4,6 +4,7 @@ import path from "path";
 export interface BlogPlatformItem {
   name: string;
   logoDomain: string;
+  icon?: string;
   description: string;
   url: string;
   bestFor?: string;

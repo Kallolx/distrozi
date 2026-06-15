@@ -56,7 +56,6 @@ export default function Home() {
           <About isMobile={isMobile} />
           <WhyChoose />
           <Testimonials isMobile={isMobile} />
-          <BlogsSlider />
           <FAQ />
           <Contact />
           <Footer />

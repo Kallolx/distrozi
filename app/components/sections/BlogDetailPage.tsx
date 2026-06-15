@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/app/components/layout/Navbar";
 import Footer from "@/app/components/layout/Footer";
@@ -26,20 +26,22 @@ import {
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as any, delay },
+  transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const, delay },
 });
 
-const PlatformLogo = ({ name, logoDomain }: { name: string; logoDomain: string }) => {
+const PlatformLogo = ({ name, logoDomain, icon }: { name: string; logoDomain: string; icon?: string }) => {
   const [error, setError] = useState(false);
   const logoUrl = `https://logo.clearbit.com/${logoDomain.toLowerCase().trim()}`;
+  const imageUrl = icon || logoUrl;
+  const isLandr = name.trim().toLowerCase() === "landr";
 
   return (
-    <div className="w-14 h-14 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center overflow-hidden shrink-0 shadow-lg relative transition-colors duration-300">
+    <div className={`w-14 h-14 rounded-xl border flex items-center justify-center overflow-hidden shrink-0 shadow-lg relative transition-colors duration-300 ${isLandr ? "bg-white/90 border-white/20" : "bg-white/5 border-white/10"}`}>
       {!error ? (
         <img
-          src={logoUrl}
+          src={imageUrl}
           alt={`${name} logo`}
-          className="w-10 h-10 object-contain p-1 filter brightness-100 transition-transform duration-300"
+          className={`w-10 h-10 object-contain p-1 filter brightness-100 transition-transform duration-300 ${isLandr ? "scale-110" : ""}`}
           onError={() => setError(true)}
         />
       ) : (
@@ -61,13 +63,7 @@ export default function BlogDetailPage({
   relatedBlogs,
 }: BlogDetailPageProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  const [shareUrl, setShareUrl] = useState("");
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setShareUrl(window.location.href);
-    }
-  }, []);
+  const [shareUrl] = useState(() => (typeof window !== "undefined" ? window.location.href : ""));
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -136,7 +132,7 @@ export default function BlogDetailPage({
       <Navbar />
 
       <div className="relative z-10 w-full pt-32 pb-24">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col gap-8">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col gap-8">
           
           {/* Header & Navigation Group (Reduced vertical gap under Back button) */}
           <div className="flex flex-col gap-4 text-left">
@@ -273,7 +269,7 @@ export default function BlogDetailPage({
                           </div>
 
                           <div className="flex flex-col sm:flex-row items-start gap-4 text-left w-full md:w-3/4">
-                            <PlatformLogo name={plat.name} logoDomain={plat.logoDomain} />
+                            <PlatformLogo name={plat.name} logoDomain={plat.logoDomain} icon={plat.icon} />
                             <div className="flex flex-col gap-2">
                               <div className="flex flex-wrap items-center gap-2.5">
                                 <h4 className="text-lg font-bold text-white tracking-tight">
@@ -293,11 +289,6 @@ export default function BlogDetailPage({
                               <p className="text-sm text-white/60 leading-relaxed">
                                 {plat.description}
                               </p>
-                              {plat.pricing && (
-                                <div className="text-xs text-white/40 font-medium">
-                                  Pricing: <span className="text-white/80">{plat.pricing}</span>
-                                </div>
-                              )}
                               {plat.pros && plat.pros.length > 0 && (
                                 <div className="flex flex-wrap gap-x-4 gap-y-1.5 mt-1">
                                   {plat.pros.map((pro, pIdx) => (
@@ -524,7 +515,7 @@ export default function BlogDetailPage({
                   Take Your Music Distribution Global
                 </h2>
                 <p className="text-white/95 text-sm sm:text-base max-w-lg drop-shadow-sm">
-                  Distribute your tracks to 150+ stores, keep 100% rights, and access YouTube CMS tools with Distrozi.
+                  Distribute your tracks to 150+ stores, manage your catalog, and access YouTube CMS tools with Distrozi.
                 </p>
                 <Button
                   as="a"
@@ -533,7 +524,7 @@ export default function BlogDetailPage({
                   size="md"
                   className="mt-2 bg-white text-black hover:bg-gray-100 border-none px-8 font-semibold"
                 >
-                  Get Started Free
+                  Get Started
                 </Button>
               </div>
             </motion.div>
