@@ -222,6 +222,14 @@ export default function Footer() {
                   Guides
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/support"
+                  className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors duration-200"
+                >
+                  Support
+                </Link>
+              </li>
             </ul>
           </div>
 
