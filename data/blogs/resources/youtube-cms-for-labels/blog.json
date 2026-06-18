@@ -4,9 +4,9 @@
   "title": "YouTube CMS for Labels",
   "metaTitle": "YouTube CMS for Labels | Distrozi Music Distribution",
   "metaDescription": "Read about YouTube CMS for Labels. Learn how to distribute your music globally, protect copyrights, and maximize streaming royalties with Distrozi.",
-  "publishDate": "2026-05-21",
+  "publishDate": "2026-05-31",
   "author": "Distrozi Editorial Team",
-  "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&auto=format&fit=crop",
+  "image": "/blogs/resources/yt-labels.avif",
   "readTime": "5 min read",
   "content": [
     {
@@ -85,6 +85,10 @@
   },
   "relatedSlugs": [
     "music-distribution-for-record-labels",
-    "music-distribution-for-independent-labels"
+    "music-distribution-for-independent-labels",
+    "white-label-music-distribution",
+    "music-distribution-api-solutions",
+    "distribution-for-music-companies",
+    "distribution-for-music-publishers"
   ]
 }

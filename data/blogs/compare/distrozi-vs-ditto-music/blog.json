@@ -4,9 +4,9 @@
   "title": "Distrozi vs Ditto Music",
   "metaTitle": "Distrozi vs Ditto Music | Distrozi Music Distribution",
   "metaDescription": "Read about Distrozi vs Ditto Music. Learn how to distribute your music globally, protect copyrights, and maximize streaming royalties with Distrozi.",
-  "publishDate": "2026-05-20",
+  "publishDate": "2026-06-04",
   "author": "Distrozi Editorial Team",
-  "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&auto=format&fit=crop",
+  "image": "/blogs/compares/disvsditto.avif",
   "readTime": "5 min read",
   "content": [
     {
@@ -47,17 +47,16 @@
         {
           "name": "Distrozi",
           "logoDomain": "distrozi.com",
-          "icon": "/platform-icons/platforms/distrozi.png",
           "description": "Premium distribution alternative with transparent pricing, zero hidden fees, and lifetime catalog protection.",
           "url": "https://distrozi.com",
           "bestFor": "Best Overall",
+          "rating": "4.9/5",
+          "pricing": "Flat Annual Fee / Splits",
           "pros": [
             "Music stays live forever",
             "Direct bank payouts",
             "YouTube CMS integration"
-          ],
-          "rating": "4.9/5",
-          "pricing": "Flat Annual Fee / Splits"
+          ]
         },
         {
           "name": "Ditto Music",
@@ -128,6 +127,10 @@
   },
   "relatedSlugs": [
     "distrozi-vs-distrokid",
-    "distrozi-vs-tunecore"
+    "distrozi-vs-tunecore",
+    "distrozi-vs-cd-baby",
+    "distrozi-vs-routenote",
+    "distrozi-vs-amuse",
+    "distrozi-vs-onerpm"
   ]
 }

@@ -28,6 +28,12 @@ export default function FAQPage() {
           "fastest-music-distribution-service",
           "free-music-distribution-with-youtube-content-id",
           "best-music-distributor-2026",
+          "how-royalties-are-calculated",
+          "music-distribution-pricing-comparison",
+          "isrc-explained",
+          "upc-explained",
+          "ddex-explained",
+          "how-youtube-content-id-works",
         ]}
       />
     </ServiceLayout>

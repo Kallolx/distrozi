@@ -4,9 +4,9 @@
   "title": "Distrozi vs Too Lost",
   "metaTitle": "Distrozi vs Too Lost | Distrozi Music Distribution",
   "metaDescription": "Read about Distrozi vs Too Lost. Learn how to distribute your music globally, protect copyrights, and maximize streaming royalties with Distrozi.",
-  "publishDate": "2026-05-19",
+  "publishDate": "2026-05-29",
   "author": "Distrozi Editorial Team",
-  "image": "https://images.unsplash.com/photo-1487180142328-0c4e37023af5?w=800&auto=format&fit=crop",
+  "image": "/blogs/compares/disvstoo.avif",
   "readTime": "5 min read",
   "content": [
     {
@@ -47,17 +47,16 @@
         {
           "name": "Distrozi",
           "logoDomain": "distrozi.com",
-          "icon": "/platform-icons/platforms/distrozi.png",
           "description": "Premium distribution alternative with transparent pricing, zero hidden fees, and lifetime catalog protection.",
           "url": "https://distrozi.com",
           "bestFor": "Best Overall",
+          "rating": "4.9/5",
+          "pricing": "Flat Annual Fee / Splits",
           "pros": [
             "Music stays live forever",
             "Direct bank payouts",
             "YouTube CMS integration"
-          ],
-          "rating": "4.9/5",
-          "pricing": "Flat Annual Fee / Splits"
+          ]
         },
         {
           "name": "Too Lost",
@@ -128,6 +127,10 @@
   },
   "relatedSlugs": [
     "distrozi-vs-distrokid",
-    "distrozi-vs-tunecore"
+    "distrozi-vs-tunecore",
+    "distrozi-vs-cd-baby",
+    "distrozi-vs-routenote",
+    "distrozi-vs-ditto-music",
+    "distrozi-vs-amuse"
   ]
 }

@@ -205,6 +205,11 @@ export default function AboutPage() {
               "best-music-distribution-companies",
               "best-music-distributor-with-publishing-administration",
               "free-music-distribution-for-independent-artists",
+              "music-distribution-for-record-labels",
+              "white-label-music-distribution",
+              "distribution-for-music-companies",
+              "what-is-music-distribution",
+              "how-to-release-music-worldwide",
             ]}
           />
 

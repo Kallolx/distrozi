@@ -4,9 +4,9 @@
   "title": "Music Distribution API Solutions",
   "metaTitle": "Music Distribution API Solutions | Distrozi Music Distribution",
   "metaDescription": "Read about Music Distribution API Solutions. Learn how to distribute your music globally, protect copyrights, and maximize streaming royalties with Distrozi.",
-  "publishDate": "2026-06-08",
+  "publishDate": "2026-06-09",
   "author": "Distrozi Editorial Team",
-  "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop",
+  "image": "/blogs/resources/music-api.avif",
   "readTime": "5 min read",
   "content": [
     {
@@ -85,6 +85,10 @@
   },
   "relatedSlugs": [
     "music-distribution-for-record-labels",
-    "music-distribution-for-independent-labels"
+    "music-distribution-for-independent-labels",
+    "white-label-music-distribution",
+    "distribution-for-music-companies",
+    "distribution-for-music-publishers",
+    "youtube-cms-for-labels"
   ]
 }

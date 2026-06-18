@@ -4,7 +4,7 @@
   "title": "Free Music Distribution for Spotify",
   "metaTitle": "Free Music Distribution for Spotify | Distrozi Music Distribution",
   "metaDescription": "Read about Free Music Distribution for Spotify. Learn how to distribute your music globally, protect copyrights, and maximize streaming royalties with Distrozi.",
-  "publishDate": "2026-05-25",
+  "publishDate": "2026-05-28",
   "author": "Distrozi Editorial Team",
   "image": "/blogs/free-spotify.avif",
   "readTime": "5 min read",
@@ -15,7 +15,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Below, we outline the leading platforms, structuring their workflow models, pros, cons, and explaining which types of artists or labels they fit best."
+      "text": "Below, we outline the leading platforms, structuring their pricing models, pros, cons, and explaining which types of artists or labels they fit best."
     },
     {
       "type": "heading",
@@ -23,7 +23,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Distrozi is positioned for artists, managers, and labels that want distribution, catalog control, YouTube CMS support, and release operations handled in one place. It is a strong fit when the priority is clean metadata, reliable delivery, and long-term control of a growing catalog rather than only uploading a single release. For Spotify-focused releases, compare how each platform handles artist profile readiness, release timing, credit metadata, pre-save planning, and updates after the track is live."
+      "text": "Modern alternative for labels and artists wanting direct local withdrawals and Content ID without heavy commissions."
     },
     {
       "type": "heading",
@@ -31,7 +31,7 @@
     },
     {
       "type": "paragraph",
-      "text": "RouteNote gives independent artists a straightforward route into major DSPs with flexible account paths and simple catalog controls. It is often considered by creators who want an accessible release workflow while still paying attention to metadata quality, store availability, and future catalog changes. For Spotify-focused releases, compare how each platform handles artist profile readiness, release timing, credit metadata, pre-save planning, and updates after the track is live."
+      "text": "Provides a flexible model with a 100% free tier (taking a small 15% split) delivering to all major DSPs globally."
     },
     {
       "type": "heading",
@@ -39,7 +39,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Amuse is designed around a lightweight artist workflow with mobile-friendly release management. It can suit newer independent artists who want a simple dashboard, but releases still need proper planning, artwork checks, artist profile readiness, and clear ownership information before submission. For Spotify-focused releases, compare how each platform handles artist profile readiness, release timing, credit metadata, pre-save planning, and updates after the track is live."
+      "text": "Offers mobile-first catalog management and a basic free tier for emerging independent solo artists."
     },
     {
       "type": "heading",
@@ -47,7 +47,7 @@
     },
     {
       "type": "paragraph",
-      "text": "SoundOn is closely tied to TikTok and short-form discovery, making it relevant for artists who build audience momentum through social video. It is useful to compare when a release strategy depends on creator content, clips, trends, and fast audience testing around the track. For Spotify-focused releases, compare how each platform handles artist profile readiness, release timing, credit metadata, pre-save planning, and updates after the track is live."
+      "text": "TikTok's native distributor, offering free uploads and direct promotional integrations within the ByteDance network."
     },
     {
       "type": "heading",
@@ -55,15 +55,11 @@
     },
     {
       "type": "paragraph",
-      "text": "ONErpm combines distribution with marketing, analytics, and label-service style support for selected catalogs. It can be a good comparison point for artists and teams that want more than basic delivery, especially when campaign planning and audience development matter. For Spotify-focused releases, compare how each platform handles artist profile readiness, release timing, credit metadata, pre-save planning, and updates after the track is live."
+      "text": "Free distribution taking a 15% split, with strong marketing tools and play analytics."
     },
     {
       "type": "heading",
-      "text": "Recommended Platforms to Compare"
-    },
-    {
-      "type": "paragraph",
-      "text": "Spotify-focused releases need dependable metadata, artist profile readiness, pitch timing, and a distributor that makes updates easy before and after release day."
+      "text": "Top Free Music Distribution Platforms Compared"
     },
     {
       "type": "platforms",
@@ -71,79 +67,71 @@
         {
           "name": "Distrozi",
           "logoDomain": "distrozi.com",
-          "icon": "/platform-icons/platforms/distrozi.png",
-          "description": "Distrozi is built for artists and labels that need global DSP delivery, YouTube CMS support, catalog management, and release operations from one dashboard. For Spotify-focused releases, it is most useful when paired with careful profile setup, release timing, and clean credit metadata.",
+          "description": "Modern alternative for labels and artists wanting direct local withdrawals and Content ID without heavy commissions.",
           "url": "https://distrozi.com",
-          "bestFor": "Catalog Control",
+          "bestFor": "Best Premium Alt",
+          "rating": "4.9/5",
+          "pricing": "Flat Annual Fee / Splits",
           "pros": [
-            "Global delivery",
-            "YouTube CMS support",
-            "Catalog workflow"
-          ]
-        },
-        {
-          "name": "DistroKid",
-          "logoDomain": "distrokid.com",
-          "icon": "/platform-icons/platforms/distrokid.png",
-          "description": "DistroKid is a familiar self-service distributor for artists who want quick upload workflows and wide DSP availability. For Spotify-focused releases, it is most useful when paired with careful profile setup, release timing, and clean credit metadata.",
-          "url": "https://distrokid.com",
-          "bestFor": "Fast Releases",
-          "pros": [
-            "Fast release setup",
-            "Broad DSP delivery",
-            "Artist dashboard"
-          ]
-        },
-        {
-          "name": "TuneCore",
-          "logoDomain": "tunecore.com",
-          "icon": "/platform-icons/platforms/tunecore.png",
-          "description": "TuneCore suits artists who want established store delivery, creator tools, and publishing-related options in a self-service workflow. For Spotify-focused releases, it is most useful when paired with careful profile setup, release timing, and clean credit metadata.",
-          "url": "https://tunecore.com",
-          "bestFor": "Publishing Tools",
-          "pros": [
-            "Established platform",
-            "Publishing options",
-            "Global delivery"
+            "Direct local withdrawals",
+            "YouTube Content ID included",
+            "Keep 100% rights"
           ]
         },
         {
           "name": "RouteNote",
           "logoDomain": "routenote.com",
-          "icon": "/platform-icons/platforms/routenote.png",
-          "description": "RouteNote gives independent artists a straightforward route into major DSPs with flexible account paths and simple catalog controls.",
+          "description": "Provides a flexible model with a 100% free tier (taking a small 15% split) delivering to all major DSPs globally.",
           "url": "https://routenote.com",
-          "bestFor": "Flexible Setup",
+          "bestFor": "Flexible Commission",
+          "rating": "4.4/5",
+          "pricing": "Free (15% split)",
           "pros": [
-            "Simple setup",
-            "Global store access",
-            "Flexible workflow"
+            "Keep 85% royalties",
+            "Optional premium upgrade",
+            "All major DSPs"
           ]
         },
         {
           "name": "Amuse",
           "logoDomain": "amuse.io",
-          "icon": "/platform-icons/platforms/amuse.png",
-          "description": "Amuse is designed around a lightweight artist workflow, making it useful for creators who prefer simple release management.",
+          "description": "Offers mobile-first catalog management and a basic free tier for emerging independent solo artists.",
           "url": "https://amuse.io",
-          "bestFor": "Mobile Workflow",
+          "bestFor": "Mobile Uploads",
+          "rating": "4.3/5",
+          "pricing": "Free basic plan",
           "pros": [
-            "Mobile-friendly tools",
-            "Simple release flow",
-            "Artist dashboard"
+            "Smartphone app dashboard",
+            "Simple split payments",
+            "Clean UI"
           ]
         },
         {
-          "name": "CD Baby",
-          "logoDomain": "cdbaby.com",
-          "icon": "/platform-icons/platforms/cd-baby.png",
-          "description": "CD Baby is a long-running distributor often used by artists who want a structured release path and catalog-oriented tools. For Spotify-focused releases, it is most useful when paired with careful profile setup, release timing, and clean credit metadata.",
-          "url": "https://cdbaby.com",
-          "bestFor": "Catalog Support",
+          "name": "SoundOn",
+          "logoDomain": "soundon.global",
+          "description": "TikTok's native distributor, offering free uploads and direct promotional integrations within the ByteDance network.",
+          "url": "https://www.soundon.global",
+          "bestFor": "TikTok Artists",
+          "rating": "4.5/5",
+          "pricing": "Free (TikTok priority)",
           "pros": [
-            "Established distributor",
-            "Catalog tools",
-            "Release support"
+            "TikTok library priority",
+            "Keep 100% on TikTok",
+            "ByteDance promotions"
+          ]
+        },
+        {
+          "name": "ONErpm",
+          "logoDomain": "onerpm.com",
+          "description": "Free distribution taking a 15% split, with strong marketing tools and play analytics.",
+          "url": "https://onerpm.com",
+          "bestFor": "Marketing Tools",
+          "rating": "4.2/5",
+          "pricing": "Free (15% split)",
+          "pros": [
+            "Advanced marketing tools",
+            "Free uploading",
+            "Global store reach"
           ]
         }
       ]
@@ -169,7 +157,7 @@
     "rows": [
       [
         "Master Ownership",
-        "Artist retains platform",
+        "Artist retains 100%",
         "Label owns masters"
       ],
       [
@@ -179,8 +167,8 @@
       ],
       [
         "Royalty Share Split",
-        "artist manages direct catalog terms",
-        "artist terms vary by agreement"
+        "Artist keeps up to 100%",
+        "Artist gets 15% - 50% split"
       ],
       [
         "Release Speed",
@@ -191,6 +179,10 @@
   },
   "relatedSlugs": [
     "best-music-distribution",
-    "best-music-distributor-2026"
+    "best-music-distributor-2026",
+    "best-music-distribution-services",
+    "best-music-distribution-companies",
+    "best-music-distributor-for-independent-artists",
+    "best-music-distributor-for-record-labels"
   ]
 }

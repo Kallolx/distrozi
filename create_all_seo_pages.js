@@ -45,22 +45,78 @@ const COUNTRY_IMAGES = {
 
 // High-Priority and Free Blog Images
 const HIGH_PRIORITY_IMAGES = {
-  "best-music-distributor-for-tiktok": "/blogs/distributor-tiktok.avif",
-  "best-music-distributor-for-youtube-music": "/blogs/distributor-youtube-music.avif",
-  "best-music-distributor-for-musicians": "/blogs/for-musicians.avif",
-  "free-music-distribution-for-apple-music": "/blogs/free-apple-music.avif",
-  "free-music-distribution-for-spotify": "/blogs/free-spotify.avif",
-  "free-music-distribution-with-youtube-content-id": "/blogs/free-yt-content-id.avif",
-  "best-music-distributor-for-independent-artists": "/blogs/independent-artist.avif",
-  "free-music-distribution-for-independent-artists": "/blogs/independent-artist.avif",
-  "best-music-distributor-for-international-artists": "/blogs/international-artist.avif",
-  "most-affordable-music-distribution-service": "/blogs/most-affortable-distribution.avif",
+  "best-music-distribution": "/blogs/best-dist.avif",
   "best-music-distributor-2026": "/blogs/music-distributor.avif",
-  "best-music-distribution": "/blogs/music-distributor.avif",
-  "best-music-distribution-services": "/blogs/music-distributor.avif",
-  "best-music-distribution-companies": "/blogs/music-distributor.avif",
-  "best-free-music-distribution": "/blogs/music-distributor.avif"
+  "best-music-distribution-services": "/blogs/best-service.avif",
+  "best-music-distribution-companies": "/blogs/best-dist-com.avif",
+  "best-music-distributor-for-independent-artists": "/blogs/independent-artist.avif",
+  "best-music-distributor-for-record-labels": "/blogs/best-record.avif",
+  "best-music-distributor-for-musicians": "/blogs/for-musicians.avif",
+  "best-music-distributor-for-spotify": "/blogs/best-spotify.avif",
+  "best-music-distributor-for-apple-music": "/blogs/best-apple.avif",
+  "best-music-distributor-for-youtube-music": "/blogs/best-youtube.avif",
+  "best-music-distributor-for-tiktok": "/blogs/distributor-tiktok.avif",
+  "best-music-distributor-with-youtube-content-id": "/blogs/free-yt-content-id.avif",
+  "best-music-distributor-with-publishing-administration": "/blogs/best-music.avif",
+  "best-music-distributor-for-global-distribution": "/blogs/best-global.avif",
+  "best-music-distributor-for-international-artists": "/blogs/international-artist.avif",
+  "fastest-music-distribution-service": "/blogs/fast-distributor.avif",
+  "most-affordable-music-distribution-service": "/blogs/most-affortable-distribution.avif",
+  "best-free-music-distribution": "/blogs/best-free.avif",
+  "top-free-music-distribution-companies": "/blogs/free-dist.avif",
+  "free-music-distribution-for-spotify": "/blogs/free-spotify.avif",
+  "free-music-distribution-for-apple-music": "/blogs/free-apple-music.avif",
+  "free-music-distribution-with-youtube-content-id": "/blogs/free-yt-content-id.avif",
+  "free-music-distribution-for-independent-artists": "/blogs/independent-artist.avif",
+  "free-music-distribution-for-labels": "/blogs/free-labels.avif"
 };
+
+// Competitor comparison images mapping
+const COMPARE_IMAGES = {
+  "Amuse": "/blogs/compares/disvsamus.avif",
+  "AWAL": "/blogs/compares/disvsawa.avif",
+  "CD Baby": "/blogs/compares/disvscdba.avif",
+  "DistroKid": "/blogs/compares/disvsdist.avif",
+  "Ditto Music": "/blogs/compares/disvsditto.avif",
+  "LANDR": "/blogs/compares/disvsland.avif",
+  "ONErpm": "/blogs/compares/disvsoner.avif",
+  "RouteNote": "/blogs/compares/disvsroute.avif",
+  "SoundOn": "/blogs/compares/disvssound.avif",
+  "Symphonic": "/blogs/compares/disvssymp.avif",
+  "Too Lost": "/blogs/compares/disvstoo.avif",
+  "TuneCore": "/blogs/compares/disvstune.avif",
+  "UnitedMasters": "/blogs/compares/disvsunined.avif"
+};
+
+// Resources images mapping
+const RESOURCE_IMAGES = {
+  "music-distribution-for-record-labels": "/blogs/resources/dist-mus-reco.avif",
+  "music-distribution-for-independent-labels": "/blogs/resources/dist-mus-indepe.avif",
+  "white-label-music-distribution": "/blogs/resources/white-label.avif",
+  "music-distribution-api-solutions": "/blogs/resources/music-api.avif",
+  "distribution-for-music-companies": "/blogs/resources/dist-mus-com.avif",
+  "distribution-for-music-publishers": "/blogs/resources/dist-mus-publi.avif",
+  "youtube-cms-for-labels": "/blogs/resources/yt-labels.avif",
+  "youtube-content-id-for-labels": "/blogs/resources/yt-content-label.avif"
+};
+
+// Guides images mapping
+const GUIDE_IMAGES = {
+  "what-is-music-distribution": "/blogs/guides/what-mus-dist.avif",
+  "how-music-distribution-works": "/blogs/guides/how-music-dist-work.avif",
+  "how-to-release-music-worldwide": "/blogs/guides/release-music.avif",
+  "how-to-upload-music-to-spotify": "/blogs/guides/how-spotify.avif",
+  "how-to-upload-music-to-apple-music": "/blogs/guides/upload-apple.avif",
+  "how-to-upload-music-to-youtube-music": "/blogs/guides/how-upload-ytmusic.avif",
+  "how-youtube-content-id-works": "/blogs/guides/yt-contentid.avif",
+  "how-tiktok-music-monetization-works": "/blogs/guides/tiktok-moniti.avif",
+  "how-royalties-are-calculated": "/blogs/guides/royalti-calcu.avif",
+  "music-distribution-pricing-comparison": "/blogs/guides/pricing-compa.avif",
+  "ddex-explained": "/blogs/guides/ddex.avif",
+  "isrc-explained": "/blogs/guides/isrc.avif",
+  "upc-explained": "/blogs/guides/upc.avif"
+};
+
 
 // Rich Country Profiles for Localized Pages
 const countryProfiles = {
@@ -695,10 +751,10 @@ function generateBlogContent(item, idx) {
     });
   }
 
-  // Related articles (pull two slugs dynamically)
+  // Related articles (pull six slugs dynamically)
   const relSlugs = PAGES_DATA
     .filter(p => p.category === item.category && p.title !== item.title)
-    .slice(0, 2)
+    .slice(0, 6)
     .map(p => makeSlug(p.title));
 
   let imgUrl = UNSPLASH_IMAGES[idx % UNSPLASH_IMAGES.length];
@@ -706,6 +762,12 @@ function generateBlogContent(item, idx) {
   // Set the local country AVIF image if applicable
   if (item.country && COUNTRY_IMAGES[item.country]) {
     imgUrl = COUNTRY_IMAGES[item.country];
+  } else if (item.category === "compare" && COMPARE_IMAGES[item.competitor]) {
+    imgUrl = COMPARE_IMAGES[item.competitor];
+  } else if (item.category === "resources" && RESOURCE_IMAGES[slug]) {
+    imgUrl = RESOURCE_IMAGES[slug];
+  } else if (item.category === "guide" && GUIDE_IMAGES[slug]) {
+    imgUrl = GUIDE_IMAGES[slug];
   } else if (HIGH_PRIORITY_IMAGES[slug]) {
     imgUrl = HIGH_PRIORITY_IMAGES[slug];
   }

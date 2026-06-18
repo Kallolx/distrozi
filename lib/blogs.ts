@@ -134,5 +134,5 @@ export function getRelatedBlogs(blog: BlogData): BlogData[] {
   
   return allBlogs
     .filter((b) => b.category === blog.category && b.slug !== blog.slug)
-    .slice(0, 3);
+    .slice(0, 6);
 }

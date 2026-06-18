@@ -116,7 +116,7 @@ export default function RelatedBlogsGrid({
                   className="flex flex-col h-full"
                 >
                   <Link
-                    href={`/blog/${blog.slug}`}
+                    href={`/${blog.category === "guide" ? "guides" : blog.category || "blog"}/${blog.slug}`}
                     className="group flex flex-col gap-4 text-left h-full"
                   >
                     <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-white/5 border border-white/5">

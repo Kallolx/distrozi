@@ -8,13 +8,15 @@ import BorderGlow from "@/components/BorderGlow";
 import Button from "../ui/Button";
 import { BlogData } from "@/lib/blogs";
 import Link from "next/link";
+import useEmblaCarousel from "embla-carousel-react";
 import { 
   Calendar, 
   Clock, 
   ArrowLeft, 
   Plus, 
   Minus,
-  Share2
+  Share2,
+  Disc
 } from "lucide-react";
 import {
   RiFacebookCircleFill,
@@ -29,9 +31,74 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const, delay },
 });
 
+const LOCAL_LOGOS: Record<string, string> = {
+  "distrozi.com": "/platform-icons/platforms/distrozi.png",
+  "distrokid.com": "/platform-icons/platforms/distrokid.png",
+  "tunecore.com": "/platform-icons/platforms/tunecore.png",
+  "cdbaby.com": "/platform-icons/platforms/cd-baby.png",
+  "routenote.com": "/platform-icons/platforms/routenote.png",
+  "dittomusic.com": "/platform-icons/platforms/ditto-music.png",
+  "amuse.com": "/platform-icons/platforms/amuse.png",
+  "amuse.io": "/platform-icons/platforms/amuse.png",
+  "onerpm.com": "/platform-icons/platforms/onerpm.png",
+  "toolost.com": "/platform-icons/platforms/too-lost.png",
+  "symphonic.com": "/platform-icons/platforms/symphonic-distribution.png",
+  "unitedmasters.com": "/platform-icons/platforms/unitedmasters.png",
+  "landr.com": "/platform-icons/platforms/landr.png",
+  "soundon.com": "/platform-icons/platforms/soundon.png",
+  "soundon.global": "/platform-icons/platforms/soundon.png",
+  "awal.com": "/platform-icons/platforms/awal.png",
+  "oklisten.com": "/platform-icons/platforms/oklisten.png",
+  "boomplay.com": "/platform-icons/platforms/boomplay-for-artists.png",
+  "distrozi": "/platform-icons/platforms/distrozi.png",
+  "distrokid": "/platform-icons/platforms/distrokid.png",
+  "tunecore": "/platform-icons/platforms/tunecore.png",
+  "cd baby": "/platform-icons/platforms/cd-baby.png",
+  "routenote": "/platform-icons/platforms/routenote.png",
+  "ditto music": "/platform-icons/platforms/ditto-music.png",
+  "amuse": "/platform-icons/platforms/amuse.png",
+  "onerpm": "/platform-icons/platforms/onerpm.png",
+  "too lost": "/platform-icons/platforms/too-lost.png",
+  "symphonic": "/platform-icons/platforms/symphonic-distribution.png",
+  "unitedmasters": "/platform-icons/platforms/unitedmasters.png",
+  "landr": "/platform-icons/platforms/landr.png",
+  "soundon": "/platform-icons/platforms/soundon.png",
+  "awal": "/platform-icons/platforms/awal.png",
+  "ok listen": "/platform-icons/platforms/oklisten.png",
+  "boomplay distribution": "/platform-icons/platforms/boomplay-for-artists.png",
+};
+
+const getLocalLogo = (name: string, domain: string) => {
+  const normDomain = domain.toLowerCase().trim();
+  const normName = name.toLowerCase().trim().replace(/[^a-z0-9]/g, "");
+
+  if (LOCAL_LOGOS[normDomain]) return LOCAL_LOGOS[normDomain];
+  if (LOCAL_LOGOS[normName]) return LOCAL_LOGOS[normName];
+
+  if (normName.includes("distrozi")) return "/platform-icons/platforms/distrozi.png";
+  if (normName.includes("distrokid")) return "/platform-icons/platforms/distrokid.png";
+  if (normName.includes("tunecore")) return "/platform-icons/platforms/tunecore.png";
+  if (normName.includes("cdbaby")) return "/platform-icons/platforms/cd-baby.png";
+  if (normName.includes("routenote")) return "/platform-icons/platforms/routenote.png";
+  if (normName.includes("dittomusic") || normName === "ditto") return "/platform-icons/platforms/ditto-music.png";
+  if (normName.includes("amuse")) return "/platform-icons/platforms/amuse.png";
+  if (normName.includes("onerpm")) return "/platform-icons/platforms/onerpm.png";
+  if (normName.includes("toolost") || normName.includes("lost")) return "/platform-icons/platforms/too-lost.png";
+  if (normName.includes("symphonic")) return "/platform-icons/platforms/symphonic-distribution.png";
+  if (normName.includes("unitedmasters")) return "/platform-icons/platforms/unitedmasters.png";
+  if (normName.includes("landr")) return "/platform-icons/platforms/landr.png";
+  if (normName.includes("soundon")) return "/platform-icons/platforms/soundon.png";
+  if (normName.includes("awal")) return "/platform-icons/platforms/awal.png";
+  if (normName.includes("oklisten")) return "/platform-icons/platforms/oklisten.png";
+  if (normName.includes("boomplay")) return "/platform-icons/platforms/boomplay-for-artists.png";
+
+  return null;
+};
+
 const PlatformLogo = ({ name, logoDomain, icon }: { name: string; logoDomain: string; icon?: string }) => {
   const [error, setError] = useState(false);
-  const logoUrl = `https://logo.clearbit.com/${logoDomain.toLowerCase().trim()}`;
+  const localLogo = getLocalLogo(name, logoDomain);
+  const logoUrl = localLogo || `https://logo.clearbit.com/${logoDomain.toLowerCase().trim()}`;
   const imageUrl = icon || logoUrl;
   const isLandr = name.trim().toLowerCase() === "landr";
 
@@ -45,8 +112,8 @@ const PlatformLogo = ({ name, logoDomain, icon }: { name: string; logoDomain: st
           onError={() => setError(true)}
         />
       ) : (
-        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#f3c343]/20 to-amber-600/10 text-[#f3c343] text-xl font-bold uppercase tracking-wider">
-          {name ? name.charAt(0) : "M"}
+        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#f3c343]/20 to-amber-600/10 text-[#f3c343]">
+          <Disc size={24} className="animate-spin" style={{ animationDuration: '6s' }} />
         </div>
       )}
     </div>
@@ -64,6 +131,13 @@ export default function BlogDetailPage({
 }: BlogDetailPageProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [shareUrl] = useState(() => (typeof window !== "undefined" ? window.location.href : ""));
+  
+  const [emblaRef] = useEmblaCarousel({
+    loop: false,
+    dragFree: true,
+    align: "start",
+    containScroll: "trimSnaps",
+  });
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
@@ -462,42 +536,57 @@ export default function BlogDetailPage({
             </section>
           )}
 
-          {/* Related Articles Section - Re-styled as minimalist cards */}
+          {/* Related Articles Section - Styled as slider with smaller cards */}
           {relatedBlogs && relatedBlogs.length > 0 && (
-            <section className="flex flex-col gap-6 border-t border-white/5 pt-10 text-left">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+            <section className="flex flex-col gap-6 border-t border-white/5 pt-10 text-left w-full overflow-hidden">
+              <h2 className="text-xl sm:text-2xl font-bold text-white">
                 Related Articles
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
-                {relatedBlogs.map((relBlog) => (
-                  <Link
-                    key={relBlog.slug}
-                    href={`/${relBlog.category === "guide" ? "guides" : relBlog.category}/${relBlog.slug}`}
-                    className="group flex flex-col gap-4 text-left h-full"
-                  >
-                    {/* Thumbnail image with rounded corners */}
-                    <div className="aspect-video w-full overflow-hidden rounded-2xl bg-white/5">
-                      <img
-                        src={relBlog.image}
-                        alt={relBlog.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <h3 className="text-base sm:text-lg font-bold text-white leading-snug group-hover:text-[#f3c343] transition-colors duration-200">
-                        {relBlog.title}
-                      </h3>
-                      {/* Date as clean gray text */}
-                      <span className="text-xs sm:text-sm text-white/40 font-medium block mt-1">
-                        {new Date(relBlog.publishDate).toLocaleDateString("en-US", {
-                          month: "short",
-                          day: "2-digit",
-                          year: "numeric",
-                        })}
-                      </span>
-                    </div>
-                  </Link>
-                ))}
+              
+              <div className="relative w-full z-10 select-none">
+                {/* Left/Right Vignette Fade Gradients */}
+                <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black via-black/10 to-transparent z-20 pointer-events-none" />
+                <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black via-black/10 to-transparent z-20 pointer-events-none" />
+
+                {/* Embla Viewport */}
+                <div className="w-full overflow-hidden" ref={emblaRef}>
+                  <div className="flex gap-4 cursor-grab active:cursor-grabbing pb-2">
+                    {relatedBlogs.map((relBlog) => (
+                      <div
+                        key={relBlog.slug}
+                        className="w-[200px] sm:w-[240px] shrink-0 flex flex-col"
+                      >
+                        <Link
+                          href={`/${relBlog.category === "guide" ? "guides" : relBlog.category || "blog"}/${relBlog.slug}`}
+                          className="group flex flex-col gap-3 text-left h-full"
+                        >
+                          {/* Thumbnail image with rounded corners */}
+                          <div className="aspect-video w-full overflow-hidden rounded-xl bg-white/5 relative">
+                            <img
+                              src={relBlog.image}
+                              alt={relBlog.title}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                              loading="lazy"
+                            />
+                          </div>
+                          <div className="flex flex-col gap-1 mt-1">
+                            <h3 className="text-sm sm:text-base font-semibold text-white leading-snug group-hover:text-[#f3c343] transition-colors duration-200 line-clamp-2 min-h-[40px]">
+                              {relBlog.title}
+                            </h3>
+                            {/* Date as clean gray text */}
+                            <span className="text-[11px] sm:text-xs text-white/40 font-medium block mt-0.5">
+                              {new Date(relBlog.publishDate).toLocaleDateString("en-US", {
+                                month: "short",
+                                day: "2-digit",
+                                year: "numeric",
+                              })}
+                            </span>
+                          </div>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </section>
           )}

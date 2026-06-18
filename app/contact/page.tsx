@@ -40,6 +40,12 @@ export default function ContactPage() {
             "best-music-distributor-for-spotify",
             "best-music-distributor-for-tiktok",
             "best-music-distributor-for-apple-music",
+            "distrozi-vs-distrokid",
+            "distrozi-vs-tunecore",
+            "distrozi-vs-too-lost",
+            "how-to-upload-music-to-spotify",
+            "how-to-upload-music-to-apple-music",
+            "how-to-upload-music-to-youtube-music",
           ]}
         />
       </div>
