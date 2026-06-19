@@ -142,6 +142,33 @@ export default function SupportClient() {
           ))}
         </div>
 
+        {/* Need custom support? */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-16 max-w-xl mx-auto w-full"
+        >
+          <div className="relative rounded-2xl bg-[#f3c343]/[0.02] border border-[#f3c343]/20 hover:border-[#f3c343]/40 p-6 text-center transition-all duration-300 shadow-[0_0_20px_rgba(243,195,67,0.02)] hover:shadow-[0_0_25px_rgba(243,195,67,0.05)]">
+            {/* Ambient gold glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(243,195,67,0.04)_0%,transparent_70%)] pointer-events-none rounded-2xl" />
+            
+            <p className="text-white/80 text-base font-semibold relative z-10 flex items-center justify-center gap-2">
+              <span>💡</span> Need custom assistance?
+            </p>
+            <p className="text-white/50 text-sm mt-1.5 relative z-10 leading-relaxed">
+              If you have any custom requests or questions not covered by the forms above, email us directly at{" "}
+              <a
+                href="mailto:support@distrozi.com"
+                className="text-[#f3c343] hover:text-[#ffd866] transition-colors font-semibold underline decoration-[#f3c343]/30 hover:decoration-[#ffd866]"
+              >
+                support@distrozi.com
+              </a>
+            </p>
+          </div>
+        </motion.div>
+
         {/* FAQ Section Integrated */}
         <div className="mt-24 border-t border-white/5 pt-8">
           <FAQ />
