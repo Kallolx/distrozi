@@ -227,7 +227,7 @@ export default function AboutPage() {
                   Ready to take your music further?
                 </h2>
                 <p className="text-white/90 text-lg max-w-xl drop-shadow-sm">
-                  Join over 10,000 artists and labels already growing with Distrozi.
+                  Join over 5,000 artists and labels already growing with Distrozi.
                 </p>
                 <Button
                   as="a"
