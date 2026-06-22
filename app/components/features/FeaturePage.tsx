@@ -394,7 +394,7 @@ export default function FeaturePage({
                 Ready to take your music further?
               </h2>
               <p className="text-white/90 text-base max-w-md drop-shadow-sm">
-                Join over 10,000 artists and labels already growing with
+                Join over 5,000 artists and labels already growing with
                 Distrozi.
               </p>
               <Button

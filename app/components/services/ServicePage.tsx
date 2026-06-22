@@ -253,38 +253,39 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       {/* ══════════════════════════════════════════════════
           4. BANNER CTA
       ══════════════════════════════════════════════════ */}
-      <section className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 pb-20">
-        <div className="h-px bg-white/[0.06] mb-20" />
+        <section className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 pb-24">
+          <motion.div
+            {...fadeUp(0)}
+            className="relative rounded-3xl overflow-hidden px-8 sm:px-14 py-14 sm:py-16 text-center"
+            style={{ background: "var(--gradient-accent)" }}
+          >
+            {/* Subtle overlay to ensure text readability */}
+            <div className="pointer-events-none absolute inset-0 bg-black/10 mix-blend-multiply" />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="relative rounded-3xl overflow-hidden border border-white/[0.08] bg-white/[0.02] px-8 sm:px-14 py-14 sm:py-16 text-center"
-        >
-          {/* Subtle gold ambient glow */}
-          <div
-            className="pointer-events-none absolute inset-0"
-            style={{
-              background:
-                "radial-gradient(ellipse at 50% 0%, rgba(243,195,67,0.08) 0%, transparent 70%)",
-            }}
-          />
-          <div className="relative z-10 flex flex-col items-center gap-5">
-            <h2 className="text-3xl sm:text-4xl font-medium text-foreground title-text max-w-xl leading-snug">
-              Take your music global
-            </h2>
-            <p className="text-muted text-base max-w-md">
-              Join over 10,000 global artists and record labels already running
-              on Distrozi.
-            </p>
-            <Button as="a" href="/apply" variant="primary" size="lg">
-              Get Started Now
-            </Button>
-          </div>
-        </motion.div>
-      </section>
+            <div className="relative z-10 flex flex-col items-center gap-5">
+              <h2 className="text-3xl sm:text-4xl font-medium text-white title-text max-w-xl shadow-black/10 drop-shadow-md">
+                Ready to take your music further?
+              </h2>
+              <p className="text-white/90 text-base max-w-md drop-shadow-sm">
+                Join over 5,000 artists and labels already growing with
+                Distrozi.
+              </p>
+              <Button
+                as="a"
+                href="/apply"
+                variant="primary"
+                size="lg"
+                className="mt-2 bg-white text-black hover:bg-gray-100"
+              >
+                Start for free
+              </Button>
+            </div>
+          </motion.div>
+        </section>
     </div>
   );
 }
+function fadeUp(arg0: number): import("react/jsx-runtime").JSX.IntrinsicAttributes & Omit<import("framer-motion").HTMLMotionProps<"div">, "ref"> & import("react").RefAttributes<HTMLDivElement> {
+  throw new Error("Function not implemented.");
+}
+
