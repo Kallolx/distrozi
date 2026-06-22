@@ -41,6 +41,15 @@ export interface ServicePageData {
   consoleType: "label" | "artist";
 }
 
+const easeOutQuart = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.65, ease: easeOutQuart, delay },
+});
+
 // ─── Component ───────────────────────────────────────────────────────────────
 
 export default function ServicePage({ data }: { data: ServicePageData }) {
@@ -284,8 +293,5 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
         </section>
     </div>
   );
-}
-function fadeUp(arg0: number): import("react/jsx-runtime").JSX.IntrinsicAttributes & Omit<import("framer-motion").HTMLMotionProps<"div">, "ref"> & import("react").RefAttributes<HTMLDivElement> {
-  throw new Error("Function not implemented.");
 }
 
