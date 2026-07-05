@@ -3,8 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  KeyRound, Search, FileText, CheckCircle, Clock, AlertTriangle, 
-  X, RefreshCw, ChevronRight
+  KeyRound, Search, X, RefreshCw, ChevronLeft, ChevronRight
 } from "lucide-react";
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
@@ -18,8 +17,10 @@ interface Ticket {
   status: "Pending" | "In Progress" | "Resolved" | "Rejected";
   date: string;
   remarks: string;
-  details: Record<string, any>;
+  details: Record<string, unknown>;
 }
+
+const PAGE_SIZE = 10;
 
 export default function AdminTicketsClient() {
   const [passcode, setPasscode] = useState("");
@@ -31,6 +32,7 @@ export default function AdminTicketsClient() {
   const [loading, setLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [statusFilter, setStatusFilter] = useState<string>("All");
+  const [currentPage, setCurrentPage] = useState(1);
   
   // Selected Ticket for Editing
   const [selectedTicket, setSelectedTicket] = useState<Ticket | null>(null);
@@ -75,6 +77,7 @@ export default function AdminTicketsClient() {
   useEffect(() => {
     const savedKey = sessionStorage.getItem("distrozi_admin_key");
     if (savedKey) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       fetchTickets(savedKey);
     }
   }, []);
@@ -164,18 +167,26 @@ export default function AdminTicketsClient() {
       const query = searchQuery.toLowerCase().trim();
       if (!query) return matchesStatus;
 
+      const labelName =
+        typeof ticket.details.labelName === "string" ? ticket.details.labelName : "";
+      const email =
+        typeof ticket.details.email === "string" ? ticket.details.email : "";
       const matchesQuery =
         ticket.ticketId.toLowerCase().includes(query) ||
         ticket.type.toLowerCase().includes(query) ||
         ticket.trackArtist.toLowerCase().includes(query) ||
-        (ticket.details.labelName &&
-          ticket.details.labelName.toLowerCase().includes(query)) ||
-        (ticket.details.email &&
-          ticket.details.email.toLowerCase().includes(query));
+        labelName.toLowerCase().includes(query) ||
+        email.toLowerCase().includes(query);
 
       return matchesStatus && matchesQuery;
     });
   }, [tickets, statusFilter, searchQuery]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredTickets.length / PAGE_SIZE));
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+  const pageStartIndex = (safeCurrentPage - 1) * PAGE_SIZE;
+  const pageEndIndex = Math.min(pageStartIndex + PAGE_SIZE, filteredTickets.length);
+  const paginatedTickets = filteredTickets.slice(pageStartIndex, pageEndIndex);
 
   // Formatted Key helper
   const formatLabel = (key: string) => {
@@ -313,7 +324,10 @@ export default function AdminTicketsClient() {
             {["All", "Pending", "In Progress", "Resolved", "Rejected"].map((status) => (
               <button
                 key={status}
-                onClick={() => setStatusFilter(status)}
+                onClick={() => {
+                  setStatusFilter(status);
+                  setCurrentPage(1);
+                }}
                 className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                   statusFilter === status
                     ? "bg-white/[0.06] text-white shadow-sm"
@@ -331,7 +345,10 @@ export default function AdminTicketsClient() {
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setCurrentPage(1);
+              }}
               placeholder="Search by ID, Label, Track..."
               className="w-full bg-white/[0.02] hover:bg-white/[0.04] focus:bg-white/[0.06] border border-white/10 rounded-xl pl-10 pr-4 py-2 text-xs text-white focus:outline-none focus:border-[#f3c343]/40 transition-all"
             />
@@ -360,7 +377,7 @@ export default function AdminTicketsClient() {
                     </td>
                   </tr>
                 ) : (
-                  filteredTickets.map((ticket) => {
+                  paginatedTickets.map((ticket) => {
                     const statusColors = {
                       Pending: "bg-amber-500/10 border-amber-500/20 text-amber-400",
                       "In Progress": "bg-blue-500/10 border-blue-500/20 text-blue-400",
@@ -418,6 +435,45 @@ export default function AdminTicketsClient() {
               </tbody>
             </table>
           </div>
+
+          {filteredTickets.length > 0 && (
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-5 py-4 border-t border-white/5 bg-white/[0.01]">
+              <span className="text-xs text-white/40">
+                Showing <span className="text-white/70 font-semibold">{pageStartIndex + 1}</span>
+                {" "}to{" "}
+                <span className="text-white/70 font-semibold">{pageEndIndex}</span>
+                {" "}of{" "}
+                <span className="text-white/70 font-semibold">{filteredTickets.length}</span>
+                {" "}tickets
+              </span>
+
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+                  disabled={safeCurrentPage === 1}
+                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/10 text-xs font-semibold text-white/70 hover:bg-white/[0.06] hover:text-white disabled:opacity-35 disabled:cursor-not-allowed transition-all cursor-pointer"
+                >
+                  <ChevronLeft size={14} />
+                  Prev
+                </button>
+
+                <span className="min-w-20 text-center text-xs font-semibold text-white/50">
+                  Page <span className="text-white">{safeCurrentPage}</span> / {totalPages}
+                </span>
+
+                <button
+                  type="button"
+                  onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
+                  disabled={safeCurrentPage === totalPages}
+                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white/[0.03] border border-white/10 text-xs font-semibold text-white/70 hover:bg-white/[0.06] hover:text-white disabled:opacity-35 disabled:cursor-not-allowed transition-all cursor-pointer"
+                >
+                  Next
+                  <ChevronRight size={14} />
+                </button>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Slide-over Drawer Panel for Reviewing Ticket details */}

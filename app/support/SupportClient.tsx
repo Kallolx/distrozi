@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { AlertCircle, Loader2, Search, TicketCheck } from "lucide-react";
 import ServiceLayout from "../components/layout/ServiceLayout";
 import FAQ from "../components/sections/FAQ";
 import BorderGlow from "@/components/BorderGlow";
@@ -63,7 +65,62 @@ const SUPPORT_CARDS = [
   },
 ];
 
+interface TicketStatusResult {
+  ticketId: string;
+  type: string;
+  trackArtist: string;
+  status: "Pending" | "In Progress" | "Resolved" | "Rejected";
+  date: string;
+}
+
+const statusStyles: Record<TicketStatusResult["status"], string> = {
+  Pending: "border-amber-500/20 bg-amber-500/10 text-amber-300",
+  "In Progress": "border-blue-500/20 bg-blue-500/10 text-blue-300",
+  Resolved: "border-emerald-500/20 bg-emerald-500/10 text-emerald-300",
+  Rejected: "border-red-500/20 bg-red-500/10 text-red-300",
+};
+
 export default function SupportClient() {
+  const [ticketId, setTicketId] = useState("");
+  const [ticketStatus, setTicketStatus] = useState<TicketStatusResult | null>(null);
+  const [statusError, setStatusError] = useState("");
+  const [checkingStatus, setCheckingStatus] = useState(false);
+
+  const handleTicketLookup = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const cleanTicketId = ticketId.trim();
+
+    setTicketStatus(null);
+    setStatusError("");
+
+    if (!cleanTicketId) {
+      setStatusError("Enter your ticket ID to check the latest status.");
+      return;
+    }
+
+    setCheckingStatus(true);
+
+    try {
+      const response = await fetch(
+        `/api/support/ticket-status?ticketId=${encodeURIComponent(cleanTicketId)}`,
+        { cache: "no-store" }
+      );
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        setStatusError(data.message || "No support ticket found with that ID.");
+        return;
+      }
+
+      setTicketStatus(data.ticket);
+    } catch (error) {
+      console.error("Ticket lookup failed:", error);
+      setStatusError("Unable to check that ticket right now. Please try again.");
+    } finally {
+      setCheckingStatus(false);
+    }
+  };
+
   return (
     <ServiceLayout>
       <div className="pt-32 pb-16 min-h-screen flex flex-col justify-center max-w-6xl mx-auto px-6 lg:px-8">
@@ -87,6 +144,86 @@ export default function SupportClient() {
             Submit release requests, whitelisting, Official Artist Channel requests, or request manual claims. Our rights department handles submissions daily.
           </motion.p>
         </div>
+
+        {/* Ticket Status Lookup */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="max-w-3xl mx-auto w-full mb-14"
+        >
+          <BorderGlow backgroundColor="#080808" borderRadius={18} className="w-full">
+            <div className="p-5 sm:p-6 flex flex-col gap-5">
+              <div className="flex items-start gap-3 text-left">
+                <div className="w-11 h-11 rounded-xl bg-[#f3c343]/10 border border-[#f3c343]/20 flex items-center justify-center text-[#f3c343] shrink-0">
+                  <TicketCheck size={22} />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">
+                    Check Support Status
+                  </h2>
+                  <p className="text-xs sm:text-sm text-white/45 leading-relaxed">
+                    Enter the ticket ID from your submission confirmation to view the latest support status.
+                  </p>
+                </div>
+              </div>
+
+              <form onSubmit={handleTicketLookup} className="flex flex-col sm:flex-row gap-3">
+                <div className="relative flex-1">
+                  <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/30 w-4.5 h-4.5" />
+                  <input
+                    type="text"
+                    value={ticketId}
+                    onChange={(event) => setTicketId(event.target.value)}
+                    placeholder="Enter ticket ID, e.g. DT-493871"
+                    className="w-full bg-white/[0.03] hover:bg-white/[0.05] focus:bg-white/[0.06] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#f3c343]/45 transition-all"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={checkingStatus}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 bg-[#f3c343] hover:bg-[#ffd866] disabled:bg-[#f3c343]/50 text-black text-sm font-bold transition-all cursor-pointer disabled:cursor-not-allowed min-w-32"
+                >
+                  {checkingStatus ? <Loader2 size={16} className="animate-spin" /> : <Search size={16} />}
+                  {checkingStatus ? "Checking" : "Search"}
+                </button>
+              </form>
+
+              {statusError && (
+                <div className="flex items-start gap-2 rounded-xl border border-red-500/15 bg-red-500/5 px-4 py-3 text-sm text-red-200">
+                  <AlertCircle size={16} className="mt-0.5 shrink-0" />
+                  <span>{statusError}</span>
+                </div>
+              )}
+
+              {ticketStatus && (
+                <div className="rounded-xl border border-white/8 bg-white/[0.025] p-4 grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 text-left">
+                  <div className="flex flex-col gap-1.5">
+                    <span className="font-mono text-xs font-bold text-[#f3c343]">
+                      {ticketStatus.ticketId}
+                    </span>
+                    <h3 className="text-base font-bold text-white">{ticketStatus.type}</h3>
+                    <p className="text-xs text-white/45">
+                      {ticketStatus.trackArtist || "Support request"} · Submitted{" "}
+                      {new Date(ticketStatus.date).toLocaleDateString([], {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </p>
+                  </div>
+                  <div className="sm:text-right">
+                    <span
+                      className={`inline-flex rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-wider ${statusStyles[ticketStatus.status]}`}
+                    >
+                      {ticketStatus.status}
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </BorderGlow>
+        </motion.div>
 
         {/* Support Options Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
