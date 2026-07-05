@@ -80,11 +80,39 @@ const statusStyles: Record<TicketStatusResult["status"], string> = {
   Rejected: "border-red-500/20 bg-red-500/10 text-red-300",
 };
 
+function getSupportIcons(type: string) {
+  const card = SUPPORT_CARDS.find((item) => item.title === type);
+  if (card?.id === "fb-ig-whitelist" || card?.id === "meta-attribution") {
+    return [
+      { src: "/icons/facebook.svg", alt: "Facebook" },
+      { src: "/icons/instagram.svg", alt: "Instagram" },
+    ];
+  }
+
+  if (card) {
+    return [{ src: card.icon, alt: card.title }];
+  }
+
+  const normalizedType = type.toLowerCase();
+  if (normalizedType.includes("instagram")) {
+    return [{ src: "/icons/instagram.svg", alt: "Instagram" }];
+  }
+  if (normalizedType.includes("facebook") || normalizedType.includes("meta")) {
+    return [{ src: "/icons/facebook.svg", alt: "Facebook" }];
+  }
+  if (normalizedType.includes("tiktok")) {
+    return [{ src: "/icons/tiktok.svg", alt: "TikTok" }];
+  }
+
+  return [{ src: "/icons/youtube.png", alt: "YouTube" }];
+}
+
 export default function SupportClient() {
   const [ticketId, setTicketId] = useState("");
   const [ticketStatus, setTicketStatus] = useState<TicketStatusResult | null>(null);
   const [statusError, setStatusError] = useState("");
   const [checkingStatus, setCheckingStatus] = useState(false);
+  const ticketIcons = ticketStatus ? getSupportIcons(ticketStatus.type) : [];
 
   const handleTicketLookup = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -198,7 +226,18 @@ export default function SupportClient() {
 
               {ticketStatus && (
                 <div className="rounded-xl border border-white/8 bg-white/[0.025] p-4 grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 text-left">
-                  <div className="flex flex-col gap-1.5">
+                  <div className="flex items-start gap-3 min-w-0">
+                    <div className="flex items-center justify-center gap-1 w-12 h-12 rounded-xl bg-white/[0.03] border border-white/8 shrink-0 overflow-hidden">
+                      {ticketIcons.map((icon) => (
+                        <img
+                          key={icon.src}
+                          src={icon.src}
+                          alt={icon.alt}
+                          className={ticketIcons.length > 1 ? "w-5 h-5 object-contain" : "w-8 h-8 object-contain"}
+                        />
+                      ))}
+                    </div>
+                    <div className="flex flex-col gap-1.5 min-w-0">
                     <span className="font-mono text-xs font-bold text-[#f3c343]">
                       {ticketStatus.ticketId}
                     </span>
@@ -211,6 +250,7 @@ export default function SupportClient() {
                         day: "numeric",
                       })}
                     </p>
+                    </div>
                   </div>
                   <div className="sm:text-right">
                     <span
@@ -237,7 +277,12 @@ export default function SupportClient() {
               className="group animate-fade-in"
             >
               <Link href={`/support/${card.id}`} className="block h-full cursor-pointer">
-                <BorderGlow backgroundColor="#080808" borderRadius={16} className="h-full">
+                <BorderGlow
+                  backgroundColor="#080808"
+                  borderRadius={16}
+                  className="h-full"
+                  enableViewportActive={false}
+                >
                   <div className="p-6 sm:p-8 flex flex-col gap-4 text-left h-full">
                     
                     {/* Platform Logo(s) - No Bg, No Border, Bigger */}
