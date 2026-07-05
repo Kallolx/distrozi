@@ -1,13 +1,12 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
-import fs from 'fs';
-import path from 'path';
+import { addTicket, SupportTicket } from '@/lib/ticketStore';
 
 export async function POST(request: Request) {
   try {
     const contentType = request.headers.get("content-type") || "";
     let dataObj: Record<string, string> = {};
-    const attachments: any[] = [];
+    const attachments: Array<{ filename: string; content: Buffer; contentType: string }> = [];
 
     if (contentType.includes("multipart/form-data")) {
       const formData = await request.formData();
@@ -32,57 +31,34 @@ export async function POST(request: Request) {
 
     // Persist ticket if it's a support submission
     if (submissionType.startsWith("Support - ")) {
-      try {
-        const dirPath = path.join(process.cwd(), 'data');
-        const filePath = path.join(dirPath, 'support-tickets.json');
+      const ticketId = dataObj.ticketId || `DT-${Math.floor(100000 + Math.random() * 900000)}`;
+      const date = new Date().toISOString();
 
-        if (!fs.existsSync(dirPath)) {
-          fs.mkdirSync(dirPath, { recursive: true });
-        }
-
-        let tickets = [];
-        if (fs.existsSync(filePath)) {
-          const fileData = fs.readFileSync(filePath, 'utf8');
-          try {
-            tickets = JSON.parse(fileData);
-            if (!Array.isArray(tickets)) tickets = [];
-          } catch (e) {
-            tickets = [];
-          }
-        }
-
-        const ticketId = dataObj.ticketId || `DT-${Math.floor(100000 + Math.random() * 900000)}`;
-        const date = new Date().toISOString();
-
-        // Extract track/artist details dynamically
-        let trackArtist = "-";
-        if (dataObj.songTitle) {
-          trackArtist = dataObj.songTitle;
-        } else if (dataObj.artistName) {
-          trackArtist = dataObj.artistName;
-        } else if (dataObj.reelTrackName || dataObj.reelArtistName) {
-          const track = dataObj.reelTrackName || "";
-          const artist = dataObj.reelArtistName || "";
-          trackArtist = [track, artist].filter(Boolean).join(" - ");
-        } else if (dataObj.labelName) {
-          trackArtist = dataObj.labelName;
-        }
-
-        const newTicket = {
-          ticketId,
-          type: submissionType.replace("Support - ", ""),
-          trackArtist,
-          status: "Pending",
-          date,
-          remarks: "",
-          details: dataObj
-        };
-
-        tickets.push(newTicket);
-        fs.writeFileSync(filePath, JSON.stringify(tickets, null, 2), 'utf8');
-      } catch (err) {
-        console.error("Error saving support ticket to file:", err);
+      // Extract track/artist details dynamically
+      let trackArtist = "-";
+      if (dataObj.songTitle) {
+        trackArtist = dataObj.songTitle;
+      } else if (dataObj.artistName) {
+        trackArtist = dataObj.artistName;
+      } else if (dataObj.reelTrackName || dataObj.reelArtistName) {
+        const track = dataObj.reelTrackName || "";
+        const artist = dataObj.reelArtistName || "";
+        trackArtist = [track, artist].filter(Boolean).join(" - ");
+      } else if (dataObj.labelName) {
+        trackArtist = dataObj.labelName;
       }
+
+      const newTicket: SupportTicket = {
+        ticketId,
+        type: submissionType.replace("Support - ", ""),
+        trackArtist,
+        status: "Pending",
+        date,
+        remarks: "",
+        details: dataObj
+      };
+
+      await addTicket(newTicket);
     }
 
     let plainText = `You have received a new submission:\n\n`;
