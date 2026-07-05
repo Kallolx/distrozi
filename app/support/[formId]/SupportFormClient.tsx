@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle } from "lucide-react";
 import ServiceLayout from "../../components/layout/ServiceLayout";
@@ -128,6 +127,8 @@ export default function SupportFormClient({ formId }: { formId: string }) {
   const [email, setEmail] = useState("");
   const [upc, setUpc] = useState("");
   const [url, setUrl] = useState("");
+  const [facebookUrl, setFacebookUrl] = useState("");
+  const [instagramUrl, setInstagramUrl] = useState("");
   const [isrc, setIsrc] = useState("");
   const [artistName, setArtistName] = useState("");
   const [country, setCountry] = useState("");
@@ -211,7 +212,8 @@ export default function SupportFormClient({ formId }: { formId: string }) {
         payload.youtubeChannelUrl = url;
       } else if (formId === "fb-ig-whitelist") {
         payload.upcs = upc;
-        payload.metaProfileOrPageUrl = url;
+        payload.facebookProfileOrPageUrl = facebookUrl;
+        payload.instagramProfileUrl = instagramUrl;
       } else if (formId === "tiktok-safelist") {
         payload.tiktokIsrcs = isrc;
         payload.tiktokAccountOrPageUrl = url;
@@ -227,7 +229,8 @@ export default function SupportFormClient({ formId }: { formId: string }) {
         payload.issueType = metaIssue === "link-isrc" ? "Link ISRC to Profile/Page" : "Attribute Claim on a Reel";
         if (metaIssue === "link-isrc") {
           payload.isrc = isrc;
-          payload.facebookInstagramUrl = url;
+          payload.facebookProfileOrPageUrl = facebookUrl;
+          payload.instagramProfileUrl = instagramUrl;
         } else {
           payload.reelArtistName = reelArtist;
           payload.reelTrackName = reelTrack;
@@ -513,18 +516,33 @@ export default function SupportFormClient({ formId }: { formId: string }) {
                           className="w-full bg-white/[0.02] hover:bg-white/[0.04] focus:bg-white/[0.06] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#f3c343]/50 transition-all"
                         />
                       </div>
-                      <div className="flex flex-col gap-2">
-                        <label className="text-sm font-semibold text-white/80">
-                          Facebook / Instagram URL <span className="text-red-500">*</span>
-                        </label>
-                        <input
-                          type="url"
-                          required
-                          value={url}
-                          onChange={(e) => setUrl(e.target.value)}
-                          placeholder="https://www.instagram.com/profile"
-                          className="w-full bg-white/[0.02] hover:bg-white/[0.04] focus:bg-white/[0.06] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#f3c343]/50 transition-all"
-                        />
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="flex flex-col gap-2">
+                          <label className="text-sm font-semibold text-white/80">
+                            Facebook Profile / Page URL <span className="text-red-500">*</span>
+                          </label>
+                          <input
+                            type="url"
+                            required
+                            value={facebookUrl}
+                            onChange={(e) => setFacebookUrl(e.target.value)}
+                            placeholder="https://www.facebook.com/page"
+                            className="w-full bg-white/[0.02] hover:bg-white/[0.04] focus:bg-white/[0.06] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#f3c343]/50 transition-all"
+                          />
+                        </div>
+                        <div className="flex flex-col gap-2">
+                          <label className="text-sm font-semibold text-white/80">
+                            Instagram Profile URL <span className="text-red-500">*</span>
+                          </label>
+                          <input
+                            type="url"
+                            required
+                            value={instagramUrl}
+                            onChange={(e) => setInstagramUrl(e.target.value)}
+                            placeholder="https://www.instagram.com/profile"
+                            className="w-full bg-white/[0.02] hover:bg-white/[0.04] focus:bg-white/[0.06] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#f3c343]/50 transition-all"
+                          />
+                        </div>
                       </div>
                     </div>
                   )}
@@ -616,7 +634,7 @@ export default function SupportFormClient({ formId }: { formId: string }) {
 
                       <div className="flex flex-col gap-2">
                         <label className="text-sm font-semibold text-white/80">
-                          Artist's Owned & Operated Channel Link <span className="text-red-500">*</span>
+                          Artist&apos;s Owned & Operated Channel Link <span className="text-red-500">*</span>
                         </label>
                         <input
                           type="url"
@@ -631,7 +649,7 @@ export default function SupportFormClient({ formId }: { formId: string }) {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="flex flex-col gap-2">
                           <label className="text-sm font-semibold text-white/80">
-                            Artist's Topic Channel Link <span className="text-red-500">*</span>
+                            Artist&apos;s Topic Channel Link <span className="text-red-500">*</span>
                           </label>
                           <input
                             type="url"
@@ -644,7 +662,7 @@ export default function SupportFormClient({ formId }: { formId: string }) {
                         </div>
                         <div className="flex flex-col gap-2">
                           <label className="text-sm font-semibold text-white/80">
-                            Artist's Vevo Channel Link (Optional)
+                            Artist&apos;s Vevo Channel Link (Optional)
                           </label>
                           <input
                             type="url"
@@ -674,14 +692,14 @@ export default function SupportFormClient({ formId }: { formId: string }) {
                         <ul className="list-disc pl-4 flex flex-col gap-1.5 mt-1">
                           <li>At least 1 official music release on YouTube (3+ recommended)</li>
                           <li>Your artist-owned channel has at least 1 music video with matching audio on Topic channel (3+ recommended)</li>
-                          <li>You own and operate a single artist/band YouTube channel focused on the artist's music</li>
+                          <li>You own and operate a single artist/band YouTube channel focused on the artist&apos;s music</li>
                           <li>Channel complies with YouTube Community Guidelines, ToS, and Copyright policies</li>
                         </ul>
                       </div>
 
                       <div className="p-4 rounded-xl bg-[#f3c343]/5 border border-[#f3c343]/15 text-xs text-[#f3c343]/85 text-left">
                         <span className="font-bold block mb-1">⚠️ Please Note</span>
-                        Approval of OAC requests is entirely at YouTube's discretion. Distrozi does not control the approval decision or timeline. The review process may take several weeks to a few months, and submission of this form does not guarantee approval.
+                        Approval of OAC requests is entirely at YouTube&apos;s discretion. Distrozi does not control the approval decision or timeline. The review process may take several weeks to a few months, and submission of this form does not guarantee approval.
                       </div>
                     </div>
                   )}
@@ -720,18 +738,33 @@ export default function SupportFormClient({ formId }: { formId: string }) {
                               className="w-full bg-white/[0.02] hover:bg-white/[0.04] focus:bg-white/[0.06] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#f3c343]/50 transition-all"
                             />
                           </div>
-                          <div className="flex flex-col gap-2">
-                            <label className="text-sm font-semibold text-white/80">
-                              Facebook/Instagram URL <span className="text-red-500">*</span>
-                            </label>
-                            <input
-                              type="url"
-                              required
-                              value={url}
-                              onChange={(e) => setUrl(e.target.value)}
-                              placeholder="https://www.instagram.com/page"
-                              className="w-full bg-white/[0.02] hover:bg-white/[0.04] focus:bg-white/[0.06] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#f3c343]/50 transition-all"
-                            />
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div className="flex flex-col gap-2">
+                              <label className="text-sm font-semibold text-white/80">
+                                Facebook Profile / Page URL <span className="text-red-500">*</span>
+                              </label>
+                              <input
+                                type="url"
+                                required
+                                value={facebookUrl}
+                                onChange={(e) => setFacebookUrl(e.target.value)}
+                                placeholder="https://www.facebook.com/page"
+                                className="w-full bg-white/[0.02] hover:bg-white/[0.04] focus:bg-white/[0.06] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#f3c343]/50 transition-all"
+                              />
+                            </div>
+                            <div className="flex flex-col gap-2">
+                              <label className="text-sm font-semibold text-white/80">
+                                Instagram Profile URL <span className="text-red-500">*</span>
+                              </label>
+                              <input
+                                type="url"
+                                required
+                                value={instagramUrl}
+                                onChange={(e) => setInstagramUrl(e.target.value)}
+                                placeholder="https://www.instagram.com/profile"
+                                className="w-full bg-white/[0.02] hover:bg-white/[0.04] focus:bg-white/[0.06] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#f3c343]/50 transition-all"
+                              />
+                            </div>
                           </div>
                         </div>
                       )}
