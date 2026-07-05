@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import fs from 'fs';
+import path from 'path';
 
 export async function POST(request: Request) {
   try {
@@ -27,6 +29,61 @@ export async function POST(request: Request) {
 
     const submissionType = dataObj.submissionType || "New Submission";
     const subject = `Distrozi - ${submissionType}`;
+
+    // Persist ticket if it's a support submission
+    if (submissionType.startsWith("Support - ")) {
+      try {
+        const dirPath = path.join(process.cwd(), 'data');
+        const filePath = path.join(dirPath, 'support-tickets.json');
+
+        if (!fs.existsSync(dirPath)) {
+          fs.mkdirSync(dirPath, { recursive: true });
+        }
+
+        let tickets = [];
+        if (fs.existsSync(filePath)) {
+          const fileData = fs.readFileSync(filePath, 'utf8');
+          try {
+            tickets = JSON.parse(fileData);
+            if (!Array.isArray(tickets)) tickets = [];
+          } catch (e) {
+            tickets = [];
+          }
+        }
+
+        const ticketId = dataObj.ticketId || `DT-${Math.floor(100000 + Math.random() * 900000)}`;
+        const date = new Date().toISOString();
+
+        // Extract track/artist details dynamically
+        let trackArtist = "-";
+        if (dataObj.songTitle) {
+          trackArtist = dataObj.songTitle;
+        } else if (dataObj.artistName) {
+          trackArtist = dataObj.artistName;
+        } else if (dataObj.reelTrackName || dataObj.reelArtistName) {
+          const track = dataObj.reelTrackName || "";
+          const artist = dataObj.reelArtistName || "";
+          trackArtist = [track, artist].filter(Boolean).join(" - ");
+        } else if (dataObj.labelName) {
+          trackArtist = dataObj.labelName;
+        }
+
+        const newTicket = {
+          ticketId,
+          type: submissionType.replace("Support - ", ""),
+          trackArtist,
+          status: "Pending",
+          date,
+          remarks: "",
+          details: dataObj
+        };
+
+        tickets.push(newTicket);
+        fs.writeFileSync(filePath, JSON.stringify(tickets, null, 2), 'utf8');
+      } catch (err) {
+        console.error("Error saving support ticket to file:", err);
+      }
+    }
 
     let plainText = `You have received a new submission:\n\n`;
     let htmlContent = `
@@ -57,36 +114,45 @@ export async function POST(request: Request) {
     </div>
     `;
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    const emailUser = process.env.EMAIL_USER;
+    const emailPass = process.env.EMAIL_PASS;
+    const hasCredentials = emailUser && emailPass && emailUser !== "your-email@gmail.com";
 
-    // Supports multiple recipients: 
-    // 1. You can comma-separate them in RECEIVER_EMAIL (e.g., "a@b.com, c@d.com")
-    // 2. Or add a second email in RECEIVER_EMAIL_2
-    const receiver1 = process.env.RECEIVER_EMAIL || "support@distrozi.com";
-    const receiver2 = process.env.RECEIVER_EMAIL_2;
-    const finalRecipients = receiver2 ? `${receiver1}, ${receiver2}` : receiver1;
+    if (hasCredentials) {
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: emailUser,
+          pass: emailPass,
+        },
+      });
 
-    const replyTo = dataObj.email || process.env.EMAIL_USER;
+      // Supports multiple recipients: 
+      // 1. You can comma-separate them in RECEIVER_EMAIL (e.g., "a@b.com, c@d.com")
+      // 2. Or add a second email in RECEIVER_EMAIL_2
+      const receiver1 = process.env.RECEIVER_EMAIL || "support@distrozi.com";
+      const receiver2 = process.env.RECEIVER_EMAIL_2;
+      const finalRecipients = receiver2 ? `${receiver1}, ${receiver2}` : receiver1;
 
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: finalRecipients,
-      replyTo: replyTo,
-      subject: subject,
-      text: plainText,
-      html: htmlContent,
-      attachments: attachments,
-    };
+      const replyTo = dataObj.email || emailUser;
 
-    await transporter.sendMail(mailOptions);
+      const mailOptions = {
+        from: emailUser,
+        to: finalRecipients,
+        replyTo: replyTo,
+        subject: subject,
+        text: plainText,
+        html: htmlContent,
+        attachments: attachments,
+      };
 
-    return NextResponse.json({ success: true, message: "Email sent successfully" }, { status: 200 });
+      await transporter.sendMail(mailOptions);
+      console.log(`Email dispatched successfully to: ${finalRecipients}`);
+    } else {
+      console.warn("⚠️ SMTP credentials missing or using example placeholders. Support ticket registered, email dispatch skipped.");
+    }
+
+    return NextResponse.json({ success: true, message: "Request registered successfully" }, { status: 200 });
   } catch (error) {
     console.error("Error sending email:", error);
     return NextResponse.json(
