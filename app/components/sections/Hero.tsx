@@ -60,7 +60,7 @@ export default function Hero({ isMobile = false }: { isMobile?: boolean }) {
     <section className="bg-black relative w-full overflow-hidden">
 
       {/* ── Main Hero ──────────────────────────────────────────────────────── */}
-      <div className="flex min-h-[90vh] sm:min-h-screen lg:min-h-[120vh] w-full flex-col relative z-20">
+      <div className="flex min-h-[90vh] sm:min-h-screen w-full flex-col relative z-20">
         {/* Spacer to prevent layout shift when Navbar is fixed */}
         <div className="h-20 sm:h-24 w-full shrink-0 pointer-events-none" />
 
@@ -73,7 +73,7 @@ export default function Hero({ isMobile = false }: { isMobile?: boolean }) {
           <div className="absolute inset-0 bg-black/25 backdrop-blur-[1px]" />
         </div>
 
-        <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between px-6 pb-6 pt-0 sm:pb-12 lg:pt-10 z-20">
+        <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-between px-6 pb-6 pt-0 sm:pb-10 lg:pb-8 lg:pt-14 z-20">
           <div className="flex-1 flex flex-col justify-center lg:grid lg:flex-none lg:gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-start w-full">
 
             {/* ── Left copy column ── */}

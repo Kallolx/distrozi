@@ -109,12 +109,16 @@ function getSupportIcons(type: string) {
 
 export default function SupportClient() {
   const [ticketId, setTicketId] = useState("");
-  const [ticketStatus, setTicketStatus] = useState<TicketStatusResult | null>(null);
+  const [ticketStatus, setTicketStatus] = useState<TicketStatusResult | null>(
+    null,
+  );
   const [statusError, setStatusError] = useState("");
   const [checkingStatus, setCheckingStatus] = useState(false);
   const ticketIcons = ticketStatus ? getSupportIcons(ticketStatus.type) : [];
 
-  const handleTicketLookup = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleTicketLookup = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ) => {
     event.preventDefault();
     const cleanTicketId = ticketId.trim();
 
@@ -131,7 +135,7 @@ export default function SupportClient() {
     try {
       const response = await fetch(
         `/api/support/ticket-status?ticketId=${encodeURIComponent(cleanTicketId)}`,
-        { cache: "no-store" }
+        { cache: "no-store" },
       );
       const data = await response.json();
 
@@ -143,7 +147,9 @@ export default function SupportClient() {
       setTicketStatus(data.ticket);
     } catch (error) {
       console.error("Ticket lookup failed:", error);
-      setStatusError("Unable to check that ticket right now. Please try again.");
+      setStatusError(
+        "Unable to check that ticket right now. Please try again.",
+      );
     } finally {
       setCheckingStatus(false);
     }
@@ -152,7 +158,6 @@ export default function SupportClient() {
   return (
     <ServiceLayout>
       <div className="pt-32 pb-16 min-h-screen flex flex-col justify-center max-w-6xl mx-auto px-6 lg:px-8">
-        
         {/* Support Page Header */}
         <div className="flex flex-col gap-4 text-center max-w-2xl mx-auto mb-16">
           <motion.h1
@@ -169,101 +174,11 @@ export default function SupportClient() {
             transition={{ duration: 0.5, delay: 0.05 }}
             className="text-white/50 text-sm sm:text-base leading-relaxed"
           >
-            Submit release requests, whitelisting, Official Artist Channel requests, or request manual claims. Our rights department handles submissions daily.
+            Submit release requests, whitelisting, Official Artist Channel
+            requests, or request manual claims. Our rights department handles
+            submissions daily.
           </motion.p>
         </div>
-
-        {/* Ticket Status Lookup */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="max-w-3xl mx-auto w-full mb-14"
-        >
-          <BorderGlow backgroundColor="#080808" borderRadius={18} className="w-full">
-            <div className="p-5 sm:p-6 flex flex-col gap-5">
-              <div className="flex items-start gap-3 text-left">
-                <div className="w-11 h-11 rounded-xl bg-[#f3c343]/10 border border-[#f3c343]/20 flex items-center justify-center text-[#f3c343] shrink-0">
-                  <TicketCheck size={22} />
-                </div>
-                <div className="flex flex-col gap-1">
-                  <h2 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                    Check Support Status
-                  </h2>
-                  <p className="text-xs sm:text-sm text-white/45 leading-relaxed">
-                    Enter the ticket ID from your submission confirmation to view the latest support status.
-                  </p>
-                </div>
-              </div>
-
-              <form onSubmit={handleTicketLookup} className="flex flex-col sm:flex-row gap-3">
-                <div className="relative flex-1">
-                  <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/30 w-4.5 h-4.5" />
-                  <input
-                    type="text"
-                    value={ticketId}
-                    onChange={(event) => setTicketId(event.target.value)}
-                    placeholder="Enter ticket ID, e.g. DT-493871"
-                    className="w-full bg-white/[0.03] hover:bg-white/[0.05] focus:bg-white/[0.06] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#f3c343]/45 transition-all"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={checkingStatus}
-                  className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 bg-[#f3c343] hover:bg-[#ffd866] disabled:bg-[#f3c343]/50 text-black text-sm font-bold transition-all cursor-pointer disabled:cursor-not-allowed min-w-32"
-                >
-                  {checkingStatus ? <Loader2 size={16} className="animate-spin" /> : <Search size={16} />}
-                  {checkingStatus ? "Checking" : "Search"}
-                </button>
-              </form>
-
-              {statusError && (
-                <div className="flex items-start gap-2 rounded-xl border border-red-500/15 bg-red-500/5 px-4 py-3 text-sm text-red-200">
-                  <AlertCircle size={16} className="mt-0.5 shrink-0" />
-                  <span>{statusError}</span>
-                </div>
-              )}
-
-              {ticketStatus && (
-                <div className="rounded-xl border border-white/8 bg-white/[0.025] p-4 grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 text-left">
-                  <div className="flex items-start gap-3 min-w-0">
-                    <div className="flex items-center justify-center gap-1 w-12 h-12 rounded-xl bg-white/[0.03] border border-white/8 shrink-0 overflow-hidden">
-                      {ticketIcons.map((icon) => (
-                        <img
-                          key={icon.src}
-                          src={icon.src}
-                          alt={icon.alt}
-                          className={ticketIcons.length > 1 ? "w-5 h-5 object-contain" : "w-8 h-8 object-contain"}
-                        />
-                      ))}
-                    </div>
-                    <div className="flex flex-col gap-1.5 min-w-0">
-                    <span className="font-mono text-xs font-bold text-[#f3c343]">
-                      {ticketStatus.ticketId}
-                    </span>
-                    <h3 className="text-base font-bold text-white">{ticketStatus.type}</h3>
-                    <p className="text-xs text-white/45">
-                      {ticketStatus.trackArtist || "Support request"} · Submitted{" "}
-                      {new Date(ticketStatus.date).toLocaleDateString([], {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </p>
-                    </div>
-                  </div>
-                  <div className="sm:text-right">
-                    <span
-                      className={`inline-flex rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-wider ${statusStyles[ticketStatus.status]}`}
-                    >
-                      {ticketStatus.status}
-                    </span>
-                  </div>
-                </div>
-              )}
-            </div>
-          </BorderGlow>
-        </motion.div>
 
         {/* Support Options Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -276,7 +191,10 @@ export default function SupportClient() {
               transition={{ duration: 0.4, delay: idx * 0.03 }}
               className="group animate-fade-in"
             >
-              <Link href={`/support/${card.id}`} className="block h-full cursor-pointer">
+              <Link
+                href={`/support/${card.id}`}
+                className="block h-full cursor-pointer"
+              >
                 <BorderGlow
                   backgroundColor="#080808"
                   borderRadius={16}
@@ -284,10 +202,10 @@ export default function SupportClient() {
                   enableViewportActive={false}
                 >
                   <div className="p-6 sm:p-8 flex flex-col gap-4 text-left h-full">
-                    
                     {/* Platform Logo(s) - No Bg, No Border, Bigger */}
                     <div className="flex items-center gap-3 h-14 shrink-0">
-                      {card.id === "fb-ig-whitelist" || card.id === "meta-attribution" ? (
+                      {card.id === "fb-ig-whitelist" ||
+                      card.id === "meta-attribution" ? (
                         <>
                           <img
                             src="/icons/facebook.svg"
@@ -324,23 +242,149 @@ export default function SupportClient() {
           ))}
         </div>
 
+        {/* Ticket Status Lookup - Full Width */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mt-10 w-full"
+        >
+          <BorderGlow
+            backgroundColor="#080808"
+            borderRadius={18}
+            className="w-full"
+          >
+            <div className="p-5 sm:p-6 lg:p-7 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-6 lg:gap-10 items-center">
+              {/* Left Text */}
+              <div className="flex items-start gap-4 text-left">
+                <div className="w-12 h-12 rounded-xl bg-[#f3c343]/5 flex items-center justify-center text-slate-300 shrink-0">
+                  <TicketCheck size={23} />
+                </div>
+
+                <div className="flex flex-col">
+                  <h2 className="text-xl font-semibold text-white tracking-tight">
+                    Check Support Status
+                  </h2>
+                  <p className="text-sm text-white/45 leading-relaxed max-w-xl">
+                    Enter the ticket ID from your submission confirmation
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Input */}
+              <form
+                onSubmit={handleTicketLookup}
+                className="flex flex-col sm:flex-row gap-3 w-full lg:justify-end"
+              >
+                <div className="relative flex-1 lg:max-w-md">
+                  <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 text-white/30 w-4.5 h-4.5" />
+                  <input
+                    type="text"
+                    value={ticketId}
+                    onChange={(event) => setTicketId(event.target.value)}
+                    placeholder="Enter your ticket ID"
+                    className="w-full bg-white/[0.03] hover:bg-white/[0.05] focus:bg-white/[0.06] border border-white/10 rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:border-[#f3c343]/45 transition-all"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={checkingStatus}
+                  className="inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 bg-[#f3c343] hover:bg-[#ffd866] disabled:bg-[#f3c343]/50 text-black text-sm font-bold transition-all cursor-pointer disabled:cursor-not-allowed min-w-32"
+                >
+                  {checkingStatus ? (
+                    <Loader2 size={16} className="animate-spin" />
+                  ) : (
+                    <Search size={16} />
+                  )}
+                  {checkingStatus ? "Checking" : "Search"}
+                </button>
+              </form>
+
+              {/* Status / Error Result */}
+              {(statusError || ticketStatus) && (
+                <div className="lg:col-span-2">
+                  {statusError && (
+                    <div className="flex items-start gap-2 rounded-xl border border-red-500/15 bg-red-500/5 px-4 py-3 text-sm text-red-200">
+                      <AlertCircle size={16} className="mt-0.5 shrink-0" />
+                      <span>{statusError}</span>
+                    </div>
+                  )}
+
+                  {ticketStatus && (
+                    <div className="rounded-xl border border-white/8 bg-white/[0.025] p-4 grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 text-left">
+                      <div className="flex items-start gap-3 min-w-0">
+                        <div className="flex items-center justify-center gap-1 w-12 h-12 rounded-xl bg-white/[0.03] border border-white/8 shrink-0 overflow-hidden">
+                          {ticketIcons.map((icon) => (
+                            <img
+                              key={icon.src}
+                              src={icon.src}
+                              alt={icon.alt}
+                              className={
+                                ticketIcons.length > 1
+                                  ? "w-5 h-5 object-contain"
+                                  : "w-8 h-8 object-contain"
+                              }
+                            />
+                          ))}
+                        </div>
+
+                        <div className="flex flex-col gap-1.5 min-w-0">
+                          <span className="font-mono text-xs font-bold text-[#f3c343]">
+                            {ticketStatus.ticketId}
+                          </span>
+                          <h3 className="text-base font-bold text-white">
+                            {ticketStatus.type}
+                          </h3>
+                          <p className="text-xs text-white/45">
+                            {ticketStatus.trackArtist || "Support request"} ·
+                            Submitted{" "}
+                            {new Date(ticketStatus.date).toLocaleDateString(
+                              [],
+                              {
+                                year: "numeric",
+                                month: "short",
+                                day: "numeric",
+                              },
+                            )}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="sm:text-right">
+                        <span
+                          className={`inline-flex rounded-full border px-3 py-1 text-xs font-bold uppercase tracking-wider ${statusStyles[ticketStatus.status]}`}
+                        >
+                          {ticketStatus.status}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          </BorderGlow>
+        </motion.div>
+
         {/* Need custom support? */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-16 max-w-xl mx-auto w-full"
+          className="mt-8 max-w-xl mx-auto w-full"
         >
           <div className="relative rounded-2xl bg-[#f3c343]/[0.02] border border-[#f3c343]/20 hover:border-[#f3c343]/40 p-6 text-center transition-all duration-300 shadow-[0_0_20px_rgba(243,195,67,0.02)] hover:shadow-[0_0_25px_rgba(243,195,67,0.05)]">
             {/* Ambient gold glow */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(243,195,67,0.04)_0%,transparent_70%)] pointer-events-none rounded-2xl" />
-            
+
             <p className="text-white/80 text-base font-semibold relative z-10 flex items-center justify-center gap-2">
               <span>💡</span> Need custom assistance?
             </p>
             <p className="text-white/50 text-sm mt-1.5 relative z-10 leading-relaxed">
-              If you have any custom requests or questions not covered by the forms above, email us directly at{" "}
+              If you have any custom requests or questions not covered by the
+              forms above, email us directly at{" "}
               <a
                 href="mailto:support@distrozi.com"
                 className="text-[#f3c343] hover:text-[#ffd866] transition-colors font-semibold underline decoration-[#f3c343]/30 hover:decoration-[#ffd866]"
