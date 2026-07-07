@@ -28,10 +28,13 @@ export async function POST(request: Request) {
 
     const submissionType = dataObj.submissionType || "New Submission";
     const subject = `Distrozi - ${submissionType}`;
+    let ticketId = dataObj.ticketId || "";
 
     // Persist ticket if it's a support submission
     if (submissionType.startsWith("Support - ")) {
-      const ticketId = dataObj.ticketId || `DT-${Math.floor(100000 + Math.random() * 900000)}`;
+      if (!ticketId) {
+        ticketId = `DT-${Math.floor(100000 + Math.random() * 900000)}`;
+      }
       const date = new Date().toISOString();
 
       // Extract track/artist details dynamically
@@ -123,7 +126,73 @@ export async function POST(request: Request) {
       };
 
       await transporter.sendMail(mailOptions);
-      console.log(`Email dispatched successfully to: ${finalRecipients}`);
+      console.log(`Email dispatched successfully to admin: ${finalRecipients}`);
+
+      // Send automated confirmation receipt to the creator/user
+      if (submissionType.startsWith("Support - ") && dataObj.email) {
+        try {
+          const cleanFormName = submissionType.replace("Support - ", "");
+          const userSubject = `Distrozi Support: Ticket Registered [${ticketId}]`;
+          const userPlainText = `Hello,\n\nThank you for contacting Distrozi Support. Your ticket has been registered in our rights log system.\n\nTicket ID: ${ticketId}\nRequest Type: ${cleanFormName}\n\nOur team is reviewing the details and will get back to you shortly.\n\nBest regards,\nDistrozi Support Desk`;
+
+          const userHtmlContent = `
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #0c0c0c; color: #ffffff; padding: 40px 30px; border-radius: 16px; border: 1px solid #222222; text-align: left;">
+            <div style="margin-bottom: 24px; border-bottom: 1px solid #222222; padding-bottom: 20px;">
+              <h1 style="margin: 0; color: #ffffff; font-size: 24px; font-weight: 700; letter-spacing: -0.5px;">Distrozi <span style="color: #f3c343;">Support</span></h1>
+            </div>
+            
+            <p style="font-size: 15px; line-height: 1.6; color: #d1d1d6; margin-top: 0; margin-bottom: 20px;">
+              Hello,
+            </p>
+            <p style="font-size: 15px; line-height: 1.6; color: #d1d1d6; margin-bottom: 24px;">
+              Thank you for reaching out to us. Your support ticket has been successfully registered and logged in our system. A summary of your request is detailed below:
+            </p>
+            
+            <div style="background-color: #121212; border: 1px solid #2a2a2a; border-radius: 12px; padding: 20px; margin-bottom: 28px;">
+              <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                <tbody>
+                  <tr>
+                    <td style="padding: 8px 0; color: #a1a1aa; font-weight: 500; width: 35%;">Ticket ID</td>
+                    <td style="padding: 8px 0; color: #f3c343; font-family: monospace; font-weight: 700; font-size: 15px;">${ticketId}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; color: #a1a1aa; font-weight: 500;">Request Type</td>
+                    <td style="padding: 8px 0; color: #ffffff; font-weight: 600;">${cleanFormName}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; color: #a1a1aa; font-weight: 500;">Date Logged</td>
+                    <td style="padding: 8px 0; color: #ffffff; font-weight: 500;">${new Date().toLocaleDateString([], { year: 'numeric', month: 'long', day: 'numeric' })}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <p style="font-size: 14px; line-height: 1.6; color: #a1a1aa; margin-bottom: 24px;">
+              Our support and rights departments review ticket submissions daily. We will update your ticket status and respond to your registered email address shortly.
+            </p>
+            
+            <div style="border-top: 1px solid #222222; padding-top: 20px; margin-top: 24px; font-size: 12px; color: #71717a;">
+              <p style="margin: 0; font-weight: 600; color: #a1a1aa; margin-bottom: 4px;">Distrozi Rights & Claims Division</p>
+              <p style="margin: 0;">This is an automated confirmation of your logged ticket. Please do not reply directly to this email.</p>
+            </div>
+          </div>
+          `;
+
+          const userMailOptions = {
+            from: emailUser,
+            to: dataObj.email,
+            replyTo: `support@distrozi.com`,
+            subject: userSubject,
+            text: userPlainText,
+            html: userHtmlContent,
+          };
+
+          await transporter.sendMail(userMailOptions);
+          console.log(`Automated confirmation email dispatched to creator: ${dataObj.email}`);
+        } catch (userMailErr) {
+          console.error("Failed to send support ticket confirmation to user:", userMailErr);
+        }
+      }
     } else {
       console.warn("⚠️ SMTP credentials missing or using example placeholders. Support ticket registered, email dispatch skipped.");
     }

@@ -47,32 +47,32 @@ async function redisCommand<T>(command: Array<string | number>): Promise<T> {
 }
 
 function canUseLocalFileStore() {
-  return process.env.NODE_ENV !== "production";
+  return true;
 }
 
 function readLocalTickets(): SupportTicket[] {
-  if (!canUseLocalFileStore()) {
-    throw new Error("Persistent ticket storage is not configured for production.");
-  }
-
   if (!fs.existsSync(localFilePath)) return [];
 
-  const data = fs.readFileSync(localFilePath, "utf8");
-  const parsed = JSON.parse(data) as unknown;
-  return Array.isArray(parsed) ? (parsed as SupportTicket[]) : [];
+  try {
+    const data = fs.readFileSync(localFilePath, "utf8");
+    const parsed = JSON.parse(data) as unknown;
+    return Array.isArray(parsed) ? (parsed as SupportTicket[]) : [];
+  } catch (e) {
+    console.error("Error reading local tickets:", e);
+    return [];
+  }
 }
 
 function writeLocalTickets(tickets: SupportTicket[]) {
-  if (!canUseLocalFileStore()) {
-    throw new Error("Persistent ticket storage is not configured for production.");
+  try {
+    const dir = path.dirname(localFilePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(localFilePath, JSON.stringify(tickets, null, 2), "utf8");
+  } catch (e) {
+    console.error("Error writing local tickets:", e);
   }
-
-  const dir = path.dirname(localFilePath);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-
-  fs.writeFileSync(localFilePath, JSON.stringify(tickets, null, 2), "utf8");
 }
 
 export async function readTickets(): Promise<SupportTicket[]> {

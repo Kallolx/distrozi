@@ -12,7 +12,7 @@ interface ServiceLayoutProps {
 
 export default function ServiceLayout({ children }: ServiceLayoutProps) {
   return (
-    <div className="relative min-h-screen bg-black">
+    <div className="relative min-h-screen bg-black overflow-x-hidden">
       {/* Same Aurora background as the landing and features pages */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Aurora

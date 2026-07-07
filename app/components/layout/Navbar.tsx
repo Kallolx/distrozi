@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   RiMenu3Line,
@@ -119,6 +120,8 @@ const navConfig: NavItem[] = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isSupportPage = pathname === "/support";
   const [isOpen, setIsOpen] = useState(false);
   const [activeAccordions, setActiveAccordions] = useState<
     Record<string, boolean>
@@ -238,17 +241,19 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button
-              as="a"
-              href="https://backstage.distrozi.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="secondary"
-              className="px-3.5 py-1.5 text-xs sm:px-5 sm:py-2 sm:text-sm md:px-[22px] md:py-[10px] md:text-[15px]"
-            >
-              <span className="md:hidden">Client Login</span>
-              <span className="hidden md:inline">Client Login</span>
-            </Button>
+            {!isSupportPage && (
+              <Button
+                as="a"
+                href="https://backstage.distrozi.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                className="px-3.5 py-1.5 text-xs sm:px-5 sm:py-2 sm:text-sm md:px-[22px] md:py-[10px] md:text-[15px]"
+              >
+                <span className="md:hidden">Client Login</span>
+                <span className="hidden md:inline">Client Login</span>
+              </Button>
+            )}
 
             <button
               onClick={() => setIsOpen(true)}
@@ -372,22 +377,24 @@ export default function Navbar() {
           </div>
 
           {/* Footer CTA */}
-          <div className="px-5 pb-8 pt-4 border-t border-white/5 flex flex-col gap-3">
-            <Button
-              as="a"
-              href="https://backstage.distrozi.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="secondary"
-              className="w-full justify-center py-3.5 text-[15px] font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              Client Login
-            </Button>
-            <p className="text-center text-[11px] text-muted">
-              Join 5,000+ artists & labels on Distrozi
-            </p>
-          </div>
+          {!isSupportPage && (
+            <div className="px-5 pb-8 pt-4 border-t border-white/5 flex flex-col gap-3">
+              <Button
+                as="a"
+                href="https://backstage.distrozi.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                className="w-full justify-center py-3.5 text-[15px] font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Client Login
+              </Button>
+              <p className="text-center text-[11px] text-muted">
+                Join 5,000+ artists & labels on Distrozi
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </>

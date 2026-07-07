@@ -137,7 +137,7 @@ export default function YouTubeNetworkMCNCMSPage() {
   };
 
   return (
-    <main className="relative min-h-screen bg-black">
+    <main className="relative min-h-screen bg-black overflow-x-hidden">
       {/* Global Fixed Background */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Aurora
