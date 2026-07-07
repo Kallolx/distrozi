@@ -116,7 +116,7 @@ export async function POST(request: Request) {
       const replyTo = dataObj.email || emailUser;
 
       const mailOptions = {
-        from: emailUser,
+        from: `"Distrozi Support" <${emailUser}>`,
         to: finalRecipients,
         replyTo: replyTo,
         subject: subject,
@@ -179,7 +179,7 @@ export async function POST(request: Request) {
           `;
 
           const userMailOptions = {
-            from: emailUser,
+            from: `"Distrozi Support" <${emailUser}>`,
             to: dataObj.email,
             replyTo: `support@distrozi.com`,
             subject: userSubject,

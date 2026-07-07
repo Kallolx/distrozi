@@ -151,7 +151,7 @@ export async function POST(request: Request) {
         `;
 
         const mailOptions = {
-          from: emailUser,
+          from: `"Distrozi Support" <${emailUser}>`,
           to: userEmail,
           replyTo: `support@distrozi.com`,
           subject: subject,
