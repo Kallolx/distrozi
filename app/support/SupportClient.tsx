@@ -69,12 +69,12 @@ interface TicketStatusResult {
   ticketId: string;
   type: string;
   trackArtist: string;
-  status: "Pending" | "In Progress" | "Resolved" | "Rejected";
+  status: "Under Review" | "In Progress" | "Resolved" | "Rejected";
   date: string;
 }
 
 const statusStyles: Record<TicketStatusResult["status"], string> = {
-  Pending: "border-amber-500/20 bg-amber-500/10 text-amber-300",
+  "Under Review": "border-amber-500/20 bg-amber-500/10 text-amber-300",
   "In Progress": "border-blue-500/20 bg-blue-500/10 text-blue-300",
   Resolved: "border-emerald-500/20 bg-emerald-500/10 text-emerald-300",
   Rejected: "border-red-500/20 bg-red-500/10 text-red-300",

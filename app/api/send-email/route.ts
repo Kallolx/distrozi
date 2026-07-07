@@ -1,12 +1,16 @@
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import { addTicket, SupportTicket } from '@/lib/ticketStore';
+import { NextResponse } from "next/server";
+import nodemailer from "nodemailer";
+import { addTicket, SupportTicket } from "@/lib/ticketStore";
 
 export async function POST(request: Request) {
   try {
     const contentType = request.headers.get("content-type") || "";
     let dataObj: Record<string, string> = {};
-    const attachments: Array<{ filename: string; content: Buffer; contentType: string }> = [];
+    const attachments: Array<{
+      filename: string;
+      content: Buffer;
+      contentType: string;
+    }> = [];
 
     if (contentType.includes("multipart/form-data")) {
       const formData = await request.formData();
@@ -55,10 +59,10 @@ export async function POST(request: Request) {
         ticketId,
         type: submissionType.replace("Support - ", ""),
         trackArtist,
-        status: "Pending",
+        status: "Under Review",
         date,
         remarks: "",
-        details: dataObj
+        details: dataObj,
       };
 
       await addTicket(newTicket);
@@ -75,9 +79,10 @@ export async function POST(request: Request) {
     for (const [key, value] of Object.entries(dataObj)) {
       if (key === "submissionType") continue;
       // formatted key
-      const formattedKey = key.replace(/([A-Z])/g, ' $1').trim();
-      const finalKey = formattedKey.charAt(0).toUpperCase() + formattedKey.slice(1);
-      
+      const formattedKey = key.replace(/([A-Z])/g, " $1").trim();
+      const finalKey =
+        formattedKey.charAt(0).toUpperCase() + formattedKey.slice(1);
+
       plainText += `${finalKey}: ${value}\n`;
       htmlContent += `
           <tr>
@@ -95,23 +100,26 @@ export async function POST(request: Request) {
 
     const emailUser = process.env.EMAIL_USER;
     const emailPass = process.env.EMAIL_PASS;
-    const hasCredentials = emailUser && emailPass && emailUser !== "your-email@gmail.com";
+    const hasCredentials =
+      emailUser && emailPass && emailUser !== "your-email@gmail.com";
 
     if (hasCredentials) {
       const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
           user: emailUser,
           pass: emailPass,
         },
       });
 
-      // Supports multiple recipients: 
+      // Supports multiple recipients:
       // 1. You can comma-separate them in RECEIVER_EMAIL (e.g., "a@b.com, c@d.com")
       // 2. Or add a second email in RECEIVER_EMAIL_2
       const receiver1 = process.env.RECEIVER_EMAIL || "support@distrozi.com";
       const receiver2 = process.env.RECEIVER_EMAIL_2;
-      const finalRecipients = receiver2 ? `${receiver1}, ${receiver2}` : receiver1;
+      const finalRecipients = receiver2
+        ? `${receiver1}, ${receiver2}`
+        : receiver1;
 
       const replyTo = dataObj.email || emailUser;
 
@@ -132,8 +140,24 @@ export async function POST(request: Request) {
       if (submissionType.startsWith("Support - ") && dataObj.email) {
         try {
           const cleanFormName = submissionType.replace("Support - ", "");
+          
+          let userFieldsHtml = "";
+          let userFieldsText = "";
+          for (const [key, value] of Object.entries(dataObj)) {
+            if (key === "submissionType" || key === "ticketId") continue;
+            const formattedKey = key.replace(/([A-Z])/g, " $1").trim();
+            const finalKey = formattedKey.charAt(0).toUpperCase() + formattedKey.slice(1);
+            userFieldsText += `${finalKey}: ${value}\n`;
+            userFieldsHtml += `
+              <tr>
+                <td style="padding: 10px 10px 10px 0; border-bottom: 1px solid #222222; color: #a1a1aa; font-weight: 500; vertical-align: top; width: 35%;">${finalKey}</td>
+                <td style="padding: 10px 0; border-bottom: 1px solid #222222; color: #ffffff; vertical-align: top; word-break: break-word;">${value || "-"}</td>
+              </tr>
+            `;
+          }
+
           const userSubject = `Distrozi Support: Ticket Registered [${ticketId}]`;
-          const userPlainText = `Hello,\n\nThank you for contacting Distrozi Support. Your ticket has been registered in our rights log system.\n\nTicket ID: ${ticketId}\nRequest Type: ${cleanFormName}\n\nOur team is reviewing the details and will get back to you shortly.\n\nBest regards,\nDistrozi Support Desk`;
+          const userPlainText = `Hello,\n\nThank you for contacting Distrozi Support. Your ticket has been registered in our rights log system.\n\nTicket ID: ${ticketId}\nRequest Type: ${cleanFormName}\n\nSubmitted Details:\n${userFieldsText}\n\nOur team is reviewing the details and will get back to you shortly.\n\nBest regards,\nDistrozi Support Desk`;
 
           const userHtmlContent = `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #0c0c0c; color: #ffffff; padding: 40px 30px; border-radius: 16px; border: 1px solid #222222; text-align: left;">
@@ -160,12 +184,23 @@ export async function POST(request: Request) {
                     <td style="padding: 8px 0; color: #ffffff; font-weight: 600;">${cleanFormName}</td>
                   </tr>
                   <tr>
+                    <td style="padding: 8px 0; color: #a1a1aa; font-weight: 500;">Initial Status</td>
+                    <td style="padding: 8px 0; color: #f3c343; font-weight: 700; text-transform: uppercase;">Under Review</td>
+                  </tr>
+                  <tr>
                     <td style="padding: 8px 0; color: #a1a1aa; font-weight: 500;">Date Logged</td>
-                    <td style="padding: 8px 0; color: #ffffff; font-weight: 500;">${new Date().toLocaleDateString([], { year: 'numeric', month: 'long', day: 'numeric' })}</td>
+                    <td style="padding: 8px 0; color: #ffffff; font-weight: 500;">${new Date().toLocaleDateString([], { year: "numeric", month: "long", day: "numeric" })}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
+
+            <h3 style="color: #ffffff; font-size: 16px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; border-bottom: 1px solid #222222; padding-bottom: 8px;">Submitted Details</h3>
+            <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 28px;">
+              <tbody>
+                ${userFieldsHtml}
+              </tbody>
+            </table>
             
             <p style="font-size: 14px; line-height: 1.6; color: #a1a1aa; margin-bottom: 24px;">
               Our support and rights departments review ticket submissions daily. We will update your ticket status and respond to your registered email address shortly.
@@ -188,21 +223,35 @@ export async function POST(request: Request) {
           };
 
           await transporter.sendMail(userMailOptions);
-          console.log(`Automated confirmation email dispatched to creator: ${dataObj.email}`);
+          console.log(
+            `Automated confirmation email dispatched to creator: ${dataObj.email}`,
+          );
         } catch (userMailErr) {
-          console.error("Failed to send support ticket confirmation to user:", userMailErr);
+          console.error(
+            "Failed to send support ticket confirmation to user:",
+            userMailErr,
+          );
         }
       }
     } else {
-      console.warn("⚠️ SMTP credentials missing or using example placeholders. Support ticket registered, email dispatch skipped.");
+      console.warn(
+        "⚠️ SMTP credentials missing or using example placeholders. Support ticket registered, email dispatch skipped.",
+      );
     }
 
-    return NextResponse.json({ success: true, message: "Request registered successfully" }, { status: 200 });
+    return NextResponse.json(
+      { success: true, message: "Request registered successfully" },
+      { status: 200 },
+    );
   } catch (error) {
     console.error("Error sending email:", error);
     return NextResponse.json(
-      { success: false, message: "Failed to send email", details: error instanceof Error ? error.message : String(error) },
-      { status: 500 }
+      {
+        success: false,
+        message: "Failed to send email",
+        details: error instanceof Error ? error.message : String(error),
+      },
+      { status: 500 },
     );
   }
 }

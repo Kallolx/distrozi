@@ -82,10 +82,10 @@ export async function POST(request: Request) {
         });
 
         const statusLabels: Record<string, string> = {
-          "Pending": "Pending Review",
-          "In Progress": "In Progress / Under Review",
-          "Resolved": "Resolved / Closed",
-          "Rejected": "Rejected / Cancelled"
+          "Under Review": "Under Review",
+          "In Progress": "In Progress",
+          "Resolved": "Resolved",
+          "Rejected": "Rejected"
         };
 
         const currentStatusLabel = statusLabels[status] || status;

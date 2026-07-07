@@ -14,7 +14,7 @@ interface Ticket {
   ticketId: string;
   type: string;
   trackArtist: string;
-  status: "Pending" | "In Progress" | "Resolved" | "Rejected";
+  status: "Under Review" | "In Progress" | "Resolved" | "Rejected";
   date: string;
   remarks: string;
   details: Record<string, unknown>;
@@ -36,7 +36,7 @@ export default function AdminTicketsClient() {
   
   // Selected Ticket for Editing
   const [selectedTicket, setSelectedTicket] = useState<Ticket | null>(null);
-  const [editStatus, setEditStatus] = useState<Ticket["status"]>("Pending");
+  const [editStatus, setEditStatus] = useState<Ticket["status"]>("Under Review");
   const [editRemarks, setEditRemarks] = useState("");
   const [updating, setUpdating] = useState(false);
 
@@ -129,11 +129,15 @@ export default function AdminTicketsClient() {
               : t
           )
         );
-        setSelectedTicket((prev) =>
-          prev
-            ? { ...prev, status: editStatus, remarks: editRemarks }
-            : null
-        );
+        if (editStatus === "Resolved" || editStatus === "Rejected") {
+          setSelectedTicket(null);
+        } else {
+          setSelectedTicket((prev) =>
+            prev
+              ? { ...prev, status: editStatus, remarks: editRemarks }
+              : null
+          );
+        }
         alert("Ticket updated successfully.");
       } else if (res.status === 401) {
         alert("Session expired or unauthorized. Please re-authenticate.");
@@ -153,10 +157,10 @@ export default function AdminTicketsClient() {
   // Calculations
   const stats = useMemo(() => {
     const total = tickets.length;
-    const pending = tickets.filter((t) => t.status === "Pending").length;
+    const underReview = tickets.filter((t) => t.status === "Under Review").length;
     const inProgress = tickets.filter((t) => t.status === "In Progress").length;
     const resolved = tickets.filter((t) => t.status === "Resolved").length;
-    return { total, pending, inProgress, resolved };
+    return { total, underReview, inProgress, resolved };
   }, [tickets]);
 
   const filteredTickets = useMemo(() => {
@@ -293,9 +297,9 @@ export default function AdminTicketsClient() {
           </div>
           
           <div className="rounded-2xl bg-white/[0.02] border border-white/5 p-5 flex flex-col gap-1.5 backdrop-blur-sm">
-            <span className="text-xs font-medium text-white/40">Pending Review</span>
+            <span className="text-xs font-medium text-white/40">Under Review</span>
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl sm:text-3xl font-bold text-amber-400">{stats.pending}</span>
+              <span className="text-2xl sm:text-3xl font-bold text-amber-400">{stats.underReview}</span>
               <span className="text-xs text-amber-500/30">waiting</span>
             </div>
           </div>
@@ -321,7 +325,7 @@ export default function AdminTicketsClient() {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           {/* Tabs */}
           <div className="flex flex-wrap gap-1.5 p-1 rounded-xl bg-white/[0.02] border border-white/5 self-start">
-            {["All", "Pending", "In Progress", "Resolved", "Rejected"].map((status) => (
+            {["All", "Under Review", "In Progress", "Resolved", "Rejected"].map((status) => (
               <button
                 key={status}
                 onClick={() => {
@@ -379,7 +383,7 @@ export default function AdminTicketsClient() {
                 ) : (
                   paginatedTickets.map((ticket) => {
                     const statusColors = {
-                      Pending: "bg-amber-500/10 border-amber-500/20 text-amber-400",
+                      "Under Review": "bg-amber-500/10 border-amber-500/20 text-amber-400",
                       "In Progress": "bg-blue-500/10 border-blue-500/20 text-blue-400",
                       Resolved: "bg-emerald-500/10 border-emerald-500/20 text-emerald-400",
                       Rejected: "bg-red-500/10 border-red-500/20 text-red-400",
@@ -578,7 +582,7 @@ export default function AdminTicketsClient() {
                         onChange={(e) => setEditStatus(e.target.value as Ticket["status"])}
                         className="w-full bg-[#121212] border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#f3c343]/50 transition-all"
                       >
-                        <option value="Pending">Pending Review</option>
+                        <option value="Under Review">Under Review</option>
                         <option value="In Progress">In Progress</option>
                         <option value="Resolved">Resolved</option>
                         <option value="Rejected">Rejected</option>

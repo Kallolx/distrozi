@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-export type TicketStatus = "Pending" | "In Progress" | "Resolved" | "Rejected";
+export type TicketStatus = "Under Review" | "In Progress" | "Resolved" | "Rejected";
 
 export interface SupportTicket {
   ticketId: string;
