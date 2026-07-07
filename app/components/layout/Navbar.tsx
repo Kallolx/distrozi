@@ -121,7 +121,7 @@ const navConfig: NavItem[] = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const isSupportPage = pathname === "/support";
+  const isSupportPage = pathname === "/support" || pathname?.startsWith("/support/");
   const [isOpen, setIsOpen] = useState(false);
   const [activeAccordions, setActiveAccordions] = useState<
     Record<string, boolean>
