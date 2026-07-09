@@ -3,9 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle } from "lucide-react";
-import ServiceLayout from "../../components/layout/ServiceLayout";
-import FAQ from "../../components/sections/FAQ";
-import BorderGlow from "@/components/BorderGlow";
+import Navbar from "../../components/layout/Navbar";
+import Footer from "../../components/layout/Footer";
+import SupportFAQ from "../../components/sections/SupportFAQ";
 import Button from "../../components/ui/Button";
 
 const SUPPORT_CARDS = [
@@ -284,8 +284,9 @@ export default function SupportFormClient({ formId }: { formId: string }) {
   };
 
   return (
-    <ServiceLayout>
-      <div className="pt-32 pb-16 min-h-screen flex flex-col max-w-4xl mx-auto px-6 lg:px-8">
+    <main className="relative min-h-screen bg-[#050505] text-[#f5f5f5] overflow-x-hidden font-sans">
+      <Navbar />
+      <div className="pt-32 pb-16 min-h-screen flex flex-col max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
         
         {/* Back Link */}
         <div className="mb-6">
@@ -300,7 +301,7 @@ export default function SupportFormClient({ formId }: { formId: string }) {
 
         {/* Dynamic Card Container with BorderGlow for Premium Styling */}
         <div className="w-full">
-          <BorderGlow backgroundColor="#080808" borderRadius={20} className="w-full">
+          <div className="w-full rounded-2xl bg-[#121212] border border-white/10">
             <div className="p-8 sm:p-12 flex flex-col gap-8 text-left">
               
               {/* Form Title & Big Borderless Logos */}
@@ -1150,15 +1151,16 @@ export default function SupportFormClient({ formId }: { formId: string }) {
               )}
 
             </div>
-          </BorderGlow>
+          </div>
         </div>
 
         {/* Integrated FAQ section at the bottom */}
         <div className="mt-24 border-t border-white/5 pt-8">
-          <FAQ />
+          <SupportFAQ />
         </div>
 
       </div>
-    </ServiceLayout>
+      <Footer />
+    </main>
   );
 }

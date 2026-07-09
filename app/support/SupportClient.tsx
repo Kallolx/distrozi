@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { AlertCircle, Loader2, Search, TicketCheck } from "lucide-react";
-import ServiceLayout from "../components/layout/ServiceLayout";
-import FAQ from "../components/sections/FAQ";
-import BorderGlow from "@/components/BorderGlow";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+import SupportFAQ from "../components/sections/SupportFAQ";
 
 const SUPPORT_CARDS = [
   {
@@ -98,45 +97,35 @@ function getSupportIcons(type: string) {
     return [{ src: "/icons/instagram.svg", alt: "Instagram" }];
   }
   if (normalizedType.includes("facebook") || normalizedType.includes("meta")) {
-    return [{ src: "/icons/facebook.svg", alt: "Facebook" }];
+    return [
+      { src: "/icons/facebook.svg", alt: "Facebook" },
+      { src: "/icons/instagram.svg", alt: "Instagram" },
+    ];
   }
   if (normalizedType.includes("tiktok")) {
     return [{ src: "/icons/tiktok.svg", alt: "TikTok" }];
   }
-
   return [{ src: "/icons/youtube.png", alt: "YouTube" }];
 }
 
 export default function SupportClient() {
   const [ticketId, setTicketId] = useState("");
-  const [ticketStatus, setTicketStatus] = useState<TicketStatusResult | null>(
-    null,
-  );
-  const [statusError, setStatusError] = useState("");
+  const [ticketStatus, setTicketStatus] = useState<TicketStatusResult | null>(null);
   const [checkingStatus, setCheckingStatus] = useState(false);
+  const [statusError, setStatusError] = useState("");
+
   const ticketIcons = ticketStatus ? getSupportIcons(ticketStatus.type) : [];
 
-  const handleTicketLookup = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ) => {
+  const handleTicketLookup = async (event: React.FormEvent) => {
     event.preventDefault();
-    const cleanTicketId = ticketId.trim();
-
-    setTicketStatus(null);
-    setStatusError("");
-
-    if (!cleanTicketId) {
-      setStatusError("Enter your ticket ID to check the latest status.");
-      return;
-    }
+    if (!ticketId.trim()) return;
 
     setCheckingStatus(true);
+    setStatusError("");
+    setTicketStatus(null);
 
     try {
-      const response = await fetch(
-        `/api/support/ticket-status?ticketId=${encodeURIComponent(cleanTicketId)}`,
-        { cache: "no-store" },
-      );
+      const response = await fetch(`/api/support/ticket-status?ticketId=${encodeURIComponent(ticketId.trim())}`);
       const data = await response.json();
 
       if (!response.ok || !data.success) {
@@ -147,60 +136,35 @@ export default function SupportClient() {
       setTicketStatus(data.ticket);
     } catch (error) {
       console.error("Ticket lookup failed:", error);
-      setStatusError(
-        "Unable to check that ticket right now. Please try again.",
-      );
+      setStatusError("Unable to check that ticket right now. Please try again.");
     } finally {
       setCheckingStatus(false);
     }
   };
 
   return (
-    <ServiceLayout>
-      <div className="pt-32 pb-16 min-h-screen flex flex-col justify-center max-w-6xl mx-auto px-6 lg:px-8">
+    <main className="relative min-h-screen bg-[#050505] text-[#f5f5f5] overflow-x-hidden font-sans">
+      <Navbar />
+
+      <div className="pt-32 pb-16 min-h-screen flex flex-col justify-center max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Support Page Header */}
         <div className="flex flex-col gap-4 text-center max-w-2xl mx-auto mb-16">
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl sm:text-5xl font-medium tracking-tight text-white"
-          >
+          <h1 className="text-4xl sm:text-5xl font-medium tracking-tight text-white">
             How can we <span className="gradient-text font-bold">help?</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.05 }}
-            className="text-white/50 text-sm sm:text-base leading-relaxed"
-          >
+          </h1>
+          <p className="text-white/50 text-sm sm:text-base leading-relaxed">
             Submit release requests, whitelisting, Official Artist Channel
             requests, or request manual claims. Our rights department handles
             submissions daily.
-          </motion.p>
+          </p>
         </div>
 
         {/* Support Options Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SUPPORT_CARDS.map((card, idx) => (
-            <motion.div
-              key={card.id}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.03 }}
-              className="group animate-fade-in"
-            >
-              <Link
-                href={`/support/${card.id}`}
-                className="block h-full cursor-pointer"
-              >
-                <BorderGlow
-                  backgroundColor="#080808"
-                  borderRadius={16}
-                  className="h-full"
-                  enableViewportActive={false}
-                >
+          {SUPPORT_CARDS.map((card) => (
+            <div key={card.id} className="group">
+              <Link href={`/support/${card.id}`} className="block h-full cursor-pointer">
+                <div className="h-full rounded-2xl bg-[#121212] border border-white/10 transition-all duration-200 hover:border-white/20 hover:bg-[#1a1a1a]">
                   <div className="p-6 sm:p-8 flex flex-col gap-4 text-left h-full">
                     {/* Platform Logo(s) - No Bg, No Border, Bigger */}
                     <div className="flex items-center gap-3 h-14 shrink-0">
@@ -210,12 +174,12 @@ export default function SupportClient() {
                           <img
                             src="/icons/facebook.svg"
                             alt="Facebook"
-                            className="w-14 h-14 object-contain filter brightness-100 animate-fade-in"
+                            className="w-14 h-14 object-contain filter brightness-100"
                           />
                           <img
                             src="/icons/instagram.svg"
                             alt="Instagram"
-                            className="w-14 h-14 object-contain filter brightness-100 animate-fade-in"
+                            className="w-14 h-14 object-contain filter brightness-100"
                           />
                         </>
                       ) : (
@@ -236,25 +200,15 @@ export default function SupportClient() {
                       </p>
                     </div>
                   </div>
-                </BorderGlow>
+                </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Ticket Status Lookup - Full Width */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-10 w-full"
-        >
-          <BorderGlow
-            backgroundColor="#080808"
-            borderRadius={18}
-            className="w-full"
-          >
+        <div className="mt-10 w-full">
+          <div className="w-full rounded-2xl bg-[#121212] border border-white/10">
             <div className="p-5 sm:p-6 lg:p-7 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-6 lg:gap-10 items-center">
               {/* Left Text */}
               <div className="flex items-start gap-4 text-left">
@@ -364,21 +318,12 @@ export default function SupportClient() {
                 </div>
               )}
             </div>
-          </BorderGlow>
-        </motion.div>
+          </div>
+        </div>
 
         {/* Need custom support? */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-8 max-w-xl mx-auto w-full"
-        >
-          <div className="relative rounded-2xl bg-[#f3c343]/[0.02] border border-[#f3c343]/20 hover:border-[#f3c343]/40 p-6 text-center transition-all duration-300 shadow-[0_0_20px_rgba(243,195,67,0.02)] hover:shadow-[0_0_25px_rgba(243,195,67,0.05)]">
-            {/* Ambient gold glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(243,195,67,0.04)_0%,transparent_70%)] pointer-events-none rounded-2xl" />
-
+        <div className="mt-8 max-w-xl mx-auto w-full">
+          <div className="relative rounded-2xl bg-[#f3c343]/[0.02] border border-[#f3c343]/20 p-6 text-center">
             <p className="text-white/80 text-base font-semibold relative z-10 flex items-center justify-center gap-2">
               <span>💡</span> Need custom assistance?
             </p>
@@ -393,13 +338,15 @@ export default function SupportClient() {
               </a>
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* FAQ Section Integrated */}
         <div className="mt-24 border-t border-white/5 pt-8">
-          <FAQ />
+          <SupportFAQ />
         </div>
       </div>
-    </ServiceLayout>
+
+      <Footer />
+    </main>
   );
 }

@@ -3,7 +3,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  KeyRound, Search, X, RefreshCw, ChevronLeft, ChevronRight
+  KeyRound, Search, X, RefreshCw, ChevronLeft, ChevronRight, Copy, Check
 } from "lucide-react";
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
@@ -39,6 +39,15 @@ export default function AdminTicketsClient() {
   const [editStatus, setEditStatus] = useState<Ticket["status"]>("Under Review");
   const [editRemarks, setEditRemarks] = useState("");
   const [updating, setUpdating] = useState(false);
+  const [copiedField, setCopiedField] = useState<string | null>(null);
+
+  const handleCopy = (fieldKey: string, textToCopy: string) => {
+    navigator.clipboard.writeText(textToCopy);
+    setCopiedField(fieldKey);
+    setTimeout(() => {
+      setCopiedField(null);
+    }, 1500);
+  };
 
   // Fetch Tickets with Authorization Header
   const fetchTickets = async (keyToUse?: string) => {
@@ -503,10 +512,22 @@ export default function AdminTicketsClient() {
               >
                 {/* Header */}
                 <div className="p-6 border-b border-white/10 flex items-center justify-between shrink-0">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2">
                     <span className="font-mono font-bold text-base text-[#f3c343]">
                       {selectedTicket.ticketId}
                     </span>
+                    <button
+                      type="button"
+                      onClick={() => handleCopy("ticketId", selectedTicket.ticketId)}
+                      className="text-white/30 hover:text-white/80 p-1 rounded hover:bg-white/5 transition-colors cursor-pointer"
+                      title="Copy Ticket ID"
+                    >
+                      {copiedField === "ticketId" ? (
+                        <Check size={13} className="text-emerald-400" />
+                      ) : (
+                        <Copy size={13} />
+                      )}
+                    </button>
                     <span className="text-white/30">|</span>
                     <span className="text-sm text-white/60">Review Request</span>
                   </div>
@@ -526,7 +547,21 @@ export default function AdminTicketsClient() {
                     <span className="text-[10px] font-semibold text-[#f3c343] tracking-widest uppercase">
                       Ticket Classification
                     </span>
-                    <h3 className="text-base font-bold text-white">{selectedTicket.type}</h3>
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="text-base font-bold text-white">{selectedTicket.type}</h3>
+                      <button
+                        type="button"
+                        onClick={() => handleCopy("type", selectedTicket.type)}
+                        className="text-white/30 hover:text-white/80 p-1 rounded hover:bg-white/5 transition-colors cursor-pointer"
+                        title="Copy Request Type"
+                      >
+                        {copiedField === "type" ? (
+                          <Check size={13} className="text-emerald-400" />
+                        ) : (
+                          <Copy size={13} />
+                        )}
+                      </button>
+                    </div>
                     <span className="text-xs text-white/40 mt-1">
                       Submitted on: {new Date(selectedTicket.date).toLocaleString()}
                     </span>
@@ -552,14 +587,30 @@ export default function AdminTicketsClient() {
                         return (
                           <div
                             key={key}
-                            className="grid grid-cols-3 gap-4 py-2 border-b border-white/[0.02] text-xs"
+                            className="grid grid-cols-3 gap-4 py-2 border-b border-white/[0.02] text-xs items-start"
                           >
-                            <span className="font-semibold text-white/40 text-left vertical-top">
+                            <span className="font-semibold text-white/40 text-left">
                               {formattedLabel}
                             </span>
-                            <span className="col-span-2 text-white/80 font-medium break-words leading-relaxed">
-                              {displayValue || "-"}
-                            </span>
+                            <div className="col-span-2 flex items-start justify-between gap-2">
+                              <span className="text-white/80 font-medium break-words leading-relaxed select-all">
+                                {displayValue || "-"}
+                              </span>
+                              {displayValue && displayValue !== "-" && (
+                                <button
+                                  type="button"
+                                  onClick={() => handleCopy(key, displayValue)}
+                                  className="text-white/30 hover:text-white/80 p-1 rounded hover:bg-white/5 transition-colors cursor-pointer shrink-0"
+                                  title={`Copy ${formattedLabel}`}
+                                >
+                                  {copiedField === key ? (
+                                    <Check size={13} className="text-emerald-400" />
+                                  ) : (
+                                    <Copy size={13} />
+                                  )}
+                                </button>
+                              )}
+                            </div>
                           </div>
                         );
                       })}
