@@ -163,14 +163,16 @@ export default function SupportFormClient({ formId }: { formId: string }) {
 
   if (!card) {
     return (
-      <ServiceLayout>
-        <div className="pt-32 pb-16 min-h-screen flex flex-col justify-center items-center">
+      <main className="relative min-h-screen bg-[#050505] text-[#f5f5f5] overflow-x-hidden font-sans">
+        <Navbar />
+        <div className="pt-32 pb-16 min-h-screen flex flex-col justify-center items-center relative z-10">
           <p className="text-white/60">Form not found.</p>
           <Link href="/support" className="text-[#f3c343] hover:underline mt-4">
             Back to Support
           </Link>
         </div>
-      </ServiceLayout>
+        <Footer />
+      </main>
     );
   }
 
