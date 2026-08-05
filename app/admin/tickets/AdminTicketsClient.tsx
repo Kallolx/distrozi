@@ -18,6 +18,7 @@ interface Ticket {
   date: string;
   remarks: string;
   details: Record<string, unknown>;
+  statusUpdatedAt?: string;
 }
 
 const PAGE_SIZE = 10;

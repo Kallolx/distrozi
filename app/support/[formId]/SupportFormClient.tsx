@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle, Plus, Trash2 } from "lucide-react";
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
 import SupportFAQ from "../../components/sections/SupportFAQ";
@@ -126,6 +126,23 @@ export default function SupportFormClient({ formId }: { formId: string }) {
   const [labelName, setLabelName] = useState("");
   const [email, setEmail] = useState("");
   const [upc, setUpc] = useState("");
+  const [ytUpcs, setYtUpcs] = useState<string[]>([""]);
+
+  const handleYtUpcChange = (index: number, val: string) => {
+    const updated = [...ytUpcs];
+    updated[index] = val;
+    setYtUpcs(updated);
+  };
+
+  const addYtUpcField = () => {
+    setYtUpcs([...ytUpcs, ""]);
+  };
+
+  const removeYtUpcField = (index: number) => {
+    if (ytUpcs.length === 1) return;
+    const updated = ytUpcs.filter((_, idx) => idx !== index);
+    setYtUpcs(updated);
+  };
   const [url, setUrl] = useState("");
   const [facebookUrl, setFacebookUrl] = useState("");
   const [instagramUrl, setInstagramUrl] = useState("");
@@ -184,7 +201,15 @@ export default function SupportFormClient({ formId }: { formId: string }) {
     }
 
     // UPC validation length checks
-    if (["yt-claim-release", "fb-claim-release"].includes(formId)) {
+    if (formId === "yt-claim-release") {
+      for (let i = 0; i < ytUpcs.length; i++) {
+        const cleanedUpc = ytUpcs[i].replace(/\s+/g, "");
+        if (cleanedUpc.length !== 13 || isNaN(Number(cleanedUpc))) {
+          alert(`UPC #${i + 1} (${ytUpcs[i] || "empty"}) must be exactly 13 digits.`);
+          return;
+        }
+      }
+    } else if (formId === "fb-claim-release") {
       const cleanedUpc = upc.replace(/\s+/g, "");
       if (cleanedUpc.length !== 13 || isNaN(Number(cleanedUpc))) {
         alert("The Affected UPC must be exactly 13 digits.");
@@ -204,7 +229,7 @@ export default function SupportFormClient({ formId }: { formId: string }) {
       };
 
       if (formId === "yt-claim-release") {
-        payload.upc = upc;
+        payload.upc = ytUpcs.map(u => u.trim()).join(", ");
         payload.youtubeVideoUrl = url;
       } else if (formId === "fb-claim-release") {
         payload.upc = upc;
@@ -406,18 +431,45 @@ export default function SupportFormClient({ formId }: { formId: string }) {
                   {/* 1. YouTube Claim Release */}
                   {formId === "yt-claim-release" && (
                     <div className="flex flex-col gap-6">
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-col gap-3">
                         <label className="text-sm font-semibold text-white/80">
-                          Affected UPC <span className="text-red-500">*</span>
+                          Affected UPCs <span className="text-red-500">*</span>
                         </label>
-                        <input
-                          type="text"
-                          required
-                          value={upc}
-                          onChange={(e) => setUpc(e.target.value)}
-                          placeholder="5054197079234 (13 digits)"
-                          className="w-full bg-white/[0.02] hover:bg-white/[0.04] focus:bg-white/[0.06] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#f3c343]/50 transition-all"
-                        />
+                        <div className="flex flex-col gap-3">
+                          {ytUpcs.map((singleUpc, idx) => (
+                            <div key={idx} className="flex items-center gap-2">
+                              <div className="relative flex-1">
+                                <input
+                                  type="text"
+                                  required
+                                  value={singleUpc}
+                                  onChange={(e) => handleYtUpcChange(idx, e.target.value)}
+                                  placeholder="5054197079234 (13 digits)"
+                                  className="w-full bg-white/[0.02] hover:bg-white/[0.04] focus:bg-white/[0.06] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#f3c343]/50 transition-all"
+                                />
+                              </div>
+                              {ytUpcs.length > 1 && (
+                                <button
+                                  type="button"
+                                  onClick={() => removeYtUpcField(idx)}
+                                  className="p-3 text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-xl border border-red-500/10 hover:border-red-500/20 transition-all cursor-pointer shrink-0 flex items-center justify-center"
+                                  title="Remove UPC"
+                                >
+                                  <Trash2 size={16} />
+                                </button>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                        <button
+                          type="button"
+                          onClick={addYtUpcField}
+                          className="mt-1 self-start px-4 py-2 text-xs font-bold bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 hover:border-white/20 text-[#f3c343] rounded-xl transition-all cursor-pointer flex items-center justify-center gap-1.5"
+                          title="Add Another UPC"
+                        >
+                          <Plus size={14} />
+                          <span>Add UPC</span>
+                        </button>
                       </div>
                       <div className="flex flex-col gap-2">
                         <label className="text-sm font-semibold text-white/80">

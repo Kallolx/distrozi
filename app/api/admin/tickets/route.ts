@@ -56,6 +56,7 @@ export async function POST(request: Request) {
 
     if (status !== undefined) {
       tickets[index].status = status as TicketStatus;
+      tickets[index].statusUpdatedAt = new Date().toISOString();
     }
     if (remarks !== undefined) {
       tickets[index].remarks = remarks;

@@ -63,6 +63,7 @@ export async function POST(request: Request) {
         date,
         remarks: "",
         details: dataObj,
+        statusUpdatedAt: date,
       };
 
       await addTicket(newTicket);

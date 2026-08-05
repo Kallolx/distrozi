@@ -11,6 +11,7 @@ export interface SupportTicket {
   date: string;
   remarks: string;
   details: Record<string, string>;
+  statusUpdatedAt?: string;
 }
 
 const TICKETS_KEY = "distrozi:support:tickets";
@@ -76,15 +77,69 @@ function writeLocalTickets(tickets: SupportTicket[]) {
 }
 
 export async function readTickets(): Promise<SupportTicket[]> {
+  let tickets: SupportTicket[] = [];
   if (!redisConfig()) {
-    return readLocalTickets();
+    tickets = readLocalTickets();
+  } else {
+    try {
+      const raw = await redisCommand<string | null>(["GET", TICKETS_KEY]);
+      if (raw) {
+        const parsed = JSON.parse(raw) as unknown;
+        tickets = Array.isArray(parsed) ? (parsed as SupportTicket[]) : [];
+      }
+    } catch (err) {
+      console.error("Error reading tickets from Redis:", err);
+      tickets = readLocalTickets();
+    }
   }
 
-  const raw = await redisCommand<string | null>(["GET", TICKETS_KEY]);
-  if (!raw) return [];
+  // Check and auto-resolve tickets in progress for more than 72 hours
+  const now = new Date();
+  let hasChanges = false;
 
-  const parsed = JSON.parse(raw) as unknown;
-  return Array.isArray(parsed) ? (parsed as SupportTicket[]) : [];
+  const updatedTickets = tickets.map((t) => {
+    if (t.status === "In Progress") {
+      if (!t.statusUpdatedAt) {
+        // Legacy "In Progress" ticket lacking a status timestamp.
+        // Set it to the current time so it has a fresh 72-hour window from today.
+        hasChanges = true;
+        return {
+          ...t,
+          statusUpdatedAt: now.toISOString(),
+        };
+      } else {
+        const refTime = new Date(t.statusUpdatedAt);
+        const diffMs = now.getTime() - refTime.getTime();
+        const diffHours = diffMs / (1000 * 60 * 60);
+
+        if (diffHours >= 72) {
+          hasChanges = true;
+          return {
+            ...t,
+            status: "Resolved" as const,
+            statusUpdatedAt: now.toISOString(),
+          };
+        }
+      }
+    }
+    return t;
+  });
+
+  if (hasChanges) {
+    try {
+      if (!redisConfig()) {
+        writeLocalTickets(updatedTickets);
+      } else {
+        await redisCommand<string>(["SET", TICKETS_KEY, JSON.stringify(updatedTickets)]);
+      }
+    } catch (err) {
+      console.error("Error auto-resolving tickets in database write:", err);
+      writeLocalTickets(updatedTickets);
+    }
+    return updatedTickets;
+  }
+
+  return tickets;
 }
 
 export async function writeTickets(tickets: SupportTicket[]): Promise<void> {
