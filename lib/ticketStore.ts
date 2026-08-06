@@ -93,7 +93,7 @@ export async function readTickets(): Promise<SupportTicket[]> {
     }
   }
 
-  // Check and auto-resolve tickets in progress for more than 72 hours
+  // Check and auto-resolve tickets in progress for more than 120 hours (5 days)
   const now = new Date();
   let hasChanges = false;
 
@@ -101,7 +101,7 @@ export async function readTickets(): Promise<SupportTicket[]> {
     if (t.status === "In Progress") {
       if (!t.statusUpdatedAt) {
         // Legacy "In Progress" ticket lacking a status timestamp.
-        // Set it to the current time so it has a fresh 72-hour window from today.
+        // Set it to the current time so it has a fresh 120-hour window from today.
         hasChanges = true;
         return {
           ...t,
@@ -112,7 +112,7 @@ export async function readTickets(): Promise<SupportTicket[]> {
         const diffMs = now.getTime() - refTime.getTime();
         const diffHours = diffMs / (1000 * 60 * 60);
 
-        if (diffHours >= 72) {
+        if (diffHours >= 120) {
           hasChanges = true;
           return {
             ...t,
