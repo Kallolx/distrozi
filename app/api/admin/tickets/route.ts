@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { readTickets, writeTickets, SupportTicket, TicketStatus } from '@/lib/ticketStore';
 import nodemailer from 'nodemailer';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   try {
     // Authorization header validation using server environment variables
@@ -14,8 +16,14 @@ export async function GET(request: Request) {
     }
 
     const tickets = await readTickets();
-    // Sort by date descending (latest first)
-    const sorted = tickets.sort((a: SupportTicket, b: SupportTicket) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    // Sort by date descending (latest first) robustly
+    const sorted = tickets.sort((a: SupportTicket, b: SupportTicket) => {
+      const timeA = a.date ? new Date(a.date).getTime() : 0;
+      const timeB = b.date ? new Date(b.date).getTime() : 0;
+      const validA = isNaN(timeA) ? 0 : timeA;
+      const validB = isNaN(timeB) ? 0 : timeB;
+      return validB - validA;
+    });
     return NextResponse.json({ tickets: sorted }, { status: 200 });
   } catch (error) {
     console.error("Error reading support tickets:", error);

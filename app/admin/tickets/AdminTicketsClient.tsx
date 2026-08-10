@@ -55,7 +55,7 @@ export default function AdminTicketsClient() {
     const key = keyToUse || sessionStorage.getItem("distrozi_admin_key") || "";
     setLoading(true);
     try {
-      const res = await fetch("/api/admin/tickets", {
+      const res = await fetch(`/api/admin/tickets?_t=${Date.now()}`, {
         headers: {
           "Authorization": `Bearer ${key}`
         }
@@ -66,6 +66,7 @@ export default function AdminTicketsClient() {
         setTickets(data.tickets || []);
         setIsAuthenticated(true);
         setAuthError(false);
+        setCurrentPage(1);
         if (keyToUse) {
           sessionStorage.setItem("distrozi_admin_key", keyToUse);
         }
