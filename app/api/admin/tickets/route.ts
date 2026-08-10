@@ -80,7 +80,8 @@ export async function POST(request: Request) {
     const ticket = tickets[index];
     const userEmail = ticket.details && ticket.details.email;
 
-    if (isStatusChanged && hasCredentials && userEmail) {
+    // Do not send email alerts when a ticket is resolved
+    if (isStatusChanged && hasCredentials && userEmail && status !== "Resolved") {
       try {
         const transporter = nodemailer.createTransport({
           service: 'gmail',
