@@ -45,6 +45,7 @@ interface FormState {
   // Step 2: Professional Info
   professionalRole: "Artist" | "Label" | "Manager" | "Sub-distributor" | "";
   artistName: string;
+  labelName: string;
   genre: string;
   currentDistributor: "DistroKid" | "CD Baby" | "TuneCore" | "Believe" | "Amuse" | "Other" | "";
   reasonForLeaving: string;
@@ -61,6 +62,7 @@ interface FormState {
   bankAccountName: string;
   bankAccountNumber: string;
   bankRoutingNumber: string;
+  bankSwiftCode: string;
   facebookUrl: string;
   youtubeChannelId: string;
   spotifyArtistUrl: string;
@@ -83,6 +85,7 @@ const initialFormState: FormState = {
   idFile: null,
   professionalRole: "",
   artistName: "",
+  labelName: "",
   genre: "",
   currentDistributor: "",
   reasonForLeaving: "",
@@ -97,6 +100,7 @@ const initialFormState: FormState = {
   bankAccountName: "",
   bankAccountNumber: "",
   bankRoutingNumber: "",
+  bankSwiftCode: "",
   facebookUrl: "",
   youtubeChannelId: "",
   spotifyArtistUrl: "",
@@ -171,6 +175,7 @@ export default function StartOnboarding() {
     if (step === 2) {
       if (!form.professionalRole) stepErrors.professionalRole = "Required";
       if (!form.artistName.trim()) stepErrors.artistName = "Required";
+      if (!form.labelName.trim()) stepErrors.labelName = "Required";
       if (!form.genre) stepErrors.genre = "Required";
       if (!form.currentDistributor) stepErrors.currentDistributor = "Required";
       if (!form.tracksReleased.trim()) stepErrors.tracksReleased = "Required";
@@ -205,6 +210,7 @@ export default function StartOnboarding() {
         if (!form.bankAccountName.trim()) stepErrors.bankAccountName = "Required";
         if (!form.bankAccountNumber.trim()) stepErrors.bankAccountNumber = "Required";
         if (!form.bankRoutingNumber.trim()) stepErrors.bankRoutingNumber = "Required";
+        if (!form.bankSwiftCode.trim()) stepErrors.bankSwiftCode = "Required";
       }
     }
 
@@ -321,6 +327,10 @@ export default function StartOnboarding() {
               <div className="flex justify-between pb-2">
                 <span className="text-neutral-500">Artist Alias:</span>
                 <span className="text-white font-medium">{form.artistName || "N/A"}</span>
+              </div>
+              <div className="flex justify-between pb-2">
+                <span className="text-neutral-500">Label Name:</span>
+                <span className="text-white font-medium">{form.labelName || "N/A"}</span>
               </div>
               <div className="flex justify-between pb-2">
                 <span className="text-neutral-500">Primary Genre:</span>
@@ -618,18 +628,32 @@ export default function StartOnboarding() {
                       {errors.professionalRole && <span className="text-[11px] text-red-500 mt-1">{errors.professionalRole}</span>}
                     </div>
 
-                    {/* Artist / Band / Label Name */}
+                    {/* Artist / Band Name */}
                     <div className="flex flex-col">
                       <input
                         type="text"
                         name="artistName"
                         value={form.artistName}
                         onChange={handleTextChange}
-                        placeholder="Artist / Band / Label Name"
+                        placeholder="Artist / Band Name"
                         className="w-full bg-white/[0.03] hover:bg-white/[0.05] focus:bg-white/[0.07] focus:ring-2 focus:ring-primary/40 rounded-2xl px-5 py-5 text-sm text-white placeholder:text-neutral-500 outline-none transition-all duration-300"
                         required
                       />
                       {errors.artistName && <span className="text-[11px] text-red-500 mt-1">{errors.artistName}</span>}
+                    </div>
+
+                    {/* Label Name */}
+                    <div className="flex flex-col">
+                      <input
+                        type="text"
+                        name="labelName"
+                        value={form.labelName}
+                        onChange={handleTextChange}
+                        placeholder="Label Name"
+                        className="w-full bg-white/[0.03] hover:bg-white/[0.05] focus:bg-white/[0.07] focus:ring-2 focus:ring-primary/40 rounded-2xl px-5 py-5 text-sm text-white placeholder:text-neutral-500 outline-none transition-all duration-300"
+                        required
+                      />
+                      {errors.labelName && <span className="text-[11px] text-red-500 mt-1">{errors.labelName}</span>}
                     </div>
 
                     {/* Genre */}
@@ -888,11 +912,24 @@ export default function StartOnboarding() {
                             name="bankRoutingNumber"
                             value={form.bankRoutingNumber}
                             onChange={handleTextChange}
-                            placeholder="Routing Number / Swift"
+                            placeholder="Routing Number"
                             className="w-full bg-white/[0.03] hover:bg-white/[0.05] focus:bg-white/[0.07] focus:ring-2 focus:ring-primary/40 rounded-2xl px-5 py-5 text-sm text-white placeholder:text-neutral-500 outline-none transition-all duration-300"
                             required
                           />
                           {errors.bankRoutingNumber && <span className="text-[11px] text-red-500 mt-1">{errors.bankRoutingNumber}</span>}
+                        </div>
+
+                        <div className="flex flex-col">
+                          <input
+                            type="text"
+                            name="bankSwiftCode"
+                            value={form.bankSwiftCode}
+                            onChange={handleTextChange}
+                            placeholder="Bank SWIFT/BIC Code"
+                            className="w-full bg-white/[0.03] hover:bg-white/[0.05] focus:bg-white/[0.07] focus:ring-2 focus:ring-primary/40 rounded-2xl px-5 py-5 text-sm text-white placeholder:text-neutral-500 outline-none transition-all duration-300"
+                            required
+                          />
+                          {errors.bankSwiftCode && <span className="text-[11px] text-red-500 mt-1">{errors.bankSwiftCode}</span>}
                         </div>
                       </div>
                     )}
@@ -974,6 +1011,7 @@ export default function StartOnboarding() {
                         <span className="text-[10px] text-neutral-500 font-medium uppercase tracking-wider">Artist Identity specs</span>
                         <div className="flex flex-col gap-1 bg-white/[0.01] rounded-2xl p-4">
                           <span className="text-white font-medium text-base">{form.artistName || "N/A"}</span>
+                          {form.labelName && <span className="text-neutral-400 text-xs mt-0.5">Label: {form.labelName}</span>}
                           <span className="text-neutral-400 text-xs mt-0.5">Primary Role: {form.professionalRole || "N/A"}</span>
                           <span className="text-neutral-400 text-xs">Genre Anchor: {form.genre || "N/A"}</span>
                           <span className="text-neutral-300 font-medium text-[10px] mt-2 bg-white/5 rounded px-2 py-0.5 w-fit">
