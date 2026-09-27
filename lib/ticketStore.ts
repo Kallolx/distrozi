@@ -97,6 +97,27 @@ export async function readTickets(): Promise<SupportTicket[]> {
   const now = new Date();
   let hasChanges = false;
 
+  // Give legacy duplicate IDs a fresh unique ID. The oldest ticket keeps the original;
+  // newer ones remember it in details.originalTicketId so status lookups still work.
+  const seenIds = new Set(tickets.map((t) => t.ticketId));
+  const claimedIds = new Set<string>();
+  const byDateAsc = [...tickets].sort(
+    (a, b) => (new Date(a.date).getTime() || 0) - (new Date(b.date).getTime() || 0)
+  );
+  for (const t of byDateAsc) {
+    if (!claimedIds.has(t.ticketId)) {
+      claimedIds.add(t.ticketId);
+      continue;
+    }
+    let newId = generateTicketId();
+    while (seenIds.has(newId)) newId = generateTicketId();
+    seenIds.add(newId);
+    claimedIds.add(newId);
+    t.details = { ...t.details, originalTicketId: t.ticketId, ticketId: newId };
+    t.ticketId = newId;
+    hasChanges = true;
+  }
+
   const updatedTickets = tickets.map((t) => {
     if (t.status === "In Progress" && t.type === "YouTube Claim Release") {
       if (!t.statusUpdatedAt) {
