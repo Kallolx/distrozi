@@ -176,10 +176,10 @@ export function generateTicketId(): string {
   return `DT-${Math.floor(100000 + Math.random() * 900000)}`;
 }
 
-// Serial numbering for new tickets (DTS-1001, DTS-1002, ...). Legacy tickets keep their random 6-digit IDs.
-const COUNTER_KEY = "distrozi:support:ticket-counter";
-const COUNTER_START = 1000;
-const localCounterPath = path.join(process.cwd(), "data", "support-ticket-counter.json");
+// Serial numbering for new tickets (DTS-10001, DTS-10002, ...). Legacy tickets keep their random 6-digit IDs.
+const COUNTER_KEY = "distrozi:support:ticket-counter-dts";
+const COUNTER_START = 10000;
+const localCounterPath = path.join(process.cwd(), "data", "support-ticket-counter-dts.json");
 
 async function nextSerialNumber(): Promise<number> {
   if (redisConfig()) {
