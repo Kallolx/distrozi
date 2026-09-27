@@ -301,7 +301,8 @@ export default function SupportFormClient({ formId }: { formId: string }) {
         throw new Error("Failed to submit request to email system");
       }
 
-      setSuccessTicket(randomTicket);
+      const result = (await response.json().catch(() => ({}))) as { ticketId?: string };
+      setSuccessTicket(result.ticketId || randomTicket);
     } catch (error) {
       console.error("Error submitting support form:", error);
       alert("There was an error submitting your request. Please try again or contact support directly.");

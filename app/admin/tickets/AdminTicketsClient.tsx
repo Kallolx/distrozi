@@ -126,6 +126,7 @@ export default function AdminTicketsClient() {
         },
         body: JSON.stringify({
           ticketId: selectedTicket.ticketId,
+          date: selectedTicket.date,
           status: editStatus,
           remarks: editRemarks,
         }),
@@ -135,7 +136,7 @@ export default function AdminTicketsClient() {
         // Update local state
         setTickets((prev) =>
           prev.map((t) =>
-            t.ticketId === selectedTicket.ticketId
+            t.ticketId === selectedTicket.ticketId && t.date === selectedTicket.date
               ? { ...t, status: editStatus, remarks: editRemarks }
               : t
           )
@@ -410,7 +411,7 @@ export default function AdminTicketsClient() {
 
                     return (
                       <tr
-                        key={ticket.ticketId}
+                        key={`${ticket.ticketId}-${ticket.date}`}
                         className="hover:bg-white/[0.01] transition-colors"
                       >
                         <td className="py-4.5 px-6 font-mono font-bold text-[#f3c343] text-xs">

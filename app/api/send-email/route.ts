@@ -66,7 +66,8 @@ export async function POST(request: Request) {
         statusUpdatedAt: date,
       };
 
-      await addTicket(newTicket);
+      ticketId = await addTicket(newTicket);
+      dataObj.ticketId = ticketId;
     }
 
     let plainText = `You have received a new submission:\n\n`;
@@ -241,7 +242,7 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json(
-      { success: true, message: "Request registered successfully" },
+      { success: true, message: "Request registered successfully", ticketId },
       { status: 200 },
     );
   } catch (error) {

@@ -151,8 +151,20 @@ export async function writeTickets(tickets: SupportTicket[]): Promise<void> {
   await redisCommand<string>(["SET", TICKETS_KEY, JSON.stringify(tickets)]);
 }
 
-export async function addTicket(ticket: SupportTicket): Promise<void> {
+export function generateTicketId(): string {
+  return `DT-${Math.floor(100000 + Math.random() * 900000)}`;
+}
+
+// Persists the ticket, reassigning its ID if it collides with an existing one.
+// Returns the ticket ID that was actually stored.
+export async function addTicket(ticket: SupportTicket): Promise<string> {
   const tickets = await readTickets();
-  tickets.push(ticket);
+  const existingIds = new Set(tickets.map((t) => t.ticketId));
+  let ticketId = ticket.ticketId || generateTicketId();
+  while (existingIds.has(ticketId)) {
+    ticketId = generateTicketId();
+  }
+  tickets.push({ ...ticket, ticketId, details: { ...ticket.details, ticketId } });
   await writeTickets(tickets);
+  return ticketId;
 }

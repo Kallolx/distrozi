@@ -46,18 +46,28 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    const { ticketId, status, remarks } = body;
+    const { ticketId, date, status, remarks } = body;
 
     if (!ticketId) {
       return NextResponse.json({ success: false, message: "Ticket ID is required" }, { status: 400 });
     }
 
     const tickets = await readTickets();
-    const index = tickets.findIndex((t: SupportTicket) => t.ticketId === ticketId);
+    // Legacy data can contain duplicate ticket IDs, so the submission date disambiguates.
+    const matches = tickets
+      .map((t: SupportTicket, i: number) => ({ t, i }))
+      .filter(({ t }) => t.ticketId === ticketId && (date === undefined || t.date === date));
 
-    if (index === -1) {
+    if (matches.length === 0) {
       return NextResponse.json({ success: false, message: "Ticket not found" }, { status: 404 });
     }
+    if (matches.length > 1) {
+      return NextResponse.json(
+        { success: false, message: "Multiple tickets share this ID; submission date is required" },
+        { status: 409 }
+      );
+    }
+    const index = matches[0].i;
 
     const oldStatus = tickets[index].status;
     const isStatusChanged = status !== undefined && status !== oldStatus;
