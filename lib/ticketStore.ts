@@ -176,7 +176,7 @@ export function generateTicketId(): string {
   return `DT-${Math.floor(100000 + Math.random() * 900000)}`;
 }
 
-// Serial numbering for new tickets (DT-1001, DT-1002, ...). Legacy tickets keep their random 6-digit IDs.
+// Serial numbering for new tickets (DTS-1001, DTS-1002, ...). Legacy tickets keep their random 6-digit IDs.
 const COUNTER_KEY = "distrozi:support:ticket-counter";
 const COUNTER_START = 1000;
 const localCounterPath = path.join(process.cwd(), "data", "support-ticket-counter.json");
@@ -206,9 +206,9 @@ async function nextSerialNumber(): Promise<number> {
 export async function addTicket(ticket: SupportTicket): Promise<string> {
   const tickets = await readTickets();
   const existingIds = new Set(tickets.map((t) => t.ticketId));
-  let ticketId = `DT-${await nextSerialNumber()}`;
+  let ticketId = `DTS-${await nextSerialNumber()}`;
   while (existingIds.has(ticketId)) {
-    ticketId = `DT-${await nextSerialNumber()}`;
+    ticketId = `DTS-${await nextSerialNumber()}`;
   }
   tickets.push({ ...ticket, ticketId, details: { ...ticket.details, ticketId } });
   await writeTickets(tickets);
