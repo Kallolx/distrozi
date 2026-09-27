@@ -176,14 +176,39 @@ export function generateTicketId(): string {
   return `DT-${Math.floor(100000 + Math.random() * 900000)}`;
 }
 
-// Persists the ticket, reassigning its ID if it collides with an existing one.
+// Serial numbering for new tickets (DT-1001, DT-1002, ...). Legacy tickets keep their random 6-digit IDs.
+const COUNTER_KEY = "distrozi:support:ticket-counter";
+const COUNTER_START = 1000;
+const localCounterPath = path.join(process.cwd(), "data", "support-ticket-counter.json");
+
+async function nextSerialNumber(): Promise<number> {
+  if (redisConfig()) {
+    await redisCommand<string | null>(["SET", COUNTER_KEY, COUNTER_START, "NX"]);
+    return redisCommand<number>(["INCR", COUNTER_KEY]);
+  }
+
+  let current = COUNTER_START;
+  try {
+    if (fs.existsSync(localCounterPath)) {
+      current = Number(JSON.parse(fs.readFileSync(localCounterPath, "utf8")).value) || COUNTER_START;
+    }
+  } catch (e) {
+    console.error("Error reading local ticket counter:", e);
+  }
+  const next = current + 1;
+  fs.mkdirSync(path.dirname(localCounterPath), { recursive: true });
+  fs.writeFileSync(localCounterPath, JSON.stringify({ value: next }), "utf8");
+  return next;
+}
+
+// Persists the ticket under the next serial ID (skipping any ID already in use).
 // Returns the ticket ID that was actually stored.
 export async function addTicket(ticket: SupportTicket): Promise<string> {
   const tickets = await readTickets();
   const existingIds = new Set(tickets.map((t) => t.ticketId));
-  let ticketId = ticket.ticketId || generateTicketId();
+  let ticketId = `DT-${await nextSerialNumber()}`;
   while (existingIds.has(ticketId)) {
-    ticketId = generateTicketId();
+    ticketId = `DT-${await nextSerialNumber()}`;
   }
   tickets.push({ ...ticket, ticketId, details: { ...ticket.details, ticketId } });
   await writeTickets(tickets);
